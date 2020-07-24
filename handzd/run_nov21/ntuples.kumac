@@ -1,0 +1,926 @@
+h/file 1 ../rzn/after_dan_before_crash.rzn
+h/file 2 ../rzn/force_6mrad.rzn
+h/file 3 ../rzn/only_6mrad.rzn
+
+h/cr/1d 101 'drift ZD layer 1' 100 -10. 10.
+h/cr/1d 102 'drift ZD layer 2' 100 -10. 10.
+h/cr/1d 103 'drift ZD layer 3' 100 -10. 10.
+h/cr/1d 104 'drift ZD layer 4' 100 -10. 10.
+h/cr/1d 105 'drift ZD layer 5' 100 -10. 10.
+h/cr/1d 106 'drift ZD layer 6' 100 -10. 10.
+
+nt/plot //lun1/fipassproc/1.drift layer==1 ! ! ! ! 101
+nt/plot //lun1/fipassproc/1.drift layer==2 ! ! ! ! 102
+nt/plot //lun1/fipassproc/1.drift layer==3 ! ! ! ! 103
+nt/plot //lun1/fipassproc/1.drift layer==4 ! ! ! ! 104
+nt/plot //lun1/fipassproc/1.drift layer==5 ! ! ! ! 105
+nt/plot //lun1/fipassproc/1.drift layer==6 ! ! ! ! 106
+
+h/cr/1d 201 'drift ZD layer 1' 100 -10. 10.
+h/cr/1d 202 'drift ZD layer 2' 100 -10. 10.
+h/cr/1d 203 'drift ZD layer 3' 100 -10. 10.
+h/cr/1d 204 'drift ZD layer 4' 100 -10. 10.
+h/cr/1d 205 'drift ZD layer 5' 100 -10. 10.
+h/cr/1d 206 'drift ZD layer 6' 100 -10. 10.
+
+nt/plot //lun2/fipassproc/1.drift layer==1 ! ! ! ! 201
+nt/plot //lun2/fipassproc/1.drift layer==2 ! ! ! ! 202
+nt/plot //lun2/fipassproc/1.drift layer==3 ! ! ! ! 203
+nt/plot //lun2/fipassproc/1.drift layer==4 ! ! ! ! 204
+nt/plot //lun2/fipassproc/1.drift layer==5 ! ! ! ! 205
+nt/plot //lun2/fipassproc/1.drift layer==6 ! ! ! ! 206
+
+h/cr/1d 301 'drift ZD layer 1' 100 -10. 10.
+h/cr/1d 302 'drift ZD layer 2' 100 -10. 10.
+h/cr/1d 303 'drift ZD layer 3' 100 -10. 10.
+h/cr/1d 304 'drift ZD layer 4' 100 -10. 10.
+h/cr/1d 305 'drift ZD layer 5' 100 -10. 10.
+h/cr/1d 306 'drift ZD layer 6' 100 -10. 10.
+
+nt/plot //lun3/fipassproc/1.drift layer==1 ! ! ! ! 301
+nt/plot //lun3/fipassproc/1.drift layer==2 ! ! ! ! 302
+nt/plot //lun3/fipassproc/1.drift layer==3 ! ! ! ! 303
+nt/plot //lun3/fipassproc/1.drift layer==4 ! ! ! ! 304
+nt/plot //lun3/fipassproc/1.drift layer==5 ! ! ! ! 305
+nt/plot //lun3/fipassproc/1.drift layer==6 ! ! ! ! 306
+
+h/cr/title 'BLACK optimized ([F]=-4 mrad), RED [F] forced to -6, BLUE no alignment w/[F]=-6'
+zone 2 3
+
+do l=1,6
+  set hcol 4
+  h/plot 30[l]
+  set hcol 2
+  h/plot 20[l] s
+  set hcol 1
+  h/plot 10[l] s
+enddo
+
+pict/print 'drift_colors.ps'
+
+h/file 21 ../rzn/after_dan_before_crash_driftsign.rzn
+h/file 22 ../rzn/force_6mrad_driftsign.rzn
+h/file 23 ../rzn/only_6mrad_driftsign.rzn
+
+h/cr/title '        my prior method                                now keeping track of sign'
+zone 2 1
+h/cr/2d 9 'Drift VS. DCA' 1 -6 6 1 -6 6
+nt/plot //lun1/fipassproc/1.drift%dca ! ! ! ! ! 9
+set ltyp 2
+dline -1.5 -1.5 $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+dline 1.5 1.5 $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+nt/plot //lun21/fipassproc/1.drift%dca ! ! ! ! ! 9
+set ltyp 2
+dline -1.5 -1.5 $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+dline 1.5 1.5 $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+
+pict/print 'drift_method.ps'
+
+h/file 1 ../rzn/after_dan_before_crash_driftsign.rzn
+h/file 2 ../rzn/force_6mrad_driftsign.rzn
+h/file 3 ../rzn/only_6mrad_driftsign.rzn
+
+pict/print 'drift_colors2.ps'
+
+ ********************************************************
+ * NTUPLE ID=    1  ENTRIES= 248950   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * layer     * 0.100000E+01 * 0.600000E+01 *
+ *      2     * wire      * 0.000000E+00 * 0.650000E+02 *
+ *      3     * phi       * 0.134612E-04 * 0.628316E+01 *
+ *      4     * z         * -.329878E+03 * 0.312309E+03 *
+ *      5     * dca       * -.199030E+02 * 0.242861E+02 *
+ *      6     * drift     * -.999737E+01 * 0.989318E+01 *
+ *      7     * cotTheta  * -.265578E+01 * 0.271333E+01 *
+ ********************************************************
+
+h/cr/title ' '
+zone 1 1
+
+h/cr/2d 9 'residual VS z' 1 -100 100 1 -2.5 2.5
+nt/plot //lun1/fipassproc/1.dca%drift layer==1&&1.5<abs(drift)<3.8
+dline -4 4 -4 4
+
+zone 2 3
+h/cr/title 'residual VS z'
+h/cr/2d 1001 'layer 1' 1 -300 300 1 -6 6
+h/cr/2d 1002 'layer 2' 1 -300 300 1 -6 6
+h/cr/2d 1003 'layer 3' 1 -300 300 1 -6 6
+h/cr/2d 1004 'layer 4' 1 -300 300 1 -6 6
+h/cr/2d 1005 'layer 5' 1 -300 300 1 -6 6
+h/cr/2d 1006 'layer 6' 1 -300 300 1 -6 6
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==1&&1.5<abs(drift)<3.8 ! ! ! ! 1001
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==4&&1.5<abs(drift)<3.8 ! ! ! ! 1004
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==2&&1.5<abs(drift)<3.8 ! ! ! ! 1002
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==5&&1.5<abs(drift)<3.8 ! ! ! ! 1005
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==3&&1.5<abs(drift)<3.8 ! ! ! ! 1003
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==6&&1.5<abs(drift)<3.8 ! ! ! ! 1006
+
+pict/print 'after_dan_masks.ps'
+
+h/cr/prof 2001 'layer 1' 100 -300 300 -6 6
+h/cr/prof 2002 'layer 2' 100 -300 300 -6 6
+h/cr/prof 2003 'layer 3' 100 -300 300 -6 6
+h/cr/prof 2004 'layer 4' 100 -300 300 -6 6
+h/cr/prof 2005 'layer 5' 100 -300 300 -6 6
+h/cr/prof 2006 'layer 6' 100 -300 300 -6 6
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==1&&1.5<abs(drift)<3.8 ! ! ! ! 2001
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==4&&1.5<abs(drift)<3.8 ! ! ! ! 2004
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==2&&1.5<abs(drift)<3.8 ! ! ! ! 2002
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==5&&1.5<abs(drift)<3.8 ! ! ! ! 2005
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==3&&1.5<abs(drift)<3.8 ! ! ! ! 2003
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==6&&1.5<abs(drift)<3.8 ! ! ! ! 2006
+
+pict/print 'after_dan_masks2.ps'
+
+min 2001 -0.2
+max 2001  0.2
+min 2002 -0.2
+max 2002  0.2
+min 2003 -0.2
+max 2003  0.2
+min 2004 -0.2
+max 2004  0.2
+min 2005 -0.2
+max 2005  0.2
+min 2006 -0.2
+max 2006  0.2
+
+h/plot 2001
+h/plot 2004
+h/plot 2002
+h/plot 2005
+h/plot 2003
+h/plot 2006
+
+pict/print 'after_dan_masks3.ps'
+
+
+
+
+
+
+
+h/cr/prof 3001 'layer 1' 100 -300 300 -6 6
+h/cr/prof 3002 'layer 2' 100 -300 300 -6 6
+h/cr/prof 3003 'layer 3' 100 -300 300 -6 6
+h/cr/prof 3004 'layer 4' 100 -300 300 -6 6
+h/cr/prof 3005 'layer 5' 100 -300 300 -6 6
+h/cr/prof 3006 'layer 6' 100 -300 300 -6 6
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==1&&1.5<abs(drift)<3.8&&abs(z)<150-50 ! ! ! ! 3001
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==4&&1.5<abs(drift)<3.8&&abs(z)<225-50 ! ! ! ! 3004
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==2&&1.5<abs(drift)<3.8&&abs(z)<170-50 ! ! ! ! 3002
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==5&&1.5<abs(drift)<3.8&&abs(z)<250-50 ! ! ! ! 3005
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==3&&1.5<abs(drift)<3.8&&abs(z)<200-50 ! ! ! ! 3003
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==6&&1.5<abs(drift)<3.8&&abs(z)<280-50 ! ! ! ! 3006
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fortran/file 65 'timelike_residuals.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+zone 2 3
+h/cr/title 'timelike residual VS z'
+h/cr/2d 1001 'layer 1' 1 -300 300 1 -6 6
+h/cr/2d 1002 'layer 2' 1 -300 300 1 -6 6
+h/cr/2d 1003 'layer 3' 1 -300 300 1 -6 6
+h/cr/2d 1004 'layer 4' 1 -300 300 1 -6 6
+h/cr/2d 1005 'layer 5' 1 -300 300 1 -6 6
+h/cr/2d 1006 'layer 6' 1 -300 300 1 -6 6
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==1&&1.5<abs(drift)<3.8 ! ! ! ! 1001
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==4&&1.5<abs(drift)<3.8 ! ! ! ! 1004
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==2&&1.5<abs(drift)<3.8 ! ! ! ! 1002
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==5&&1.5<abs(drift)<3.8 ! ! ! ! 1005
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==3&&1.5<abs(drift)<3.8 ! ! ! ! 1003
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==6&&1.5<abs(drift)<3.8 ! ! ! ! 1006
+
+h/cr/prof 2001 'layer 1' 100 -300 300 -6 6
+h/cr/prof 2002 'layer 2' 100 -300 300 -6 6
+h/cr/prof 2003 'layer 3' 100 -300 300 -6 6
+h/cr/prof 2004 'layer 4' 100 -300 300 -6 6
+h/cr/prof 2005 'layer 5' 100 -300 300 -6 6
+h/cr/prof 2006 'layer 6' 100 -300 300 -6 6
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==1&&1.5<abs(drift)<3.8 ! ! ! ! 2001
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==4&&1.5<abs(drift)<3.8 ! ! ! ! 2004
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==2&&1.5<abs(drift)<3.8 ! ! ! ! 2002
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==5&&1.5<abs(drift)<3.8 ! ! ! ! 2005
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==3&&1.5<abs(drift)<3.8 ! ! ! ! 2003
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==6&&1.5<abs(drift)<3.8 ! ! ! ! 2006
+
+min 2001 -0.2
+max 2001  0.2
+min 2002 -0.2
+max 2002  0.2
+min 2003 -0.2
+max 2003  0.2
+min 2004 -0.2
+max 2004  0.2
+min 2005 -0.2
+max 2005  0.2
+min 2006 -0.2
+max 2006  0.2
+
+h/plot 2001
+h/plot 2004
+h/plot 2002
+h/plot 2005
+h/plot 2003
+h/plot 2006
+
+close 65
+
+
+
+
+h/cr/1d 101 'residual -5.lt.drift.lt.-4' 50 -5 5
+h/cr/1d 102 'residual -4.lt.drift.lt.-3' 50 -5 5
+h/cr/1d 103 'residual -3.lt.drift.lt.-2' 50 -5 5
+h/cr/1d 104 'residual -2.lt.drift.lt.-1' 50 -5 5
+h/cr/1d 105 'residual -1.lt.drift.lt. 0' 50 -5 5
+h/cr/1d 106 'residual  0.lt.drift.lt. 1' 50 -5 5
+h/cr/1d 107 'residual  1.lt.drift.lt. 2' 50 -5 5
+h/cr/1d 108 'residual  2.lt.drift.lt. 3' 50 -5 5
+h/cr/1d 109 'residual  3.lt.drift.lt. 4' 50 -5 5
+h/cr/1d 110 'residual  4.lt.drift.lt. 5' 50 -5 5
+
+nt/plot //lun1/fipassproc/1.drift-dca -5<drift<-4 ! ! ! ! 101
+nt/plot //lun1/fipassproc/1.drift-dca -4<drift<-3 ! ! ! ! 102
+nt/plot //lun1/fipassproc/1.drift-dca -3<drift<-2 ! ! ! ! 103
+nt/plot //lun1/fipassproc/1.drift-dca -2<drift<-1 ! ! ! ! 104
+nt/plot //lun1/fipassproc/1.drift-dca -1<drift<0 ! ! ! ! 105
+nt/plot //lun1/fipassproc/1.drift-dca  0<drift<1 ! ! ! ! 106
+nt/plot //lun1/fipassproc/1.drift-dca  1<drift<2 ! ! ! ! 107
+nt/plot //lun1/fipassproc/1.drift-dca  2<drift<3 ! ! ! ! 108
+nt/plot //lun1/fipassproc/1.drift-dca  3<drift<4 ! ! ! ! 109
+nt/plot //lun1/fipassproc/1.drift-dca  4<drift<5 ! ! ! ! 110
+
+
+fortran/file 65 '../plots/drgood_resolution_vs_drift.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+opt sta
+set stat 0111110
+opt fit
+set fit 001
+
+zone 1 2
+set hcol 1
+
+h/fit 101 g
+h/fit 102 g
+h/fit 103 g
+h/fit 104 g
+h/fit 105 g
+h/fit 106 g
+h/fit 107 g
+h/fit 108 g
+h/fit 109 g
+h/fit 110 g
+
+set ncol 16
+palette 1
+
+opt nsta
+opt nfit
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&-5<drift<-4 ! ! ! 'l' 101
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&-5<drift<-4 ! ! ! 'sl' 101
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&-5<drift<-4 ! ! ! 'sl' 101
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&-5<drift<-4 ! ! ! 'sl' 101
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&-5<drift<-4 ! ! ! 'sl' 101
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&-5<drift<-4 ! ! ! 'sl' 101
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&-4<drift<-3 ! ! ! 'l' 102
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&-4<drift<-3 ! ! ! 'sl' 102
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&-4<drift<-3 ! ! ! 'sl' 102
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&-4<drift<-3 ! ! ! 'sl' 102
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&-4<drift<-3 ! ! ! 'sl' 102
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&-4<drift<-3 ! ! ! 'sl' 102
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&-3<drift<-2 ! ! ! 'l' 103
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&-3<drift<-2 ! ! ! 'sl' 103
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&-3<drift<-2 ! ! ! 'sl' 103
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&-3<drift<-2 ! ! ! 'sl' 103
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&-3<drift<-2 ! ! ! 'sl' 103
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&-3<drift<-2 ! ! ! 'sl' 103
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&-2<drift<-1 ! ! ! 'l' 104
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&-2<drift<-1 ! ! ! 'sl' 104
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&-2<drift<-1 ! ! ! 'sl' 104
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&-2<drift<-1 ! ! ! 'sl' 104
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&-2<drift<-1 ! ! ! 'sl' 104
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&-2<drift<-1 ! ! ! 'sl' 104
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&-1<drift<0 ! ! ! 'l' 105
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&-1<drift<0 ! ! ! 'sl' 105
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&-1<drift<0 ! ! ! 'sl' 105
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&-1<drift<0 ! ! ! 'sl' 105
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&-1<drift<0 ! ! ! 'sl' 105
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&-1<drift<0 ! ! ! 'sl' 105
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&0<drift<1 ! ! ! 'l' 106
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&0<drift<1 ! ! ! 'sl' 106
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&0<drift<1 ! ! ! 'sl' 106
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&0<drift<1 ! ! ! 'sl' 106
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&0<drift<1 ! ! ! 'sl' 106
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&0<drift<1 ! ! ! 'sl' 106
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&1<drift<2 ! ! ! 'l' 107
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&1<drift<2 ! ! ! 'sl' 107
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&1<drift<2 ! ! ! 'sl' 107
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&1<drift<2 ! ! ! 'sl' 107
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&1<drift<2 ! ! ! 'sl' 107
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&1<drift<2 ! ! ! 'sl' 107
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&2<drift<3 ! ! ! 'l' 108
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&2<drift<3 ! ! ! 'sl' 108
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&2<drift<3 ! ! ! 'sl' 108
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&2<drift<3 ! ! ! 'sl' 108
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&2<drift<3 ! ! ! 'sl' 108
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&2<drift<3 ! ! ! 'sl' 108
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&3<drift<4 ! ! ! 'l' 109
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&3<drift<4 ! ! ! 'sl' 109
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&3<drift<4 ! ! ! 'sl' 109
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&3<drift<4 ! ! ! 'sl' 109
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&3<drift<4 ! ! ! 'sl' 109
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&3<drift<4 ! ! ! 'sl' 109
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+set hcol 1
+nt/plot //lun1/fipassproc/1.drift-dca layer==1&&4<drift<5 ! ! ! 'l' 110
+set hcol 2
+nt/plot //lun1/fipassproc/1.drift-dca layer==2&&4<drift<5 ! ! ! 'sl' 110
+set hcol 4
+nt/plot //lun1/fipassproc/1.drift-dca layer==3&&4<drift<5 ! ! ! 'sl' 110
+set hcol 6
+nt/plot //lun1/fipassproc/1.drift-dca layer==4&&4<drift<5 ! ! ! 'sl' 110
+set hcol 12
+nt/plot //lun1/fipassproc/1.drift-dca layer==5&&4<drift<5 ! ! ! 'sl' 110
+set hcol 15
+nt/plot //lun1/fipassproc/1.drift-dca layer==6&&4<drift<5 ! ! ! 'sl' 110
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 3*120
+set txci 1
+text -3 $SIGMA(where) 'layer 1' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 2*120
+set txci 2
+text -3 $SIGMA(where) 'layer 2' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 1*120
+set txci 4
+text -3 $SIGMA(where) 'layer 3' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. + 0*120
+set txci 6
+text -3 $SIGMA(where) 'layer 4' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 1*120
+set txci 12
+text -3 $SIGMA(where) 'layer 5' 0.4 ! 'c'
+sigma where = ($GRAFINFO('WNYMAX') + $GRAFINFO('WNYMIN')) / 2. - 2*120
+set txci 15
+text -3 $SIGMA(where) 'layer 6' 0.4 ! 'c'
+set txci 1
+
+close 65
+
+
+
+
+
+
+ ********************************************************
+ * NTUPLE ID=    1  ENTRIES= 248950   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * layer     * 0.100000E+01 * 0.600000E+01 *
+ *      2     * wire      * 0.000000E+00 * 0.650000E+02 *
+ *      3     * phi       * 0.134612E-04 * 0.628316E+01 *
+ *      4     * z         * -.329878E+03 * 0.312309E+03 *
+ *      5     * dca       * -.199030E+02 * 0.242861E+02 *
+ *      6     * drift     * -.999737E+01 * 0.989318E+01 *
+ *      7     * cotTheta  * -.265578E+01 * 0.271333E+01 *
+ ********************************************************
+
+
+cd //lun1/fipassproc
+
+ve/cr LAYER1(33)
+ve/cr LAYER2(40)
+ve/cr LAYER3(46)
+ve/cr LAYER4(52)
+ve/cr LAYER5(58)
+ve/cr LAYER6(65)
+
+ve/cr ERR1(33)
+ve/cr ERR2(40)
+ve/cr ERR3(46)
+ve/cr ERR4(52)
+ve/cr ERR5(58)
+ve/cr ERR6(65)
+
+do i=1,33
+  nt/plot 1.dca-drift layer==1&&wire==[i]&&abs(z)<10&&1.5<drift<3.8
+  ve/inp LAYER1([i]) $HINFO(1000000, 'RMS')
+  sigma err = $HINFO(1000000, 'RMS') / sqrt(2. * $HINFO(1000000, 'ENTRIES'))
+  ve/inp ERR1([i]) $SIGMA(err)
+  if $HINFO(1000000, 'ENTRIES').lt.3 then
+    ve/inp LAYER1([i]) 0
+    ve/inp ERR1([i]) 1000.
+  endif
+  message layer 1 wire [i]
+enddo
+
+do i=1,40
+  nt/plot 1.dca-drift layer==2&&wire==[i]&&abs(z)<10&&1.5<drift<3.8
+  ve/inp LAYER2([i]) $HINFO(1000000, 'RMS')
+  sigma err = $HINFO(1000000, 'RMS') / sqrt(2. * $HINFO(1000000, 'ENTRIES'))
+  ve/inp ERR2([i]) $SIGMA(err)
+  if $HINFO(1000000, 'ENTRIES').lt.3 then
+    ve/inp LAYER2([i]) 0
+    ve/inp ERR2([i]) 1000.
+  endif
+  message layer 2 wire [i]
+enddo
+
+do i=1,46
+  nt/plot 1.dca-drift layer==3&&wire==[i]&&abs(z)<10&&1.5<drift<3.8
+  ve/inp LAYER3([i]) $HINFO(1000000, 'RMS')
+  sigma err = $HINFO(1000000, 'RMS') / sqrt(2. * $HINFO(1000000, 'ENTRIES'))
+  ve/inp ERR3([i]) $SIGMA(err)
+  if $HINFO(1000000, 'ENTRIES').lt.3 then
+    ve/inp LAYER3([i]) 0
+    ve/inp ERR3([i]) 1000.
+  endif
+  message layer 3 wire [i]
+enddo
+
+do i=1,52
+  nt/plot 1.dca-drift layer==4&&wire==[i]&&abs(z)<10&&1.5<drift<3.8
+  ve/inp LAYER4([i]) $HINFO(1000000, 'RMS')
+  sigma err = $HINFO(1000000, 'RMS') / sqrt(2. * $HINFO(1000000, 'ENTRIES'))
+  ve/inp ERR4([i]) $SIGMA(err)
+  if $HINFO(1000000, 'ENTRIES').lt.3 then
+    ve/inp LAYER4([i]) 0
+    ve/inp ERR4([i]) 1000.
+  endif
+  message layer 4 wire [i]
+enddo
+
+do i=1,58
+  nt/plot 1.dca-drift layer==5&&wire==[i]&&abs(z)<10&&1.5<drift<3.8
+  ve/inp LAYER5([i]) $HINFO(1000000, 'RMS')
+  sigma err = $HINFO(1000000, 'RMS') / sqrt(2. * $HINFO(1000000, 'ENTRIES'))
+  ve/inp ERR5([i]) $SIGMA(err)
+  if $HINFO(1000000, 'ENTRIES').lt.3 then
+    ve/inp LAYER5([i]) 0
+    ve/inp ERR5([i]) 1000.
+  endif
+  message layer 5 wire [i]
+enddo
+
+do i=1,65
+  nt/plot 1.dca-drift layer==6&&wire==[i]&&abs(z)<10&&1.5<drift<3.8
+  ve/inp LAYER6([i]) $HINFO(1000000, 'RMS')
+  sigma err = $HINFO(1000000, 'RMS') / sqrt(2. * $HINFO(1000000, 'ENTRIES'))
+  ve/inp ERR6([i]) $SIGMA(err)
+  if $HINFO(1000000, 'ENTRIES').lt.3 then
+    ve/inp LAYER6([i]) 0
+    ve/inp ERR6([i]) 1000.
+  endif
+  message layer 6 wire [i]
+enddo
+
+h/cr/1d 10 'Layer 1' 33 0.5 33.5
+h/cr/1d 20 'Layer 2' 40 0.5 40.5
+h/cr/1d 30 'Layer 3' 46 0.5 46.5
+h/cr/1d 40 'Layer 4' 52 0.5 52.5
+h/cr/1d 50 'Layer 5' 58 0.5 58.5
+h/cr/1d 60 'Layer 6' 65 0.5 65.5
+
+h/put_vect/contents 10 LAYER1
+h/put_vect/contents 20 LAYER2
+h/put_vect/contents 30 LAYER3
+h/put_vect/contents 40 LAYER4
+h/put_vect/contents 50 LAYER5
+h/put_vect/contents 60 LAYER6
+
+h/put_vect/errors 10 ERR1
+h/put_vect/errors 20 ERR2
+h/put_vect/errors 30 ERR3
+h/put_vect/errors 40 ERR4
+h/put_vect/errors 50 ERR5
+h/put_vect/errors 60 ERR6
+
+min 10 0
+max 10 2
+min 20 0
+max 20 2
+min 30 0
+max 30 2
+min 40 0
+max 40 2
+min 50 0
+max 50 2
+min 60 0
+max 60 2
+
+opt nsta
+zone 2 3
+h/cr/title 'wire-by-wire RMS residual (in mm) with abs(z).lt.1cm 1.5mm.lt.drift.lt.3.8mm'
+
+opt fit
+set fit 111
+h/fit 10 p0
+h/fit 40 p0
+h/fit 20 p0
+h/fit 50 p0
+h/fit 30 p0
+h/fit 60 p0
+
+pict/print '../plots/drgood_wirebywire_residuals.ps'
+
+
+
+
+
+*************** start here
+
+
+h/file 1 ../rzn/after_dan_before_crash_driftsign.rzn
+h/file 2 ../rzn/force_6mrad_driftsign_drgood.rzn
+h/file 3 ../rzn/only_6mrad_driftsign_drgood.rzn
+
+fortran/file 65 'drshift_residuals_only6mrad.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+
+h/cr/2d 1001 'layer 1' 1 -300 300 1 -6 6
+h/cr/2d 1002 'layer 2' 1 -300 300 1 -6 6
+h/cr/2d 1003 'layer 3' 1 -300 300 1 -6 6
+h/cr/2d 1004 'layer 4' 1 -300 300 1 -6 6
+h/cr/2d 1005 'layer 5' 1 -300 300 1 -6 6
+h/cr/2d 1006 'layer 6' 1 -300 300 1 -6 6
+h/cr/prof 2001 'layer 1' 10 -20 20 1 -2 2
+h/cr/prof 2002 'layer 2' 10 -20 20 1 -2 2
+h/cr/prof 2003 'layer 3' 10 -20 20 1 -2 2
+h/cr/prof 2004 'layer 4' 10 -20 20 1 -2 2
+h/cr/prof 2005 'layer 5' 10 -20 20 1 -2 2
+h/cr/prof 2006 'layer 6' 10 -20 20 1 -2 2
+
+nt/plot 1.dca-drift%z layer==1&&1.5<abs(drift)<3.8 100000 ! ! ! 1001
+
+
+
+nt/plot 1.dca-drift%z layer==1&&1.5<abs(drift)<3.8
+
+whatever
+
+
+
+
+zone 2 3
+h/cr/title 'spacelike residual VS z'
+h/cr/2d 1001 'layer 1' 1 -300 300 1 -6 6
+h/cr/2d 1002 'layer 2' 1 -300 300 1 -6 6
+h/cr/2d 1003 'layer 3' 1 -300 300 1 -6 6
+h/cr/2d 1004 'layer 4' 1 -300 300 1 -6 6
+h/cr/2d 1005 'layer 5' 1 -300 300 1 -6 6
+h/cr/2d 1006 'layer 6' 1 -300 300 1 -6 6
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==1&&1.5<abs(drift)<3.8 100000 ! ! ! 1001
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==4&&1.5<abs(drift)<3.8 100000 ! ! ! 1004
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==2&&1.5<abs(drift)<3.8 100000 ! ! ! 1002
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==5&&1.5<abs(drift)<3.8 100000 ! ! ! 1005
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==3&&1.5<abs(drift)<3.8 100000 ! ! ! 1003
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==6&&1.5<abs(drift)<3.8 100000 ! ! ! 1006
+
+h/cr/prof 2001 'layer 1' 100 -300 300 -6 6
+h/cr/prof 2002 'layer 2' 100 -300 300 -6 6
+h/cr/prof 2003 'layer 3' 100 -300 300 -6 6
+h/cr/prof 2004 'layer 4' 100 -300 300 -6 6
+h/cr/prof 2005 'layer 5' 100 -300 300 -6 6
+h/cr/prof 2006 'layer 6' 100 -300 300 -6 6
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==1&&1.5<abs(drift)<3.8 ! ! ! ! 2001
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==4&&1.5<abs(drift)<3.8 ! ! ! ! 2004
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==2&&1.5<abs(drift)<3.8 ! ! ! ! 2002
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==5&&1.5<abs(drift)<3.8 ! ! ! ! 2005
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==3&&1.5<abs(drift)<3.8 ! ! ! ! 2003
+nt/plot //lun1/fipassproc/1.dca-drift%z layer==6&&1.5<abs(drift)<3.8 ! ! ! ! 2006
+
+min 2001 -0.2
+max 2001  0.2
+min 2002 -0.2
+max 2002  0.2
+min 2003 -0.2
+max 2003  0.2
+min 2004 -0.2
+max 2004  0.2
+min 2005 -0.2
+max 2005  0.2
+min 2006 -0.2
+max 2006  0.2
+
+h/plot 2001
+h/plot 2004
+h/plot 2002
+h/plot 2005
+h/plot 2003
+h/plot 2006
+
+
+
+zone 2 3
+h/cr/title 'timelike residual VS z'
+h/cr/2d 1001 'layer 1' 1 -300 300 1 -6 6
+h/cr/2d 1002 'layer 2' 1 -300 300 1 -6 6
+h/cr/2d 1003 'layer 3' 1 -300 300 1 -6 6
+h/cr/2d 1004 'layer 4' 1 -300 300 1 -6 6
+h/cr/2d 1005 'layer 5' 1 -300 300 1 -6 6
+h/cr/2d 1006 'layer 6' 1 -300 300 1 -6 6
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==1&&1.5<abs(drift)<3.8 100000 ! ! ! 1001
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==4&&1.5<abs(drift)<3.8 100000 ! ! ! 1004
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==2&&1.5<abs(drift)<3.8 100000 ! ! ! 1002
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==5&&1.5<abs(drift)<3.8 100000 ! ! ! 1005
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==3&&1.5<abs(drift)<3.8 100000 ! ! ! 1003
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==6&&1.5<abs(drift)<3.8 100000 ! ! ! 1006
+
+h/cr/prof 2001 'layer 1' 100 -300 300 -6 6
+h/cr/prof 2002 'layer 2' 100 -300 300 -6 6
+h/cr/prof 2003 'layer 3' 100 -300 300 -6 6
+h/cr/prof 2004 'layer 4' 100 -300 300 -6 6
+h/cr/prof 2005 'layer 5' 100 -300 300 -6 6
+h/cr/prof 2006 'layer 6' 100 -300 300 -6 6
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==1&&1.5<abs(drift)<3.8 ! ! ! ! 2001
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==4&&1.5<abs(drift)<3.8 ! ! ! ! 2004
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==2&&1.5<abs(drift)<3.8 ! ! ! ! 2002
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==5&&1.5<abs(drift)<3.8 ! ! ! ! 2005
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==3&&1.5<abs(drift)<3.8 ! ! ! ! 2003
+nt/plot //lun1/fipassproc/1.(dca-drift)*drift/abs(drift)%z layer==6&&1.5<abs(drift)<3.8 ! ! ! ! 2006
+
+min 2001 -0.2
+max 2001  0.2
+min 2002 -0.2
+max 2002  0.2
+min 2003 -0.2
+max 2003  0.2
+min 2004 -0.2
+max 2004  0.2
+min 2005 -0.2
+max 2005  0.2
+min 2006 -0.2
+max 2006  0.2
+
+h/plot 2001
+h/plot 2004
+h/plot 2002
+h/plot 2005
+h/plot 2003
+h/plot 2006
+
+close 65
+

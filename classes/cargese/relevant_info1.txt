@@ -1,0 +1,113 @@
+Marseille - Toulon:        64.47 km    42 minutes
+Marseille - Avignon:      103.55 km    1 hour, 9 minutes
+Marseille - Nimes:        121.92 km    1 hour, 26 minutes
+Marseille - Saint-Tropez: 132.81 km    1 hour, 50 minutes
+Marseille - Montpellier:  168.41 km    1 hour, 54 minutes
+Marseille - Cannes:       180.22 km    1 hour, 54 minutes
+Marseille - Nice:         204.71 km    2 hours, 9 minutes
+Marseille - Beziers:      231.15 km    2 hours, 34 minutes
+Marseille - Carcassonne:  312.95 km    3 hours, 23 minutes
+
+Nice - Cannes:             35.38 km    30 minutes
+Nice - Saint-Tropez:      113.64 km    1 hour, 34 minutes
+Nice - Toulon:            150.66 km    1 hour, 37 minutes
+Nice - Marseille:         207.08 km    2 hours, 12 minutes
+Nice - Avignon:           261.91 km    2 hours, 48 minutes
+Nice - Nimes:             280.28 km    3 hours, 4 minutes
+Nice - Montpellier:       326.77 km    3 hours, 32 minutes
+Nice - Beziers:           389.51 km    4 hours, 13 minutes
+Nice - Carcassonne:       471.31 km    5 hours, 2 minutes
+
+Toulon - Marseille:   	   64.31 km    42 minutes
+Toulon - Saint-Tropez:	   68.25 km    1 hour, 7 minutes
+Toulon - Cannes:      	  124.25 km    1 hour, 19 minutes
+Toulon - Nice:        	  148.74 km    1 hour, 34 minutes
+Toulon - Avignon:     	  166.99 km    1 hour, 47 minutes
+Toulon - Nimes:       	  185.37 km    2 hours, 4 minutes
+Toulon - Montpellier: 	  231.86 km    2 hours, 32 minutes
+Toulon - Beziers:     	  294.60 km    3 hours, 12 minutes
+Toulon - Carcassonne: 	  376.40 km    4 hours, 1 minute
+
+Prices assume Aug 3 - Aug 30, from New York City
+Travelocity is much more expensive, fewer options.
+
+On Corsica:
+
+    Ajaccio (AJA)  $1000 - $1100 Air France
+    Bastia (BIA)   $1000 - $1100 Air France
+    Calvi (CLY)    $1130 - $1350 Air France and Air Littoral
+
+Ferry:
+
+    Nice (NCE)                         $810 - $910   Northwest, KLM Royal Dutch, United Airlines, Delta, Lufthansa, Air France, SAS
+    Toulon (TLN)                       $921, $1030   British Airways, Air France
+    Marseille (MRS)                    $890 - $950   Lufthansa, Delta, Air France
+    Cannes - Mandelieu (CEQ)
+    Cannes - Coisette Heliport (JCA)
+    Cannes - Vieux Port (QYW)
+
+Ferry + 1 hour:
+
+    Saint Tropez - La Mole (LTT)
+    Saint-Tropez (XPZ)
+    Avignon (AVN)
+
+Ferry + 1.5 hours:
+
+    Nimes (FNI)
+
+Ferry + 2 hours:
+
+    Montpellier (MPL)                  $1030 - $1030  Air France
+
+Now I think that either Nice or Marseille is best.
+
+Syracuse --> Nice:        $1000 - $1100  Continental - SN Brussels, US Airways - Lufthansa, United Airlines... many changes!
+Syracuse --> Marseilles:  $1000 - $1100  Continental - SN Brussels, US Airways - Lufthansa, United Airlines... many changes!
+
+New York City is a better embarkment point.
+
+Marseille is where Roland will be, and it also has a train
+connection.  I think New York City <--> Marseilles is best.
+
+Ending date flexibility (Orbitz):
+
+22nd: $930 - $945 Lufthansa, Delta, Air France
+23rd: $930 - $945 Lufthansa, Delta, Air France
+24th: $900 - $945 Lufthansa, Delta, Air France
+25th: $900 - $915 Lufthansa, Delta, Air France
+
+29th: $930 - $945 Lufthansa, Delta, Air France
+30st: $908 - $945 Lufthansa, Delta, Air France
+31st: $930 - $945 Lufthansa, Delta, Air France
+1st:  $900 - $915 Lufthansa, Air France
+
+Only matters in the slightest.
+
+16th - 30th is similar... I must be beyond some plateau.
+
+Rail passes:
+
+    Austria, Czech Republic, Hungary, Poland and Slovakia
+    any 5 days of travel within 1 month
+    $154, $225 US (plus $18, $25 per "extra" day) (2nd, 1st classes)
+
+    Everything else is inconvenient or expensive.
+
+Relevant countries:
+
+    France     	    EU Member and Shengen State (passport only if visit is less than 3 months, plus return ticket)
+    Italy      	    EU Member and Shengen State
+    Austria         EU Member and Shengen State
+    Slovakia   	    EU Candidate (passport only if visit is less than 30 days)
+    Poland     	    EU Candidate (passport only if visit is less than 90 days)
+    Germany    	    EU Member and Shengen State
+
+Marginal (depends on route):
+
+    Czech Republic  EU Candidate (passport only if visit is less than 90 days)
+    Switzerland     Independent  (passport only if visit is less than 3 months)
+    Hungary         EU Candidate (passport only if visit is less than 90 days)
+    Slovenia        EU Candidate (passport only if visit is less than 90 days)
+
+

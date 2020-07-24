@@ -1,0 +1,54 @@
+    CompHEP kinematics module 
+ The session parameters:
+
+#Subprocess 29 (u,s -> c,s,H)
+#Session_number 31
+#Initial_state 
+  SQRT(S) 1.400000E+04
+  Rapidity(c.m.s) 0.000000E+00
+  StrFun1: PDF:cteq6l1(proton)
+  StrFun2: PDF:cteq6l1(proton)
+
+#Physical_Parameters 
+        EE = 3.134500000000000E-01
+        SW = 4.807600000000000E-01
+       s12 = 2.229000000000000E-01
+       s23 = 4.120000000000000E-02
+       s13 = 3.600000000000000E-03
+        MZ = 9.118760000000000E+01
+        wZ = 2.436310000000000E+00
+        wW = 2.027980000000000E+00
+        Mc = 1.650000000000000E+00
+        Ms = 1.170000000000000E-01
+        Mb = 4.850000000000000E+00
+        MH = 1.000000000000000E+02
+
+#Width_scheme  0
+
+#Kinematical_scheme 
+12 -> 3 , 45
+45 -> 4 , 5
+
+#Cuts 
+*** Table ***
+ Cuts  
+  Parameter  |> Min bound <|> Max bound <|
+==========================================
+
+#Regularization 
+*** Table ***
+ Regularization 
+ Momentum    |> Mass  <|> Width <| Power|
+=========================================
+
+#QCD Lambda6= 1.185000E-01  Scale= 91.187
+#Vegas_calls 7680x5
+#END
+===================================
+ #IT   Cross section [pb]  Error %    nCall   chi**2
+  1      9.3928E-03       6.63E+00     7680 
+  2      1.0116E-02       2.49E+00     7680 
+  3      1.0063E-02       1.55E+00     7680 
+  4      9.8794E-03       1.26E+00     7680 
+  5      9.6994E-03       1.32E+00     7680 
+ < >     9.8739E-03       7.44E-01    38400        1

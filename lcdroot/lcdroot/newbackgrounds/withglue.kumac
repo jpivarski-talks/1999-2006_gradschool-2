@@ -1,0 +1,118 @@
+* nt/chain oboy rzn/chi20chi30v5_c1pc1m_l_0p1.rzn
+* nt/chain oboy rzn/chi20chi30v5_c1pc1m_l_0p2.rzn
+* nt/chain oboy rzn/chi20chi30v5_c1pc1m_l_1p1.rzn
+* h/cr/prof 100 '(reconstructed) signal jet energy vs costheta' 100 0 1 0 100
+* nt/plot //oboy/CHI20CHI30PROC/5.j1e%abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2) ! ! ! ! ! 100
+* set ltyp 2
+* dline 0.9 0.9 0 $GRAFINFO('WNYMAX')
+* pict/print 'withglue_anglecut.eps'
+exec load_simd242.kumac
+
+nt/chain c1c1l ../rzn/anewer_left1.rzn
+nt/chain c1c1l ../rzn/anewer_left2.rzn
+nt/chain c1c1r ../rzn/anewer_right1.rzn
+nt/chain c1030l ../rzn/anewer_chi1030left.rzn
+nt/chain c1030r ../rzn/anewer_chi1030right.rzn
+nt/chain c12l ../rzn/anewer_chi12left.rzn
+nt/chain c12r ../rzn/anewer_chi12right.rzn
+nt/chain c2030l ../rzn/anewer_chi2030left.rzn
+nt/chain c2030r ../rzn/anewer_chi2030right.rzn
+nt/chain sm ../rzn/anewer_sm1.rzn
+nt/chain sm ../rzn/anewer_sm2.rzn
+nt/chain sm ../rzn/anewer_sm3.rzn
+nt/chain sm ../rzn/anewer_sm4.rzn
+nt/chain sm ../rzn/anewer_sm5.rzn
+nt/chain sm ../rzn/anewer_sm6.rzn
+nt/chain sm ../rzn/anewer_sm7.rzn
+nt/chain sm ../rzn/anewer_sm8.rzn
+nt/chain sm ../rzn/anewer_sm9.rzn
+nt/chain sm ../rzn/anewer_sm10.rzn
+nt/chain sm ../rzn/anewer_sm12.rzn
+
+
+nt/plot //sm/LCDEXAMPLEPROC/1.500-eve ((mcfile<0)&&(jets==2))*scale
+nt/plot //simd242/CHI20CHI30PROC/5.500-eve scale ! ! ! 's'
+
+nt/plot //sm/LCDEXAMPLEPROC/1.sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2) ((mcfile<0)&&(jets==2)&&((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2>0))*scale
+nt/plot //simd242/CHI20CHI30PROC/5.jinvm scale ! ! ! 's'
+
+nt/plot //sm/LCDEXAMPLEPROC/1.isopz/sqrt(isopx**2+isopy**2+isopz**2) ((mcfile<0)&&(jets==2))*scale
+nt/plot //simd242/CHI20CHI30PROC/5.lpz/sqrt(lpx**2+lpy**2+lpz**2) scale ! ! ! 's'
+
+nt/plot //sm/LCDEXAMPLEPROC/1.isopz/sqrt(isopx**2+isopy**2+isopz**2) ((mcfile<0)&&(jets==2))*scale
+nt/plot //simd242/CHI20CHI30PROC/5.lpz/sqrt(lpx**2+lpy**2+lpz**2) jinvm<60&&scale ! ! ! 's'
+
+
+
+
+
+sigma sc1c1r = 1010
+sigma sc1c1l = 127.6+138.2
+sigma sc2030l = 254.4
+sigma sc2030r = 282.1
+sigma sc1030l = 281.6
+sigma sc1030r = 317.2
+sigma sc12l = 511+163.5
+sigma sc12r = 500+198.4
+
+* h/cr/2d 100 'Presence of gluon versus number of jets' 5 1.25 3.75 5 -0.75 1.75
+* nt/plot //c1c1l/LCDEXAMPLEPROC/1.glue>0%jets ! ! ! ! 'text' 100
+
+nt/cuts $1 (ct<0.9&&jct<0.9&&sqrt(evpx**2+evpy**2)>10)
+nt/cuts $2 (500-eve>300)
+nt/cuts $3 ((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2>0)
+nt/cuts $4 sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)<60
+
+
+
+
+h/cr/1d 100 'left mcfile' 79 -0.5 78.5
+h/cr/1d 101 'left mcfile' 79 -0.5 78.5
+nt/plot //sm/LCDEXAMPLEPROC/1.mcfile $1&&$2&&$3&&$4&&scale ! ! ! ! 100
+nt/plot //sm/LCDEXAMPLEPROC/1.-mcfile $1&&$2&&$3&&$4&&scale ! ! ! ! 101
+h/plot 100
+h/plot 101
+
+
+
+
+
+nt/plot //sm/LCDEXAMPLEPROC/1.mcfile (scale*250.0)*$1*(500-eve>300)*(((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)>0)*(sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)<60)
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.jets (jets<10)
+
+
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc1c1l)*$1
+nt/plot //c1030l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc1030l)*$1 ! ! ! 's'
+nt/plot //c12l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc12l)*$1 ! ! ! 's'
+nt/plot //c2030l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc2030l)*$1 ! ! ! 's'
+nt/plot //sm/LCDEXAMPLEPROC/1.500-eve (scale*250.0)*(mcfile<0)*$1 ! ! ! 's'
+
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2) $SIGMA(250.0/sc1c1l)*$1*((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)>0
+nt/plot //c1030l/LCDEXAMPLEPROC/1.sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2) $SIGMA(250.0/sc1030l)*$1*((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)>0 ! ! ! 's'
+nt/plot //c12l/LCDEXAMPLEPROC/1.sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2) $SIGMA(250.0/sc12l)*$1*((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)>0 ! ! ! 's'
+nt/plot //c2030l/LCDEXAMPLEPROC/1.sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2) $SIGMA(250.0/sc2030l)*$1*((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)>0 ! ! ! 's'
+nt/plot //sm/LCDEXAMPLEPROC/1.sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2) (scale*250.0)*(mcfile<0)*$1*((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2)>0 ! ! ! 's'
+
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc1c1l)*$1
+nt/plot //c1030l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc1030l)*$1 ! ! ! 's'
+nt/plot //c12l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc12l)*$1 ! ! ! 's'
+nt/plot //c2030l/LCDEXAMPLEPROC/1.500-eve $SIGMA(250.0/sc2030l)*$1 ! ! ! 's'
+nt/plot //sm/LCDEXAMPLEPROC/1.500-eve (scale*250.0)*(mcfile<0)*$1 ! ! ! 's'
+
+h/cr/1d 100 'SM missing energy' 100 280 550
+nt/plot //sm/LCDEXAMPLEPROC/1.500-eve (scale*250.0)*(mcfile<0)*(jets==2)*(ct<0.95&&jct<0.95) ! ! ! ! 100
+nt/plot //sm/LCDEXAMPLEPROC/1.500-eve (scale*250.0)*(mcfile<0)*(jets>=2)*(ct<0.95&&jct<0.95) ! ! ! 's' 100
+nt/plot //simd242/CHI20CHI30PROC/5.500-eve (scale*250.0)*(abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95) ! ! ! 's' 100
+
+nt/plot //simd242/CHI20CHI30PROC/5.eve-le (scale*250.0)&&(abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.9&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.9&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.9)&&jinvm<60
+
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.ct%jct
+
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.sqrt((eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2) (eve-isoe)**2-(evpx-isopx)**2-(evpy-isopy)**2-(evpz-isopz)**2>0
+
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.(eve-isoe)
+
+nt/plot //c1c1l/LCDEXAMPLEPROC/1.sqrt((evpx-isopx)**2+(evpy-isopy)**2) (evpx-isopx)**2+(evpy-isopy)**2>0
+
+
+

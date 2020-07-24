@@ -1,0 +1,249 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  5 MAY 2005 16:52
+**pta.tex
+(./pta.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2002/08/04 v6.72v Hypertext links for LaTeX
+\@linkdim=\dimen105
+\Hy@linkcounter=\count88
+\Hy@pagecounter=\count89
+
+(/usr/share/texmf/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2002/08/04 v6.72v Hyperref: PDFDocEncoding definition (HO)
+)
+Package hyperref Info: Bookmarks ON on input line 1797.
+Package hyperref Info: Hyper figures OFF on input line 1816.
+Package hyperref Info: Link nesting OFF on input line 1821.
+Package hyperref Info: Hyper index ON on input line 1824.
+Package hyperref Info: Plain pages ON on input line 1829.
+Package hyperref Info: Backreferencing OFF on input line 1836.
+
+Implicit mode ON; LaTeX internals redefined
+(/usr/share/texmf/tex/latex/html/url.sty
+Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
+ names
+)
+LaTeX Info: Redefining \url on input line 2048.
+\Fld@menulength=\count90
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+\Choice@toks=\toks15
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 2506.
+Package hyperref Info: Link nesting OFF on input line 2511.
+Package hyperref Info: Hyper index ON on input line 2514.
+Package hyperref Info: backreferencing OFF on input line 2521.
+Package hyperref Info: Link coloring OFF on input line 2526.
+\c@Item=\count91
+\c@Hfootnote=\count92
+)
+*hyperref using driver hpdftex*
+(/usr/share/texmf/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2002/08/04 v6.72v Hyperref driver for pdfTeX
+
+(/usr/share/texmf/tex/latex/psnfss/pifont.sty
+Package: pifont 2001/06/04 PSNFSS-v8.2 Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 62.
+
+(/usr/share/texmf/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 63.
+
+(/usr/share/texmf/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\Fld@listcount=\count93
+\@outlinefile=\write3
+) (./pta.aux)
+\openout1 = `pta.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count94
+\scratchcounter=\count95
+\scratchtoks=\toks17
+\scratchdimen=\dimen108
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write4
+\zeropoint=\dimen109
+\nextbox=\box27
+\nextdepth=\dimen110
+\everyline=\toks18
+\!!counta=\count96
+\!!countb=\count97
+\recursecounter=\count98
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count99
+\nofMParguments=\count100
+\everyMPtoPDFconversion=\toks19
+)
+Package hyperref Info: Link coloring OFF on input line 12.
+ (/usr/share/texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2001/01/27 v2.19 Cross-referencing by name of section
+\c@section@level=\count101
+)
+LaTeX Info: Redefining \ref on input line 12.
+LaTeX Info: Redefining \pageref on input line 12.
+ (./pta.out) (./pta.out)
+\openout3 = `pta.out'.
+
+
+[1
+
+{/usr/share/texmf/dvips/config/pdftex.map}]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 55.
+ [2]
+<explain_asymmetric_cut.pdf, id=27, 324.21124pt x 326.21875pt>
+File: explain_asymmetric_cut.pdf Graphic file (type pdf)
+
+<use explain_asymmetric_cut.pdf>
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 73--100
+[][] 
+ []
+
+[3 <./explain_asymmetric_cut.pdf>]
+<prepforpta2.pdf, id=51, 463.7325pt x 185.69376pt>
+File: prepforpta2.pdf Graphic file (type pdf)
+ <use prepforpta2.pdf>
+[4 <./prepforpta2.pdf>]
+<plottrig_blocks2.pdf, id=58, 508.90125pt x 508.90125pt>
+File: plottrig_blocks2.pdf Graphic file (type pdf)
+
+<use plottrig_blocks2.pdf>
+<plottrig_blocks_vrun2.pdf, id=59, 574.145pt x 508.90125pt>
+File: plottrig_blocks_vrun2.pdf Graphic file (type pdf)
+
+<use plottrig_blocks_vrun2.pdf> [5 <./plottrig_blocks2.pdf> <./plottrig_blocks_
+vrun2.pdf>] <afterexclude.pdf, id=76, 460.72125pt x 240.9pt>
+File: afterexclude.pdf Graphic file (type pdf)
+
+<use afterexclude.pdf> [6 <./afterexclude.pdf>] [7]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <24.88> on input line 173.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 173.
+
+<prepforpta4_0.pdf, id=88, 464.73625pt x 254.9525pt>
+File: prepforpta4_0.pdf Graphic file (type pdf)
+ <use prepforpta4_0.pdf>
+[8 <./prepforpta4_0.pdf>] <forptatalk.pdf, id=95, 542.025pt x 311.1625pt>
+File: forptatalk.pdf Graphic file (type pdf)
+
+<use forptatalk.pdf> [9 <./forptatalk.pdf>] [10] [11]
+<prepforpta4.pdf, id=110, 464.73625pt x 254.9525pt>
+File: prepforpta4.pdf Graphic file (type pdf)
+ <use prepforpta4.pdf>
+[12 <./prepforpta4.pdf>]
+<prepforpta3_oldhadronalloldgam.pdf, id=117, 477.785pt x 356.33125pt>
+File: prepforpta3_oldhadronalloldgam.pdf Graphic file (type pdf)
+
+<use prepforpta3_oldhadronalloldgam.pdf> [13 <./prepforpta3_oldhadronalloldgam.
+pdf>] <prepforpta3_oldhadronall.pdf, id=125, 477.785pt x 356.33125pt>
+File: prepforpta3_oldhadronall.pdf Graphic file (type pdf)
+
+<use prepforpta3_oldhadronall.pdf> [14 <./prepforpta3_oldhadronall.pdf>]
+<prepforpta3.pdf, id=132, 477.785pt x 356.33125pt>
+File: prepforpta3.pdf Graphic file (type pdf)
+ <use prepforpta3.pdf>
+[15 <./prepforpta3.pdf>]
+Underfull \hbox (badness 2318) in paragraph at lines 293--293
+[]/cmr17@20.74pt/fraction of con-tin-uum sub-trac-tion
+ []
+
+[16] [17] <bhabha_discrimination.pdf, id=153, 542.025pt x 456.70625pt>
+File: bhabha_discrimination.pdf Graphic file (type pdf)
+
+<use bhabha_discrimination.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 342--350
+[][] 
+ []
+
+[18 <./bhabha_discrimination.pdf>] (./pta.aux) ) 
+Here is how much of TeX's memory you used:
+ 2561 strings out of 50453
+ 34662 string characters out of 688420
+ 83545 words of memory out of 1500001
+ 5532 multiletter control sequences out of 10000+25000
+ 9245 words of font info for 32 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 27i,18n,21p,198b,475s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/b
+luesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/s
+hare/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/blues
+ky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/shar
+e/texmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on pta.pdf (18 pages, 979905 bytes).

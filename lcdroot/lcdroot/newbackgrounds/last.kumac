@@ -1,0 +1,402 @@
+*** Begin of history file: Fri Apr  1 10:22:36 2005
+exec /tmp/pawtmp-7215.kumac
+exec /tmp/pawtmp-1550.kumac
+nt/print //c1c1l/clean/1
+nt/print //c11l/clean/1
+nt/plot //c11l/clean/1.mse/sqrt(mspx**2+mspy**2+mspz**2) $1
+nt/plot //c11l/clean/1.mse/sqrt(mspx**2+mspy**2+mspz**2) $1&&sqrt(mspx**2+mspy**2+mspz**2)>0
+opt sta
+nt/plot //c11l/clean/1.mse/sqrt(mspx**2+mspy**2+mspz**2) $1&&sqrt(mspx**2+mspy**2+mspz**2)>0
+nt/plot //c11l/clean/1.mse $1
+nt/plot //c11l/clean/1.msdist $1
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>100000
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>1000
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>10
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>1
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>0.9
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>0.8
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>0.5
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>0.1
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>1
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>2
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>1
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>1000000
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>1&&abs(lpz/sqrt(lpx**2+lpy**2+lpz**2))>0.9
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist>1&&abs(lpz/sqrt(lpx**2+lpy**2+lpz**2))<0.9
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&abs(lpz/sqrt(lpx**2+lpy**2+lpz**2))<0.9
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.9
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.9999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.999999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.9999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.9
+opt logy
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>-1
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)<0.999999
+nt/plot //c11l/clean/1.(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)<0.99999
+nt/plot //c11l/clean/1.msdist $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99999
+nt/plot //c11l/clean/1.msdist $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)<0.99999
+nt/plot //c11l/clean/1.msdist $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99999
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99999
+opt liny
+nt/plot //c11l/clean/1.we-(hade+eme-mse)
+nt/plot //c11l/clean/1.we-(hade+eme-mse) abs(wpz)/sqrt(wpx**2+wpy**2+wpz**2)<0.5
+nt/plot //c11l/clean/1.we-(hade+eme-mse) $1&&abs(wpz)/sqrt(wpx**2+wpy**2+wpz**2)<0.5
+nt/plot //c11l/clean/1.we-(hade+eme-mse)%we $1&&abs(wpz)/sqrt(wpx**2+wpy**2+wpz**2)<0.5
+nt/plot //c11l/clean/1.we-(hade+eme-mse) $1&&abs(wpz)/sqrt(wpx**2+wpy**2+wpz**2)<0.5
+nt/plot //c11l/clean/1.we-(te) $1
+nt/plot //c11l/clean/1.we-(te-sqrt(mspx**2+mspy**2+mspz**2)) $1
+nt/plot //c11l/clean/1.wpx-(tpx-mspx) $1
+nt/plot //c11l/clean/1.wpx-(tpx-mspx+c2px) $1
+nt/plot //c11l/clean/1.wpx-(tpx-mspx) $1
+nt/plot //c11l/clean/1.wpx-(tpx-mspx)%c2px $1
+nt/plot //c11l/clean/1.c2px $1
+nt/plot //c11l/clean/1.c2px+1000 $1
+nt/plot //c11l/clean/1.wpx-(tpx-mspx+c2px+1000)%c2px $1
+nt/plot //c11l/clean/1.wpx-(tpx-mspx+c2px+1000) $1
+nt/plot //c11l/clean/1.wpy-(tpy-mspy+c2py+1000) $1
+nt/plot //c11l/clean/1.wpz-(tpz-mspz+c2pz+1000) $1
+nt/plot //c11l/clean/1.(hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2
+nt/plot //c11l/clean/1.(hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2 $1
+nt/plot //c11l/clean/1.(hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2 $1&&(hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2<0
+nt/plot //c11l/clean/1.(hade+eme-mse)**2-(tpx-mspx+c5px+1000)**2-(tpy-mspy+c5py+1000)**2-(tpz-mspz+c5pz+1000)**2 $1&&(hade+eme-mse)**2-(tpx-mspx+c5px+1000)**2-(tpy-mspy+c5py+1000)**2-(tpz-mspz+c5pz+1000)**2<0
+nt/plot //c11l/clean/1.(hade+eme-mse)**2-(tpx-mspx+c10px+1000)**2-(tpy-mspy+c10py+1000)**2-(tpz-mspz+c10pz+1000)**2 $1&&(hade+eme-mse)**2-(tpx-mspx+c10px+1000)**2-(tpy-mspy+c10py+1000)**2-(tpz-mspz+c10pz+1000)**2<0
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(tpx-mspx+c10px+1000)**2-(tpy-mspy+c10py+1000)**2-(tpz-mspz+c10pz+1000)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&(hade+eme-mse)**2-(tpx-mspx+c10px+1000)**2-(tpy-mspy+c10py+1000)**2-(tpz-mspz+c10pz+1000)**2>0
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(tpx-mspx+c5px+1000)**2-(tpy-mspy+c5py+1000)**2-(tpz-mspz+c5pz+1000)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&(hade+eme-mse)**2-(tpx-mspx+c5px+1000)**2-(tpy-mspy+c5py+1000)**2-(tpz-mspz+c5pz+1000)**2>0
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&(hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2>0
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&(hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2>0
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&(hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0
+nt/plot //c11l/clean/1.((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1
+ve/read tmp1 tmp1.txt
+ve/read tmp2 tmp2.txt
+ve/read tmp3 tmp3.txt
+h/cr/1d 100 'tmp' 100 -5 5
+ve/hfill tmp1 100
+h/fit 100 g
+h/cr/1d 100 'tmp' 100 -5 5
+ve/hfill tmp2 100
+h/fit 100 g
+h/cr/1d 100 'tmp' 100 -5 5
+ve/hfill tmp3 100
+h/fit 100 g
+h/cr/1d 100 'tmp' 100 -10 10
+ve/hfill tmp1 100
+h/fit 100 g
+h/cr/1d 100 'tmp' 100 -10 10
+ve/hfill tmp2 100
+h/fit 100 g
+h/cr/1d 100 'tmp' 100 -10 10
+ve/hfill tmp3 100
+h/fit 100 g
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's'
+nt/plot //c11l/clean/1.we $1
+nt/plot //c11l/clean/1.we $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's'
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)%we ! ! ! ! ! 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) ! ! ! ! ! 100
+opt nsta
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) ! ! ! ! 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) ! ! ! ! ! 100
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+h/cr/2d 200 'efficiency' 35 0 70 35 0 140
+h/cr/2d 300 'efficiency' 35 0 70 35 0 140
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+h/cr/2d 200 'efficiency' 35 0 70 35 0 140
+h/cr/2d 300 'efficiency' 35 0 70 35 0 140
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 200
+div 200 100 300
+h/plot 300 'box'
+h/cr/prox 300
+h/cr/proy 300
+h/project 300
+h/plot 300.prox
+h/plot 300.proy
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+h/cr/2d 200 'efficiency' 35 0 70 35 0 140
+h/cr/2d 300 'efficiency' 35 0 70 35 0 140
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 200
+div 100 200 300
+h/plot 300 'box'
+h/cr/prox 300
+h/cr/proy 300
+h/project 300
+h/plot 300.proy
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! 'box' 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 'sbox' 200
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+h/cr/2d 200 'efficiency' 35 0 70 35 0 140
+h/cr/2d 300 'efficiency' 35 0 70 35 0 140
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 200
+div 200 100 300
+h/plot 300 'box'
+h/cr/prox 300
+h/cr/proy 300
+h/project 300
+h/plot 300.proy
+help slix
+h/plot 300 'box'
+h/cr/slix 300 35
+h/cr/sliy 300 35
+h/project 300
+help slix
+h/plot 300.slix.10
+h/plot 300.slix.11
+h/plot 300.slix.12
+h/plot 300.slix.13
+h/plot 300.slix.14
+h/plot 300.slix.15
+h/plot 300.slix.1
+h/plot 300.slix.2
+h/plot 300.slix.3
+h/plot 300.slix.4
+h/plot 300.slix.5
+h/plot 300.slix.6
+h/plot 300.slix.7
+h/plot 300.slix.8
+h/plot 300.slix.9
+h/plot 300.slix.10
+h/plot 300.slix.11
+h/plot 300.slix.12
+h/plot 300.slix.13
+h/plot 300.slix.14
+h/plot 300.slix.15
+h/plot 300.slix.16
+h/plot 300.slix.17
+h/plot 300.slix.18
+h/plot 300.slix.19
+h/plot 300.slix.20
+h/plot 300.slix.21
+h/plot 300.slix.22
+h/plot 300.slix.23
+h/plot 300.slix.24
+h/plot 300.slix.25
+h/plot 300.slix.26
+h/plot 300.slix.27
+h/plot 300.slix.28
+h/plot 300.slix.29
+h/plot 300.slix.30
+h/plot 300.slix.31
+h/plot 300.slix.32
+h/plot 300.slix.33
+h/plot 300.slix.34
+h/plot 300.slix.35
+h/plot 300.sliy.1
+h/plot 300.sliy.2
+h/plot 300.sliy.3
+h/plot 300.sliy.4
+h/plot 300.sliy.5
+h/plot 300.sliy.6
+h/plot 300.sliy.7
+h/plot 300.sliy.8
+h/plot 300.sliy.9
+h/plot 300.sliy.10
+h/plot 300.sliy.11
+h/plot 300.sliy.12
+h/plot 300.sliy.13
+h/plot 300.sliy.14
+h/plot 300.sliy.15
+h/plot 300.sliy.16
+h/plot 300.sliy.17
+h/plot 300.sliy.18
+h/plot 300.sliy.19
+h/plot 300.sliy.20
+h/plot 300.sliy.21
+h/plot 300.sliy.22
+h/plot 300.sliy.23
+h/plot 300.sliy.24
+h/plot 300.sliy.25
+h/plot 300.sliy.26
+h/plot 300.sliy.27
+h/plot 300.sliy.28
+h/plot 300.sliy.29
+h/plot 300.sliy.30
+h/plot 300.sliy.31
+h/plot 300.sliy.32
+h/plot 300.sliy.33
+h/plot 300.sliy.34
+h/plot 300.sliy.35
+h/plot 300 'box'
+h/fit 300 p1
+h/plot 300 'box'
+h/fit 300 p1
+h/cr/slix 300 35
+h/cr/sliy 300 35
+h/project 300
+h/plot 300.slix.1
+h/plot 300.slix.2
+h/plot 300.slix.3
+h/plot 300.slix.4
+h/plot 300.slix.5
+h/plot 300.slix.6
+h/plot 300.slix.7
+h/plot 300.slix.8
+h/plot 300.slix.1
+h/plot 300.slix.2
+h/plot 300.slix.3
+h/plot 300.slix.4
+h/plot 300.slix.5
+h/plot 300.slix.6
+h/plot 300.slix.7
+h/plot 300.slix.8
+h/plot 300.slix.9
+h/plot 300.slix.10
+h/plot 300.slix.11
+h/plot 300.slix.12
+h/plot 300.slix.13
+h/plot 300.slix.14
+h/plot 300.slix.15
+h/plot 300.slix.16
+h/plot 300.slix.17
+h/plot 300.slix.1
+h/plot 300.slix.2
+h/plot 300.slix.3
+h/plot 300.slix.4
+h/plot 300.slix.5
+h/plot 300.slix.6
+h/plot 300.slix.7
+h/plot 300.slix.8
+h/plot 300.slix.9
+h/plot 300.slix.10
+h/plot 300.slix.11
+h/plot 300.slix.12
+h/plot 300.slix.13
+h/plot 300.slix.14
+h/plot 300.slix.15
+h/plot 300.slix.16
+h/plot 300.slix.17
+h/plot 300.slix.18
+h/plot 300.slix.19
+h/plot 300.slix.20
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's'
+nt/plot //c11l/clean/1.we $1
+h/cr/1d 100 'generator-level W mass (dashed=cut)' 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+h/cr/1d 101 'generator-level W mass (dashed=cut)' 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 101
+h/cr/1d 200 'generator-level W energy (dashed=cut)' 70 0 140
+h/cr/1d 201 'generator-level W energy (dashed=cut)' 70 0 140
+nt/plot //c11l/clean/1.we $1 ! ! ! ! 200
+nt/plot //c11l/clean/1.we $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 201
+normalize 200
+normalize 201
+normalize 100
+normalize 101
+h/plot 100
+h/plot 101
+h/plot 100
+h/plot 101 's'
+normalize 200
+normalize 201
+h/plot 200
+h/plot 201 's'
+zone 1 2
+h/plot 100
+h/plot 101 's'
+h/plot 200
+h/plot 201 's'
+h/cr/1d 202 'generator-level W energy (dashed=cut)' 70 0 140
+h/cr/1d 202 'W energy correction' 70 0 140
+div 201 200 202
+zone 1 1
+h/plot 202
+h/fit 202(20.:120.) p2
+h/fit 202(20.:119.) p2
+zone 1 3
+h/plot 100
+h/plot 101 's'
+h/plot 200
+h/plot 201 's'
+h/plot 202
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+pict/print 'cut_sculpting.eps'
+zone 1 2
+h/plot 100
+h/plot 101 's'
+h/plot 200
+h/cr/1d 100 'generator-level W mass (dashed=cut)' 60 0 60
+h/cr/1d 101 'generator-level W mass (dashed=cut)' 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 101
+normalize 100
+normalize 101
+h/cr/1d 200 'generator-level W energy (dashed=cut)' 70 0 140
+h/cr/1d 201 'generator-level W energy (dashed=cut)' 70 0 140
+nt/plot //c11l/clean/1.we $1 ! ! ! ! 200
+nt/plot //c11l/clean/1.we $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 201
+normalize 200
+normalize 201
+zone 1 2
+h/plot 100
+h/plot 101 's'
+h/plot 200
+h/plot 201 's'
+pict/print 'cut_sculpting.eps'
+h/cr/1d 100 'W mass (dashed=detector-level)' 60 0 60
+h/cr/1d 101 'W mass (dashed=detector-level)' 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 100
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 101
+h/cr/1d 200 'W energy (dashed=detector-level)' 70 0 140
+h/cr/1d 201 'W energy (dashed=detector-level)' 70 0 140
+nt/plot //c11l/clean/1.we $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 200
+nt/plot //c11l/clean/1.hade+eme-mse $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 201
+pict/print 'detector_modelling.eps'
+h/cr/2d 300 'W mass generated VS detected' 60 0 60 60 0 60
+h/cr/2d 300 'W mass generated VS detected' 60 0 60 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 300
+zone 1 1
+h/cr/2d 300 'W mass generated VS detected' 60 0 60 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 300
+dline 0 60 0 60
+h/cr/2d 301 'W energy generated VS detected' 70 0 140 70 0 140
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 301
+h/cr/2d 301 'W energy generated VS detected' 70 0 140 70 0 140
+nt/plot //c11l/clean/1.we%(hade+eme-mse) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 301
+dline 0 70 0 70
+dline 0 140 0 140
+h/cr/2d 300 'W mass generated VS detected' 60 0 60 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 300
+dline 0 60 0 60
+pict/print 'detector_modelling_2.eps'
+h/cr/2d 301 'W energy generated VS detected' 70 0 140 70 0 140
+nt/plot //c11l/clean/1.we%(hade+eme-mse) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 301
+dline 0 140 0 140
+pict/print 'detector_modelling_3.eps'
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)-sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18
+opt sta
+h/plot 1000000
+nt/plot //c11l/clean/1.we-(hade+eme-mse) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18
+h/fit 1000000 g
+opt fit
+h/fit 1000000 g
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)-sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18
+h/fit 1000000 g
+h/cr/1d 400 'W mass generated - detected' 40 -50 30
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)-sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 400
+h/fit 400(-30.:10.) g
+h/fit 400(-20.:10.) g
+h/fit 400(-20.:5.) g
+h/fit 400(-30.:5.) g
+h/fit 400(-10.:5.) g
+h/plot 'hist'
+opt nfit
+h/plot 400 'hist'
+nt/plot //c11l/clean/1.we-(hade+eme-mse) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18
+h/cr/1d 400 'W mass generated - detected' 50 -50 50
+h/cr/1d 401 'W energy generated - detected' 50 -50 50
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)-sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 400
+nt/plot //c11l/clean/1.we-(hade+eme-mse) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 401
+*** End   of history file: Mon Apr  4 10:28:36 2005

@@ -1,0 +1,12 @@
+#$ -l calibration
+#$ -o /cdat/tem/mccann/force_6mrad.log
+#$ -S /bin/bash
+#$ -j y
+
+cd /home/mccann/handzd/run
+. /nfs/cleo3/scripts/cleo3defs
+c3rel Oct15_03_MC
+
+export USER_ALIGNMENT=force_6mrad
+
+suez -f makentuple.tcl

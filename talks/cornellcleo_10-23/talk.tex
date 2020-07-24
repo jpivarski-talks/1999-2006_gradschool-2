@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{graphicx,color}
+
+\pagestyle{empty}
+\oddsidemargin  0.0in
+\evensidemargin 0.0in
+\textwidth      6.5in
+\headheight     0.0in
+\topmargin      0.0in
+\textheight=9.0in
+
+\begin{document}
+
+\begin{center}
+  \begin{tabular}{p{0.42\linewidth} p{0.5 cm} p{0.42\linewidth}}
+    \begin{minipage}{\linewidth}
+      \includegraphics*[height=\linewidth, angle=-90]{dubrovin_ea.eps}
+    \end{minipage} & &
+    \begin{minipage}{\linewidth}
+      \includegraphics*[width=\linewidth]{plot_drift_14.eps}
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+\huge
+
+\hspace{-2 cm}\textcolor{red}{\Huge \sc Done:}
+
+\begin{itemize}
+
+  \item Created a new set of fittingweights constants types
+
+\begin{center}
+  \begin{tabular}{p{4.3 cm} p{1.3 cm} p{8 cm}}
+    \begin{minipage}{\linewidth}
+      \LARGE \tt DRWeightLayer \\
+      DRWeightDrift \\
+      DRWeightTheta \\
+      DRWeightPhi
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \begin{center}
+	\Huge $\Longrightarrow$
+      \end{center}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \LARGE \tt DRWeight2LayerDriftEntAng \\
+      DRWeight2LayerTheta \\
+      DRWeight2LayerPhi
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+  \item Loaded the new constants in {\tt CDOffCal} and
+  {\tt ZDDrift-} {\tt FunctionProd} (cleaning up the interpolation code)
+
+  \item Submited the constants types and version 1.0 values to the
+  constants database
+
+  \item Provided backward-compatibility values of the constants for
+  {\tt PASS2\_3}
+
+\end{itemize}
+
+\hspace{-2 cm}\textcolor{red}{\Huge \sc To do:}
+
+\begin{itemize}
+
+  \item Write an iterator module to find real values of these
+  constants.
+
+\end{itemize}
+
+\pagebreak
+
+\begin{center}
+  \includegraphics*[width=\linewidth]{wiggle2.eps}
+\end{center}
+\textcolor{red}{Not understood:} fine-$\phi_0$ variation of impact parameters
+
+Will the ZD correct this?
+
+\vspace{1 cm}
+
+\begin{center}
+  \includegraphics*[width=\linewidth]{z0miss_problem.eps}
+\end{center}
+\textcolor{red}{Not understood:} at what effective radius should DR
+wires be placed?
+
+\vspace{1 cm}
+
+\hspace{-2 cm}{\Huge \sc What I'm doing:}
+
+\begin{itemize}
+
+  \item Writing an iterator module to do wedding cake ring alignment
+
+  \item Thinking about how a ZD alignment might be done
+
+\end{itemize}
+
+\hspace{-2 cm}{\Huge \sc What Nadia will take over:}
+
+\begin{itemize}
+
+  \item Work on tracking mysteries (like the above), which might
+  actually be related to calibration
+
+\end{itemize}
+
+\end{document}

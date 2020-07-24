@@ -1,0 +1,90 @@
+/****************************************************************************
+** HVHistogramPlotter meta object code from reading C++ file 'HVHistogramPlotter.h'
+**
+** Created: Thu Nov 13 17:54:40 2003
+**      by: The Qt MOC ($Id: qt/moc_yacc.cpp   3.2.2   edited Oct 10 03:44 $)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <qmetaobject.h>
+#include <qapplication.h>
+
+#include <private/qucomextra_p.h>
+#if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
+#error "This file was generated using the moc from 3.2.2. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+const char *HVHistogramPlotter::className() const
+{
+    return "HVHistogramPlotter";
+}
+
+QMetaObject *HVHistogramPlotter::metaObj = 0;
+static QMetaObjectCleanUp cleanUp_HVHistogramPlotter( "HVHistogramPlotter", &HVHistogramPlotter::staticMetaObject );
+
+#ifndef QT_NO_TRANSLATION
+QString HVHistogramPlotter::tr( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "HVHistogramPlotter", s, c, QApplication::DefaultCodec );
+    else
+	return QString::fromLatin1( s );
+}
+#ifndef QT_NO_TRANSLATION_UTF8
+QString HVHistogramPlotter::trUtf8( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "HVHistogramPlotter", s, c, QApplication::UnicodeUTF8 );
+    else
+	return QString::fromUtf8( s );
+}
+#endif // QT_NO_TRANSLATION_UTF8
+
+#endif // QT_NO_TRANSLATION
+
+QMetaObject* HVHistogramPlotter::staticMetaObject()
+{
+    if ( metaObj )
+	return metaObj;
+    QMetaObject* parentObject = QwtPlot::staticMetaObject();
+    metaObj = QMetaObject::new_metaobject(
+	"HVHistogramPlotter", parentObject,
+	0, 0,
+	0, 0,
+#ifndef QT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+#endif // QT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_HVHistogramPlotter.setMetaObject( metaObj );
+    return metaObj;
+}
+
+void* HVHistogramPlotter::qt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "HVHistogramPlotter" ) )
+	return this;
+    return QwtPlot::qt_cast( clname );
+}
+
+bool HVHistogramPlotter::qt_invoke( int _id, QUObject* _o )
+{
+    return QwtPlot::qt_invoke(_id,_o);
+}
+
+bool HVHistogramPlotter::qt_emit( int _id, QUObject* _o )
+{
+    return QwtPlot::qt_emit(_id,_o);
+}
+#ifndef QT_NO_PROPERTIES
+
+bool HVHistogramPlotter::qt_property( int id, int f, QVariant* v)
+{
+    return QwtPlot::qt_property( id, f, v);
+}
+
+bool HVHistogramPlotter::qt_static_property( QObject* , int , int , QVariant* ){ return FALSE; }
+#endif // QT_NO_PROPERTIES

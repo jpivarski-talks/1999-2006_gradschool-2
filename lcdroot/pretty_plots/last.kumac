@@ -1,0 +1,52 @@
+*** Begin of history file: Thu Oct 21 12:13:55 2004
+exec /tmp/pawtmp-3875.kumac
+nt/cuts $1 500-eve>300.
+nt/cuts $2 abs(j1pz/sqrt(j1px**2+j1py**2+j1pz**2))<0.9&&abs(j2pz/sqrt(j2px**2+j2py**2+j2pz**2))<0.9
+nt/cuts $3 jinvm<60.
+h/cr/2d 400 'Jet mass versus jet energy' 30 0. 140. 30 0. 60.
+h/cr/2d 401 'Jet mass versus jet energy' 30 0. 140. 30 0. 60.
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm%j1e+j2e $1&&$2&&$3 ! ! ! 'N' 400
+nt/plot //wpairs/CHI20CHI30PROC/5.jinvm%j1e+j2e $1&&$2&&$3 ! ! ! 'N' 401
+h/delete 402
+add 400 401 402 1. 11.73
+set hcol 14
+set dmod 1
+h/plot 402 box
+set fcol 2
+set fwid 4
+set dmod 1
+f/plot sqrt(x**2-(sqrt((500/2)**2-(155.723+0)**2)-sqrt(((500/2)-x)**2-(106.547+0)**2))**2) 20 118 's'
+set dmod 2
+f/plot sqrt(x**2-(sqrt((500/2)**2-(155.723+5)**2)-sqrt(((500/2)-x)**2-(106.547+5)**2))**2) 20 114 's'
+f/plot sqrt(x**2-(sqrt((500/2)**2-(155.723-5)**2)-sqrt(((500/2)-x)**2-(106.547-5)**2))**2) 20 122 's'
+set ncol 16
+palette 0
+h/cr/2d 400 'Jet mass versus jet energy' 30 0. 140. 30 0. 60.
+h/cr/2d 401 'Jet mass versus jet energy' 30 0. 140. 30 0. 60.
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm%j1e+j2e $1&&$2&&$3 ! ! ! 'N' 400
+nt/plot //wpairs/CHI20CHI30PROC/5.jinvm%j1e+j2e $1&&$2&&$3 ! ! ! 'N' 401
+h/delete 402
+add 400 401 402 1. 11.73
+set hcol 14
+set dmod 1
+h/plot 402 box
+set fcol 2
+set fwid 4
+set dmod 1
+f/plot sqrt(x**2-(sqrt((500/2)**2-(155.723+0)**2)-sqrt(((500/2)-x)**2-(106.547+0)**2))**2) 20 118 's'
+set dmod 2
+f/plot sqrt(x**2-(sqrt((500/2)**2-(155.723+5)**2)-sqrt(((500/2)-x)**2-(106.547+5)**2))**2) 20 114 's'
+f/plot sqrt(x**2-(sqrt((500/2)**2-(155.723-5)**2)-sqrt(((500/2)-x)**2-(106.547-5)**2))**2) 20 122 's'
+h/cr/2d 400 'Jet mass versus jet energy' 30 0. 140. 30 0. 60.
+h/cr/2d 401 'Jet mass versus jet energy' 30 0. 140. 30 0. 60.
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm%j1e+j2e $1&&$2&&$3 ! ! ! 'N' 400
+nt/plot //wpairs/CHI20CHI30PROC/5.jinvm%j1e+j2e $1&&$2&&$3 ! ! ! 'N' 401
+h/delete 402
+add 400 401 402 1. 11.73
+set hcol 14
+set dmod 1
+h/plot 402 box
+set fcol 2
+set fwid 4
+set dmod 1
+*** End   of history file: Thu Oct 21 12:16:39 2004

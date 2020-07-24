@@ -1,0 +1,55 @@
+import layer*
+
+h/delete $SIGMA(prefix+01)
+h/delete $SIGMA(prefix+02)
+h/delete $SIGMA(prefix+03)
+h/delete $SIGMA(prefix+04)
+h/delete $SIGMA(prefix+05)
+h/delete $SIGMA(prefix+06)
+h/delete $SIGMA(prefix+07)
+
+h/cr/1d $SIGMA(prefix+01) [1] [2] [3] [4]
+h/cr/1d $SIGMA(prefix+02) [1] [2] [3] [4]
+h/cr/1d $SIGMA(prefix+03) [1] [2] [3] [4]
+h/cr/1d $SIGMA(prefix+04) [1] [2] [3] [4]
+h/cr/1d $SIGMA(prefix+05) [1] [2] [3] [4]
+h/cr/1d $SIGMA(prefix+06) [1] [2] [3] [4]
+h/cr/1d $SIGMA(prefix+07) [1] [2] [3] [4]
+
+nt/plot //[layer1]/[5] [6] ! ! ! 'N' $SIGMA(prefix+01)
+nt/plot //[layer2]/[5] [6] ! ! ! 'N' $SIGMA(prefix+02)
+nt/plot //[layer3]/[5] [6] ! ! ! 'N' $SIGMA(prefix+03)
+nt/plot //[layer4]/[5] [6] ! ! ! 'N' $SIGMA(prefix+04)
+nt/plot //[layer5]/[5] [6] ! ! ! 'N' $SIGMA(prefix+05)
+nt/plot //[layer6]/[5] [6] ! ! ! 'N' $SIGMA(prefix+06)
+nt/plot //[layer7]/[5] [6] ! ! ! 'N' $SIGMA(prefix+07)
+
+h/delete $SIGMA(prefix+11)
+h/delete $SIGMA(prefix+12)
+h/delete $SIGMA(prefix+13)
+h/delete $SIGMA(prefix+14)
+h/delete $SIGMA(prefix+15)
+h/delete $SIGMA(prefix+16)
+h/delete $SIGMA(prefix+17)
+
+h/delete $SIGMA(prefix+22)
+h/delete $SIGMA(prefix+23)
+h/delete $SIGMA(prefix+24)
+h/delete $SIGMA(prefix+25)
+h/delete $SIGMA(prefix+26)
+h/delete $SIGMA(prefix+27)
+
+sub $SIGMA(prefix+01) $SIGMA(prefix+01) $SIGMA(prefix+11) $SIGMA(s[layer1]) 0 'e'
+sub $SIGMA(prefix+02) $SIGMA(prefix+02) $SIGMA(prefix+12) $SIGMA(s[layer2]) 0 'e'
+sub $SIGMA(prefix+03) $SIGMA(prefix+03) $SIGMA(prefix+13) $SIGMA(s[layer3]) 0 'e'
+sub $SIGMA(prefix+04) $SIGMA(prefix+04) $SIGMA(prefix+14) $SIGMA(s[layer4]) 0 'e'
+sub $SIGMA(prefix+05) $SIGMA(prefix+05) $SIGMA(prefix+15) $SIGMA(s[layer5]) 0 'e'
+sub $SIGMA(prefix+06) $SIGMA(prefix+06) $SIGMA(prefix+16) $SIGMA(s[layer6]) 0 'e'
+sub $SIGMA(prefix+07) $SIGMA(prefix+07) $SIGMA(prefix+17) $SIGMA(s[layer7]) 0 'e'
+
+add $SIGMA(prefix+11) $SIGMA(prefix+12) $SIGMA(prefix+22) ! ! 'e'
+add $SIGMA(prefix+22) $SIGMA(prefix+13) $SIGMA(prefix+23) ! ! 'e'
+add $SIGMA(prefix+23) $SIGMA(prefix+14) $SIGMA(prefix+24) ! ! 'e'
+add $SIGMA(prefix+24) $SIGMA(prefix+15) $SIGMA(prefix+25) ! ! 'e'
+add $SIGMA(prefix+25) $SIGMA(prefix+16) $SIGMA(prefix+26) ! ! 'e'
+add $SIGMA(prefix+26) $SIGMA(prefix+17) $SIGMA(prefix+27) ! ! 'e'

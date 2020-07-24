@@ -1,0 +1,500 @@
+\documentclass[12pt]{article}
+
+\oddsidemargin  -0.5 cm
+\evensidemargin 0.0 cm
+\textwidth      6.5in
+\headheight     0.0in
+\topmargin      -1 cm
+\textheight=9.0in
+
+\begin{document}
+
+\begin{flushright}
+Jim Pivarski's Notes for Physics and Geometry (\today)
+\end{flushright}
+
+\section{Maxwell's GUT}
+
+Three empirically-discovered laws of electrodynamics were known in
+Maxwell's time:
+\begin{eqnarray}
+  \vec{E} &=& \displaystyle \frac{1}{4\pi\epsilon_0} \int \frac{\rho}{r^2} \hat{r} \, dr \mbox{\hspace{0.9 cm} Coulumb's Law} \\
+  \vec{B} &=& \displaystyle \frac{\mu_0}{4\pi} \int \frac{\vec{J}\times \hat{r}}{r^2} \, dr \mbox{\hspace{0.8 cm} Biot-Savart Law} \\
+  \displaystyle \oint_\Omega \vec{E} \cdot d\vec{\ell} &=& \displaystyle -\frac{d}{dt} \int_\Omega \vec{B} \cdot d\vec{a} \mbox{\hspace{1 cm} Faraday's Law} \\
+  \vec{F} &=& \displaystyle q(\vec{E} + \vec{v} \times \vec{B}) \mbox{\hspace{1 cm} Lorentz Force Law}
+\end{eqnarray}
+(The last is a definition of $\vec{E}$ and $\vec{B}$ in terms of
+mechanical force.)  $\vec{E}$ is the electric field, $\vec{B}$ is the
+magnetic field, $\rho$ is the density of electric charge, $\vec{J}$ is
+the density of electric charge current, $q$ is a test charge with
+velocity $\vec{v}$, $dr$ is a differential over all space, $d\vec{a}$
+and $d\ell$ are differentials over the area and bounary of a surface
+$\Omega$.  These equations can be written in differential form like
+this:
+\begin{eqnarray}
+  \nabla \cdot \vec{E} &=& \displaystyle \frac{1}{\epsilon_0} \rho \mbox{\hspace{1 cm} Gauss's Law} \\
+  \nabla \times \vec{B} &=& \mu_0 \vec{J} \mbox{\hspace{0.9 cm} Amp\`ere's Law} \\
+  \nabla \cdot \vec{B} &=& 0 \\
+  \displaystyle \nabla \times \vec{E} + \frac{\partial \vec{B}}{\partial t} &=& 0 \mbox{\hspace{1.4 cm} Faraday's Law}
+\end{eqnarray}
+
+Maxwell noticed a theoretical problem with this theory: if you take
+the divergence of Amp\`ere's Law,
+\begin{equation}
+  \nabla \cdot (\nabla \times \vec{B}) = \mu_0 \nabla \cdot \vec{J}
+\end{equation}
+the right hand side is not in general zero.  Thought of as a fluid,
+charge density is compressible, and if charge is flowing into a volume
+element (the plate of a capacitor is charging up), it will increase
+the charge density in that volume element.
+\begin{equation}
+  -\nabla \cdot \vec{J} = \frac{\partial \rho}{\partial t}
+\end{equation}
+Combining this with Gauss's Law, we see that Amp\`ere's Law can be
+generalized by adding a $\mu_0\epsilon_0 \partial\vec{E}/\partial t$
+term.  Now the full Maxwell Equations read
+
+\begin{center}
+  \fbox{\begin{minipage}{\linewidth}
+    \vspace{-0.5 cm}
+    \begin{eqnarray}
+      \nabla \cdot \vec{E} &=& \displaystyle \frac{1}{\epsilon_0} \rho \label{me1} \\
+      \displaystyle \nabla \times \vec{B} - \mu_0\epsilon_0 \frac{\partial \vec{E}}{\partial t} &=& \mu_0 \vec{J} \label{me2} \\
+      \nabla \cdot \vec{B} &=& 0 \label{me3} \\
+      \displaystyle \nabla \times \vec{E} + \frac{\partial \vec{B}}{\partial t} &=& 0 \label{me4}
+    \end{eqnarray}
+  \end{minipage}}
+\end{center}
+
+\subsection{Symmetry Between Electric and Magnetic Fields}
+
+These equations are very symmetric with the exception of their right
+hand sides.  If $\rho$ and $\vec{J}$ are zero, one could swap the
+roles of $\vec{E}$ and $\vec{B}$, providing one appropriately handles
+the constants $\epsilon_0$ and $\mu_0$.  I'm going to handle them by
+choosing some unit system in which they are both equal to 1.
+
+One can actually rotate the definitions
+\begin{equation}
+  \left( \begin{array}{c} \vec{E}' \\ \vec{B}' \end{array} \right) =
+  \left( \begin{array}{c c} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{array} \right)
+  \left( \begin{array}{c} \vec{E} \\ \vec{B} \end{array} \right)
+\end{equation}
+where $\vec{E}'$ and $\vec{B}'$ are how electric and magnetic fields
+are defined on some alien planet.
+
+If we {\it leave in} the right hand side and prime it (because it's
+alien), Maxwell's equations become
+\begin{eqnarray}
+  \nabla \cdot \vec{E}' &=& \displaystyle \rho' \\
+  \displaystyle \nabla \times \vec{B}' - \frac{\partial \vec{E}'}{\partial t} &=& \vec{J}' \\
+  \nabla \cdot \vec{B}' &=& 0 \\
+  \displaystyle \nabla \times \vec{E}' + \frac{\partial \vec{B}'}{\partial t} &=& 0
+\end{eqnarray}
+which reduces to
+\begin{eqnarray}
+  \nabla \cdot \vec{E} &=& \displaystyle \cos\theta \rho' \\
+  \displaystyle \nabla \times \vec{B} - \frac{\partial \vec{E}}{\partial t} &=& \cos\theta \vec{J}' \\
+  \nabla \cdot \vec{B} &=& \sin\theta \rho' \\
+  \displaystyle \nabla \times \vec{E} + \frac{\partial \vec{B}}{\partial t} &=& -\sin\theta \vec{J}'
+\end{eqnarray}
+The sources have also undergone a rotation: $\vec{E}$ and $\vec{B}$
+form a two-dimensional space of possible definitions, and the sources
+are rotated along with the fields.  But the sources observed in nature
+all lie along a line in this space that no rotation can smear, and so
+Earthlings have adopted a convention of labelling the fields with
+sources {\it electric} and the fields without sources {\it magnetic.}
+
+Deviation from the thin charged line, a particle observed to have
+$\nabla \cdot \vec{B} \ne 0$ according to our definition of $\vec{B}$,
+would be called a magnetic monopole.  P.\ A.\ M.\ Dirac argued, within
+the context of quantum mechanics, that the existence of a single
+magnetic monopole anywhere in the universe will suffice to quantize
+electric charge everywhere.  Despite the really good reason for there
+to be magnetic monopoles, 147 experiments between 1951 and 2004 saw
+only four events, and none of them were deemed significant given the
+parameters of the experiments.  But then, we only need one.
+
+Since I intend to avoid quantum mechanics in this lecture, I won't
+present the argument.  (Maybe Matt will.)
+
+\subsection{Maxwell's Equations, Relativised.}
+
+Classical mechanics need to be modified to become relativistic, but
+Maxwell's Equations are already relativistic.  In fact, it was taking
+Maxwell's Equations seriously that led A.\ Einstein to relativity
+(``On the Electrodynamics of Moving Bodies'' in 1905).  I'll just
+write them in four-vector notation and move on.
+
+\subsubsection{Cheat-Sheet for Einstein Notation}
+
+(\ldots because I would probably forget and drop a $\sum$ if I tried
+to do it right.)
+\begin{itemize}
+
+  \item We express vector equations by showing what is done to each
+  component: $x^\mu = 0$ means the vector $x$ equals $(0,0,0,0)$.
+
+  \item A sub/superscript appearing on both sides of the equation has
+  an implied ``$\forall$'': to say $x^\mu = y^\mu$ implies $\forall
+  \mu$.
+
+  \item A sub/superscript appearing mulitply on one side of an
+  equation (or only in one term) has an implied ``$\sum$'': to say
+  $x^\mu y_\mu = 0$ implies $\displaystyle \sum_\mu$.
+
+  \item What is the meaning of upper and lower indices?  In special
+  relativity (which is all {\it I} will be doing), nothing.  But in
+  curved spaces, ntuples with a raised index are contravariant vectors
+  and ntuples with a lowered index are covariant one-forms.  I'd like
+  to understand this distinction better myself.  Only upper and lower
+  indices can be contracted ($\sum_\mu x^\mu y_\mu$ is good, $\sum_\mu
+  x^\mu y^\mu$ is bad), and a lower index can be converted into an
+  upper index by contracting with the funkymetric $g^{\mu\nu}$: $x^\mu =
+  g^{\mu\nu} x_\nu$ where in special relativity
+\begin{equation}
+  g^{\mu\nu} = \left(\begin{array}{c c c c}
+-1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \end{array}\right)
+\end{equation}
+  For the remainder of {\it my} talk, this whole bullet point will not
+  matter.
+
+  \item If you are keeping track of indices anyway, we should know
+  that $\partial/\partial x^\mu$ transforms as a one-form with a {\it
+  lowered} index.  This is why I write all space-time derivatives with
+  a single symbol $\partial_\mu$.
+
+\end{itemize}
+
+Non-relativistic physics usually involves interactions between a
+scalar quantity and a vecotr quantity that mean nearly the same thing.
+Time is a coordinate and space is a coordinate; energy is a conserved
+quantity of motion and momentum is a conserved quantity of motion;
+charge density is a measure of electricity and currernt density is a
+measure of electricity.  These can be combined into four-vectors by
+making the scalar piece the time (zeroth) component:
+\begin{eqnarray}
+  x^\mu &=& (t,x,y,z)^\mu \\
+  p^\mu &=& (E,p_x,p_y,p_z)^\mu \\
+  j^\mu &=& (\rho, J_x, J_y, J_z)^\mu
+\end{eqnarray}
+
+Maxwell's Equations involve the interactions of two three-vectors---
+six independent components.  An antisymmetric four-tensor has six
+independent components.  Ergo (Q.\ E.\ D.) Maxwell's Equations can be
+written in terms of an antisymmetric {\it field strength tensor.}
+\begin{equation}
+  F^{\mu\nu} = \left(\begin{array}{c c c c}
+0 & E_x & E_y & E_z \\
+-E_x & 0 & B_z & -B_y \\
+-E_y & -B_z & 0 & B_x \\
+-E_z & B_y & -B_x & 0
+\end{array}\right)^{\mu\nu}
+\end{equation}
+It's done like this:
+\begin{equation}
+  \partial_\mu F^{\mu\nu} = \left(\begin{array}{c}
+\displaystyle 0 + \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z} \\
+\displaystyle -\frac{\partial E_x}{\partial t} + 0 + \frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z} \\
+\displaystyle -\frac{\partial E_y}{\partial t} - \frac{\partial B_z}{\partial x} + 0 + \frac{\partial B_x}{\partial z} \\
+\displaystyle -\frac{\partial E_z}{\partial t} + \frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y} + 0
+  \end{array}\right)^{\mu\nu}
+= \left(\begin{array}{c} \rho \\ J_x \\ J_y \\ J_z \end{array}\right)^\nu = j^\nu
+\end{equation}
+
+Thus the first two Maxwell Equations (a scalar \ref{me1} and
+three-vector \ref{me2}) can be rolled up into one relativistic
+equation without changing any numerical predictions.  (Classical
+mechanics changes $E = p^2/2m$ into $E^2 = p^2 + m^2$.)  For the other
+two, dual rotate $\vec{E}$ and $\vec{B}$ 90 degrees ($\vec{E} \to
+\vec{B}$ and $\vec{B} \to -\vec{E}$) to get
+\begin{equation}
+  G^{\mu\nu} = \left(\begin{array}{c c c c}
+0 & B_x & B_y & B_z \\
+-B_x & 0 & -E_z & E_y \\
+-B_y & E_z & 0 & -E_x \\
+-B_z & -E_y & E_x & 0
+\end{array}\right)^{\mu\nu}
+\end{equation}
+Now we can write Maxwell's Equations as
+\begin{equation}
+  \partial_\mu F^{\mu\nu} = j^\nu \mbox{ and } \partial_\mu G^{\mu\nu} = 0
+\end{equation}
+which is what really should be on the T-shirts.
+
+\section{The Potential and Gauge Freedom}
+
+In electrostatics, force-problems could be turned into energy-problems
+by replacing $\vec{E}$ with a potential $V$.  In three dimensions,
+\begin{equation}
+  \vec{E} = -\nabla V
+\end{equation}
+Because $V$ was obtained by integration, it is undetermined up to a
+scalar constant $V_0$.  Only potential {\it differences} lead to
+observable physics.
+
+In full electrodynamics, the potential needs three more dimensions:
+\begin{eqnarray}
+  \vec{E} &=& -\nabla V - \frac{\partial \vec{A}}{\partial t} \\
+  \vec{B} &=& \nabla \times \vec{A}
+\end{eqnarray}
+As usual, one scalar $+$ one three-vector makes a four-vector.
+\begin{equation}
+  A^\mu = (V, A_x, A_y, A_z)^\mu
+\end{equation}
+
+$\vec{E}$ and $\vec{B}$ (which are directly measured by the forces
+they inflict on a test charge) are unchanged by translations of
+$A^\mu$ by the gradient of any scalar field $\chi$.
+\begin{equation}
+  (A_\mu)' = A_\mu + \partial_\mu \chi
+\end{equation}
+This is, in three-vector land,
+\begin{equation}
+  V' = V - \frac{\partial \chi}{\partial t} \mbox{ and }
+  \vec{A}' = \vec{A} + \nabla \chi
+\end{equation}
+
+This freedom to choose and constrain $A^\mu$ (called {\it gauge
+freedom}) can be used to simplify calculations.  Also, it is deeply
+responsible for the coupling of charged matter to electromagnetic
+fields.  Here's a gauge I'll use in the next section, called the {\it
+Lorentz} or {\it radiation gauge:}
+\begin{equation}
+  \partial_\mu A^\mu = 0
+  \label{gauge}
+\end{equation}
+This doesn't use up all the gauge freedom--- we can still translate
+\begin{equation}
+  (A_\mu)' = A_\mu + \partial_\mu \chi \mbox{ as long as } \partial_\mu \partial^\mu \chi = 0
+  \label{aslongas}
+\end{equation}
+
+\section{Applications and Interpretation}
+
+We can write the stress field tensor in terms of $A^\mu$
+\begin{equation}
+  F^{\mu\nu} = \partial^\mu A^\nu - \partial^nu A^\mu
+\end{equation}
+and therefore Maxwell's Equations are
+\begin{equation}
+  \partial_\mu F^{\mu\nu} = \partial_\mu \partial^\mu A^\nu - \partial^\nu \partial_\mu A^\mu = j^\nu
+\end{equation}
+In Lorentz gauge, $\partial_\mu A^\mu$ is zero, so the second term is
+zero.  The wave equation for $A^\mu$ is therefore
+\begin{equation}
+  \partial_\mu \partial^\mu A^\nu = j^\nu
+  \label{inhomogeneous}
+\end{equation}
+This is a simple wave equation in each of the four components $\nu$:
+\begin{equation}
+  -\frac{\partial^2 A^\nu}{\partial t^2} + \nabla^2 A^\nu = j^\nu
+\end{equation}
+
+As an illustration, imagine $j^z = \sin t$ at one point on an $XY$
+plane: $A^z$ waves are generated in the plane, propogating outward
+from this point.  This is a cross-section of an infinite radio
+antenna: waves of $A^\mu$ are generated by oscillating electric
+current.
+
+Without a source ($j^\nu = 0$), the wavefunction $A^\nu$ has solutions
+\begin{equation}
+  A^\nu = \varepsilon^\nu(p) e^{-i p_{\mu'} x^{\mu'}}
+  \label{solution}
+\end{equation}
+where the energy/momentum of the wave is the four-vector $p_{\mu'}$,
+and $\varepsilon^\nu$ is a four-component spinor for a given $p$.
+
+\subsection{A Word About Quantum Mechanics}
+
+``Wavefunction'' is the right word: the homogeneous equation
+\begin{equation}
+  \frac{\partial^2 A^\nu}{\partial t^2} - \nabla^2 A^\nu = 0
+\end{equation}
+is a Klein-Gordon equation for a boson with zero mass.  It is related to
+the non-relativistic Schr\"odinger Equation
+\begin{equation}
+  i\frac{\partial \psi}{\partial t} + \frac{1}{2m} \nabla^2 \psi = 0
+\end{equation}
+(which is $E - p^2/2m = 0$ with $E \to i \partial/\partial t$ and $\vec{p}
+\to i\nabla$) by using the relativistic expression $E^2 - p^2 - m^2 =
+0$.  Each $A^\nu$ takes the place of $\psi$.
+
+My treatment for this talk will be classical in the sense that
+$A^\nu(x)$ is a real (or complex) number.  In quantum mechanics (or,
+correctly speaking, quantum field theory), $A^\nu$ is replaced with an
+abstract operator that obeys a non-trivial commutation relation.  This
+commutation relation restricts the spectrum of solutions to
+non-negative integers, so the $N$th excited state above the vacuum is
+said to contain $N$ photons.  In general, a physical state may be a
+superposition of the $N$-photon states.  The light incident on a
+photomultiplier tube, for instance, is usually in a Poisson
+distribution on $N$ with a mean of about 50 photons.  The difference
+between a quantum mechanical description and a classical description,
+therefore, is usually something like the difference between a Poission
+distribution with a mean of 49.3 and a single-valued real number with
+value of 49.3.
+
+\section{Properties of the Classical Photofield}
+
+Substitute the solution (\ref{solution}) into the homogeneous wave equation
+(equation \ref{inhomogeneous} with $j^\nu = 0$), and we get
+\begin{eqnarray}
+  \partial_\mu \partial^\mu A^\nu &=& \partial_\mu (-i p_\mu) \varepsilon^\nu(p) e^{-i p_{\mu'} x^{\mu'}} \\
+  &=& (-p_\mu p^\mu) \varepsilon^\nu(p) e^{-i p_{\mu'} x^{\mu'}} \\
+  0 &=& p_\mu p^\mu
+\end{eqnarray}
+The length of the energy/momentum vector is always zero.  In this
+non-positive-definite funkymetric, a line with zero length is any that
+satisfies
+\begin{equation}
+  \Delta t^2 = \Delta x^2 + \Delta y^2 + \Delta z^2
+\end{equation}
+The set of all such lines from a given point is a light cone.
+
+In terms of three-vectors and scalars, this means that $E = |p|^2$ for
+all photons.
+
+At first glance, \ref{solution} has four components, but physical
+light has only two independent polarizations.  The reduction in
+components comes from the gauge freedom.
+
+Take $\chi$ in \ref{aslongas} to be
+\begin{equation}
+  \chi = ie^{-i p_{\mu'} x^{\mu'}}
+\end{equation}
+(This satisfies $\partial_\mu \partial^\mu \chi = 0$ for the same
+reason as $\partial_\mu \partial^\mu A^\nu = 0$.)
+
+The gauge translation in $A^\nu$ is
+\begin{equation}
+  (A^\nu)' = A^\nu + \partial^\nu \chi = A^\nu + p^\nu e^{-i p_{\mu'} x^{\mu'}}
+\end{equation}
+so the physical state represented by \ref{solution} is also
+represented by 
+\begin{eqnarray}
+  A^\nu &=& \varepsilon^\nu(p) e^{-i p_{\mu'} x^{\mu'}} + p^\nu e^{-i p_{\mu'} x^{\mu'}} \\
+  &=& (\varepsilon^\nu(p) + p^\nu) e^{-i p_{\mu'} x^{\mu'}}
+\end{eqnarray}
+The spinor $\varepsilon^\nu$ is physically the same as the spinor
+$\varepsilon^\nu + p^\nu$!  It can be scaled arbitrarily along its
+direction of propogation!  Let's use this freedom to adopt a
+convention for polarization in the ``time'' direction:
+\begin{equation}
+  \varepsilon^0 = 0
+\end{equation}
+
+The rest of our gauge freedom is the Lorentz condition $\partial_\nu
+A^\nu = 0$.  Let's insert the solution (\ref{solution}) into this
+equation:
+\begin{eqnarray}
+  0 = \partial_\nu A^\nu &=& (-i p_nu) \varepsilon^\nu(p) e^{-i p_{\mu'} x^{\mu'}} \\
+  0 &=& p_\nu \varepsilon^\nu(p)
+\end{eqnarray}
+Because of our convention, this is $\vec{p} \cdot \vec{\varepsilon} =
+0$, which is to say that the components of the photofield spinor, the
+polarization of light, is perpendicular to the direction of
+propogation.
+
+\section{Connecting the Electrofield to the Photofield}
+
+To talk about electrodynamics more abstractly, I need to introduce the
+Lagrangian.  In classical mechanics, the Lagrangian is a scalar
+function over parameters relevant to the system being modelled, from
+which equations of motion can be derived by finding the
+minimum-Lagrangian path through parameter space.  The equations of
+motion are the Euler-Lagrange Equations
+\begin{equation}
+  \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial (\partial q_i/\partial t)}
+  \right) - \frac{\partial \mathcal{L}}{\partial q_i} = 0
+\end{equation}
+where $q_i$ are the parameters of the system, and they all depend on
+the one coordinate $t$.
+
+For field theories, the variables of the Lagrangian $q_i(t)$ become
+$A^\nu(t,x,y,z)$.  In this generalization, the time derivative becomes
+$\partial_\mu$:
+\begin{equation}
+  \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu A^\nu)}
+  \right) - \frac{\partial \mathcal{L}}{\partial A^\nu} = 0
+\end{equation}
+
+The Lagrangian for electromagnetism, what should really go on the
+T-shirts, is
+\begin{eqnarray}
+  \mathcal{L}_{EM} &=& -\frac{1}{4} F_{\mu'\nu'} F^{\mu'\nu'} - j^{\mu'} A_{\mu'} \\
+  &=& -\frac{1}{4} (\partial_{\mu'}A_{\nu'} - \partial_{\nu'}A_{\mu'})(\partial^{\mu'}A^{\nu'} - \partial^{\nu'}A^{\mu'}) - j^{\mu'} A_{\mu'}
+\end{eqnarray}
+ derivatives of the Lagrangian are
+\begin{eqnarray}
+  \frac{\partial \mathcal{L}_{EM}}{\partial (\partial_\mu A^\nu)} &=& -F^{\mu\nu} \mbox{ and} \\
+  \frac{\partial \mathcal{L}_{EM}}{\partial A^\nu} &=& -j^\nu
+\end{eqnarray}
+recovering Maxwell's Equations as the equations of motion:
+\begin{equation}
+  \partial_\mu F^{\mu\nu} = j^\nu
+\end{equation}
+
+\subsection{Electrofield}
+
+In the same way that we consider a classical photon field by refusing
+the turn complex numbers into operators, we can consider the wave
+equation for electrons classical.  The Dirac Equation for fermions can
+be derived from the following Lagrangian
+\begin{equation}
+  \mathcal{L}_D = i \psi^\dagger \gamma^0 \gamma_\mu \partial^\mu \psi
+  - m \psi^\dagger \gamma^0 \psi
+\end{equation}
+where
+\begin{equation}
+  \gamma^0 = \left(\begin{array}{c c c c}
+1 & & & \\
+ & 1 & & \\
+ & & -1 & \\
+ & & & -1 \end{array}\right) \mbox{\hspace{0.3 cm}}
+  \gamma^1 = \left(\begin{array}{c c c c}
+ & & 0 & -i \\
+ & & -i & 0\\
+0 & i & & \\
+i & 0 & & \end{array}\right)
+\end{equation}
+\begin{equation}
+  \gamma^2 = \left(\begin{array}{c c c c}
+ & & 0 & -1 \\
+ & & 1 & 0 \\
+0 & 1 & & \\
+-1 & 0& & \end{array}\right) \mbox{\hspace{0.3 cm}}
+  \gamma^3 = \left(\begin{array}{c c c c}
+ & & -i & 0 \\
+ & & 0 & i\\
+i & 0 & & \\
+0 & -i & & \end{array}\right)
+\end{equation}
+and $\psi$ is a vector with four complex components.  (This
+four-dimensional space is not space-time, it's the minimum number of
+components necessary to construct a wave equation that is first-order
+in time and space derivatives.  Coincidentally, that mathematical
+necessity provides a natural origin for the existence of
+two-dimensional spinors $\times$ the two components of particle and
+antiparticle.)
+
+\subsection{Noether's Theorm (a.k.a.\ The Deepest Theorem in Physics)}
+
+\subsection{Local U(1) Invariance of $\mathcal{L}_D$ Needs Coupling to the Photofield}
+
+\subsection{The Complete Electromagnetic Lagrangian}
+
+\begin{center}
+  \fbox{\begin{minipage}{\linewidth}
+    \begin{equation}
+      \mathcal{L} = i \psi^\dagger \gamma^0 \gamma_\mu \partial^\mu \psi
+      - m \psi^\dagger \gamma^0 \psi
+      - \frac{1}{4} F_{\mu'\nu'} F^{\mu'\nu'} + e \psi^\dagger \gamma^0 \gamma^\mu A_\mu
+    \end{equation}
+  \end{minipage}}
+\end{center}
+
+\end{document}

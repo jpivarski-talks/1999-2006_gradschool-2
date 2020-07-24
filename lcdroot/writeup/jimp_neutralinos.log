@@ -1,0 +1,179 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  21 OCT 2004 12:19
+**jimp_neutralinos.tex
+(./jimp_neutralinos.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+No file jimp_neutralinos.aux.
+\openout1 = `jimp_neutralinos.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks15
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks16
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 18.
+ <jimptwoleptons_a.pdf, id=1, 508.90125pt x 508.90125pt>
+File: jimptwoleptons_a.pdf Graphic file (type pdf)
+
+<use jimptwoleptons_a.pdf>
+<jimptwoleptons_b.pdf, id=2, 508.90125pt x 508.90125pt>
+File: jimptwoleptons_b.pdf Graphic file (type pdf)
+
+<use jimptwoleptons_b.pdf>
+Overfull \hbox (14.61003pt too wide) in paragraph at lines 17--22
+ [] 
+ []
+
+<jimpleftleptons_a.pdf, id=3, 508.90125pt x 508.90125pt>
+File: jimpleftleptons_a.pdf Graphic file (type pdf)
+
+<use jimpleftleptons_a.pdf>
+<jimpleftleptons_b.pdf, id=4, 508.90125pt x 508.90125pt>
+File: jimpleftleptons_b.pdf Graphic file (type pdf)
+
+<use jimpleftleptons_b.pdf>
+Overfull \hbox (14.61003pt too wide) in paragraph at lines 37--42
+ [] 
+ []
+
+
+LaTeX Warning: Reference `X' on page 1 undefined on input line 92.
+
+[1{/usr/share/texmf/dvips/config/pdftex.map}
+
+ <./jimptwoleptons_a.pdf> <./jimptwoleptons_b.pdf>]
+
+LaTeX Warning: Reference `jimptwoleptons' on page 2 undefined on input line 108
+.
+
+
+LaTeX Warning: Reference `jimpleftleptons' on page 2 undefined on input line 11
+5.
+
+
+LaTeX Warning: Reference `jimptwoleptons' on page 2 undefined on input line 132
+.
+
+
+LaTeX Warning: Reference `jimpleftleptons' on page 2 undefined on input line 13
+2.
+
+[2 <./jimpleftleptons_a.pdf> <./jimpleftleptons_b.pdf>]
+
+LaTeX Warning: Reference `jimpbetable' on page 3 undefined on input line 144.
+
+
+LaTeX Warning: Reference `Y' on page 3 undefined on input line 183.
+
+
+LaTeX Warning: Reference `jimptwoleptons' on page 3 undefined on input line 188
+.
+
+
+LaTeX Warning: Reference `jimpleftleptons' on page 3 undefined on input line 18
+8.
+
+
+LaTeX Warning: Reference `Z' on page 3 undefined on input line 191.
+
+[3] [4] (./jimp_neutralinos.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 889 strings out of 50453
+ 10861 string characters out of 688420
+ 60679 words of memory out of 1500001
+ 3931 multiletter control sequences out of 10000+25000
+ 7289 words of font info for 26 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,15n,21p,817b,531s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb><
+/usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type
+1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr
+/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/blu
+esky/cm/cmr12.pfb>
+Output written on jimp_neutralinos.pdf (4 pages, 92007 bytes).

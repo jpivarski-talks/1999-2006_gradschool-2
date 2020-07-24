@@ -1,0 +1,79 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2003.2.18)  24 SEP 2004 16:33
+**electrodynamics.tex
+(electrodynamics.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (electrodynamics.aux)
+\openout1 = `electrodynamics.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 20.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 66--67
+ [] 
+ []
+
+[1
+
+] [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 135.
+
+ (/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
+ [3] [4] [5] [6] [7]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 486.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 486.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 497--498
+ [] 
+ []
+
+[8] (electrodynamics.aux) ) 
+Here is how much of TeX's memory you used:
+ 255 strings out of 20880
+ 2651 string characters out of 196184
+ 51503 words of memory out of 350001
+ 3265 multiletter control sequences out of 10000+15000
+ 8856 words of font info for 31 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 22i,10n,20p,196b,233s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on electrodynamics.dvi (8 pages, 31272 bytes).

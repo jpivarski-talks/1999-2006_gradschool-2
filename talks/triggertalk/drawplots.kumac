@@ -1,0 +1,191 @@
+ve/cr axd(19)
+ve/inp axd(1) 0
+ve/inp axd(2) 2
+ve/inp axd(3) 21
+ve/inp axd(4) 134
+ve/inp axd(5) 300
+ve/inp axd(6) 71
+ve/inp axd(7) 14
+ve/inp axd(8) 4
+ve/inp axd(9) 5
+ve/inp axd(10) 2
+ve/inp axd(11) 1
+ve/inp axd(12) 0
+ve/inp axd(13) 0
+ve/inp axd(14) 0
+ve/inp axd(15) 0
+ve/inp axd(16) 0
+ve/inp axd(17) 0
+ve/inp axd(18) 0
+ve/inp axd(19) 0
+
+ve/cr axm(19)
+ve/inp axm(1) 0
+ve/inp axm(2) 5
+ve/inp axm(3) 212
+ve/inp axm(4) 1474
+ve/inp axm(5) 5069
+ve/inp axm(6) 1676
+ve/inp axm(7) 744
+ve/inp axm(8) 258
+ve/inp axm(9) 91
+ve/inp axm(10) 39
+ve/inp axm(11) 22
+ve/inp axm(12) 10
+ve/inp axm(13) 0
+ve/inp axm(14) 2
+ve/inp axm(15) 0
+ve/inp axm(16) 1
+ve/inp axm(17) 0
+ve/inp axm(18) 0
+ve/inp axm(19) 0
+
+ve/cr md4(8)
+ve/inp md4(1) 3423
+ve/inp md4(2) 3538
+ve/inp md4(3) 1848
+ve/inp md4(4) 621
+ve/inp md4(5) 140
+ve/inp md4(6) 29
+ve/inp md4(7) 3
+ve/inp md4(8) 1
+
+ve/cr md0(8)
+ve/inp md0(1) 136
+ve/inp md0(2) 88
+ve/inp md0(3) 173
+ve/inp md0(4) 153
+ve/inp md0(5) 22
+ve/inp md0(6) 6
+ve/inp md0(7) 1
+ve/inp md0(8) 0
+
+ve/cr tr(19)
+ve/inp tr(1) 579
+ve/inp tr(2) 824
+ve/inp tr(3) 2006
+ve/inp tr(4) 3975
+ve/inp tr(5) 9603
+ve/inp tr(6) 13701
+ve/inp tr(7) 21878
+ve/inp tr(8) 21341
+ve/inp tr(9) 23734
+ve/inp tr(10) 16895
+ve/inp tr(11) 13466
+ve/inp tr(12) 7424
+ve/inp tr(13) 4539
+ve/inp tr(14) 1996
+ve/inp tr(15) 895
+ve/inp tr(16) 321
+ve/inp tr(17) 133
+ve/inp tr(18) 32
+ve/inp tr(19) 15
+
+h/cr/1d 100 'MC "f#reconstructed tracks' 19 -0.5 18.5
+h/put_vect/contents 100 tr
+normalize 100
+h/plot 100
+
+h/cr/1d 200 'MC "f#CBMD for 0, 4 tracks' 8 -0.5 7.5
+h/cr/1d 201 'MC "f#CBMD for 0, 4 tracks' 8 -0.5 7.5
+h/put_vect/contents 200 md0
+h/put_vect/contents 201 md4
+normalize 200
+normalize 201
+max 200 250
+h/plot 200
+h/plot 201 's'
+
+h/cr/1d 300 'MC, data "f#AXIAL for 4 tracks' 19 -0.5 18.5
+h/cr/1d 301 'MC, data "f#AXIAL for 4 tracks' 19 -0.5 18.5
+h/put_vect/contents 300 axm
+h/put_vect/contents 301 axd
+normalize 300
+normalize 301
+max 300 6000
+h/plot 300
+h/plot 301 's'
+
+set GSIZ $SIGMA(0.28)
+set TSIZ $SIGMA(0.28)
+set ASIZ $SIGMA(0.28)
+set CSIZ $SIGMA(0.28)
+set PSIZ $SIGMA(0.28)
+set VSIZ $SIGMA(0.28)
+set YHTI 0.8
+zone 3 3
+set dmod 1
+set dmod 1
+h/plot 100
+set dmod 1
+set dmod 1
+h/plot 200
+set dmod 3
+h/plot 201 's'
+set bord 1
+set fais 0
+set pcli 0
+box $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+set dmod 1
+set dmod 1
+h/plot 300(-0.5:7.5)
+set dmod 3
+h/plot 301 's'
+box $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+pict/print 'drawplots2.eps'
+
+* %%BoundingBox: 10 340 545 520
+
+* ve/cr ax0m(19)
+* ve/inp ax0m(1) 104
+* ve/inp ax0m(2) 208
+* ve/inp ax0m(3) 146
+* ve/inp ax0m(4) 38
+* ve/inp ax0m(5) 42
+* ve/inp ax0m(6) 15
+* ve/inp ax0m(7) 16
+* ve/inp ax0m(8) 6
+* ve/inp ax0m(9) 3
+* ve/inp ax0m(10) 1
+* ve/inp ax0m(11) 0
+* ve/inp ax0m(12) 0
+* ve/inp ax0m(13) 0
+* ve/inp ax0m(14) 0
+* ve/inp ax0m(15) 0
+* ve/inp ax0m(16) 0
+* ve/inp ax0m(17) 0
+* ve/inp ax0m(18) 0
+* ve/inp ax0m(19) 0
+
+* ve/cr ax0d(19)
+* ve/inp ax0d(1) 948
+* ve/inp ax0d(2) 111
+* ve/inp ax0d(3) 3156
+* ve/inp ax0d(4) 331
+* ve/inp ax0d(5) 82
+* ve/inp ax0d(6) 19
+* ve/inp ax0d(7) 6
+* ve/inp ax0d(8) 0
+* ve/inp ax0d(9) 1
+* ve/inp ax0d(10) 0
+* ve/inp ax0d(11) 0
+* ve/inp ax0d(12) 0
+* ve/inp ax0d(13) 0
+* ve/inp ax0d(14) 0
+* ve/inp ax0d(15) 0
+* ve/inp ax0d(16) 0
+* ve/inp ax0d(17) 0
+* ve/inp ax0d(18) 0
+* ve/inp ax0d(19) 0
+
+* h/cr/1d 400 'MC, data "f#AXIAL for 0 tracks' 19 -0.5 18.5
+* h/cr/1d 401 'MC, data "f#AXIAL for 0 tracks' 19 -0.5 18.5
+* h/put_vect/contents 400 ax0m
+* h/put_vect/contents 401 ax0d
+* normalize 400
+* normalize 401
+* max 400 440
+* h/plot 400
+* h/plot 401 's'
+
+

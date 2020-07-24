@@ -1,0 +1,239 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 4.0,
+MathReader 4.0, or any compatible application. The data for the notebook 
+starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5731,        181]*)
+(*NotebookOutlinePosition[      6390,        205]*)
+(*  CellTagsIndexPosition[      6346,        201]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \(pa = {pa1, pa2, pa3}\), "\n", 
+    \(pb = {pb1, pb2, pb3}\)}], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{pa1, pa2, pa3}\)], "Output"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{pb1, pb2, pb3}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(mab = \((pa + pb)\) . \((pa + pb)\)\), "\n", 
+    \(mac = \((pa + pc)\) . \((pa + pc)\)\)}], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\((pa1 + pb1)\)\^2 + \((pa2 + pb2)\)\^2 + \((pa3 + \
+pb3)\)\^2\)], "Output"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\((pa1 + pc)\)\^2 + \((pa2 + pc)\)\^2 + \((pa3 + pc)\)\
+\^2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dt[mab*mac]\)], "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{
+        RowBox[{
+        "2", " ", \((\((pa1 + pc)\)\^2 + \((pa2 + pc)\)\^2 + \((pa3 + \
+pc)\)\^2)\), " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{\((pa1 + pb1)\), " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pa1"}], "+", 
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pb1"}]}], ")"}]}], "+", 
+              RowBox[{\((pa2 + pb2)\), " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pa2"}], "+", 
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pb2"}]}], ")"}]}], "+", 
+              RowBox[{\((pa3 + pb3)\), " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pa3"}], "+", 
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pb3"}]}], ")"}]}]}], ")"}]}], "+", 
+        RowBox[{
+        "2", " ", \((\((pa1 + pb1)\)\^2 + \((pa2 + pb2)\)\^2 + \((pa3 + \
+pb3)\)\^2)\), " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{\((pa1 + pc)\), " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pa1"}], "+", 
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pc"}]}], ")"}]}], "+", 
+              RowBox[{\((pa2 + pc)\), " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pa2"}], "+", 
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pc"}]}], ")"}]}], "+", 
+              RowBox[{\((pa3 + pc)\), " ", 
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pa3"}], "+", 
+                    RowBox[{
+                      TagBox["\[DifferentialD]",
+                        Dt], "pc"}]}], ")"}]}]}], ")"}]}]}], 
+      TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(Times @@ \((Dt /@ {pa1, pa2, pa3, pb1, pb2, 
+              pb3})\)\)\(*\)\)\)], "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{
+        RowBox[{
+          TagBox["\[DifferentialD]",
+            Dt], "pa1"}], " ", 
+        RowBox[{
+          TagBox["\[DifferentialD]",
+            Dt], "pa2"}], " ", 
+        RowBox[{
+          TagBox["\[DifferentialD]",
+            Dt], "pa3"}], " ", 
+        RowBox[{
+          TagBox["\[DifferentialD]",
+            Dt], "pb1"}], " ", 
+        RowBox[{
+          TagBox["\[DifferentialD]",
+            Dt], "pb2"}], " ", 
+        RowBox[{
+          TagBox["\[DifferentialD]",
+            Dt], "pb3"}]}], TraditionalForm]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"4.0 for X",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+Evaluator->"lns183",
+WindowSize->{746, 624},
+WindowMargins->{{2, Automatic}, {10, Automatic}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1739, 51, 92, 2, 43, "Input"],
+Cell[1834, 55, 66, 1, 28, "Output"],
+Cell[1903, 58, 66, 1, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2006, 64, 122, 2, 43, "Input"],
+Cell[2131, 68, 113, 2, 29, "Output"],
+Cell[2247, 72, 110, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2394, 79, 44, 1, 27, "Input"],
+Cell[2441, 82, 2540, 67, 65, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5018, 154, 112, 2, 27, "Input"],
+Cell[5133, 158, 582, 20, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

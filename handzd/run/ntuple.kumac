@@ -1,0 +1,662 @@
+h/file 1 ../rzn/ntuple_fixedphi_big.rzn
+h/file 2 ../rzn/ntuple_chidual.rzn
+
+* h/file 2 ../rzn/ntuple_chidual2.rzn
+* cd //lun1/zdhitstudy
+
+ ********************************************************
+ * NTUPLE ID=    1  ENTRIES=  59207   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * pperp     * 0.153872E-03 * 0.754385E-01 *
+ *      2     * pz        * -.754640E-01 * 0.754673E-01 *
+ *      3     * curv      * -.202011E+00 * 0.204289E+00 *
+ *      4     * phi0      * 0.485145E-04 * 0.628443E+01 *
+ *      5     * d0        * -.910786E-02 * 0.910786E-02 *
+ *      6     * cotTheta  * -.236656E+01 * 0.232289E+01 *
+ *      7     * z0        * -.518689E-01 * 0.537755E-01 *
+ *      8     * layer     * 0.100000E+01 * 0.600000E+01 *
+ *      9     * wire      * 0.000000E+00 * 0.650000E+02 *
+ *     10     * refx      * -.104488E+00 * 0.104864E+00 *
+ *     11     * refy      * -.105557E+00 * 0.104156E+00 *
+ *     12     * refz      * -.259280E+00 * 0.276412E+00 *
+ *     13     * hphi      * 0.587486E-04 * 0.628313E+01 *
+ *     14     * hz        * 0.000000E+00 * 0.000000E+00 *
+ *     15     * wirex     * -.104185E+00 * 0.103826E+00 *
+ *     16     * wirey     * -.105196E+00 * 0.103549E+00 *
+ *     17     * wirez     * -.258800E+00 * 0.276153E+00 *
+ *     18     * dca       * -.362253E-01 * 0.387935E-01 *
+ *     19     * drift     * -.363050E-01 * 0.395522E-01 *
+ *     20     * dualchi2  * 0.455985E-01 * 0.443313E+04 *
+ ********************************************************
+
+h/cr/2d 201 'momentum Y vs X (no constraint)' 1 -0.08 0.08 1 -0.08 0.08
+h/cr/2d 202 'momentum Y vs X (constrained)' 1 -0.08 0.08 1 -0.08 0.08
+
+nt/plot //lun1/zdhitstudy/1.pperp*sin(hphi)%pperp*cos(hphi) layer==1&&curv>0 50000 ! ! ! 201
+nt/plot //lun2/zdhitstudy/1.pperp*sin(hphi)%pperp*cos(hphi) layer==1&&curv>0 50000 ! ! ! 202
+
+
+h/cr/prof 208 'transverse momentum VS phi' 100 0. $SIGMA(2.*3.1415926) -1. 1.
+nt/plot //lun1/zdhitstudy/1.pperp%hphi layer==1&&curv>0 ! ! ! ! 208
+pict/print '../plots/pperp_is_symmetric.ps'
+
+
+
+
+h/cr/1d 201 'Z momentum superimposed on -Z momentum' 100 -0.07 0.07
+h/cr/1d 202 'Z momentum superimposed on -Z momentum' 100 -0.07 0.07
+
+nt/plot //lun1/zdhitstudy/1.pz layer==4&&curv>0 ! ! ! ! 201
+nt/plot //lun1/zdhitstudy/1.-pz layer==4&&curv>0 ! ! ! 's' 202
+subtract 201 202 206 ! ! 'e'
+h/copy 206 207 'difference'
+
+zone 1 2
+h/plot 201
+h/plot 202 's'
+min 207 -250
+max 207  250
+h/plot 207
+set ltyp 3
+dline $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') 0 0
+
+pict/print '../plots/pz_is_symmetric.ps'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zone 2 2
+
+h/cr/title 'dual-fit [h]^2!/DOF VS cotTheta'
+
+h/cr/2d 201 'no quad correction' 1 -2.4 2.4 1 0. 100.
+h/cr/2d 202 'kludgy quad field correction' 1 -2.4 2.4 1 0. 100.
+h/cr/prof 203 'no quad correction' 100 -2.4 2.4 0. 100.
+h/cr/prof 204 'kludgy quad field correction' 100 -2.4 2.4 0. 100.
+
+nt/plot //lun1/zdhitstudy/1.dualchi2%cotTheta layer==4&&curv>0 500000 ! ! ! 201
+nt/plot //lun2/zdhitstudy/1.dualchi2%cotTheta layer==4&&curv>0 500000 ! ! ! 202
+nt/plot //lun1/zdhitstudy/1.dualchi2%cotTheta layer==4&&curv>0 ! ! ! ! 203
+nt/plot //lun2/zdhitstudy/1.dualchi2%cotTheta layer==4&&curv>0 ! ! ! ! 204
+
+pict/print '../plots/quadcorr_doesnt_help_dualchi.ps'
+
+
+h/cr/title 'dual-fit [h]^2!/DOF VS track momentum'
+
+h/cr/2d 301 'no quad correction' 1 0.8 1.2 1 0. 100.
+h/cr/2d 302 'kludgy quad field correction' 1 0.8 1.2 1 0. 100.
+h/cr/prof 303 'no quad correction' 100 0.8 1.2 0. 100.
+h/cr/prof 304 'kludgy quad field correction' 100 0.8 1.2 0. 100.
+
+nt/plot //lun1/zdhitstudy/1.dualchi2%sqrt((0.5/curv)**2*(1.+cotTheta**2))/6.306 layer==4 50000 ! ! ! 301
+nt/plot //lun2/zdhitstudy/1.dualchi2%sqrt((0.5/curv)**2*(1.+cotTheta**2))/6.306 layer==4 50000 ! ! ! 302
+nt/plot //lun1/zdhitstudy/1.dualchi2%sqrt((0.5/curv)**2*(1.+cotTheta**2))/6.306 layer==4 ! ! ! ! 303
+nt/plot //lun2/zdhitstudy/1.dualchi2%sqrt((0.5/curv)**2*(1.+cotTheta**2))/6.306 layer==4 ! ! ! ! 304
+
+pict/print '../plots/dualchi_vs_momentum.ps'
+
+h/cr/title 'dual-fit [h]^2!/DOF VS cotTheta with momentum within 1"Y# of peak'
+nt/cuts $1 0.99<sqrt((0.5/curv)**2*(1.+cotTheta**2))/6.306<1.018
+
+h/cr/2d 401 'no quad correction' 1 -2.4 2.4 1 0. 30.
+h/cr/prof 403 'no quad correction' 100 -2.4 2.4 0. 30.
+
+zone 1 2
+nt/plot //lun1/zdhitstudy/1.dualchi2%cotTheta layer==4&&$1&&curv>0 50000 ! ! ! 401
+nt/plot //lun1/zdhitstudy/1.dualchi2%cotTheta layer==4&&$1&&curv>0 ! ! ! ! 403
+
+pict/print '../plots/dualchi_vs_cottheta_pcut.ps'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nt/plot 1.refz-wirez
+
+zone 1 1
+nt/plot 1.sqrt((refx-wirex)**2+(refy-wirey)**2+(refz-wirez)**2)%abs(dca)
+
+
+h/cr/2d 101 'layer 1' 10 -2. 2. 10 -5e-3 5e-3
+h/cr/2d 102 'layer 2' 10 -2. 2. 10 -5e-3 5e-3
+h/cr/2d 103 'layer 3' 10 -2. 2. 10 -5e-3 5e-3
+h/cr/2d 104 'layer 4' 10 -2. 2. 10 -5e-3 5e-3
+h/cr/2d 105 'layer 5' 10 -2. 2. 10 -5e-3 5e-3
+h/cr/2d 106 'layer 6' 10 -2. 2. 10 -5e-3 5e-3
+
+h/cr/title '(cotTheta*radius?pcawire! + z0) - z?ref! VS cotTheta'
+
+zone 2 3
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv+z0)-refz%cotTheta layer==1 ! ! ! ! 101
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv+z0)-refz%cotTheta layer==2 ! ! ! ! 102
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv+z0)-refz%cotTheta layer==3 ! ! ! ! 103
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv+z0)-refz%cotTheta layer==4 ! ! ! ! 104
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv+z0)-refz%cotTheta layer==5 ! ! ! ! 105
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv+z0)-refz%cotTheta layer==6 ! ! ! ! 106
+
+pict/print '../plots/pcawirerad_relationship_projectedz_vs_cotTheta.ps'
+
+
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv+z0)-refz%refz layer==1
+nt/plot 1.(cotTheta*asin(0.052621*curv)/curv+z0)-refz%refz layer==1&&wire==4
+
+
+
+nt/plot 1. layer==1
+
+nt/plot 1.wirey%wirex wire<4&&refz>0
+
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%hphi layer==1
+
+h/cr/1d 90 'layer 1 phi' 136 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+
+h/cr/1d 91 'wire occupancy layer 1' 34 -0.5 33.5
+h/cr/1d 92 'wire occupancy layer 2' 41 -0.5 40.5
+h/cr/1d 93 'wire occupancy layer 3' 46 -0.5 45.5
+h/cr/1d 94 'wire occupancy layer 4' 53 -0.5 52.5
+h/cr/1d 95 'wire occupancy layer 5' 59 -0.5 58.5
+h/cr/1d 96 'wire occupancy layer 6' 66 -0.5 65.5
+nt/plot 1.wire layer==1 100000 ! ! ! 91
+nt/plot 1.wire layer==2 100000 ! ! ! 92
+nt/plot 1.wire layer==3 100000 ! ! ! 93
+nt/plot 1.wire layer==4 100000 ! ! ! 94
+nt/plot 1.wire layer==5 100000 ! ! ! 95
+nt/plot 1.wire layer==6 100000 ! ! ! 96
+
+
+
+zone 1 2
+
+h/plot 2
+
+h/cr/1d 98 'phi?hit!' 300 0 $SIGMA(2.*3.1415926)
+nt/plot 1.hphi ! ! ! ! ! 98
+
+pict/print '../rzn/xy2.ps'
+
+
+nt/plot 1.sqrt(refx**2+refy**2)%refz layer==1&&wire==4&&sqrt(refx**2+refy**2)>0.05
+nt/plot 1.sqrt(wirex**2+wirey**2)%refz layer==1&&wire==4
+
+nt/plot 1.sqrt(wirey**2+wirex**2) layer==1&&wire==8
+
+nt/plot 1.(cotTheta*0.6873285-z0)-refz%refz layer==1&&wire==8
+nt/plot 1.(cotTheta*0.052621-z0)-refz%refz layer==1&&wire==8
+
+
+h/cr/title 'layer 1                             layer 1'
+zone 2 2
+
+nt/plot 1.(drift-dca)%cotTheta layer==1 ! ! ! 
+nt/plot 1.(drift-dca)%cotTheta layer==1 ! ! ! prof
+nt/plot 1.(drift-dca)%refz layer==1 ! ! ! 
+nt/plot 1.(drift-dca)%refz layer==1 ! ! ! prof
+pict/print '../plots/residual_vs_cotTheta_not_z.ps'
+
+
+zone 1 1
+nt/plot 1.(dca-drift)%hphi layer==1&&wire==4 ! ! ! prof
+
+
+nt/plot 1.hphi+1.3165*wirez%wirez layer==1&&wire==4 ! ! ! prof
+h/fit 1000000(-0.08:0.08) p1
+
+
+
+
+nt/plot 1.(dca-drift)%0.052621*(hphi+1.3165*wirez)-0.0382 layer==1&&wire==4 ! ! ! prof
+nt/plot 1.(dca-drift)%dca layer==1&&wire==4 ! ! ! prof
+
+
+
+
+
+nt/plot 1.hphi+1.3165*wirez layer==1&&(wire==2.or.wire==4.or.wire==6)
+nt/plot 1.hphi+1.3165*wirez layer==1&&(wire==3.or.wire==5.or.wire==7)
+
+
+
+
+
+
+
+**** this is a plot
+
+fortran/file 65 '../plots/whats_wrong_with_phi_dependence.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+zone 1 1
+h/cr/title 'stereo angle for layer 1 is 1.3165/m ([D]phi/[D]z)'
+h/cr/2d 90 '5.26cm * (phi + 1.3165/m * wirez) - 0.0382 VS DCA for wire L1-4' 1 -0.01 0.01 1 -0.01 0.01
+nt/plot 1.0.052621*(hphi+1.3165*wirez)-0.0382%dca layer==1&&wire==4 1000000 ! ! ! 90
+dline -0.01 0.01 -0.01 0.01
+
+h/cr/title 'layer 1'
+zone 1 2
+nt/cuts $1 wire==1.or.wire==3.or.wire==5.or.wire==7.or.wire==9.or.wire==11.or.wire==13.or.wire==15.or.wire==17.or.wire==19.or.wire==21.or.wire==23.or.wire==25.or.wire==27.or.wire==29.or.wire==31.or.wire==33
+nt/cuts $2 wire==0.or.wire==2.or.wire==4.or.wire==6.or.wire==8.or.wire==10.or.wire==12.or.wire==14.or.wire==16.or.wire==18.or.wire==20.or.wire==22.or.wire==24.or.wire==26.or.wire==28.or.wire==30.or.wire==32
+h/cr/1d 101 'phi corrected for stereo angle (odds)' 1020 0. 6.2831852
+h/cr/1d 201 'phi corrected for stereo angle (evens)' 1020 0. 6.2831852
+h/cr/prof 100 'residual VS phi corrected for stereo angle (odds)' 1020 0. 6.2831852 -0.001 0.001
+h/cr/prof 200 'residual VS phi corrected for stereo angle (evens)' 1020 0. 6.2831852 -0.001 0.001
+nt/plot 1.(hphi+1.3165*wirez) layer==1&&$1 ! ! ! ! 101
+nt/plot 1.(hphi+1.3165*wirez) layer==1&&$2 ! ! ! ! 201
+nt/plot 1.(dca-drift)%(hphi+1.3165*wirez) layer==1&&$1 ! ! ! 'N' 100
+nt/plot 1.(dca-drift)%(hphi+1.3165*wirez) layer==1&&$2 ! ! ! 'N' 200
+min 100 -0.001
+max 100  0.001
+min 200 -0.001
+max 200  0.001
+h/plot 100
+h/plot 200
+h/cr/title 'zoom in...'
+h/plot 100(30:150)
+h/plot 200(30:150)
+
+close 65
+
+*** end plot
+
+
+
+zone 1 1
+nt/plot 1.wirey%wirex layer==1&&0.7<cotTheta<2
+nt/plot 1.wirey%wirex layer==1&&-0.7<cotTheta<0.7
+nt/plot 1.wirey%wirex layer==1&&-2<cotTheta<-0.7 
+
+h/cr/title ' '
+h/cr/prof 301 'residual VS wire phi... layer 1 0.7"l#cotTheta"l#2' 1020 -3.1415926 3.1415926 -0.001 0.001
+h/cr/prof 302 'residual VS wire phi... layer 1 -0.7"l#cotTheta"l#0.7' 1020 -3.1415926 3.1415926 -0.001 0.001
+h/cr/prof 303 'residual VS wire phi... layer 1 -2"l#cotTheta"l#-0.7' 1020 -3.1415926 3.1415926 -0.001 0.001
+nt/plot 1.(dca-drift)%atan2(wirey,wirex) layer==1&&0.7<cotTheta<2 ! ! ! 'N' 301
+nt/plot 1.(dca-drift)%atan2(wirey,wirex) layer==1&&-0.7<cotTheta<0.7 ! ! ! 'N' 302
+nt/plot 1.(dca-drift)%atan2(wirey,wirex) layer==1&&-2<cotTheta<-0.7 ! ! ! 'N' 303
+zone 1 3
+min 301 -0.001
+max 301  0.001
+min 302 -0.001
+max 302  0.001
+min 303 -0.001
+max 303  0.001
+h/plot 301
+h/plot 302
+h/plot 303
+pict/print '../plots/whats_wrong_with_phi_dependence2.ps'
+
+
+
+
+
+
+
+
+
+
+
+h/cr/title 'residual VS cotTheta (chi2fitter, dual track constraint)'
+h/cr/prof 401 'layer 1 (black), 2 (red), 3 (blue)' 200 -2. 2. -0.002 0.002
+h/cr/prof 402 'layer 2' 200 -2. 2. -0.002 0.002
+h/cr/prof 403 'layer 3' 200 -2. 2. -0.002 0.002
+h/cr/prof 404 'layer 4 (black), 5 (red), 6 (blue)' 200 -2. 2. -0.002 0.002
+h/cr/prof 405 'layer 5' 200 -2. 2. -0.002 0.002
+h/cr/prof 406 'layer 6' 200 -2. 2. -0.002 0.002
+zone 2 3
+nt/plot 1.(drift-dca)%cotTheta layer==1 ! ! ! 'N' 401
+nt/plot 1.(drift-dca)%cotTheta layer==2 ! ! ! 'N' 402
+nt/plot 1.(drift-dca)%cotTheta layer==3 ! ! ! 'N' 403
+nt/plot 1.(drift-dca)%cotTheta layer==4 ! ! ! 'N' 404
+nt/plot 1.(drift-dca)%cotTheta layer==5 ! ! ! 'N' 405
+nt/plot 1.(drift-dca)%cotTheta layer==6 ! ! ! 'N' 406
+min 401 -0.0003
+max 401  0.0003
+min 402 -0.0003
+max 402  0.0003
+min 403 -0.0003
+max 403  0.0003
+min 404 -0.0003
+max 404  0.0003
+min 405 -0.0003
+max 405  0.0003
+min 406 -0.0003
+max 406  0.0003
+h/plot 401
+h/plot 402
+h/plot 403
+h/plot 404
+h/plot 405
+h/plot 406
+
+zone 1 2
+set hcol 1
+h/plot 401 'histl'
+set hcol 2
+h/plot 402 'shistl'
+set hcol 4
+h/plot 403 'shistl'
+
+set hcol 1
+h/plot 404 'histl'
+set hcol 2
+h/plot 405 'shistl'
+set hcol 4
+h/plot 406 'shistl'
+
+pict/print '../plots/residual_vs_cotTheta2_chi2dual.ps'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cd //lun2/zdhitstudy
+
+ve/cr pss(20)
+ve/cr ess(20)
+ve/cr pcc(20)
+ve/cr ecc(20)
+ve/cr ctt(20)
+
+ve/cr par(5)
+ve/cr err(5)
+
+opt sta
+set stat 0000110
+set dmod 1
+
+h/plot 121
+ve/inp ctt(1) $HINFO(121,'MEAN')
+h/plot 122
+ve/inp ctt(2) $HINFO(122,'MEAN')
+h/plot 123
+ve/inp ctt(3) $HINFO(123,'MEAN')
+h/plot 124
+ve/inp ctt(4) $HINFO(124,'MEAN')
+h/plot 125
+ve/inp ctt(5) $HINFO(125,'MEAN')
+h/plot 126
+ve/inp ctt(6) $HINFO(126,'MEAN')
+h/plot 127
+ve/inp ctt(7) $HINFO(127,'MEAN')
+h/plot 128
+ve/inp ctt(8) $HINFO(128,'MEAN')
+h/plot 129
+ve/inp ctt(9) $HINFO(129,'MEAN')
+h/plot 130
+ve/inp ctt(10) $HINFO(130,'MEAN')
+h/plot 131
+ve/inp ctt(11) $HINFO(131,'MEAN')
+h/plot 132
+ve/inp ctt(12) $HINFO(132,'MEAN')
+h/plot 133
+ve/inp ctt(13) $HINFO(133,'MEAN')
+h/plot 134
+ve/inp ctt(14) $HINFO(134,'MEAN')
+h/plot 135
+ve/inp ctt(15) $HINFO(135,'MEAN')
+h/plot 136
+ve/inp ctt(16) $HINFO(136,'MEAN')
+h/plot 137
+ve/inp ctt(17) $HINFO(137,'MEAN')
+h/plot 138
+ve/inp ctt(18) $HINFO(138,'MEAN')
+h/plot 139
+ve/inp ctt(19) $HINFO(139,'MEAN')
+h/plot 140
+ve/inp ctt(20) $HINFO(140,'MEAN')
+
+h/cr/title 'after quad correction'
+
+fortran/file 65 '../plots/after_quad_correction.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+zone 4 5
+opt nsta
+
+min 101 -0.0002
+min 102 -0.0002
+min 103 -0.0002
+min 104 -0.0002
+min 105 -0.0002
+min 106 -0.0002
+min 107 -0.0002
+min 108 -0.0002
+min 109 -0.0002
+min 110 -0.0002
+min 111 -0.0002
+min 112 -0.0002
+min 113 -0.0002
+min 114 -0.0002
+min 115 -0.0002
+min 116 -0.0002
+min 117 -0.0002
+min 118 -0.0002
+min 119 -0.0002
+min 120 -0.0002
+
+max 101 0.0002
+max 102 0.0002
+max 103 0.0002
+max 104 0.0002
+max 105 0.0002
+max 106 0.0002
+max 107 0.0002
+max 108 0.0002
+max 109 0.0002
+max 110 0.0002
+max 111 0.0002
+max 112 0.0002
+max 113 0.0002
+max 114 0.0002
+max 115 0.0002
+max 116 0.0002
+max 117 0.0002
+max 118 0.0002
+max 119 0.0002
+max 120 0.0002
+
+h/fit 101 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(1) $SIGMA(par(4))
+ve/inp pcc(1) $SIGMA(par(5))
+ve/inp ess(1) $SIGMA(err(4))
+ve/inp ecc(1) $SIGMA(err(5))
+h/fit 102 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(2) $SIGMA(par(4))
+ve/inp pcc(2) $SIGMA(par(5))
+ve/inp ess(2) $SIGMA(err(4))
+ve/inp ecc(2) $SIGMA(err(5))
+h/fit 103 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(3) $SIGMA(par(4))
+ve/inp pcc(3) $SIGMA(par(5))
+ve/inp ess(3) $SIGMA(err(4))
+ve/inp ecc(3) $SIGMA(err(5))
+h/fit 104 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(4) $SIGMA(par(4))
+ve/inp pcc(4) $SIGMA(par(5))
+ve/inp ess(4) $SIGMA(err(4))
+ve/inp ecc(4) $SIGMA(err(5))
+h/fit 105 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(5) $SIGMA(par(4))
+ve/inp pcc(5) $SIGMA(par(5))
+ve/inp ess(5) $SIGMA(err(4))
+ve/inp ecc(5) $SIGMA(err(5))
+h/fit 106 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(6) $SIGMA(par(4))
+ve/inp pcc(6) $SIGMA(par(5))
+ve/inp ess(6) $SIGMA(err(4))
+ve/inp ecc(6) $SIGMA(err(5))
+h/fit 107 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(7) $SIGMA(par(4))
+ve/inp pcc(7) $SIGMA(par(5))
+ve/inp ess(7) $SIGMA(err(4))
+ve/inp ecc(7) $SIGMA(err(5))
+h/fit 108 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(8) $SIGMA(par(4))
+ve/inp pcc(8) $SIGMA(par(5))
+ve/inp ess(8) $SIGMA(err(4))
+ve/inp ecc(8) $SIGMA(err(5))
+h/fit 109 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(9) $SIGMA(par(4))
+ve/inp pcc(9) $SIGMA(par(5))
+ve/inp ess(9) $SIGMA(err(4))
+ve/inp ecc(9) $SIGMA(err(5))
+h/fit 110 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(10) $SIGMA(par(4))
+ve/inp pcc(10) $SIGMA(par(5))
+ve/inp ess(10) $SIGMA(err(4))
+ve/inp ecc(10) $SIGMA(err(5))
+h/fit 111 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(11) $SIGMA(par(4))
+ve/inp pcc(11) $SIGMA(par(5))
+ve/inp ess(11) $SIGMA(err(4))
+ve/inp ecc(11) $SIGMA(err(5))
+h/fit 112 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(12) $SIGMA(par(4))
+ve/inp pcc(12) $SIGMA(par(5))
+ve/inp ess(12) $SIGMA(err(4))
+ve/inp ecc(12) $SIGMA(err(5))
+h/fit 113 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(13) $SIGMA(par(4))
+ve/inp pcc(13) $SIGMA(par(5))
+ve/inp ess(13) $SIGMA(err(4))
+ve/inp ecc(13) $SIGMA(err(5))
+h/fit 114 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(14) $SIGMA(par(4))
+ve/inp pcc(14) $SIGMA(par(5))
+ve/inp ess(14) $SIGMA(err(4))
+ve/inp ecc(14) $SIGMA(err(5))
+h/fit 115 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(15) $SIGMA(par(4))
+ve/inp pcc(15) $SIGMA(par(5))
+ve/inp ess(15) $SIGMA(err(4))
+ve/inp ecc(15) $SIGMA(err(5))
+h/fit 116 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(16) $SIGMA(par(4))
+ve/inp pcc(16) $SIGMA(par(5))
+ve/inp ess(16) $SIGMA(err(4))
+ve/inp ecc(16) $SIGMA(err(5))
+h/fit 117 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(17) $SIGMA(par(4))
+ve/inp pcc(17) $SIGMA(par(5))
+ve/inp ess(17) $SIGMA(err(4))
+ve/inp ecc(17) $SIGMA(err(5))
+h/fit 118 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(18) $SIGMA(par(4))
+ve/inp pcc(18) $SIGMA(par(5))
+ve/inp ess(18) $SIGMA(err(4))
+ve/inp ecc(18) $SIGMA(err(5))
+h/fit 119 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(19) $SIGMA(par(4))
+ve/inp pcc(19) $SIGMA(par(5))
+ve/inp ess(19) $SIGMA(err(4))
+ve/inp ecc(19) $SIGMA(err(5))
+h/fit 120 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(20) $SIGMA(par(4))
+ve/inp pcc(20) $SIGMA(par(5))
+ve/inp ess(20) $SIGMA(err(4))
+ve/inp ecc(20) $SIGMA(err(5))
+
+zone 1 2
+opt nsta
+
+set dmod 1
+null -2. 2. -0.0002 0.0002
+do i=1,20
+  dline ctt([i]) ctt([i]) $SIGMA(pss([i])+ess([i])) $SIGMA(pss([i])-ess([i]))
+enddo
+graph 20 ctt pss '*'
+set dmod 2
+* f/plot -0.0000155735-0.0000275939*x-9.06903E-6*x**2-6.00561E-6*x**3 -2. 2. 's'
+f/plot 0. -2. 2. 's'
+text 0 -0.27e-3 'sin(2 phi) term VS cotTheta' ! ! 'c'
+
+set dmod 1
+null -2. 2. -0.0002 0.0002
+do i=1,20
+  dline ctt([i]) ctt([i]) $SIGMA(pcc([i])+ecc([i])) $SIGMA(pcc([i])-ecc([i]))
+enddo
+graph 20 ctt pcc '*'
+set dmod 2
+* f/plot -3.60378E-6+4.59787E-6*x+0.0000164158-0.0000116454 -2. 2. 's'
+f/plot 0. -2. 2. 's'
+text 0 -0.27e-3 'cos(2 phi) term VS cotTheta' ! ! 'c'
+
+close 65

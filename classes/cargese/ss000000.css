@@ -1,0 +1,114 @@
+UNKNOWN {
+	FONT-SIZE: 9pt; BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD {
+	FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+P {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BLOCKQUOTE {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+OL {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+HR {
+	COLOR: #000066
+}
+.sml {
+	FONT-SIZE: 8pt
+}
+.int {
+	FONT-SIZE: 12pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tb-o {
+	BACKGROUND-COLOR: #000066
+}
+.tb-f {
+	BACKGROUND-COLOR: #ffcc33
+}
+.tl {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+.tl-o {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.tl-l {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #ffcc00; TEXT-DECORATION: none
+}
+.sn {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.sn-o {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #bbbbbb; TEXT-DECORATION: none
+}
+.n {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000
+}
+.n-l {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #bbbbbb
+}
+.s {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN-LEFT: 0px; COLOR: #000066; MARGIN-RIGHT: 0px; TEXT-DECORATION: none
+}
+.phd {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; MARGIN-LEFT: 4px; COLOR: #000066; MARGIN-RIGHT: 25px; TEXT-DECORATION: none
+}
+.tbc {
+	BACKGROUND-COLOR: #000066
+}
+.sbc {
+	BACKGROUND-COLOR: #ffffff
+}
+.thc {
+	FONT-SIZE: 8pt; BACKGROUND-COLOR: #efefef
+}
+.tdc {
+	FONT-SIZE: 9pt; BACKGROUND-COLOR: #ffffff
+}
+.l {
+	FONT-WEIGHT: bold; COLOR: #000000
+}
+.glb {
+	FONT-WEIGHT: bold; COLOR: #008000
+}
+.elb {
+	FONT-WEIGHT: bold; COLOR: #ee0000
+}
+.req {
+	FONT-SIZE: 8pt; COLOR: #ee0000
+}
+.shd {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt
+}
+.tcd {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt
+}
+.lrg {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #000066; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.sbr {
+	FONT-SIZE: 9pt; COLOR: #000066; TEXT-DECORATION: none
+}
+.f {
+	FONT-SIZE: 9pt; COLOR: #000066
+}
+.f-o {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #000066
+}
+.f-l {
+	FONT-SIZE: 9pt; COLOR: #bbbbbb
+}
+.qqq {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #000066; MARGIN-RIGHT: 25px; TEXT-DECORATION: none
+}
+.qan {
+	FONT-SIZE: 9pt; COLOR: #666666; MARGIN-RIGHT: 25px; TEXT-DECORATION: none
+}
+.tqc {
+	FONT-SIZE: 9pt; BACKGROUND-COLOR: #666666
+}
+.pf {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #ffffff; TEXT-DECORATION: none
+}

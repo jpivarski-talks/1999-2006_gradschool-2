@@ -1,0 +1,12 @@
+#$ -l calibration
+#$ -o /cdat/tem/mccann/goodcuts_pds200963.log
+#$ -S /bin/bash
+#$ -j y
+
+cd /home/mccann/handzd/mysteries
+. /nfs/cleo3/scripts/cleo3defs
+c3rel Oct15_03_MC
+
+export USER_RUN=200963
+
+suez -f goodcuts_pdsrun.tcl

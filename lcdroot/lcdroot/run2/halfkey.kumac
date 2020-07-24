@@ -1,0 +1,27 @@
+set bord 1
+set fais 1
+sigma left = 0.9*($GRAFINFO('WNXMAX')-$GRAFINFO('WNXMIN')) + $GRAFINFO('WNXMIN')
+sigma right = 0.95*($GRAFINFO('WNXMAX')-$GRAFINFO('WNXMIN')) + $GRAFINFO('WNXMIN')
+sigma textr = 0.88*($GRAFINFO('WNXMAX')-$GRAFINFO('WNXMIN')) + $GRAFINFO('WNXMIN')
+sigma top = $GRAFINFO('WNYMAX')
+set faci 07
+box $SIGMA(left) $SIGMA(right) $SIGMA(0.94*top) $SIGMA(0.90*top)
+text $SIGMA(textr) $SIGMA(0.92*top) 'W^+! W^-!' ! ! 'r'
+set faci 05
+box $SIGMA(left) $SIGMA(right) $SIGMA(0.86*top) $SIGMA(0.80*top)
+text $SIGMA(textr) $SIGMA(0.82*top) 'tt' ! ! 'r'
+set faci 03
+box $SIGMA(left) $SIGMA(right) $SIGMA(0.76*top) $SIGMA(0.70*top)
+text $SIGMA(textr) $SIGMA(0.72*top) 'Z^0! Z^0!' ! ! 'r'
+set faci 15
+box $SIGMA(left) $SIGMA(right) $SIGMA(0.66*top) $SIGMA(0.60*top)
+text $SIGMA(textr) $SIGMA(0.62*top) '[v]^+!?1! [v]^-!?1!' ! ! 'r'
+set faci 06
+box $SIGMA(left) $SIGMA(right) $SIGMA(0.56*top) $SIGMA(0.50*top)
+text $SIGMA(textr) $SIGMA(0.52*top) '[v]^0!?2! [v]^0!?3!' ! ! 'r'
+set faci 04
+box $SIGMA(left) $SIGMA(right) $SIGMA(0.46*top) $SIGMA(0.40*top)
+text $SIGMA(textr) $SIGMA(0.42*top) '[v]^+!?1! [v]^-!?2!' ! ! 'r'
+set faci 02
+box $SIGMA(left) $SIGMA(right) $SIGMA(0.36*top) $SIGMA(0.30*top)
+text $SIGMA(textr) $SIGMA(0.32*top) '[v]^0!?1! [v]^0!?3!' ! ! 'r'

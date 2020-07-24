@@ -1,0 +1,225 @@
+This is pdfeTeX, Version 3.14159-1.10b-2.1 (Web2C 7.4.5) (format=pdflatex 2006.3.18)  10 APR 2006 14:25
+entering extended mode
+**talk
+(./talk.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, catalan, croatian, czech, danish, dutch, finnish, greek, iceland
+ic, irish, italian, latin, magyar, norsk, norsk, portuges, romanian, russian, s
+lovak, slovene, spanish, swedish, turkish, ukrainian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2001/08/31 v1.1 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 125.
+) (./talk.aux)
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks16
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\minusone=\count90
+\thousandpoint=\dimen107
+\emptytoks=\toks17
+\nextbox=\box27
+\nextdepth=\dimen108
+\everyline=\toks18
+\!!counta=\count91
+\!!countb=\count92
+\recursecounter=\count93
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPtoPDFconversion=\toks19
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+ (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+<diagram_GeeU.pdf, id=1, 506.89375pt x 149.55875pt>
+File: diagram_GeeU.pdf Graphic file (type pdf)
+ <use diagram_GeeU.pdf>
+[1
+
+{/var/lib/texmf/dvips/config/pdftex.map} <./diagram_GeeU.pdf>]
+<ckm04-white.pdf, id=30, 265.99374pt x 213.79875pt>
+File: ckm04-white.pdf Graphic file (type pdf)
+ <use ckm04-white.pdf>
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 101--123
+[][] 
+ []
+
+[1 <./ckm04-white.pdf>]
+File: ckm04-white.pdf Graphic file (type pdf)
+ <use ckm04-white.pdf>
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 152--174
+[][] 
+ []
+
+[1] <ckm04.pdf, id=55, 264.99pt x 212.795pt>
+File: ckm04.pdf Graphic file (type pdf)
+ <use ckm04.pdf>
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 203--225
+[][] 
+ []
+
+[1 <./ckm04.pdf>] <samplescans.pdf, id=63, 489.83pt x 340.27126pt>
+File: samplescans.pdf Graphic file (type pdf)
+
+<use samplescans.pdf> <aerial.pdf, id=64, 239.89626pt x 114.4275pt>
+File: aerial.pdf Graphic file (type pdf)
+
+<use aerial.pdf> [2 <./samplescans.pdf> <./aerial.pdf>]
+<backgrounds.pdf, id=86, 475.7775pt x 337.26pt>
+File: backgrounds.pdf Graphic file (type pdf)
+ <use backgrounds.pdf> [3 <./backgrounds.pdf>] <twotoone.pdf, id=98, 403.5075pt
+ x 162.6075pt>
+File: twotoone.pdf Graphic file (type pdf)
+
+<use twotoone.pdf> <pipimass.pdf, id=99, 263.98625pt x 239.89626pt>
+File: pipimass.pdf Graphic file (type pdf)
+
+<use pipimass.pdf>
+Overfull \hbox (14.31987pt too wide) in paragraph at lines 283--300
+[][] 
+ []
+
+[4 <./twotoone.pdf> <./pipimass.pdf>]
+<luminosity.pdf, id=123, 455.7025pt x 260.975pt>
+File: luminosity.pdf Graphic file (type pdf)
+ <use luminosity.pdf> [5 <./luminosity.pdf>] <fitorder.pdf, id=135, 269.005pt x
+ 475.7775pt>
+File: fitorder.pdf Graphic file (type pdf)
+
+<use fitorder.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 331--358
+[][] 
+ []
+
+[6 <./fitorder.pdf>] <fits.pdf, id=142, 503.8825pt x 166.6225pt>
+File: fits.pdf Graphic file (type pdf)
+
+<use fits.pdf> [7 <./fits.pdf>]
+<interference.pdf, id=152, 138.5175pt x 93.34875pt>
+File: interference.pdf Graphic file (type pdf)
+ <use interference.pdf>
+<simpleintfit.pdf, id=153, 491.8375pt x 499.8675pt>
+File: simpleintfit.pdf Graphic file (type pdf)
+ <use simpleintfit.pdf>
+[8 <./interference.pdf> <./simpleintfit.pdf>] [9] [10]
+<historyplot.pdf, id=186, 602.25pt x 459.7175pt>
+File: historyplot.pdf Graphic file (type pdf)
+ <use historyplot.pdf> [11 <./historyplot.pdf>] <latticespacingagain.pdf, id=20
+2, 778.91pt x 499.8675pt>
+File: latticespacingagain.pdf Graphic file (type pdf)
+
+<use latticespacingagain.pdf> [12 <./latticespacingagain.pdf>] (./talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 1377 strings out of 94960
+ 16418 string characters out of 1182470
+ 60098 words of memory out of 1000001
+ 4507 multiletter control sequences out of 10000+50000
+ 18902 words of font info for 70 fonts, out of 500000 for 1000
+ 198 hyphenation exceptions out of 1000
+ 25i,18n,24p,220b,381s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 247 PDF objects out of 300000
+ 0 named destinations out of 131072
+ 75 words of extra memory for PDF output out of 65536
+{/
+usr/share/texmf/dvips/tetex/f7b6d320.enc}</usr/share/texmf/fonts/type1/bluesky/
+cm/cmr7.pfb>{/usr/share/texmf/dvips/tetex/aae443f0.enc}</usr/share/texmf/fonts/
+type1/bluesky/cm/cmmi7.pfb>{/usr/share/texmf/dvips/tetex/74afc74c.enc}</usr/sha
+re/texmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesk
+y/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share
+/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/
+cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmss12.pfb></usr/share/te
+xmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/
+cmmib10.pfb>{/usr/share/texmf/dvips/tetex/bbad153f.enc}</usr/share/texmf/fonts/
+type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb
+></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmr17.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmss17.pfb>
+Output written on talk.pdf (15 pages, 639831 bytes).

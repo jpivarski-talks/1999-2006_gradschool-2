@@ -1,0 +1,44 @@
+*** Begin of history file: Fri Mar  4 11:22:11 2005
+h/file 1 hist.rzn
+cd clean
+nt/print 1
+nt/plot 1.cpx%wpx
+nt/plot 1.cpx%wpx ismode==2.or.ismode==12
+nt/plot 1.cpx%wpx ismode==2.or.ismode==12
+h/cr/2d 100 'stuff' 100 -100 100 100 -100 100
+nt/plot 1.cpx%wpx ismode==2.or.ismode==12 ! ! ! ! 100
+dline -100 100 -100 100
+nt/plot 1.cpx-mspx%wpx ismode==2.or.ismode==12 ! ! ! ! 100
+dline -100 100 -100 100
+nt/plot 1.cpy-mspy%wpy ismode==2.or.ismode==12 ! ! ! ! 100
+dline -100 100 -100 100
+nt/plot 1.cpz-mspz%wpz ismode==2.or.ismode==12 ! ! ! ! 100
+dline -100 100 -100 100
+nt/plot 1.((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) ismode==2.or.ismode==12
+nt/plot 1.(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%(we**2-wpx**2-wpy**2-wpz**2) ismode==2.or.ismode==12
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqrt(we**2-wpx**2-wpy**2-wpz**2) ismode==2.or.ismode==12
+dline 0 60 0 60
+nt/plot 1.banda+bandb+bandc%bandd+bande
+nt/plot 1.(bandd+bande)%(banda+bandb+bandc)
+nt/plot 1.(bandd+bande)/(banda+bandb+bandc)
+nt/plot 1.(bandd+bande)/(banda+bandb+bandc) banda+bandb+bandc>0
+nt/plot 1.(bandd+bande)/(banda+bandb+bandc) banda+bandb+bandc>0&&(bandd+bande)/(banda+bandb+bandc)<1
+nt/plot 1.(bandd+bande)/(banda+bandb+bandc) banda+bandb+bandc>0&&(bandd+bande)/(banda+bandb+bandc)<0.2
+nt/cuts $1 (ismode==2.or.ismode==12)
+nt/cuts $2 (banda+bandb+bandc>0&&(bandd+bande)/(banda+bandb+bandc)<0.2)
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqt(we**2-wpx**2-wpy**2-wpz**2) $1&&$2
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$2
+h/cr/2d 100 'stuff' 100 -100 100 100 -100 100
+h/cr/2d 100 'stuff' 60 -60 60 60 -60 60
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$2 ! ! ! ! 100
+h/cr/2d 100 'stuff' 60 0 60 60 0 60
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+dline 0 60 0 60
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$2 ! ! ! 's' 100
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$2 ! ! ! ! 100
+dline 0 60 0 60
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2))%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! 's' 100
+nt/plot 1.sqrt(((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)) $1
+nt/plot 1.500-(hade+eme) $1
+exit
+*** End   of history file: Fri Mar  4 11:36:23 2005

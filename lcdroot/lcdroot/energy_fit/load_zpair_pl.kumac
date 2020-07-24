@@ -1,0 +1,7 @@
+close 1
+CHAIN -zpair
+CHAIN zpair rzn/chi20chi30v5_zpair_l_0p1.rzn
+CHAIN zpair rzn/chi20chi30v5_zpair_l_0p2.rzn
+CHAIN zpair rzn/chi20chi30v5_zpair_l_1p1.rzn
+cd //zpair
+cdir CHI20CHI30PROC

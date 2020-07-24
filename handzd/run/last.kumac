@@ -1,0 +1,27 @@
+*** Begin of history file: Fri Dec  5 12:26:45 2003
+h/file 1 ../pds/all.rzn
+cd bhabhacuts
+exec /tmp/pawtmp-7215.kumac
+fortran/file 65 '../pds/cuts.ps'
+graphics/metafile 65 -111
+igset mtype 1
+zone 3 3
+opt logy
+opt sta
+set stat 0000010
+sigma low = 0.1
+sigma high = 10*$HINFO(1,'MAX')
+min 1 $SIGMA(low)
+max 1 $SIGMA(high)
+h/plot 1
+set ltyp 2
+dline 1.5 1.5 $SIGMA(low) $SIGMA(high)
+dline 2.5 2.5 $SIGMA(low) $SIGMA(high)
+sigma low = 0.1
+sigma high = 10*$HINFO(2,'MAX')
+min 2 $SIGMA(low)
+close 65
+exec /tmp/pawtmp-1550.kumac
+exec /tmp/pawtmp-2647.kumac
+exit
+*** End   of history file: Fri Dec  5 12:43:01 2003

@@ -1,0 +1,73 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2002.8.29)  17 JUN 2003 17:34
+**curriculum_vitae.tex
+(curriculum_vitae.tex
+LaTeX2e <2000/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2000/05/19 v1.4b Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2000/05/19 v1.4b Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (curriculum_vitae.aux)
+\openout1 = `curriculum_vitae.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 23.
+
+Overfull \hbox (22.03905pt too wide) in paragraph at lines 37--39
+\OT1/cmtt/m/n/12 mccann@lns.cornell.edu 
+ []
+
+
+Overfull \hbox (14.60287pt too wide) in paragraph at lines 45--102
+[] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 126.
+
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 126.
+ [1
+
+] (curriculum_vitae.aux) ) 
+Here is how much of TeX's memory you used:
+ 242 strings out of 20887
+ 2518 string characters out of 196241
+ 49377 words of memory out of 350001
+ 3243 multiletter control sequences out of 10000+15000
+ 8451 words of font info for 30 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 22i,12n,19p,163b,357s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on curriculum_vitae.dvi (1 page, 3664 bytes).

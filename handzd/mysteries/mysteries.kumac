@@ -1,0 +1,135 @@
+h/file 1 ../rzn/myst_201031.rzn
+h/file 2 ../rzn/myst_badtracsk_201031.rzn
+h/file 3 ../rzn/myst_badtracsk2_201031.rzn
+h/file 4 ../rzn/myst_goodtracsk_201031.rzn
+
+ ********************************************************
+ * NTUPLE ID=    1  ENTRIES=   3310   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * curv      * -.221240E+00 * 0.208244E+00 *
+ *      2     * phi0      * 0.118571E-02 * 0.627322E+01 *
+ *      3     * d0        * -.219311E-02 * 0.117916E-02 *
+ *      4     * cT        * -.233976E+01 * 0.235565E+01 *
+ *      5     * z0        * -.592569E-01 * 0.834086E-01 *
+ *      6     * layer     * 0.100000E+01 * 0.900000E+01 *
+ *      7     * wire      * 0.000000E+00 * 0.710000E+02 *
+ *      8     * phi       * 0.101008E-02 * 0.628192E+01 *
+ *      9     * z         * -.372001E+00 * 0.363959E+00 *
+ *     10     * drift     * -.159349E-01 * 0.320495E-01 *
+ *     11     * dca       * -.162905E-01 * 0.315369E-01 *
+ ********************************************************
+
+opt sta
+nt/plot //lun1/mysterious/1.dca-drift%z layer<7
+nt/dump //lun1/mysterious/1.curv%z0%cT
+
+nt/plot //lun1/mysterious/1.dca-drift%z layer<7 ! ! ! prof
+nt/plot //lun2/mysterious/1.dca-drift%z layer<7
+
+
+zone 1 2
+opt sta
+set stat 0000010
+h/cr/2d 100 'ZD residual VS Z, old dataset' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 200 'ZD residual VS Z, more anti-cosmic cuts' 1 -0.3 0.3 1 -0.01 0.01
+nt/plot //lun3/mysterious/1.dca-drift%z layer<7 7400 ! ! ! 100
+nt/plot //lun2/mysterious/1.dca-drift%z layer<7 ! ! ! ! 200
+pict/print '../plots/cuts_matter.ps'
+
+
+
+zone 1 2
+opt sta
+set stat 0000010
+h/cr/2d 100 'ZD residual VS Z, old dataset' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 200 'ZD residual VS Z, more anti-cosmic cuts' 1 -0.3 0.3 1 -0.01 0.01
+nt/plot //lun3/mysterious/1.dca-drift%z layer<7 2100 ! ! ! 100
+nt/plot //lun4/mysterious/1.dca-drift%z layer<7 ! ! ! ! 200
+
+
+
+
+
+
+zone 1 1
+
+nt/plot //lun2/mysterious/1.dca-drift%z 1<=layer<=3&&abs(cT)<2
+nt/plot //lun2/mysterious/1.dca-drift%z 4<=layer<=6&&abs(cT)<2
+
+
+opt nsta
+nt/plot //lun2/mysterious/1.dca-drift%z abs(dca-drift)<0.002&&1<=layer<=3&&abs(cT)<2 ! ! ! prof
+nt/plot //lun2/mysterious/1.dca-drift%z abs(dca-drift)<0.002&&4<=layer<=6&&abs(cT)<2 ! ! ! prof
+
+
+
+h/cr/prof 
+nt/plot //lun4/mysterious/1.dca-drift%z 1<=layer<=3 ! ! ! prof
+nt/plot //lun4/mysterious/1.dca-drift%z 4<=layer<=6 ! ! ! prof
+
+
+
+fortran/file 65 '../plots/trackparams_of_tailresiduals.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+h/cr/title 'old cut set'
+
+set htyp 0
+nt/plot //lun3/mysterious/1.curv layer<7
+set htyp 244
+nt/plot //lun3/mysterious/1.curv dca-drift>0.002&&layer<7 ! ! ! 's'
+set ltyp 2
+
+set htyp 0
+nt/plot //lun3/mysterious/1.phi0 layer<7
+set htyp 244
+nt/plot //lun3/mysterious/1.phi0 dca-drift>0.002&&layer<7 ! ! ! 's'
+
+set htyp 0
+nt/plot //lun3/mysterious/1.d0 layer<7
+set htyp 244
+nt/plot //lun3/mysterious/1.d0 dca-drift>0.002&&layer<7 ! ! ! 's'
+
+set htyp 0
+nt/plot //lun3/mysterious/1.cT layer<7
+set htyp 244
+nt/plot //lun3/mysterious/1.cT dca-drift>0.002&&layer<7 ! ! ! 's'
+set ltyp 2
+
+set htyp 0
+nt/plot //lun3/mysterious/1.z0 layer<7
+set htyp 244
+nt/plot //lun3/mysterious/1.z0 dca-drift>0.002&&layer<7 ! ! ! 's'
+
+h/cr/title 'new cut set'
+
+set htyp 0
+nt/plot //lun4/mysterious/1.curv layer<7
+set htyp 244
+nt/plot //lun4/mysterious/1.curv dca-drift>0.002&&layer<7 ! ! ! 's'
+
+set htyp 0
+nt/plot //lun4/mysterious/1.phi0 layer<7
+set htyp 244
+nt/plot //lun4/mysterious/1.phi0 dca-drift>0.002&&layer<7 ! ! ! 's'
+
+set htyp 0
+nt/plot //lun4/mysterious/1.d0 layer<7
+set htyp 244
+nt/plot //lun4/mysterious/1.d0 dca-drift>0.002&&layer<7 ! ! ! 's'
+
+set htyp 0
+nt/plot //lun4/mysterious/1.cT layer<7
+set htyp 244
+nt/plot //lun4/mysterious/1.cT dca-drift>0.002&&layer<7 ! ! ! 's'
+
+set htyp 0
+nt/plot //lun4/mysterious/1.z0 layer<7
+set htyp 244
+nt/plot //lun4/mysterious/1.z0 dca-drift>0.002&&layer<7 ! ! ! 's'
+
+close 65
+

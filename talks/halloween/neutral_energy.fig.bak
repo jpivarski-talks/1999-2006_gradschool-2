@@ -1,0 +1,15 @@
+#FIG 3.2
+Landscape
+Center
+Inches
+Letter  
+100.00
+Single
+-2
+1200 2
+2 5 0 1 0 -1 1 0 -1 0.000 0 0 -1 0 0 5
+	0 neutral_energy.eps
+	 3150 1350 12585 1350 12585 10785 3150 10785 3150 1350
+4 2 0 1 0 0 24 0.0000 4 255 1860 11100 5550 Monte Carlo\001
+4 0 0 1 0 0 24 0.0000 4 330 2775 6225 8175 Single-Beam Data\001
+4 0 0 1 0 0 24 0.0000 4 330 6675 4725 3225 0.12% of MC events have zero neutral energy\001

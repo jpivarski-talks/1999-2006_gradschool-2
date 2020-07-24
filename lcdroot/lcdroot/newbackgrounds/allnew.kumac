@@ -1,0 +1,851 @@
+nt/chain c11r ../rzn/redo_r9p2c1+c1-.rzn
+nt/chain c11l ../rzn/redo_l9p2c1+c1-.0.rzn
+nt/chain c11l ../rzn/redo_l9p2c1+c1-.1.rzn
+nt/chain c2030r ../rzn/redo_r9p2c20c30.rzn
+nt/chain c2030l ../rzn/redo_l9p2c20c30.rzn
+nt/chain c1030r ../rzn/redo_r9p2c10c30.rzn
+nt/chain c1030l ../rzn/redo_l9p2c10c30.rzn
+nt/chain c12r ../rzn/redo_r9p2c1+c2-.0.rzn
+nt/chain c12r ../rzn/redo_r9p2c1+c2-.rzn
+nt/chain c12l ../rzn/redo_l9p2c1+c2-.0.rzn
+nt/chain c12l ../rzn/redo_l9p2c1+c2-.rzn
+nt/chain sml ../rzn/redo_simd24201.rzn
+* nt/chain sm ../rzn/redo_simd24202.rzn
+nt/chain sml ../rzn/redo_simd24203.rzn
+nt/chain sml ../rzn/redo_simd24204.rzn
+nt/chain sml ../rzn/redo_simd24205.rzn
+nt/chain sml ../rzn/redo_simd24206.rzn
+nt/chain sml ../rzn/redo_simd24207.rzn
+nt/chain sml ../rzn/redo_simd24208.rzn
+nt/chain sml ../rzn/redo_simd24209.rzn
+nt/chain sml ../rzn/redo_simd24210.rzn
+nt/chain sml ../rzn/redo_simd24211.rzn
+nt/chain sml ../rzn/redo_simd24212.rzn
+nt/chain sml ../rzn/redo_simd24213.rzn
+nt/chain sml ../rzn/redo_simd24214.rzn
+nt/chain sml ../rzn/redo_simd24215.rzn
+nt/chain sml ../rzn/redo_simd24216.rzn
+nt/chain sml ../rzn/redo_simd24217.rzn
+nt/chain sml ../rzn/redo_simd24218.rzn
+nt/chain sml ../rzn/redo_simd24219.rzn
+nt/chain sml ../rzn/redo_simd24220.rzn
+nt/chain sml ../rzn/redo_simd24221.rzn
+nt/chain sml ../rzn/redo_simd24222.rzn
+nt/chain sml ../rzn/redo_simd24223.rzn
+nt/chain sml ../rzn/redo_simd24224.rzn
+nt/chain sml ../rzn/redo_simd24225.rzn
+nt/chain sml ../rzn/redo_simd24226.rzn
+nt/chain sml ../rzn/redo_simd24227.rzn
+nt/chain sml ../rzn/redo_simd24228.rzn
+nt/chain sml ../rzn/redo_simd24229.rzn
+nt/chain sml ../rzn/redo_simd24230.rzn
+nt/chain sml ../rzn/redo_simd24231.rzn
+nt/chain sml ../rzn/redo_simd24232.rzn
+nt/chain sml ../rzn/redo_simd24233.rzn
+nt/chain sml ../rzn/redo_simd24234.rzn
+nt/chain sml ../rzn/redo_simd24235.rzn
+nt/chain sml ../rzn/redo_simd24236.rzn
+nt/chain sml ../rzn/redo_simd24237.rzn
+nt/chain sml ../rzn/redo_simd24238.rzn
+nt/chain sml ../rzn/redo_simd24239.rzn
+nt/chain sml ../rzn/redo_simd24240.rzn
+nt/chain sml ../rzn/redo_simd24241.rzn
+nt/chain sml ../rzn/redo_simd24242.rzn
+nt/chain sml ../rzn/redo_simd24243.rzn
+nt/chain sml ../rzn/redo_simd24244.rzn
+nt/chain sml ../rzn/redo_simd24245.rzn
+nt/chain sml ../rzn/redo_simd24246.rzn
+nt/chain sml ../rzn/redo_simd24247.rzn
+nt/chain sml ../rzn/redo_simd24248.rzn
+nt/chain sml ../rzn/redo_simd24249.rzn
+nt/chain sml ../rzn/redo_simd24250.rzn
+nt/chain sml ../rzn/redo_simd24251.rzn
+nt/chain sml ../rzn/redo_simd24252.rzn
+nt/chain sml ../rzn/redo_simd24253.rzn
+nt/chain sml ../rzn/redo_simd24254.rzn
+nt/chain sml ../rzn/redo_simd24255.rzn
+nt/chain sml ../rzn/redo_simd24256.rzn
+nt/chain sml ../rzn/redo_simd24257.rzn
+nt/chain sml ../rzn/redo_simd24258.rzn
+nt/chain sml ../rzn/redo_simd24259.rzn
+nt/chain sml ../rzn/redo_simd24260.rzn
+nt/chain sml ../rzn/redo_simd24261.rzn
+nt/chain sml ../rzn/redo_simd24262.rzn
+nt/chain sml ../rzn/redo_simd24263.rzn
+nt/chain sml ../rzn/redo_simd24264.rzn
+nt/chain sml ../rzn/redo_simd24265.rzn
+nt/chain sml ../rzn/redo_simd24266.rzn
+nt/chain sml ../rzn/redo_simd24267.rzn
+nt/chain sml ../rzn/redo_simd24268.rzn
+nt/chain sml ../rzn/redo_simd24269.rzn
+nt/chain sml ../rzn/redo_simd24270.rzn
+nt/chain sml ../rzn/redo_simd24271.rzn
+nt/chain sml ../rzn/redo_simd24272.rzn
+nt/chain sml ../rzn/redo_simd24273.rzn
+nt/chain sml ../rzn/redo_simd24274.rzn
+nt/chain sml ../rzn/redo_simd24275.rzn
+nt/chain sml ../rzn/redo_simd24276.rzn
+nt/chain sml ../rzn/redo_simd24277.rzn
+nt/chain sml ../rzn/redo_simd24278.rzn
+nt/chain smr ../rzn/redo_simd24301.rzn
+nt/chain smr ../rzn/redo_simd24302.rzn
+nt/chain smr ../rzn/redo_simd24303.rzn
+nt/chain smr ../rzn/redo_simd24304.rzn
+nt/chain smr ../rzn/redo_simd24305.rzn
+nt/chain smr ../rzn/redo_simd24306.rzn
+nt/chain smr ../rzn/redo_simd24307.rzn
+nt/chain smr ../rzn/redo_simd24308.rzn
+nt/chain smr ../rzn/redo_simd24309.rzn
+nt/chain smr ../rzn/redo_simd24310.rzn
+nt/chain smr ../rzn/redo_simd24311.rzn
+nt/chain smr ../rzn/redo_simd24312.rzn
+nt/chain smr ../rzn/redo_simd24313.rzn
+nt/chain smr ../rzn/redo_simd24314.rzn
+nt/chain smr ../rzn/redo_simd24315.rzn
+nt/chain smr ../rzn/redo_simd24316.rzn
+nt/chain smr ../rzn/redo_simd24317.rzn
+nt/chain smr ../rzn/redo_simd24318.rzn
+nt/chain smr ../rzn/redo_simd24319.rzn
+nt/chain smr ../rzn/redo_simd24320.rzn
+nt/chain smr ../rzn/redo_simd24321.rzn
+nt/chain smr ../rzn/redo_simd24322.rzn
+nt/chain smr ../rzn/redo_simd24323.rzn
+nt/chain smr ../rzn/redo_simd24324.rzn
+nt/chain smr ../rzn/redo_simd24325.rzn
+nt/chain smr ../rzn/redo_simd24326.rzn
+nt/chain smr ../rzn/redo_simd24327.rzn
+nt/chain smr ../rzn/redo_simd24328.rzn
+nt/chain smr ../rzn/redo_simd24329.rzn
+nt/chain smr ../rzn/redo_simd24330.rzn
+nt/chain smr ../rzn/redo_simd24331.rzn
+nt/chain smr ../rzn/redo_simd24332.rzn
+nt/chain smr ../rzn/redo_simd24333.rzn
+nt/chain smr ../rzn/redo_simd24334.rzn
+nt/chain smr ../rzn/redo_simd24335.rzn
+nt/chain smr ../rzn/redo_simd24336.rzn
+nt/chain smr ../rzn/redo_simd24337.rzn
+nt/chain smr ../rzn/redo_simd24338.rzn
+nt/chain smr ../rzn/redo_simd24339.rzn
+nt/chain smr ../rzn/redo_simd24340.rzn
+nt/chain smr ../rzn/redo_simd24341.rzn
+nt/chain smr ../rzn/redo_simd24342.rzn
+nt/chain smr ../rzn/redo_simd24343.rzn
+nt/chain smr ../rzn/redo_simd24344.rzn
+nt/chain smr ../rzn/redo_simd24345.rzn
+nt/chain smr ../rzn/redo_simd24346.rzn
+nt/chain smr ../rzn/redo_simd24347.rzn
+nt/chain smr ../rzn/redo_simd24348.rzn
+nt/chain smr ../rzn/redo_simd24349.rzn
+nt/chain smr ../rzn/redo_simd24350.rzn
+nt/chain smr ../rzn/redo_simd24351.rzn
+nt/chain smr ../rzn/redo_simd24352.rzn
+nt/chain smr ../rzn/redo_simd24353.rzn
+nt/chain smr ../rzn/redo_simd24354.rzn
+nt/chain smr ../rzn/redo_simd24355.rzn
+nt/chain smr ../rzn/redo_simd24356.rzn
+nt/chain smr ../rzn/redo_simd24357.rzn
+nt/chain smr ../rzn/redo_simd24358.rzn
+nt/chain smr ../rzn/redo_simd24359.rzn
+nt/chain smr ../rzn/redo_simd24360.rzn
+nt/chain smr ../rzn/redo_simd24361.rzn
+nt/chain smr ../rzn/redo_simd24362.rzn
+nt/chain smr ../rzn/redo_simd24363.rzn
+nt/chain smr ../rzn/redo_simd24364.rzn
+nt/chain smr ../rzn/redo_simd24365.rzn
+nt/chain smr ../rzn/redo_simd24366.rzn
+nt/chain smr ../rzn/redo_simd24367.rzn
+nt/chain smr ../rzn/redo_simd24368.rzn
+nt/chain smr ../rzn/redo_simd24369.rzn
+nt/chain smr ../rzn/redo_simd24370.rzn
+nt/chain smr ../rzn/redo_simd24371.rzn
+nt/chain smr ../rzn/redo_simd24372.rzn
+nt/chain smr ../rzn/redo_simd24373.rzn
+nt/chain smr ../rzn/redo_simd24374.rzn
+nt/chain smr ../rzn/redo_simd24375.rzn
+nt/chain smr ../rzn/redo_simd24376.rzn
+nt/chain smr ../rzn/redo_simd24377.rzn
+nt/chain smr ../rzn/redo_simd24378.rzn
+sigma sc11l   = 127.6+138.2
+sigma sc11r   = 1010
+sigma sc2030l = 254.4
+sigma sc2030r = 282.1
+sigma sc1030l = 281.6
+sigma sc1030r = 317.2
+sigma sc12l   = 163.5+511
+sigma sc12r   = 198.4+500
+
+* the signal
+nt/cuts $1 (ismode==2.or.ismode==12)
+* the event
+nt/cuts $11 (500.-(hade+eme)>300.)
+nt/cuts $12 (sqrt(cpx**2+cpy**2)>15.)
+nt/cuts $13 (tracks>10.)
+* the lepton
+nt/cuts $14 ((minsep/3.1415926*180.)>30.)
+nt/cuts $15 (mse>15.)
+nt/cuts $16 (abs(mspz)/sqrt(mspx**2+mspy**2+mspz**2)<0.8)
+* the W
+nt/cuts $17 (abs(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2)<0.8)
+nt/cuts $18 ((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.)&&(sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)<70.)
+
+set ncol 16
+palette 1
+set GSIZ 0.35
+set TSIZ 0.35
+set ASIZ 0.35
+set CSIZ 0.35
+set PSIZ 0.35
+set VSIZ 0.35
+set yhti 1.0
+set bord 1
+set fais 1
+
+fortran/file 65 'allnew_1.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 100 'Missing energy (GeV)' 110 280 500 
+* nt/project 100 //c11l/clean/1.(500.-(hade+eme)) $SIGMA(250./sc11l)*($1)
+* nt/project 100 //c11r/clean/1.(500.-(hade+eme)) $SIGMA(250./sc11r)*($1)
+* h/copy 100 103
+* nt/project 100 //c12l/clean/1.(500.-(hade+eme)) $SIGMA(250./sc12l)
+* nt/project 100 //c12r/clean/1.(500.-(hade+eme)) $SIGMA(250./sc12r)
+* nt/project 100 //c1030l/clean/1.(500.-(hade+eme)) $SIGMA(250./sc1030l)
+* nt/project 100 //c1030r/clean/1.(500.-(hade+eme)) $SIGMA(250./sc1030r)
+* nt/project 100 //c2030l/clean/1.(500.-(hade+eme)) $SIGMA(250./sc2030l)
+* nt/project 100 //c2030r/clean/1.(500.-(hade+eme)) $SIGMA(250./sc2030r)
+* nt/project 100 //c11l/clean/1.(500.-(hade+eme)) $SIGMA(250./sc11l)*(!$1)
+* nt/project 100 //c11r/clean/1.(500.-(hade+eme)) $SIGMA(250./sc11r)*(!$1)
+* h/copy 100 102
+* nt/project 100 //sml/clean/1.(500.-(hade+eme)) (scale*250.)
+* nt/project 100 //smr/clean/1.(500.-(hade+eme)) (scale*250.)
+* h/copy 100 101
+opt logy
+min 101 10
+max 101 1e7
+set hcol 1107
+h/plot 101
+set hcol 1105
+h/plot 102 's'
+set hcol 1115
+h/plot 103 's'
+exec new_log_cutline.kumac 300. 1.
+exec new_log_key.kumac
+set ltyp 1
+sigma wnymin = $GRAFINFO('WNYMIN')
+sigma wnymax = $GRAFINFO('WNYMAX')
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $SIGMA(10**wnymin) $SIGMA(10**wnymax)
+close 65
+
+fortran/file 65 'allnew_2.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 200 'Transverse momentum (GeV)' 90 10 100
+* nt/project 200 //c11l/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc11l)*($1&&$11)
+* nt/project 200 //c11r/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc11r)*($1&&$11)
+* h/copy 200 203
+* nt/project 200 //c12l/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc12l)*($11)
+* nt/project 200 //c12r/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc12r)*($11)
+* nt/project 200 //c1030l/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc1030l)*($11)
+* nt/project 200 //c1030r/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc1030r)*($11)
+* nt/project 200 //c2030l/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc2030l)*($11)
+* nt/project 200 //c2030r/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc2030r)*($11)
+* nt/project 200 //c11l/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc11l)*(!$1&&$11)
+* nt/project 200 //c11r/clean/1.sqrt(cpx**2+cpy**2) $SIGMA(250./sc11r)*(!$1&&$11)
+* h/copy 200 202
+* nt/project 200 //sml/clean/1.sqrt(cpx**2+cpy**2) (scale*250.)*($11)
+* nt/project 200 //smr/clean/1.sqrt(cpx**2+cpy**2) (scale*250.)*($11)
+* h/copy 200 201
+opt logy
+min 201 10
+max 201 1e7
+set hcol 1107
+h/plot 201
+set hcol 1105
+h/plot 202 's'
+set hcol 1115
+h/plot 203 's'
+exec new_log_cutline.kumac 15. 1.
+exec new_log_key.kumac
+set ltyp 1
+sigma wnymin = $GRAFINFO('WNYMIN')
+sigma wnymax = $GRAFINFO('WNYMAX')
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $SIGMA(10**wnymin) $SIGMA(10**wnymax)
+close 65
+
+fortran/file 65 'allnew_3.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 300 'Number of tracks' 41 -0.5 40.5
+* nt/project 300 //c11l/clean/1.tracks $SIGMA(250./sc11l)*($1&&$11&&$12)
+* nt/project 300 //c11r/clean/1.tracks $SIGMA(250./sc11r)*($1&&$11&&$12)
+* h/copy 300 303
+* nt/project 300 //c12l/clean/1.tracks $SIGMA(250./sc12l)*($11&&$12)
+* nt/project 300 //c12r/clean/1.tracks $SIGMA(250./sc12r)*($11&&$12)
+* nt/project 300 //c1030l/clean/1.tracks $SIGMA(250./sc1030l)*($11&&$12)
+* nt/project 300 //c1030r/clean/1.tracks $SIGMA(250./sc1030r)*($11&&$12)
+* nt/project 300 //c2030l/clean/1.tracks $SIGMA(250./sc2030l)*($11&&$12)
+* nt/project 300 //c2030r/clean/1.tracks $SIGMA(250./sc2030r)*($11&&$12)
+* nt/project 300 //c11l/clean/1.tracks $SIGMA(250./sc11l)*(!$1&&$11&&$12)
+* nt/project 300 //c11r/clean/1.tracks $SIGMA(250./sc11r)*(!$1&&$11&&$12)
+* h/copy 300 302
+* nt/project 300 //sml/clean/1.tracks (scale*250.)*($11&&$12)
+* nt/project 300 //smr/clean/1.tracks (scale*250.)*($11&&$12)
+* h/copy 300 301
+opt logy
+min 301 10
+max 301 1e7
+set hcol 1107
+h/plot 301
+set hcol 1105
+h/plot 302 's'
+set hcol 1115
+h/plot 303 's'
+exec new_log_cutline.kumac 10.5 1.
+exec new_log_key.kumac
+set ltyp 1
+sigma wnymin = $GRAFINFO('WNYMIN')
+sigma wnymax = $GRAFINFO('WNYMAX')
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $SIGMA(10**wnymin) $SIGMA(10**wnymax)
+close 65
+
+fortran/file 65 'allnew_4.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 400 'Electron isolation angle' 90 0 180
+* nt/project 400 //c11l/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc11l)*($1&&$11&&$12&&$13)
+* nt/project 400 //c11r/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc11r)*($1&&$11&&$12&&$13)
+* h/copy 400 403
+* nt/project 400 //c12l/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc12l)*($11&&$12&&$13)
+* nt/project 400 //c12r/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc12r)*($11&&$12&&$13)
+* nt/project 400 //c1030l/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc1030l)*($11&&$12&&$13)
+* nt/project 400 //c1030r/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc1030r)*($11&&$12&&$13)
+* nt/project 400 //c2030l/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc2030l)*($11&&$12&&$13)
+* nt/project 400 //c2030r/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc2030r)*($11&&$12&&$13)
+* nt/project 400 //c11l/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc11l)*(!$1&&$11&&$12&&$13)
+* nt/project 400 //c11r/clean/1.(minsep/3.1415926*180.) $SIGMA(250./sc11r)*(!$1&&$11&&$12&&$13)
+* h/copy 400 402
+* nt/project 400 //sml/clean/1.(minsep/3.1415926*180.) (scale*250.)*($11&&$12&&$13)
+* nt/project 400 //smr/clean/1.(minsep/3.1415926*180.) (scale*250.)*($11&&$12&&$13)
+* h/copy 400 401
+opt logy
+min 401 10
+max 401 1e6
+set hcol 1107
+h/plot 401
+set hcol 1105
+h/plot 402 's'
+set hcol 1115
+h/plot 403 's'
+exec new_log_cutline.kumac 30. 1.
+exec new_log_key.kumac
+set ltyp 1
+sigma wnymin = $GRAFINFO('WNYMIN')
+sigma wnymax = $GRAFINFO('WNYMAX')
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $SIGMA(10**wnymin) $SIGMA(10**wnymax)
+close 65
+
+fortran/file 65 'allnew_5.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 500 'Electron energy' 120 0 120
+* nt/project 500 //c11l/clean/1.mse $SIGMA(250./sc11l)*($1&&$11&&$12&&$13&&$14)
+* nt/project 500 //c11r/clean/1.mse $SIGMA(250./sc11r)*($1&&$11&&$12&&$13&&$14)
+* h/copy 500 503
+* nt/project 500 //c12l/clean/1.mse $SIGMA(250./sc12l)*($11&&$12&&$13&&$14)
+* nt/project 500 //c12r/clean/1.mse $SIGMA(250./sc12r)*($11&&$12&&$13&&$14)
+* nt/project 500 //c1030l/clean/1.mse $SIGMA(250./sc1030l)*($11&&$12&&$13&&$14)
+* nt/project 500 //c1030r/clean/1.mse $SIGMA(250./sc1030r)*($11&&$12&&$13&&$14)
+* nt/project 500 //c2030l/clean/1.mse $SIGMA(250./sc2030l)*($11&&$12&&$13&&$14)
+* nt/project 500 //c2030r/clean/1.mse $SIGMA(250./sc2030r)*($11&&$12&&$13&&$14)
+* nt/project 500 //c11l/clean/1.mse $SIGMA(250./sc11l)*(!$1&&$11&&$12&&$13&&$14)
+* nt/project 500 //c11r/clean/1.mse $SIGMA(250./sc11r)*(!$1&&$11&&$12&&$13&&$14)
+* h/copy 500 502
+* nt/project 500 //sml/clean/1.mse (scale*250.)*($11&&$12&&$13&&$14)
+* nt/project 500 //smr/clean/1.mse (scale*250.)*($11&&$12&&$13&&$14)
+* h/copy 500 501
+opt logy
+min 501 10
+max 501 2e4
+set hcol 1107
+h/plot 501
+set hcol 1105
+h/plot 502 's'
+set hcol 1115
+h/plot 503 's'
+exec new_log_cutline.kumac 15. 1.
+exec new_log_key.kumac
+set ltyp 1
+sigma wnymin = $GRAFINFO('WNYMIN')
+sigma wnymax = $GRAFINFO('WNYMAX')
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $SIGMA(10**wnymin) $SIGMA(10**wnymax)
+close 65
+
+fortran/file 65 'allnew_6.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 600 'Electron cos([Q])' 100 -1 1
+* nt/project 600 //c11l/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc11l)*($1&&$11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c11r/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc11r)*($1&&$11&&$12&&$13&&$14&&$15)
+* h/copy 600 603
+* nt/project 600 //c12l/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc12l)*($11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c12r/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc12r)*($11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c1030l/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc1030l)*($11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c1030r/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc1030r)*($11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c2030l/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc2030l)*($11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c2030r/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc2030r)*($11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c11l/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc11l)*(!$1&&$11&&$12&&$13&&$14&&$15)
+* nt/project 600 //c11r/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) $SIGMA(250./sc11r)*(!$1&&$11&&$12&&$13&&$14&&$15)
+* h/copy 600 602
+* nt/project 600 //sml/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) (scale*250.)*($11&&$12&&$13&&$14&&$15)
+* nt/project 600 //smr/clean/1.mspz/sqrt(mspx**2+mspy**2+mspz**2) (scale*250.)*($11&&$12&&$13&&$14&&$15)
+* h/copy 600 601
+opt liny
+min 601 0
+max 601 2000
+set hcol 1107
+h/plot 601
+set hcol 1105
+h/plot 602 's'
+set hcol 1115
+h/plot 603 's'
+exec cutline.kumac -0.8 1. 0.75
+exec cutline.kumac 0.8 -1. 0.75
+exec new_key.kumac
+set ltyp 1
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+close 65
+
+fortran/file 65 'allnew_7.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 700 'W cos([Q])' 100 -1 1
+* nt/project 700 //c11l/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc11l)*($1&&$11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c11r/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc11r)*($1&&$11&&$12&&$13&&$14&&$15&&$16)
+* h/copy 700 703
+* nt/project 700 //c12l/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc12l)*($11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c12r/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc12r)*($11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c1030l/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc1030l)*($11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c1030r/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc1030r)*($11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c2030l/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc2030l)*($11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c2030r/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc2030r)*($11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c11l/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc11l)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //c11r/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) $SIGMA(250./sc11r)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16)
+* h/copy 700 702
+* nt/project 700 //sml/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16)
+* nt/project 700 //smr/clean/1.(cpz-mspz)/sqrt((cpx-mspx)**2+(cpy-mspy)**2+(cpz-mspz)**2) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16)
+* h/copy 700 701
+opt liny
+min 701 0
+max 701 2500
+set hcol 1107
+h/plot 701
+set hcol 1105
+h/plot 702 's'
+set hcol 1115
+h/plot 703 's'
+exec cutline.kumac -0.8 1. 0.75
+exec cutline.kumac 0.8 -1. 0.75
+exec new_key.kumac
+set ltyp 1
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+close 65
+
+fortran/file 65 'allnew_8.eps'
+graphics/metafile 65 -111
+igset mtype 1
+* h/cr/1d 800 'W invariant mass' 100 0 100
+* nt/project 800 //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11l)*($1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c11r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11r)*($1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* h/copy 800 803
+* nt/project 800 //c12l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc12l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c12r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc12r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c1030l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc1030l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c1030r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc1030r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c2030l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc2030l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c2030r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc2030r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11l)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //c11r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11r)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* h/copy 800 802
+* nt/project 800 //sml/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* nt/project 800 //smr/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0.))
+* h/copy 800 801
+opt liny
+min 801 0
+max 801 800
+set hcol 1107
+h/plot 801
+set hcol 1105
+h/plot 802 's'
+set hcol 1115
+h/plot 803 's'
+exec cutline.kumac 70 -1. 0.75
+exec new_key.kumac
+set ltyp 1
+dline $GRAFINFO('WNXMAX') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+close 65
+
+*  left: 13206 survive 36905 in the ljj(j) final state, out of 250000 c1c1 events
+* right:  6431 survive 17929 in the ljj(j) final state, out of 120000 c1c1 events
+* this is a 36% efficiency for a mode with 15% branching fraction (2*B(W->lnu)*B(W->qq(g)))
+
+
+* These are 250 fb^-1 of left-polarized data + 250 fb^-1 of
+* right-polarized data.  My mode has a 15% branching fraction (2*B(W->e
+* nu)*B(W->hadrons)), and I have 35%-efficient cuts.  The cuts are not
+* yet optimized.
+
+*  Left signal == 12421 events, SUSY bkgnd == 1751, SM bkgnd == 3170
+* Right signal ==  1592 events, SUSY bkgnd ==  480, SM bkgnd == 1209
+
+* One could obtain more data than these by also letting the lepton be a
+* muon; this would double the signal and SM background.  I don't know
+* what would happen to the SUSY backgrounds.
+
+* My full set of cuts are:
+
+*   * missing energy > 300 GeV
+*   * transverse momentum > 15 GeV
+*   * number of tracks > 10
+*   * electron (within 10% of e/p == 1) minimum separation angle with
+*     all other tracks is 30 degrees
+*   * electron energy > 15 GeV
+*   * electron |cos(theta)| < 0.8
+*   * W (vector sum of all the rest of the energy) |cos(theta)| < 0.8
+*   * W invariant mass < 70 GeV to pick out the virtual one
+
+
+
+
+h/cr/2d 900 'stuff' 35 70 140 15 30 60 
+h/cr/2d 901 'stuff' 35 70 140 15 30 60
+nt/project 900 //c12l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc12l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //c12r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc12r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //c1030l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc1030l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //c1030r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc1030r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //c2030l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc2030l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //c2030r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc2030r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc11l)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //c11r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc11r)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //sml/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 900 //smr/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 901 //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc11l)*($1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 901 //c11r/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)%(hade+eme-mse) $SIGMA(250./sc11r)*($1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+set hcol 1
+h/plot 900 'box'
+h/plot 901 'box'
+
+h/cr/prox 900
+h/cr/proy 900
+h/project 900
+h/copy 900.proy 902
+h/copy 900.prox 903
+
+h/cr/1d 1000 'stuff' 15 0 15
+h/cr/1d 1001 'stuff' 35 0 35
+ve/cr tmp(15)
+h/get_vect/contents 902 tmp
+h/put_vect/contents 1000 tmp
+ve/cr tmp(35)
+h/get_vect/contents 903 tmp
+h/put_vect/contents 1001 tmp
+
+h/fit 1000 p1
+* 109.62+17.751*x
+h/fit 1001 p2
+* 147.48-8.7988*x+0.13486*x**2
+
+h/cr/1d 2000 'stuff' 15 0 15
+h/cr/1d 2001 'stuff' 35 0 35
+ve/cr tmp(15)
+do i = 1, 15
+  ve/inp tmp([i]) $SIGMA(109.62+17.751*[i])
+enddo
+h/put_vect/contents 2000 tmp
+ve/cr tmp(35)
+do i = 1, 35
+  ve/inp tmp([i]) $SIGMA(147.48-8.7988*[i]+0.13486*[i]**2)
+enddo
+h/put_vect/contents 2001 tmp
+
+h/cr/2d 3000 'stuff' 35 0 35 15 0 15
+ve/cr tmp(35,15)
+do i = 1, 15
+  do j = 1, 35
+    ve/inp tmp([j],[i]) $SIGMA((109.62+17.751*[i])*(147.48-8.7988*[j]+0.13486*[j]**2)*140/500000)
+  enddo
+enddo
+h/put_vect/contents 3000 tmp
+h/cr/prox 3000
+h/project 3000
+h/plot 3000.prox
+h/plot 903
+
+h/plot 900 'box'
+h/plot 3000 'box'
+
+ve/print tmp 0
+
+h/plot 901 'box'
+message $HINFO(901,'SUM')
+
+
+
+
+
+
+
+h/cr/2d 100 'signal' 35 0 70 35 0 140
+h/cr/2d 101 'signal' 35 0 70 35 0 140
+h/cr/2d 102 'signal' 35 0 70 35 0 140
+nt/project 100 //c11l/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 100 //c11r/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+h/plot 100 'box'
+message $HINFO(100,'SUM')
+
+nt/project 102 //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $SIGMA(250./sc11l)*($1)
+nt/project 102 //c11r/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $SIGMA(250./sc11r)*($1)
+h/plot 102 'box'
+
+nt/project 101 //c12l/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc12l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //c12r/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc12r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //c1030l/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc1030l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //c1030r/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc1030r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //c2030l/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc2030l)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //c2030r/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc2030r)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //c11l/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11l)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //c11r/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $SIGMA(250./sc11r)*(!$1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //sml/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+nt/project 101 //smr/clean/1.(hade+eme-mse)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) (scale*250.)*($11&&$12&&$13&&$14&&$15&&$16&&$17&&$18)
+h/plot 101 'box'
+
+ve/cr tmp(35,35)
+h/get_vect/contents 101 tmp
+ve/print tmp 0
+
+
+
+
+
+
+
+
+
+ *      1     * ismode    * 0.100000E+01 * 0.140000E+02 *
+ *      2     * minsep    * 0.660492E-04 * 0.313275E+01 *
+ *      3     * mspx      * -.946877E+02 * 0.975749E+02 *
+ *      4     * mspy      * -.999265E+02 * 0.942852E+02 *
+ *      5     * mspz      * -.100029E+03 * 0.101636E+03 *
+ *      6     * mse       * 0.000000E+00 * 0.113485E+03 *
+ *      7     * msdist    * 0.238270E-03 * 0.395607E+14 *
+ *      8     * hade      * 0.000000E+00 * 0.140173E+03 *
+ *      9     * eme       * 0.000000E+00 * 0.210661E+03 *
+ *     10     * te        * 0.000000E+00 * 0.197741E+03 *
+ *     11     * tpx       * -.958576E+02 * 0.941571E+02 *
+ *     12     * tpy       * -.110280E+03 * 0.101385E+03 *
+ *     13     * tpz       * -.970105E+02 * 0.100653E+03 *
+ *     14     * cpx       * -.112100E+03 * 0.106806E+03 *
+ *     15     * cpy       * -.119462E+03 * 0.113758E+03 *
+ *     16     * cpz       * -.114742E+03 * 0.113058E+03 *
+ *     17     * c2px      * -.108494E+04 * -.906147E+03 *
+ *     18     * c2py      * -.109573E+04 * -.901310E+03 *
+ *     19     * c2pz      * -.109449E+04 * -.904490E+03 *
+ *     20     * c5px      * -.108042E+04 * -.912669E+03 *
+ *     21     * c5py      * -.108127E+04 * -.914654E+03 *
+ *     22     * c5pz      * -.108732E+04 * -.908577E+03 *
+ *     23     * c10px     * -.108358E+04 * -.916679E+03 *
+ *     24     * c10py     * -.108127E+04 * -.914979E+03 *
+ *     25     * c10pz     * -.108568E+04 * -.908577E+03 *
+ *     26     * banda     * 0.000000E+00 * 0.224068E+03 *
+ *     27     * bandb     * 0.000000E+00 * 0.172829E+03 *
+ *     28     * bandc     * 0.000000E+00 * 0.159724E+03 *
+ *     29     * bandd     * 0.000000E+00 * 0.164146E+03 *
+ *     30     * bande     * 0.000000E+00 * 0.167305E+03 *
+ *     31     * tracks    * 0.000000E+00 * 0.700000E+02 *
+ *     32     * scale     * 0.100000E+01 * 0.100000E+01 *
+ *     33     * le        * -.100000E+04 * 0.111983E+03 *
+ *     34     * lpx       * -.100000E+04 * 0.982567E+02 *
+ *     35     * lpy       * -.100000E+04 * 0.988342E+02 *
+ *     36     * lpz       * -.100000E+04 * 0.107104E+03 *
+ *     37     * we        * -.100000E+04 * 0.119947E+03 *
+ *     38     * wpx       * -.100000E+04 * 0.112625E+03 *
+ *     39     * wpy       * -.100000E+04 * 0.115518E+03 *
+ *     40     * wpz       * -.100000E+04 * 0.117430E+03 *
+
+
+nt/plot //c11l/clean/1.wpx-(tpx-mspx+c2px+1000) $1
+nt/plot //c11l/clean/1.wpy-(tpy-mspy+c2py+1000) $1
+nt/plot //c11l/clean/1.wpz-(tpz-mspz+c2pz+1000) $1
+
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&(hade+eme-mse)**2-(tpx-mspx+c2px+1000)**2-(tpy-mspy+c2py+1000)**2-(tpz-mspz+c2pz+1000)**2>0
+
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&(hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2>0
+
+nt/plot //c11l/clean/1.((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2)-sqrt(we**2-wpx**2-wpy**2-wpz**2) $1
+
+nt/plot //c11l/clean/1.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&msdist<1&&(mspx*lpx+mspy*lpy+mspz*lpz)/sqrt(mspx**2+mspy**2+mspz**2)/sqrt(lpx**2+lpy**2+lpz**2)>0.99999
+
+
+ve/read tmp1 tmp1.txt
+ve/read tmp2 tmp2.txt
+ve/read tmp3 tmp3.txt
+h/cr/1d 100 'tmp' 100 -10 10
+ve/hfill tmp1 100
+h/fit 100 g
+h/cr/1d 100 'tmp' 100 -10 10
+ve/hfill tmp2 100
+h/fit 100 g
+h/cr/1d 100 'tmp' 100 -10 10
+ve/hfill tmp3 100
+h/fit 100 g
+
+
+
+h/cr/1d 100 'generator-level W mass (dashed=cut)' 60 0 60
+h/cr/1d 101 'generator-level W mass (dashed=cut)' 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 101
+normalize 100
+normalize 101
+
+h/cr/1d 200 'generator-level W energy (dashed=cut)' 70 0 140
+h/cr/1d 201 'generator-level W energy (dashed=cut)' 70 0 140
+nt/plot //c11l/clean/1.we $1 ! ! ! ! 200
+nt/plot //c11l/clean/1.we $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 201
+normalize 200
+normalize 201
+
+h/cr/1d 202 'W energy correction' 70 0 140
+div 201 200 202
+h/fit 202(20.:119.) p2
+
+zone 1 2
+h/plot 100
+h/plot 101 's'
+h/plot 200
+h/plot 201 's'
+* h/plot 202
+pict/print 'cut_sculpting.eps'
+
+
+h/cr/1d 100 'W mass (dashed=detector-level)' 60 0 60
+h/cr/1d 101 'W mass (dashed=detector-level)' 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 100
+nt/plot //c11l/clean/1.sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 101
+
+h/cr/1d 200 'W energy (dashed=detector-level)' 70 0 140
+h/cr/1d 201 'W energy (dashed=detector-level)' 70 0 140
+nt/plot //c11l/clean/1.we $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 200
+nt/plot //c11l/clean/1.hade+eme-mse $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! 's' 201
+
+pict/print 'detector_modelling.eps'
+
+h/cr/2d 300 'W mass generated VS detected' 60 0 60 60 0 60
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)%sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 300
+dline 0 60 0 60
+pict/print 'detector_modelling_2.eps'
+
+h/cr/1d 400 'W mass generated - detected' 50 -50 50
+h/cr/1d 401 'W energy generated - detected' 50 -50 50
+nt/plot //c11l/clean/1.sqrt(we**2-wpx**2-wpy**2-wpz**2)-sqrt((hade+eme-mse)**2-(cpx-mspx)**2-(cpy-mspy)**2-(cpz-mspz)**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 400
+
+nt/plot //c11l/clean/1.we-(hade+eme-mse) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 401
+
+zone 1 2
+h/plot 400
+h/plot 401
+pict/print 'detector_modelling_4.eps'
+
+
+
+h/cr/2d 301 'W energy generated VS detected' 70 0 140 70 0 140
+nt/plot //c11l/clean/1.we%(hade+eme-mse) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 301
+dline 0 140 0 140
+pict/print 'detector_modelling_3.eps'
+
+h/cr/2d 100 'efficiency' 35 0 70 35 0 140
+h/cr/2d 200 'efficiency' 35 0 70 35 0 140
+h/cr/2d 300 'efficiency' 35 0 70 35 0 140
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1 ! ! ! ! 100
+nt/plot //c11l/clean/1.we%sqrt(we**2-wpx**2-wpy**2-wpz**2) $1&&$11&&$12&&$13&&$14&&$15&&$16&&$17&&$18 ! ! ! ! 200
+div 200 100 300
+h/plot 300 'box'
+h/fit 300 p1
+
+h/cr/slix 300 35
+h/cr/sliy 300 35
+h/project 300
+
+h/plot 300.slix.1
+h/plot 300.slix.2
+h/plot 300.slix.3
+h/plot 300.slix.4
+h/plot 300.slix.5
+h/plot 300.slix.6
+h/plot 300.slix.7
+h/plot 300.slix.8
+h/plot 300.slix.9
+h/plot 300.slix.10
+h/plot 300.slix.11
+h/plot 300.slix.12
+h/plot 300.slix.13
+h/plot 300.slix.14
+h/plot 300.slix.15
+h/plot 300.slix.16
+h/plot 300.slix.17
+h/plot 300.slix.18
+h/plot 300.slix.19
+h/plot 300.slix.20
+h/plot 300.slix.21
+h/plot 300.slix.22
+h/plot 300.slix.23
+h/plot 300.slix.24
+h/plot 300.slix.25
+h/plot 300.slix.26
+h/plot 300.slix.27
+h/plot 300.slix.28
+h/plot 300.slix.29
+h/plot 300.slix.30
+h/plot 300.slix.31
+h/plot 300.slix.32
+h/plot 300.slix.33
+h/plot 300.slix.34
+h/plot 300.slix.35
+
+h/plot 300.sliy.1
+h/plot 300.sliy.2
+h/plot 300.sliy.3
+h/plot 300.sliy.4
+h/plot 300.sliy.5
+h/plot 300.sliy.6
+h/plot 300.sliy.7
+h/plot 300.sliy.8
+h/plot 300.sliy.9
+h/plot 300.sliy.10
+h/plot 300.sliy.11
+h/plot 300.sliy.12
+h/plot 300.sliy.13
+h/plot 300.sliy.14
+h/plot 300.sliy.15
+h/plot 300.sliy.16
+h/plot 300.sliy.17
+h/plot 300.sliy.18
+h/plot 300.sliy.19
+h/plot 300.sliy.20
+h/plot 300.sliy.21
+h/plot 300.sliy.22
+h/plot 300.sliy.23
+h/plot 300.sliy.24
+h/plot 300.sliy.25
+h/plot 300.sliy.26
+h/plot 300.sliy.27
+h/plot 300.sliy.28
+h/plot 300.sliy.29
+h/plot 300.sliy.30
+h/plot 300.sliy.31
+h/plot 300.sliy.32
+h/plot 300.sliy.33
+h/plot 300.sliy.34
+h/plot 300.sliy.35
+
+
+

@@ -1,0 +1,472 @@
+h/file 1 ../rzn/d0miss_chi2diff.rzn
+cd d0miss
+
+h/plot 42
+h/plot 43
+h/plot 44
+h/plot 45
+h/plot 46
+h/plot 47
+h/plot 48
+h/plot 49
+h/plot 50
+h/plot 51
+h/plot 52
+h/plot 53
+h/plot 54
+h/plot 55
+h/plot 56
+
+fortran/file 65 'd0miss_chi2diff.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+ve/cr cent(15)
+ve/cr ecen(15)
+ve/cr par(3)
+ve/cr err(3)
+
+zone 3 5
+opt sta
+set stat 0000100
+opt fit
+set fit 011
+set plci 2
+
+ve/inp par $HINFO(42,'ENTRIES') $HINFO(42,'MEAN') $HINFO(42,'RMS')
+h/fit 42 g '0' 3 par ! ! ! err
+h/fit 42($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(1) par(2)
+ve/inp ecen(1) err(2)
+ve/inp par $HINFO(43,'ENTRIES') $HINFO(43,'MEAN') $HINFO(43,'RMS')
+h/fit 43 g '0' 3 par ! ! ! err
+h/fit 43($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(2) par(2)
+ve/inp ecen(2) err(2)
+ve/inp par $HINFO(44,'ENTRIES') $HINFO(44,'MEAN') $HINFO(44,'RMS')
+h/fit 44 g '0' 3 par ! ! ! err
+h/fit 44($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(3) par(2)
+ve/inp ecen(3) err(2)
+ve/inp par $HINFO(45,'ENTRIES') $HINFO(45,'MEAN') $HINFO(45,'RMS')
+h/fit 45 g '0' 3 par ! ! ! err
+h/fit 45($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(4) par(2)
+ve/inp ecen(4) err(2)
+ve/inp par $HINFO(46,'ENTRIES') $HINFO(46,'MEAN') $HINFO(46,'RMS')
+h/fit 46 g '0' 3 par ! ! ! err
+h/fit 46($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(5) par(2)
+ve/inp ecen(5) err(2)
+ve/inp par $HINFO(47,'ENTRIES') $HINFO(47,'MEAN') $HINFO(47,'RMS')
+h/fit 47 g '0' 3 par ! ! ! err
+h/fit 47($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(6) par(2)
+ve/inp ecen(6) err(2)
+ve/inp par $HINFO(48,'ENTRIES') $HINFO(48,'MEAN') $HINFO(48,'RMS')
+h/fit 48 g '0' 3 par ! ! ! err
+h/fit 48($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(7) par(2)
+ve/inp ecen(7) err(2)
+ve/inp par $HINFO(49,'ENTRIES') $HINFO(49,'MEAN') $HINFO(49,'RMS')
+h/fit 49 g '0' 3 par ! ! ! err
+h/fit 49($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(8) par(2)
+ve/inp ecen(8) err(2)
+ve/inp par $HINFO(50,'ENTRIES') $HINFO(50,'MEAN') $HINFO(50,'RMS')
+h/fit 50 g '0' 3 par ! ! ! err
+h/fit 50($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(9) par(2)
+ve/inp ecen(9) err(2)
+ve/inp par $HINFO(51,'ENTRIES') $HINFO(51,'MEAN') $HINFO(51,'RMS')
+h/fit 51 g '0' 3 par ! ! ! err
+h/fit 51($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(10) par(2)
+ve/inp ecen(10) err(2)
+ve/inp par $HINFO(52,'ENTRIES') $HINFO(52,'MEAN') $HINFO(52,'RMS')
+h/fit 52 g '0' 3 par ! ! ! err
+h/fit 52($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(11) par(2)
+ve/inp ecen(11) err(2)
+ve/inp par $HINFO(53,'ENTRIES') $HINFO(53,'MEAN') $HINFO(53,'RMS')
+h/fit 53 g '0' 3 par ! ! ! err
+h/fit 53($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(12) par(2)
+ve/inp ecen(12) err(2)
+ve/inp par $HINFO(54,'ENTRIES') $HINFO(54,'MEAN') $HINFO(54,'RMS')
+h/fit 54 g '0' 3 par ! ! ! err
+h/fit 54($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(13) par(2)
+ve/inp ecen(13) err(2)
+ve/inp par $HINFO(55,'ENTRIES') $HINFO(55,'MEAN') $HINFO(55,'RMS')
+h/fit 55 g '0' 3 par ! ! ! err
+h/fit 55($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(14) par(2)
+ve/inp ecen(14) err(2)
+ve/inp par $HINFO(56,'ENTRIES') $HINFO(56,'MEAN') $HINFO(56,'RMS')
+h/fit 56 g '0' 3 par ! ! ! err
+h/fit 56($SIGMA(par(2)-par(3)):$SIGMA(par(2)+par(3))) g ! 3 par ! ! ! err
+ve/inp cent(15) par(2)
+ve/inp ecen(15) err(2)
+
+ve/cr nsigmas(15)
+vdivide cent ecen nsigmas
+h/cr/1d 101 ' ' 3 12.5 15.5
+h/cr/1d 102 ' ' 7 0.5 7.5
+h/cr/1d 103 'center of distribution' 5 7.5 12.5
+h/cr/1d 200 'significance' 15 0.5 15.5
+h/put_vect/contents 101 cent(13:15)
+h/put_vect/errors 101 ecen(13:15)
+h/put_vect/contents 102 cent(1:7)
+h/put_vect/errors 102 ecen(1:7)
+h/put_vect/contents 103 cent(8:12)
+h/put_vect/errors 103 ecen(8:12)
+h/put_vect/contents 200 nsigmas
+
+zone 3 2
+opt nsta
+
+min 102 -0.3e-7
+max 102  0.3e-7
+h/plot 102 'e1'
+set ltyp 3
+set plci 1
+dline 0.5 7.5 0 0
+sigma bot = $GRAFINFO('WNYMIN')
+sigma sep = ($GRAFINFO('WNYMAX') - $GRAFINFO('WNYMIN'))
+text  1 $SIGMA(bot-0.13*sep) 'cc' ! ! 'c'
+text  2 $SIGMA(bot-0.13*sep) 'cp' ! ! 'c'
+text  3 $SIGMA(bot-0.13*sep) 'cd' ! ! 'c'
+text  4 $SIGMA(bot-0.13*sep) 'ct' ! ! 'c'
+text  5 $SIGMA(bot-0.13*sep) 'cz' ! ! 'c'
+text  6 $SIGMA(bot-0.13*sep) 'pp' ! ! 'c'
+text  7 $SIGMA(bot-0.13*sep) 'pd' ! ! 'c'
+min 103 -0.3e-8
+max 103  0.3e-8
+h/plot 103 'e1'
+set ltyp 3
+set plci 1
+dline 7.5 12.5 0 0
+sigma bot = $GRAFINFO('WNYMIN')
+sigma sep = ($GRAFINFO('WNYMAX') - $GRAFINFO('WNYMIN'))
+text  8 $SIGMA(bot-0.13*sep) 'pt' ! ! 'c'
+text  9 $SIGMA(bot-0.13*sep) 'pz' ! ! 'c'
+text 10 $SIGMA(bot-0.13*sep) 'dd' ! ! 'c'
+text 11 $SIGMA(bot-0.13*sep) 'dt' ! ! 'c'
+text 12 $SIGMA(bot-0.13*sep) 'dz' ! ! 'c'
+min 101 -0.3e-5
+max 101  0.3e-5
+h/plot 101 'e1'
+set ltyp 3
+set plci 1
+dline 12.5 15.5 0 0
+sigma bot = $GRAFINFO('WNYMIN')
+sigma sep = ($GRAFINFO('WNYMAX') - $GRAFINFO('WNYMIN'))
+text 13 $SIGMA(bot-0.13*sep) 'tt' ! ! 'c'
+text 14 $SIGMA(bot-0.13*sep) 'tz' ! ! 'c'
+text 15 $SIGMA(bot-0.13*sep) 'zz' ! ! 'c'
+
+zone 1 2 2 's'
+min 200 -100
+max 200  100
+h/plot 200
+set ltyp 3
+set plci 1
+dline 0.5 15.5 0 0
+sigma bot = $GRAFINFO('WNYMIN')
+sigma sep = ($GRAFINFO('WNYMAX') - $GRAFINFO('WNYMIN'))
+text  1 $SIGMA(bot-0.13*sep) 'cc' ! ! 'c'
+text  2 $SIGMA(bot-0.13*sep) 'cp' ! ! 'c'
+text  3 $SIGMA(bot-0.13*sep) 'cd' ! ! 'c'
+text  4 $SIGMA(bot-0.13*sep) 'ct' ! ! 'c'
+text  5 $SIGMA(bot-0.13*sep) 'cz' ! ! 'c'
+text  6 $SIGMA(bot-0.13*sep) 'pp' ! ! 'c'
+text  7 $SIGMA(bot-0.13*sep) 'pd' ! ! 'c'
+text  8 $SIGMA(bot-0.13*sep) 'pt' ! ! 'c'
+text  9 $SIGMA(bot-0.13*sep) 'pz' ! ! 'c'
+text 10 $SIGMA(bot-0.13*sep) 'dd' ! ! 'c'
+text 11 $SIGMA(bot-0.13*sep) 'dt' ! ! 'c'
+text 12 $SIGMA(bot-0.13*sep) 'dz' ! ! 'c'
+text 13 $SIGMA(bot-0.13*sep) 'tt' ! ! 'c'
+text 14 $SIGMA(bot-0.13*sep) 'tz' ! ! 'c'
+text 15 $SIGMA(bot-0.13*sep) 'zz' ! ! 'c'
+
+close 65
+
+
+
+
+
+************************* this is for a different thing
+
+* h/file 1 ../rzn/d0miss.rzn
+h/file 1 ../rzn/d0miss_cor.rzn
+cd d0miss
+set dmod 1
+
+*           1 (1)   d0miss V phi cotTheta in (-2.0,-1.8)
+*           2 (1)   d0miss V phi cotTheta in (-1.8,-1.6)
+*           3 (1)   d0miss V phi cotTheta in (-1.6,-1.4)
+*           4 (1)   d0miss V phi cotTheta in (-1.4,-1.2)
+*           5 (1)   d0miss V phi cotTheta in (-1.2,-1.0)
+*           6 (1)   d0miss V phi cotTheta in (-1.0,-0.8)
+*           7 (1)   d0miss V phi cotTheta in (-0.8,-0.6)
+*           8 (1)   d0miss V phi cotTheta in (-0.6,-0.4)
+*           9 (1)   d0miss V phi cotTheta in (-0.4,-0.2)
+*          10 (1)   d0miss V phi cotTheta in (-0.2, 0.0)
+*          11 (1)   d0miss V phi cotTheta in ( 0.0, 0.2)
+*          12 (1)   d0miss V phi cotTheta in ( 0.2, 0.4)
+*          13 (1)   d0miss V phi cotTheta in ( 0.4, 0.6)
+*          14 (1)   d0miss V phi cotTheta in ( 0.6, 0.8)
+*          15 (1)   d0miss V phi cotTheta in ( 0.8, 1.0)
+*          16 (1)   d0miss V phi cotTheta in ( 1.0, 1.2)
+*          17 (1)   d0miss V phi cotTheta in ( 1.2, 1.4)
+*          18 (1)   d0miss V phi cotTheta in ( 1.4, 1.6)
+*          19 (1)   d0miss V phi cotTheta in ( 1.6, 1.8)
+*          20 (1)   d0miss V phi cotTheta in ( 1.8, 2.0)
+*          21 (1)   cotTheta in (-2.0,-1.8) 
+*          22 (1)   cotTheta in (-1.8,-1.6) 
+*          23 (1)   cotTheta in (-1.6,-1.4) 
+*          24 (1)   cotTheta in (-1.4,-1.2) 
+*          25 (1)   cotTheta in (-1.2,-1.0) 
+*          26 (1)   cotTheta in (-1.0,-0.8) 
+*          27 (1)   cotTheta in (-0.8,-0.6) 
+*          28 (1)   cotTheta in (-0.6,-0.4) 
+*          29 (1)   cotTheta in (-0.4,-0.2) 
+*          30 (1)   cotTheta in (-0.2, 0.0) 
+*          31 (1)   cotTheta in ( 0.0, 0.2) 
+*          32 (1)   cotTheta in ( 0.2, 0.4) 
+*          33 (1)   cotTheta in ( 0.4, 0.6) 
+*          34 (1)   cotTheta in ( 0.6, 0.8) 
+*          35 (1)   cotTheta in ( 0.8, 1.0) 
+*          36 (1)   cotTheta in ( 1.0, 1.2) 
+*          37 (1)   cotTheta in ( 1.2, 1.4) 
+*          38 (1)   cotTheta in ( 1.4, 1.6) 
+*          39 (1)   cotTheta in ( 1.6, 1.8) 
+*          40 (1)   cotTheta in ( 1.8, 2.0) 
+
+fortran/file 65 'd0miss_cor.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+ve/cr pss(20)
+ve/cr ess(20)
+ve/cr pcc(20)
+ve/cr ecc(20)
+ve/cr ctt(20)
+
+ve/cr par(5)
+ve/cr err(5)
+
+zone 4 5
+opt nsta
+
+min  1 -0.0002
+min  2 -0.0002
+min  3 -0.0002
+min  4 -0.0002
+min  5 -0.0002
+min  6 -0.0002
+min  7 -0.0002
+min  8 -0.0002
+min  9 -0.0002
+min 10 -0.0002
+min 11 -0.0002
+min 12 -0.0002
+min 13 -0.0002
+min 14 -0.0002
+min 15 -0.0002
+min 16 -0.0002
+min 17 -0.0002
+min 18 -0.0002
+min 19 -0.0002
+min 20 -0.0002
+
+max  1 0.0002
+max  2 0.0002
+max  3 0.0002
+max  4 0.0002
+max  5 0.0002
+max  6 0.0002
+max  7 0.0002
+max  8 0.0002
+max  9 0.0002
+max 10 0.0002
+max 11 0.0002
+max 12 0.0002
+max 13 0.0002
+max 14 0.0002
+max 15 0.0002
+max 16 0.0002
+max 17 0.0002
+max 18 0.0002
+max 19 0.0002
+max 20 0.0002
+
+h/fit  1 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(1) $SIGMA(par(4))
+ve/inp pcc(1) $SIGMA(par(5))
+ve/inp ess(1) $SIGMA(err(4))
+ve/inp ecc(1) $SIGMA(err(5))
+h/fit  2 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(2) $SIGMA(par(4))
+ve/inp pcc(2) $SIGMA(par(5))
+ve/inp ess(2) $SIGMA(err(4))
+ve/inp ecc(2) $SIGMA(err(5))
+h/fit  3 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(3) $SIGMA(par(4))
+ve/inp pcc(3) $SIGMA(par(5))
+ve/inp ess(3) $SIGMA(err(4))
+ve/inp ecc(3) $SIGMA(err(5))
+h/fit  4 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(4) $SIGMA(par(4))
+ve/inp pcc(4) $SIGMA(par(5))
+ve/inp ess(4) $SIGMA(err(4))
+ve/inp ecc(4) $SIGMA(err(5))
+h/fit  5 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(5) $SIGMA(par(4))
+ve/inp pcc(5) $SIGMA(par(5))
+ve/inp ess(5) $SIGMA(err(4))
+ve/inp ecc(5) $SIGMA(err(5))
+h/fit  6 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(6) $SIGMA(par(4))
+ve/inp pcc(6) $SIGMA(par(5))
+ve/inp ess(6) $SIGMA(err(4))
+ve/inp ecc(6) $SIGMA(err(5))
+h/fit  7 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(7) $SIGMA(par(4))
+ve/inp pcc(7) $SIGMA(par(5))
+ve/inp ess(7) $SIGMA(err(4))
+ve/inp ecc(7) $SIGMA(err(5))
+h/fit  8 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(8) $SIGMA(par(4))
+ve/inp pcc(8) $SIGMA(par(5))
+ve/inp ess(8) $SIGMA(err(4))
+ve/inp ecc(8) $SIGMA(err(5))
+h/fit  9 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(9) $SIGMA(par(4))
+ve/inp pcc(9) $SIGMA(par(5))
+ve/inp ess(9) $SIGMA(err(4))
+ve/inp ecc(9) $SIGMA(err(5))
+h/fit 10 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(10) $SIGMA(par(4))
+ve/inp pcc(10) $SIGMA(par(5))
+ve/inp ess(10) $SIGMA(err(4))
+ve/inp ecc(10) $SIGMA(err(5))
+h/fit 11 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(11) $SIGMA(par(4))
+ve/inp pcc(11) $SIGMA(par(5))
+ve/inp ess(11) $SIGMA(err(4))
+ve/inp ecc(11) $SIGMA(err(5))
+h/fit 12 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(12) $SIGMA(par(4))
+ve/inp pcc(12) $SIGMA(par(5))
+ve/inp ess(12) $SIGMA(err(4))
+ve/inp ecc(12) $SIGMA(err(5))
+h/fit 13 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(13) $SIGMA(par(4))
+ve/inp pcc(13) $SIGMA(par(5))
+ve/inp ess(13) $SIGMA(err(4))
+ve/inp ecc(13) $SIGMA(err(5))
+h/fit 14 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(14) $SIGMA(par(4))
+ve/inp pcc(14) $SIGMA(par(5))
+ve/inp ess(14) $SIGMA(err(4))
+ve/inp ecc(14) $SIGMA(err(5))
+h/fit 15 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(15) $SIGMA(par(4))
+ve/inp pcc(15) $SIGMA(par(5))
+ve/inp ess(15) $SIGMA(err(4))
+ve/inp ecc(15) $SIGMA(err(5))
+h/fit 16 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(16) $SIGMA(par(4))
+ve/inp pcc(16) $SIGMA(par(5))
+ve/inp ess(16) $SIGMA(err(4))
+ve/inp ecc(16) $SIGMA(err(5))
+h/fit 17 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(17) $SIGMA(par(4))
+ve/inp pcc(17) $SIGMA(par(5))
+ve/inp ess(17) $SIGMA(err(4))
+ve/inp ecc(17) $SIGMA(err(5))
+h/fit 18 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(18) $SIGMA(par(4))
+ve/inp pcc(18) $SIGMA(par(5))
+ve/inp ess(18) $SIGMA(err(4))
+ve/inp ecc(18) $SIGMA(err(5))
+h/fit 19 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(19) $SIGMA(par(4))
+ve/inp pcc(19) $SIGMA(par(5))
+ve/inp ess(19) $SIGMA(err(4))
+ve/inp ecc(19) $SIGMA(err(5))
+h/fit 20 sin2cos2.f ! 5 par ! ! ! err
+ve/inp pss(20) $SIGMA(par(4))
+ve/inp pcc(20) $SIGMA(par(5))
+ve/inp ess(20) $SIGMA(err(4))
+ve/inp ecc(20) $SIGMA(err(5))
+
+opt sta
+set stat 0000110
+
+h/plot 21
+ve/inp ctt(1) $HINFO(21,'MEAN')
+h/plot 22
+ve/inp ctt(2) $HINFO(22,'MEAN')
+h/plot 23
+ve/inp ctt(3) $HINFO(23,'MEAN')
+h/plot 24
+ve/inp ctt(4) $HINFO(24,'MEAN')
+h/plot 25
+ve/inp ctt(5) $HINFO(25,'MEAN')
+h/plot 26
+ve/inp ctt(6) $HINFO(26,'MEAN')
+h/plot 27
+ve/inp ctt(7) $HINFO(27,'MEAN')
+h/plot 28
+ve/inp ctt(8) $HINFO(28,'MEAN')
+h/plot 29
+ve/inp ctt(9) $HINFO(29,'MEAN')
+h/plot 30
+ve/inp ctt(10) $HINFO(30,'MEAN')
+h/plot 31
+ve/inp ctt(11) $HINFO(31,'MEAN')
+h/plot 32
+ve/inp ctt(12) $HINFO(32,'MEAN')
+h/plot 33
+ve/inp ctt(13) $HINFO(33,'MEAN')
+h/plot 34
+ve/inp ctt(14) $HINFO(34,'MEAN')
+h/plot 35
+ve/inp ctt(15) $HINFO(35,'MEAN')
+h/plot 36
+ve/inp ctt(16) $HINFO(36,'MEAN')
+h/plot 37
+ve/inp ctt(17) $HINFO(37,'MEAN')
+h/plot 38
+ve/inp ctt(18) $HINFO(38,'MEAN')
+h/plot 39
+ve/inp ctt(19) $HINFO(39,'MEAN')
+h/plot 40
+ve/inp ctt(20) $HINFO(40,'MEAN')
+
+zone 1 2
+opt nsta
+
+null -2. 2. -0.0002 0.0002
+do i=1,20
+  dline ctt([i]) ctt([i]) $SIGMA(pss([i])+ess([i])) $SIGMA(pss([i])-ess([i]))
+enddo
+graph 20 ctt pss '*'
+set dmod 2
+* f/plot -0.0000155735-0.0000275939*x-9.06903E-6*x**2-6.00561E-6*x**3 -2. 2. 's'
+f/plot 0. -2. 2. 's'
+
+null -2. 2. -0.0002 0.0002
+do i=1,20
+  dline ctt([i]) ctt([i]) $SIGMA(pcc([i])+ecc([i])) $SIGMA(pcc([i])-ecc([i]))
+enddo
+graph 20 ctt pcc '*'
+set dmod 2
+* f/plot -3.60378E-6+4.59787E-6*x+0.0000164158-0.0000116454 -2. 2. 's'
+f/plot 0. -2. 2. 's'
+
+close 65

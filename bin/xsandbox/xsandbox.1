@@ -1,0 +1,146 @@
+.TH XSANDBOX 1 "July, 14 2001" "xsandbox"
+.SH NAME
+xsandbox \- physics-based distraction
+.SH SYNOPSIS
+.B
+xsandbox
+[\fIsandbox options...\fR] [\fIGTK options...\fR]
+.SH DESCRIPTION
+\fBxsandbox\fR renders a sandbox in an X11 window, buffeted by ocean
+waves.
+.PP
+Sand may be added with the left mouse button, removed with the right
+mouse button, and pushed around (leveling peaks) with the middle
+button.
+.PP
+Water is simulated with adjustable resolution by a dispersive Laplace
+equation, subject to gravity. Water boundary conditions are periodic
+at the four edges of the window, and the water height of the bottom
+edge is sinusoidally driven to represent the ocean.
+.PP
+Some parameters can be set at startup time (see \fBSANDBOX
+OPTIONS\fR), and others can be changed while \fBxsandbox\fR is running
+(see \fBKEYBOARD COMMANDS\fR).
+.SH SANDBOX OPTIONS
+.TP 8
+.B \fI\-geom\fR, \fI\-\-geometry\fR \fB+x+y|wXh[+x+y]\fR (default = 400x300)
+This is the standard X11 geometry argument for setting the size and
+location of the window. (Setting the window location doesn't yet
+work. See \fBKNOWN BUGS\fR)
+.TP 8
+.B \fI\-nw\fR, \fI\-\-no\-water\fR
+Create a window filled with sand but no water.
+.TP 8
+.B \fI\-wp\fR, \fI\-\-water\-pixelation\fR \fBint\fR (default = 3)
+Set the width and height of a single water pixel. Only 2, 3 and 4 are
+suggested.
+.TP 8
+.B \fI\-wc\fR, \fI\-\-water\-coupling\fR \fBfloat\fR (default = 0.45)
+Set the water coupling constant (square of wave-propagation speed). It
+is suggested that a lower value than the default is used, if any.
+.TP 8
+.B \fI\-wd\fR, \fI\-\-water\-dissipation\fR \fBfloat\fR (default = 0.05)
+Set the level of energy dissipation. Values higher than the default
+are suggested, if any.
+.TP 8
+.B \fI\-u\fR, \fI\-\-update\-time\fR \fBint\fR (default = 100)
+Set the time in milliseconds between calls to update the water. Only
+use small values on fast machines.
+.TP 8
+.B \fI\-nh\fR, \fI\-\-no\-hill\fR
+Start the sand distribution with no hill. This option is suggested if
+you plan to resize the window while the program is running (see
+\fBKNOWN BUGS\fR).
+.TP 8
+.B \fI\-nb\fR, \fI\-\-no\-bumps\fR
+Don't create initial anisotropies in the sand distribution, saving
+time in startup at the expense of realism.
+.TP 8
+.B \fI\-amp\fR, \fI\-\-ocean\-amplitude\fR \fBfloat\fR (default = 1.0)
+Set the amplitude of ocean waves in units of a suggested value.
+.TP 8
+.B \fI\-per\fR, \fI\-\-ocean\-period\fR \fBfloat\fR (default = 20.0)
+Set the period of ocean waves in seconds.
+.SH GTK OPTIONS
+.PP
+Since \fBxsandbox\fR uses GTK to handle the X11 interface, it has
+inherited the standard suite of GTK options. They will be listed but
+not described here.
+.TP 8
+.B \fI\-\-gtk\-module\fR
+.TP 8
+.B \fI\-\-g\-fatal\-warnings\fR
+.TP 8
+.B \fI\-\-gtk\-debug\fR
+.TP 8
+.B \fI\-\-gtk\-no\-debug\fR
+.TP 8
+.B \fI\-\-gdk\-debug\fR
+.TP 8
+.B \fI\-\-gdk\-no\-debug\fR
+.TP 8
+.B \fI\-\-display\fR
+.TP 8
+.B \fI\-\-sync\fR
+.TP 8
+.B \fI\-\-no\-xshm\fR
+.TP 8
+.B \fI\-\-name\fR
+.TP 8
+.B \fI\-\-class\fR
+.SH MOUSE COMMANDS
+.PP
+While \fBxsandbox\fR is running, the mouse is used as a paintbrush to
+add, remove or push sand. The brush acts when a mouse button is
+pressed or held down while moving (but not when it is held down and
+stationary).
+.TP 8
+.B \fBLeft Mouse Button \- Add Sand\fR
+The sand height is increased in a Gaussian-distributed region around
+the cursor.
+.TP 8
+.B \fBMiddle Mouse Button \- Push Sand\fR
+The sand height is flattened to a given level (the level of the sand
+where the push started). Any sand that was previously above this level
+is pushed by the brush in a clump ahead of the direction of
+motion. This is the only of the three brushes which conserves the
+quantity of sand.
+.TP 8
+.B \fBRight Mouse Button \- Remove Sand\fR
+The sand height is decreased in a Gaussian-distributed region around
+the cursor.
+.SH KEYBOARD COMMANDS
+.PP
+If one of the following keys are clicked in the window's focus,
+\fBxsandbox\fR will perform the associated action.
+.TP 8
+.B \fB\fIq\fB or \fIQ\fB \- Quit\fR
+\fBxsandbox\fR exits normally.
+.TP 8
+.B \fB\fIp\fB or \fIP\fB \- Pause\fR
+Pause or unpause the water animation.
+.TP 8
+.B \fB\fIr\fB or \fIR\fB \- Resume\fR
+Resume the water animation.
+.TP 8
+.B \fB\fI>\fB or \fI<\fB \- Rotate Light Source\fR
+Increase or decrease the angle of the light source by ten
+degrees. Each time it is clicked, the entire window must be redrawn,
+so be careful to avoid autorepeating keys.
+.TP 8
+.B \fB\fIspacebar\fB \- Toggle Contour Lines\fR
+Turn on or off the contour lines used to indicate sand elevation.
+.SH KNOWN BUGS
+.PP
+Setting the window location with GTK doesn't work. I may be using the
+wrong command or I may be using it at the wrong time.
+.PP
+Due to another GTK anachronism, the window size cannot be made smaller
+than the size it has at startup time.
+.PP
+The way that the sand field responds to new area (by an enlargement of
+the window) is naive and undesirably discontinuous. Changing the
+window size is only suggested in the mode specified by the \fI\-nh\fR
+option (no hill\-\- a level starting distribution).
+.SH AUTHOR
+Jim McCann <mccann@watson.org>

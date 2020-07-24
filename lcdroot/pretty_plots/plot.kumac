@@ -1,0 +1,36 @@
+import layer*
+
+if [5].ne.'s' then
+  if [3].ne.[4] then
+    min $SIGMA(prefix+27) [3]
+    max $SIGMA(prefix+27) [4]
+  endif
+  
+  set hcol $SIGMA(1100+c[layer7])
+  if [1].eq.[2] then
+    h/plot $SIGMA(prefix+27) 'hist'
+  else
+    h/plot $SIGMA(prefix+27)([1]:[2]) 'hist'
+  endif
+else
+  set hcol $SIGMA(1100+c[layer7])
+  h/plot $SIGMA(prefix+27) 'shist'
+endif
+
+set hcol $SIGMA(1100+c[layer6])
+h/plot $SIGMA(prefix+26) 'shist'
+set hcol $SIGMA(1100+c[layer5])
+h/plot $SIGMA(prefix+25) 'shist'
+set hcol $SIGMA(1100+c[layer4])
+h/plot $SIGMA(prefix+24) 'shist'
+set hcol $SIGMA(1100+c[layer3])
+h/plot $SIGMA(prefix+23) 'shist'
+set hcol $SIGMA(1100+c[layer2])
+h/plot $SIGMA(prefix+22) 'shist'
+set hcol $SIGMA(1100+c[layer1])
+h/plot $SIGMA(prefix+11) 'shist'
+
+set bord 1
+set fais 0
+set faci 0
+box $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')

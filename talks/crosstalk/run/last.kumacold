@@ -1,0 +1,19 @@
+*** Begin of history file: Tue Jun 10 13:44:03 2003
+h/file 1 ../rzn/test_view.rzn
+cd findlambdas2
+nt/plot mlam
+nt/plot 1.mlam
+nt/plot 1.mlam sqrt(x**2+y**2)>0.01
+nt/plot 1.mlam sqrt(x**2+y**2)>0.02
+nt/plot 1.mlam sqrt(x**2+y**2)>0.03
+nt/plot 1.mlam sqrt(x**2+y**2)>0.04
+nt/plot 1.mlam sqrt(x**2+y**2)>0.05
+nt/plot 1.mlam sqrt(x**2+y**2)>0.06
+nt/plot 1.mlam sqrt(x**2+y**2)>0.07
+nt/plot 1.mlam sqrt(x**2+y**2)>0.08
+nt/plot 1.mlam sqrt(x**2+y**2)>0.10
+nt/plot 1.mlam
+nt/plot 1.mlam sqrt(x**2+y**2)>0.10 ! ! ! ! s
+nt/plot 1.mlam sqrt(x**2+y**2)>0.10 ! ! ! s
+exit
+*** End   of history file: Tue Jun 10 13:53:14 2003

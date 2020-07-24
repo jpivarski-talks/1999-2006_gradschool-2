@@ -1,0 +1,2 @@
+yes, the fraction is 4%, but most of that comes from overflow, with a strong suspicion of z=1000.
+Assuming no z=1000. (approximating symmetry) gives a fraction of 0.1%.

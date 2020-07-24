@@ -1,0 +1,80 @@
+% To combine into a pdf:
+%
+% > for x in *.eps; do epstopdf $x; done
+% > pdflatex charginos.tex
+% > acroread charginos.pdf
+%
+% or if you're a tcsh user, replace the for loop with something like this:
+% > foreach x (*.eps)
+% foreach? epstopdf $x
+% foreach? end
+%
+% or do them all by hand.
+
+\documentclass[landscape]{article}
+\usepackage[pdftex]{graphicx}
+\pagestyle{empty}
+\oddsidemargin  -0.5 in
+\evensidemargin -0.5 in
+\headheight     0 in
+\topmargin      -1 in
+\textheight     7.7 in
+\textwidth      10 in
+\begin{document}
+\LARGE
+\renewcommand{\labelitemi}{-}
+\setlength{\parindent}{0 cm}
+
+\begin{center} \begin{tabular}{p{\textheight} p{4 cm}}
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{charginos_1.pdf}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      Signal: \\
+      \includegraphics[width=\linewidth]{charginos_signal.pdf}
+
+      \vspace{1 cm}
+      Background: \\
+      \includegraphics[width=\linewidth]{charginos_background.pdf}
+    \end{minipage}
+  \end{tabular}
+\end{center}
+\pagebreak
+
+\begin{center} \begin{tabular}{p{\textheight} p{4 cm}}
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{charginos_2.pdf}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      Signal: \\
+      \includegraphics[width=\linewidth]{charginos_signal.pdf}
+
+      \vspace{1 cm}
+      $\mbox{$\chi^+$}_1$--LSP mass difference from upper threshold of
+      jet invariant mass.
+
+      \vspace{1 cm}
+      Fortunately far from $W$ peak.
+
+      \vspace{1 cm}
+      (How much variation in study point?)
+    \end{minipage}
+  \end{tabular}
+\end{center}
+\pagebreak
+
+\begin{center} \begin{tabular}{p{\textheight} p{4 cm}}
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{charginos_5.pdf}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      Signal: \\
+      \includegraphics[width=\linewidth]{charginos_signal.pdf}
+
+      \vspace{1 cm}
+      LSP mass from lower threshold of spectrum?
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+\end{document}

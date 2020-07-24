@@ -1,0 +1,8 @@
+example_wrap.c
+
+[ Python Module : example ]
+
+
+fact(n)
+        [ returns int  ]
+

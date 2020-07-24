@@ -1,0 +1,346 @@
+Title:
+
+Abstract:
+
+INTRODUCTION
+
+High-precision lattice QCD (1)
+
+  * Explain method, history, situation, and "unquenching"
+
+  * Ratio plots; 2 mass measurements are CLEO 1st & 2nd observations;
+    m_{B_c} and m_{\Omega} may be added
+
+  * For the rest of this talk, I'll refer to LQCD as a tool for
+    extracting fundumental physics from decay rates
+    but first I want to emphasize that this breakthrough amounts to
+    finally understanding the strong force quantitatively
+
+LQCD for flavor physics: decay rates (1)
+
+  * Matrix elements (transition probabilities) instead of eigenvalues
+    (masses)
+
+  * Typically, two particles must meet at a point for the transition
+    to occur, so this probes fine-grain structure:
+    |psi(0,0,0)|^2 of spatial wavefunction in real life, lattice
+    structure in simulation
+
+  * The a -> 0 extrapolation is more challenging
+
+Main goal: B meson decay constant (f_B) (1)
+
+  * Why?  B\bar{B} mixing could tightly constrain V_td
+
+    \Delta m_B = (known) (f_B^2 B_B) |V_td|^2 = 0.502 \pm 0.007 ps^-1 (1.4%)
+
+    if QCD factors f_B and B_B could be determined.  (V_td is a CKM
+    matrix element, a fundumental parameter of SM that constrains CP
+    asymmetry measurement.)
+
+  * If you are familiar with the unitarity triangle, this corresponds
+    to shrinking the B_d band (20%) to a narrow annulus
+
+  * f_B can't be measured directly, as B+ -> l nu rate is too slow to
+    be observable
+
+  * LQCD is the most promising technique for calculating f_B and B_B
+
+The program: LQCD calculates f_B and B_B and predicts related,
+verifiable quantities (1)
+
+             heavy-light    heavy-heavy
+  * bottom       f_B        \Gamma_ee(U)
+            (theory only)   (th vs expt)
+
+     charm       f_D
+             (th vs expt)
+
+  * Leptonic decays of strongly-bound mesons expose decay constants
+    (diagrams, label f_D, "f_U", V_cd(known to 1.3%), 1(known))
+
+For the remainder of this talk, I will present (1)
+
+  * a high-precision measurement (1.5-2.5%) of \Gamma_ee for
+    U(1S,2S,3S) (CLEO-III)
+
+  * a first statistically-significant observation (6.6 sigma) of D ->
+    mu nu, which determines f_B to 7.6% (CLEO-c)
+
+  * future confrontations between theory and experiment at CLEO-c
+
+GAMMA_EE
+
+Roadmap: table of contents and an indicator at the top of the screen (1)
+
+Measurement technique I (1)
+
+  * By definition, \Gamma_ee(Upsilon) is the decay rate of Upsilon to
+    e+e- (in absense of other interactions): \Gamma_ee = \Gamma B_ee
+
+  * It may seem that a measurement would consist of counting e+e-
+    final states, but
+
+    - this measures B_ee, which is one step removed from \Gamma_ee
+
+    - \Gamma can't be measured directly (narrower than collider beam
+      energy spread)
+
+  * Alternative method: time-reversed process (diagrams), measure U
+    production from e+e- beams (\Gamma_ee = ... \int \sigma dE)
+
+Measurement technique II (3)
+
+  * dE integration can be accomplished by scanning U resonance (aerial
+    view of CESR and cartoon on same slide): cross-section vs. energy
+
+  * CLEO-III cut-away; point out silicon, drift chamber, and CsI
+    calorimeter
+
+  * Represent U production with hadronic decays (list cuts)
+
+  * U decays to ee, mm, tt: multiply them back in with 1/(1-3 B_mm)
+    (B_mm precisely measured at CLEO-III (3-4%))
+
+Measurement technique III (3)
+
+  * Obtain \Gamma_ee from a fit to the resonance lineshape (cartoon)
+
+    - Most background processes scale as 1/s
+
+    - BW lineshape is convoluted with beam energy spread: does not
+      affect *area* (== \Gamma_ee)
+
+    - Also convoluted with ISR tail (e+e- -> U \gamma) which diverges;
+      we remove this by
+
+      . Constructing a fit function which is BW \otimes G \otimes ISR
+
+      . Fitting measured points
+
+      . Reading off BW area parameter
+
+  * Definition of \Gamma_ee (ee -> U, U -> ee diagrams side-by-side)
+
+    - ISR removed             FSR not represented by this measurement
+
+    - Vacuum polarization: same in both cases, left in (6% effect)
+
+  * Show fits and scan/off lumi for each
+
+    - Compare with best lineshapes before CLEO-III
+
+Backgrounds are well-controlled (2)
+
+  * Bottom of the sea plot
+
+    - Lines are represented in the fit function
+
+    - Points are explicitly subtracted, point-by-point
+
+  * We explicitly count and subtract cosmic rays and beam-gas
+
+    - Single-beam and no-beam samples
+
+    - The paper plots: cosmic d_XY is better than beam-gas d_Z
+
+Hadronic efficiency (2)
+
+  * Number of U = (U -> hadrons) / (1-3 Bmm)
+    Hadronic e uncertainty (0.6%) > Bmm e uncertainty (0.2%)
+
+  * Want to avoid using MC for hadronic e, as it assumes a
+    hadronization model
+
+  * Model-independent method for measuring hadronic e (1S):
+
+    - Select U(2S) -> U(1S) pi+pi- events such that the pi+pi- alone
+      guarantee inclusion in the dataset (sufficient for trigger)
+
+    - Supplies an unbiased set of U(1S) events (includes invisibles
+      like U -> nu\bar{nu} and even any BSM decays)
+
+    - Count (#pass cuts)/(#total) for cut efficiencies
+
+    - (Show the recoil mass plots for the unbiased case)
+
+    - Efficiency is nearly 100%
+
+  * For 2S, 3S hadronic e, most modes are unchanged
+
+    - (Use MC for correction factor 1.x +- 0.x consistent with 1)
+
+  * Main difference: U(nS) -> X U(n-1S), U(n-1S) -> e+e-, m+m-
+    have zero efficiency
+
+    - Mini-analysis to determine these branching fractions
+
+Integrated Luminosity (1)
+
+  * Need to know integrated luminosity (amount of data) for each scan
+    point
+
+  * Divide problem into relative int lumis (determine all up to a
+    single constant) and absolute int lumi (determine the last
+    constant)
+
+  * Relative int lumis:
+
+    - Count #e+e- -> \gamma\gamma at each scan point
+
+    - Int lumi is proportional to #\gamma\gamma * beam energy^2
+
+    - This is enough to plot cross-section vs energy, with
+      cross-section in unknown units
+
+  * Absolute int lumis:
+
+    - Separate analysis involving e+e-, \gamma\gamma, m+m- final
+      states
+
+    - Blinded \Gamma_ee analysis by applying this correction at the
+      very end
+
+Cross-section stability (1)
+
+  * 500 measurements of cross-section (below resonance) are consistent
+    with a single value
+
+    - Pull distributions are unit Gaussians
+
+    - Same is true if relative int lumit is measured by Bhabhas
+
+    - This is a larger sample of data than the scan
+
+Beam-energy measurement stability (2, really 1)
+
+  * Weekly scans were short and independent
+
+  * Measurements alternated above and below resonance peak
+
+  * Point of high slope was repeated in the scan
+
+    - Energy measurement stability from consistency of that repeated
+      point
+
+    - 30 measurements, consistent with zero, yield upper limit of 0.07
+      MeV
+
+Fit results (just like last talk) (4, really 2)
+
+Summary of uncertainties (just like last talk) (1)
+
+Preliminary results (just like last talk, with PDG plots) (2)
+
+Comparison with theory (2)
+
+  * Theoretical result is incomplete
+
+    - Equation 23: missing Z_match is lattice current -> real current
+      renormalization, and therefore includes discretization
+      corrections
+
+    - For now, we can compare *ratio* of U(2S)/U(1S) with theory
+
+    - (Add theory extrapolation to plot and update reference)
+
+    - Chiral extrapolation on left, lattice spacing dependence on
+      right
+
+    - \Gamma_ee(1S,2S,3S) calculations will ultimately be ~10%
+      accurate, but ratios will be few percent
+
+D TO MU NU
+
+Similar roadmap (1)
+
+Introduction (3, really 2)
+
+  * Very different kind of analysis: discovery, statistics-limited
+
+  * CLEO-c (show cut-away, point out SI -> ZD) with 281 pb^-1 at
+    psi(3770) (produces D\bar{D} pairs)
+
+  * Identify D+ on one side of the event and look for signal:
+    D- -> mu nu (or charge conjugate)
+
+    - Event picture of a typical D- -> mu nu
+
+    - Six tag modes, following the MARK-III procedure very closely
+
+Event selection (2)
+
+  * Tag modes are fully reconstructed (each track identified,
+    pions/kaons cleanly distinguished by RICH detector, no
+    unidentified CsI showers > 250 MeV)
+
+    - Plot from updated paper
+
+  * Muon deposits < 300 MeV in CsI calorimeter (cuts out 60% of pions)
+
+  * Neutrino is reconstructed from missing mass^2 (define)
+
+    - Plot from updated paper
+
+    - Large peak is from D+ -> K^0 pi, where the K^0 is lost:
+      0.25 GeV^2 is the mass^2 of the K^0
+
+    - D+ -> mu nu (and conjugates) peak near zero (previous
+      measurement at BES saw 1 event)
+
+Backgrounds (1)
+
+  * Table of background contributions (MC) (use updated paper text)
+
+    - All background rates are small: 2.8 background / 47.2 signal
+
+Systematic uncertainties characterize MC accuracy (table) (1)
+
+  * Clean environment, well-understood detector, tested MC
+    --> 2% systematic
+
+  * Statistical uncertainty is 15%
+
+Final results (quote paper, make a PDG plot out of the predictions) (1)
+
+FUTURE
+
+Return to f_D, f_B, \Gamma_ee table (2)
+
+  * Add a dimension: f_Ds (th vs expt), f_Bs (theory only)
+
+    - Theory errors cancel in f_Bs/f_B, so measure
+      \Delta_m_Bs/\Delta_m_B for V_ts/V_td
+
+    - CLEO-c will measure f_Ds, and therefore f_Ds/f_D
+
+    - LQCD does the same and extrapolates to B meson (in fact, more
+      errors cancel in "Grinstein ratio": (f_Bs/f_Bd)/(f_Ds/f_D))
+
+    - CESR/CLEO is already optimizing an energy point for Ds
+      production
+
+  * Semi-leptonic decays: q^2 dependence of f_D (big diagram)
+
+    - Difficult to measure far above threshold (CLEO-III plots)
+      (K l nu peaks under pi l nu)
+
+    - Easier at threshold (pastedGraphic; Fig1-a,b CLNS 05-1906)
+      (This is only 55.8/281 of the currently available data: work in
+      progress)
+
+SUMMARY (1)
+
+  * Precision LQCD is a breakthrough in its own right
+
+  * As a tool, it can extract fundumental parameters from decay rate
+    measurements
+
+  * Some contacts with experiment, such as \Gamma_ee, f_D, f_Ds, f(q^2)
+    Can use these to
+
+    - Check the validity the calculations in different quark pair
+      settings
+
+    - Extrapolate experimental measurements, such as f_D and f_Ds/f_D,
+      to higher quark masses

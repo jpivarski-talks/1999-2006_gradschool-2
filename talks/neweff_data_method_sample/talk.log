@@ -1,0 +1,186 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2002.8.29)  27 FEB 2004 08:39
+**talk.tex
+(./talk.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2000/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2000/05/19 v1.4b Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2000/05/19 v1.4b Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+No file talk.aux.
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks15
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks16
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <24.88> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 28.
+ [1
+
+{/usr/share/texmf/dvips/config/pdftex.map}]
+</cdat/daf9/mccann/neweff/gaudy_slide.pdf, id=11, 723.70375pt x 557.08125pt>
+File: /cdat/daf9/mccann/neweff/gaudy_slide.pdf Graphic file (type pdf)
+
+<use /cdat/daf9/mccann/neweff/gaudy_slide.pdf> [2 </cdat/daf9/mccann/neweff/gau
+dy_slide.pdf>] <p2gg_three_peaks.pdf, id=17, 756.8275pt x 401.5pt>
+File: p2gg_three_peaks.pdf Graphic file (type pdf)
+
+<use p2gg_three_peaks.pdf> [3 <./p2gg_three_peaks.pdf>]
+<cuts0.pdf, id=31, 624.3325pt x 308.15125pt>
+File: cuts0.pdf Graphic file (type pdf)
+ <use cuts0.pdf> [4 <./cuts0.pdf>]
+<cuts.pdf, id=41, 624.3325pt x 308.15125pt>
+File: cuts.pdf Graphic file (type pdf)
+ <use cuts.pdf> [5 <./cuts.pdf>]
+<reffcuts0.pdf, id=51, 625.33624pt x 140.525pt>
+File: reffcuts0.pdf Graphic file (type pdf)
+ <use reffcuts0.pdf> [6 <./reffcuts0.pdf>] <cuts2.pdf, id=62, 624.3325pt x 146.
+5475pt>
+File: cuts2.pdf Graphic file (type pdf)
+ <use cuts2.pdf>
+<reffcuts2.pdf, id=63, 625.33624pt x 141.52875pt>
+File: reffcuts2.pdf Graphic file (type pdf)
+ <use reffcuts2.pdf> [7 <./cuts2.pdf> <./reffcuts2.pdf>]
+<comp_tracks1.pdf, id=81, 569.12625pt x 569.12625pt>
+File: comp_tracks1.pdf Graphic file (type pdf)
+ <use comp_tracks1.pdf>
+[8 <./comp_tracks1.pdf>] <comp_tracks2.pdf, id=87, 569.12625pt x 569.12625pt>
+File: comp_tracks2.pdf Graphic file (type pdf)
+
+<use comp_tracks2.pdf> [9 <./comp_tracks2.pdf>]
+File: reffcuts0.pdf Graphic file (type pdf)
+ <use reffcuts0.pdf> [10]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 177.
+
+Overfull \hbox (28.77365pt too wide) in paragraph at lines 177--183
+[][] 
+ []
+
+
+Overfull \hbox (28.77365pt too wide) in paragraph at lines 185--201
+[][] 
+ []
+
+
+Overfull \hbox (28.77365pt too wide) in paragraph at lines 203--212
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--212
+
+ []
+
+<breakdown.pdf, id=99, 322.20375pt x 561.09625pt>
+File: breakdown.pdf Graphic file (type pdf)
+ <use breakdown.pdf>
+Overfull \hbox (9.5429pt too wide) in paragraph at lines 217--258
+ [] 
+ []
+
+[11]
+Overfull \vbox (56.4371pt too high) has occurred while \output is active []
+
+
+[12 <./breakdown.pdf>] [13] (./talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 955 strings out of 50460
+ 11965 string characters out of 688477
+ 65339 words of memory out of 1500001
+ 3986 multiletter control sequences out of 10000+25000
+ 8902 words of font info for 31 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,15n,21p,199b,570s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesky
+/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/
+texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
+/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texm
+f/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cm
+r17.pfb>
+Output written on talk.pdf (13 pages, 363877 bytes).

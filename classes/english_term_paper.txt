@@ -1,0 +1,47 @@
+Term paper paragraph  ---  Jim Pivarski
+=======================================
+
+Although I'm not taking this course for credit (not even auditing),
+the open-endedness of the term paper question got me thinking about
+what would be an interesting topic. Well, there is a topic that I find
+interesting; maybe you'd like to read about it: particle naming
+conventions. Particle physicists have been discovering and trying to
+categorize new elementary particles since the beginning of the
+twentieth century, and have developed informal and international
+naming conventions along the way. (For instance, a lot of particles
+from the first half of the twentieth century end in "-on". I think
+this is to draw a similarity to the fundumentalness of the "proton,"
+which comes from Greek for "first." I would need to do a little
+research here, because the "electron" was discovered first, and its
+name comes somehow from "elektra," Greek for "amber.") I could also
+write about how Categorization schemes such as "lepton," "meson,"
+"hadron" take on new meaning as more is discovered about the
+particles' substructures, and the varied ways that individual
+particles get their names: from the shape their decays make in the
+detector (the psi particle), people's names (Samuel _Chao_ Chung Ting
+--> "J") as well as more arbitrary sources ("three _quarks_ for Muster
+Mark" (_Finnegan's Wake_)). (Actually, Gell-Mann intended to emphasize
+the way quarks always come in threes.) Finally, a new theory which
+predicts a doubling of the number of particles--- each particle that
+we know about has a mirror-partner that we haven't discovered yet---
+also proposes a scheme for naming the new particles, once they are
+discovered (prefixing "s-" or suffixing "-ino," depending on the
+particle type).
+
+I haven't yet been able to think of a thesis that would draw this all
+together, at the moment it is a collection of anecdotes. Unlike
+historical linguistics, there are no regular sound changes (none of
+these words have existed for more than 105 years), but there might be
+variations from language to language. (I would only have access to
+French, German and Russian speakers in my office, if I go that route.)
+Because we're scientists, there is some struggle to make the
+categorizations meaningful--- to give the nomenclature a grammar that
+models the natural structures (such as prefixing "anti-" for an
+oppositely-charged version of some particle, and the "s-"/"-ino" rule
+mentioned above), but this is subject to a changing understanding of
+what those natural structures are, and a tendancy for widely-used
+names to stick. (The use of "mu meson" rather than "muon" can be used
+to catch a physicist's age, since the category "meson" has shifted in
+meaning.) A lot of this is known to me only well enough to structure a
+paper--- there would still be a little research for me to do to fix
+the details.

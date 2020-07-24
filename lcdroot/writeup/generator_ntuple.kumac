@@ -1,0 +1,40 @@
+h/file 1 /home/mccann/lcdroot/pretty_plots/rcg24/hist_gen.rzn
+cd GENLEVELPROC
+
+* two leptons is 10 + num charged e,mu + 3 * num taus
+* two jets 200 + 10 * up-quark jets + 1 * gluon jets
+
+set GSIZ $SIGMA(0.28*1.5)
+set TSIZ $SIGMA(0.28*1.5)
+set ASIZ $SIGMA(0.28*1.5)
+set CSIZ $SIGMA(0.28*1.5)
+set PSIZ $SIGMA(0.28*1.5)
+set VSIZ $SIGMA(0.28)
+set yhti 1.0
+
+fortran/file 65 'jimp_generator_jets.eps'
+graphics/metafile 65 -111
+igset mtype 1
+
+set hcol 1
+set dmod 1
+h/cr/2d 400 'Generator-level jet mass versus jet energy' 1 0. 140. 1 0. 60.
+nt/plot 1.c1invm%c11e+c12e c1dec==210 ! ! ! ! 400
+set fcol 2
+set fwid 5
+set dmod 1
+f/plot sqrt(x**2-(sqrt((500/2)**2-(159.417)**2)-sqrt(((500/2)-x)**2-(107.697)**2))**2) 20 120.5 's'
+set dmod 2
+f/plot sqrt(x**2-(sqrt((500/2)**2-(159.417+5)**2)-sqrt(((500/2)-x)**2-(107.697+5)**2))**2) 20 116.4 's'
+f/plot sqrt(x**2-(sqrt((500/2)**2-(159.417-5)**2)-sqrt(((500/2)-x)**2-(107.697-5)**2))**2) 20 124.8 's'
+f/plot sqrt(x**2-(sqrt((400/2)**2-(159.417)**2)-sqrt(((400/2)-x)**2-(107.697)**2))**2) 0 71 's'
+
+close 65
+
+* exec /home/mccann/lcdroot/rcg24_parent/evrsmfuncs.kumac
+* set hcol 1
+* nt/plot 1.c11e+c12e%c1invm c1dec==210
+* set fcol 2
+* set fwid 5
+* f/plot bener3(250.0,159.417,107.697,x,+1.0) 0 53 's'
+* f/plot bener3(250.0,159.417,107.697,x,-1.0) 0 54 's'

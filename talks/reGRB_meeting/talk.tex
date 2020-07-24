@@ -1,0 +1,543 @@
+\documentclass[landscape]{article}
+\usepackage[pdftex]{graphicx}
+\pagestyle{empty}
+\oddsidemargin  -0.5 in
+\evensidemargin -0.5 in
+\headheight     0 in
+\topmargin      -1 in
+\textheight     7.7 in
+\textwidth      10 in
+\begin{document}
+\huge
+\renewcommand{\labelitemi}{-}
+\setlength{\parindent}{0 cm}
+
+\begin{tabular}{p{0.45\linewidth} p{0.25\linewidth} p{0.25\linewidth}}
+  \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=7.7 cm, angle=-90, viewport=0 0 316 475, clip=true]{../tables5/all1_bblumi_normcc.pdf}
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=7.7 cm, angle=-90, viewport=0 210 316 475, clip=true]{../tables5/all2_bblumi_normcc.pdf}
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=7.7 cm, angle=-90, viewport=0 210 316 475, clip=true]{../tables5/all3_bblumi_normcc.pdf}
+  \end{minipage} \\
+\end{tabular}
+
+\vfill
+
+Monte Carlo is hadronic (no prompt leptons, but everything else
+(including {\it cascades} to leptons)).
+
+\vfill
+
+Data is hadronic (on-res minus off-res minus beamgas (from
+single-beam) minus cosmic rays (from no-beam) minus prompt decays to
+$e^+e^-$, $\mu^+\mu^-$, $\tau^+\tau^-$ (from Monte Carlo)).
+
+\vfill
+
+\pagebreak
+
+Strategy for determining efficiency
+
+\vfill
+
+\begin{tabular}{p{0.35\linewidth} p{0.6\linewidth}}
+  \begin{minipage}{\linewidth}
+    $\left\{ \begin{array}{c}
+      \vspace{0.5 cm} \mbox{trigger} \\
+      \vspace{0.5 cm} \mbox{closest d0 $<$ 5 mm} \\
+      \mbox{biggest shower $<$} \\
+      \vspace{0.5 cm} \mbox{85\% beam energy} \\
+      \mbox{second-biggest track $<$} \\
+      \mbox{85\% beam energy}
+    \end{array} \right\}$
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    Background subtraction dominates uncertainties
+
+    \vspace{1 cm}
+    Data/MC agreement looks good
+
+    \vspace{1 cm}
+    Cut boundaries are far from signal
+
+    \vspace{1 cm}
+    Measure from Monte Carlo
+  \end{minipage}
+\end{tabular}
+
+\vfill
+
+\begin{tabular}{p{0.35\linewidth} p{0.6\linewidth}}
+  \begin{minipage}{\linewidth}
+    $\left\{ \begin{array}{c}
+      \mbox{Event vertex Z $<$ 7.5 cm} \\
+    \end{array} \right\}$
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    Only $\Upsilon(1S)$ has sub-percent errors
+
+    Measure from $\Upsilon(1S)$, apply to all three
+  \end{minipage}
+\end{tabular}
+
+\vfill
+
+\begin{tabular}{p{0.35\linewidth} p{0.6\linewidth}}
+  \begin{minipage}{\linewidth}
+    $\left\{ \begin{array}{c}
+      \mbox{visible energy $<$ 35\% of } \\
+      \vspace{0.5 cm} \mbox{center-of-mass energy} \\
+      \vspace{0.5 cm} \mbox{quality tracks $\ge$ 2} \\
+      \vspace{0.5 cm} \mbox{level 3/level 4} \\
+      \mbox{CC energy $<$ 85\% of} \\
+      \mbox{center-of-mass energy} \\
+    \end{array} \right\}$
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    No more backgrounds
+
+    \vspace{1 cm}
+    Measure from data
+  \end{minipage} \\
+
+\end{tabular}
+
+\pagebreak
+
+Trigger variables
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_trigger.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_trigger.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_trigger.pdf}
+  \end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item Blue histogram is Monte Carlo
+
+  \item Bluish bins are prompt decays to $e^+e^-$ and $\mu^+\mu^-$
+
+  \item Greenish bins are prompt decays to $\tau^+\tau^-$
+
+  \item Red data points are the sum of these + beam-gas and cosmic rays
+
+  \item Black points are on-res minus off-res data
+
+  \item Black points should agree with red points
+\end{itemize}
+
+\vfill
+
+Suppose we take the error on trigger to be 100\% of itself: 0.5\% efficiency systematic.
+
+\pagebreak
+
+d0 of closest track $<$ 5 mm (trigger already implied existence of one track)
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_d0close.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_d0close.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_d0close.pdf}
+  \end{tabular}
+\end{center}
+
+(Fixed beamspot problem!)
+
+\vfill
+
+Taking error to be 100\% of cut region would yield a 0.1\% efficiency systematic
+
+\vfill
+
+Suppose we're wrong the other way: shift cut from 5 mm down to 2 mm
+changes the result by 0.25\%
+
+\vfill
+
+Take efficiency systematic to be 0.25\%.
+
+\vfill
+
+\pagebreak
+
+Biggest shower $<$ 0.85\% of beam energy
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_e1.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_e1.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_e1.pdf}
+  \end{tabular}
+\end{center}
+
+\vfill
+
+$ggg$ events are all easily below the cut-off
+
+\vfill
+
+$gg\gamma$ span the boundary
+
+\vfill
+
+cascade decays to $e^+e^-$ are all to the right of the boundary
+
+\vfill
+
+\pagebreak
+
+Biggest shower uncertainty from $\Gamma_{gg\gamma}/\Gamma_{ggg}$
+
+\begin{tabular}{p{0.5\linewidth} p{0.45\linewidth}}
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=\linewidth]{../ggg_vs_gggamma.pdf}
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    Solid is $ggg$, dashed is $gg\gamma$ (boundary is also dashed)
+
+    \vspace{1 cm}
+    $\Gamma_{gg\gamma}/\Gamma_{ggg}$ is precise
+    \begin{itemize}
+      \item 2.75 $\pm$ 0.15\% from CLEO PRD 55, 5273 direct measurement
+
+      \item 3.646 $\pm$ 0.054\% from PDG world-average and running to $M_\Upsilon$
+    \end{itemize}
+
+    \vspace{1 cm}
+    Even if we straddle both, efficiency gets a systematic of 0.15\% error
+
+  \end{minipage}
+\end{tabular}
+
+\vfill
+
+\begin{center} But wait!  There's a disaster! \end{center}
+
+\vfill
+
+\pagebreak
+
+Disasterous uncertainty in $gg\gamma$ Monte Carlo
+
+\begin{tabular}{p{0.5\linewidth} p{0.45\linewidth}}
+  \includegraphics[width=\linewidth]{../ggg_vs_gggamma_again.pdf} &
+  \includegraphics[width=\linewidth]{../example_big_gggamma.pdf}
+\end{tabular}
+
+\vfill
+
+\begin{flushright} (Yes, that says 28.4 GeV in the bottom shower) \end{flushright}
+
+\vfill
+
+The big showers don't come from the prompt photon, they come from a
+massively overlapped jet from the $gg$.  This tail extends way beyond
+the full center-of-mass energy.
+
+\vfill
+
+\begin{center} \fbox{Is this feature in the data?} \end{center}
+
+\pagebreak
+
+No.  Not even a little bit.
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../mc_overmodelling_shower_pileup.pdf} &
+    \includegraphics[width=\linewidth]{../mc_overmodelling_shower_pileup2.pdf} &
+    \includegraphics[width=\linewidth]{../mc_overmodelling_shower_pileup3.pdf}
+  \end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item Horizontal axis is in units of center-of-mass energy
+
+  \item Solid is Monte Carlo
+
+  \item Dashed is on-res minus off-res
+
+  \item Histogram is just on-res
+\end{itemize}
+
+\vfill
+
+If Monte Carlo didn't make this mistake, would $gg\gamma$ events be
+below the cut boundary?  I can't tell, so I'll take uncertainty in
+$\Gamma_{gg\gamma}/\Gamma_{ggg}$ to be all of itself, incurring a
+1.1\% systematic in efficiency.
+
+\vfill
+
+\pagebreak
+
+Second-biggest track $<$ 0.85\% of beam energy
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_p2.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_p2.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_p2.pdf}
+  \end{tabular}
+\end{center}
+
+\vfill
+
+No such problems here.  All $ggg$ and $gg\gamma$ pass this cut.
+
+\vfill
+
+I haven't forgotten the cascade to leptons systematic.
+
+\vspace{0.5 cm}
+With Istvan's new $\mathcal{B}_{\mu\mu}$, $\Upsilon(nS) \to X \ell^+
+\ell^-$ (where $X$ cannot be nothing)
+\begin{center}
+is 0 for $\Upsilon(1S)$, 0.795 $\pm$ 0.036\% for
+$\Upsilon(2S)$ and 0.480 $\pm$ 0.028\% for $\Upsilon(3S)$.
+\end{center}
+
+\vfill
+
+Systematic error on efficiency for these uncertainties is 0.06\%.
+
+\vfill
+
+Supposing PHOTOS is wrong by 50\%, we get another systematic of
+0.03\%.
+
+\pagebreak
+
+Event vertex Z $<$ 7.5 cm (or closest track z0 $<$ 7.5 cm, if only one track)
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_wz.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_wz.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_wz.pdf}
+  \end{tabular}
+\end{center}
+
+(Bottom plot is closest z0 for those few events which didn't have two
+tracks to form a Z vertex.  It doesn't cancel well because I forgot to
+move z0 to the beamspot--- $\Upsilon(2S)$ and $\Upsilon(3S)$ samples
+contain many runs.)
+
+\vfill
+
+This cut is perhaps a little too close to trust Monte Carlo,
+backgrounds are now controlled for $\Upsilon(1S)$ (the tallest peak),
+and cut efficiency should be the same for all three resonances, so
+take $\Upsilon(1S)$ value for each.
+
+\vspace{-1.5 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} 99.35 $\pm$ 0.20 $\pm$ 0.56\% \end{center} &
+    \begin{center} 99.96 $\pm$ 0.30 $\pm$ 1.39\% \end{center} &
+    \begin{center} 99.53 $\pm$ 0.41 $\pm$ 1.99\% \end{center}
+  \end{tabular}
+\end{center}
+
+\vspace{-0.75 cm}
+First error is statistical (binomial fluctuations in samples that pass
+cuts) and second is systematic (fluctuations in control samples, scale factors).
+
+\pagebreak
+
+Visible energy $<$ 0.35\% of center-of-mass energy
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_visen.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_visen.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_visen.pdf}
+  \end{tabular}
+\end{center}
+
+\vfill
+
+Bottom plot is the on-res (blue) and off-res (red) before subtraction.
+
+\vfill
+
+The low-energy bump seems to be mostly two-photon events.
+
+\vfill
+
+The problem: $\Upsilon(3S)$ doesn't subtract perfectly--- low-energy
+on-res events got about 50 MeV more neutral energy per event than
+off-res events.
+
+\vfill
+
+\pagebreak
+
+The solution:
+
+\vspace{0.5 cm}
+\begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
+  \includegraphics[width=0.9\linewidth]{../tables5/all3_bblumi_normcc_visen.pdf} &
+  \includegraphics[width=0.9\linewidth]{../tables5/all3_bblumi_coolcc_visen.pdf}
+\end{tabular}
+
+\begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
+  \begin{minipage}{\linewidth} \begin{center} Normal visible energy \end{center} \end{minipage} &
+  \begin{minipage}{\linewidth} \begin{center} No hot showers \end{center} \end{minipage}
+\end{tabular}
+
+\vfill
+
+Calculate visible energy excluding hot showers and the mismatch is gone.
+
+\vfill
+
+Tau subcollection cuts on visible energy including hot showers.
+
+\vfill
+
+I will continue to cut on that variable, but raise the threshold
+above the dangerous bump.
+
+\vfill
+
+\pagebreak
+
+Quality tracks $\ge$ 2
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_tracks.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_tracks.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_tracks.pdf}
+  \end{tabular}
+\end{center}
+
+\vfill
+
+This was the reason I switched to the tau subcollection: data/MC
+mismatch doesn't matter when the cut is made so low.
+
+\vfill
+
+Nor does it matter now anyway, since I'm reading the efficiency from
+data for this variable.
+
+\vfill
+
+\pagebreak
+
+CC energy $<$ 0.85\% of center-of-mass energy
+
+\vspace{-1.75 cm}
+\begin{center}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \begin{center} $\Upsilon(1S)$ \end{center} & \begin{center} $\Upsilon(2S)$ \end{center} & \begin{center} $\Upsilon(3S)$ \end{center} \\
+  \end{tabular}
+
+  \vspace{-0.75 cm}
+  \begin{tabular}{p{0.32\linewidth} p{0.32\linewidth} p{0.32\linewidth}}
+    \includegraphics[width=\linewidth]{../tables5/all1_bblumi_normcc_ccen.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all2_bblumi_normcc_ccen.pdf} &
+    \includegraphics[width=\linewidth]{../tables5/all3_bblumi_normcc_ccen.pdf}
+  \end{tabular}
+\end{center}
+
+\vfill
+
+This was the data/MC disagreement I introduced by the switch.  I will
+remind you that I'm measuring the efficiency from the data.
+
+\vfill
+
+\pagebreak
+
+The big table
+
+\vfill
+
+\begin{center}\fbox{\begin{minipage}{0.9\linewidth}
+\begin{center}\begin{tabular}{l l l l}
+  & \mbox{\hspace{0.55 cm}} $\Upsilon(1S)$ \mbox{\hspace{1 cm}}
+  & \mbox{\hspace{0.55 cm}} $\Upsilon(2S)$ \mbox{\hspace{1 cm}}
+  & \mbox{\hspace{0.55 cm}} $\Upsilon(3S)$ \mbox{\hspace{1 cm}} \\\hline\hline
+  Monte Carlo part \mbox{\hspace{4 cm}} & \mbox{\hspace{0.55 cm}} 0.9852 & \mbox{\hspace{0.55 cm}} 0.9711 & \mbox{\hspace{0.55 cm}} 0.9773 \\
+  statistical & $\pm$ 0.00032 & $\pm$ 0.00040 & $\pm$ 0.00048 \\
+  trigger & $\pm$ 0.0050 & $\pm$ 0.0050 & $\pm$ 0.0050 \\
+  closest d0 & $\pm$ 0.0025 & $\pm$ 0.0025 & $\pm$ 0.0025 \\
+  100\% of $\Gamma_{gg\gamma}/\Gamma_{ggg}$ & $\pm$ 0.0111 & $\pm$ 0.0108 & $\pm$ 0.0109 \\
+  $\mathcal{B}$ of cascade-leptons (1$\sigma$) & $\pm$ 0 & $\pm$ 0.0006 & $\pm$ 0.0005 \\
+  PHOTOS by 50\% & $\pm$ 0 & $\pm$ 0.0003 & $\pm$ 0.0001 \\\hline
+  event Z & \mbox{\hspace{0.55 cm}} 0.9935 & \mbox{\hspace{0.55 cm}} 0.9935 & \mbox{\hspace{0.55 cm}} 0.9935 \\
+  statistical & $\pm$ 0.0020 & $\pm$ 0.0020 & $\pm$ 0.0020 \\
+  systematic & $\pm$ 0.0056 & $\pm$ 0.0056 & $\pm$ 0.0056 \\\hline
+  data part & \mbox{\hspace{0.55 cm}} 0.9949 & \mbox{\hspace{0.55 cm}} 0.9792 & \mbox{\hspace{0.55 cm}} 0.9874 \\
+  statistical & $\pm$ 0.0034 & $\pm$ 0.0039 & $\pm$ 0.0055 \\
+  systematic & $\pm$ 0.0081 & $\pm$ 0.0088 & $\pm$ 0.0110 \\\hline\hline
+  & \mbox{\hspace{0.55 cm}} 0.9738 & \mbox{\hspace{0.55 cm}} 0.9447 & \mbox{\hspace{0.55 cm}} 0.9587 \\
+  total & $\pm$ 0.0040 & $\pm$ 0.0044 & $\pm$ 0.0059 \\
+  & $\pm$ 0.0159 & $\pm$ 0.0160 & $\pm$ 0.0174
+\end{tabular}\end{center}\end{minipage}}\end{center}
+
+\vfill
+
+\mbox{ }
+
+\vfill
+
+\end{document}

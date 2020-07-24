@@ -1,0 +1,31 @@
+if [2].gt.0 then
+  set ncol 16
+  palette 0
+  set fais 1
+  set bord 0
+  set faci 9
+  box [1] $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+  set ncol 16
+  palette 1
+endif
+if [2].lt.0 then
+  set ncol 16
+  palette 0
+  set fais 1
+  set bord 0
+  set faci 9
+  box $GRAFINFO('WNXMIN') [1] $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+  set ncol 16
+  palette 1
+endif
+set ltyp 2
+sigma top = $GRAFINFO('WNYMAX')
+sigma bot = $GRAFINFO('WNYMIN')
+sigma wide = $GRAFINFO('WNXMAX') - $GRAFINFO('WNXMIN')
+dline [1] [1] $SIGMA(bot) $SIGMA(top)
+set ltyp 1
+dline [1] $SIGMA([1]+[2]/abs([2])*0.1*wide) $SIGMA([3]*(top-bot)+bot) $SIGMA([3]*(top-bot)+bot)
+if [2].ne.0 then
+  dline $SIGMA([1]+[2]/abs([2])*0.1*wide) $SIGMA([1]+[2]/abs([2])*0.06*wide) $SIGMA([3]*(top-bot)+bot) $SIGMA(([3]+0.02)*(top-bot)+bot)
+  dline $SIGMA([1]+[2]/abs([2])*0.1*wide) $SIGMA([1]+[2]/abs([2])*0.06*wide) $SIGMA([3]*(top-bot)+bot) $SIGMA(([3]-0.02)*(top-bot)+bot)
+endif

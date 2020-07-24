@@ -1,0 +1,193 @@
+* nt/hmerge ../pds/combined_1.rzn ../pds/r200733.rzn ../pds/r200734.rzn ../pds/r200746.rzn ../pds/r200750.rzn ../pds/r200797.rzn
+* nt/hmerge ../pds/combined_2.rzn ../pds/r200798.rzn ../pds/r200801.rzn ../pds/r200802.rzn ../pds/r200805.rzn ../pds/r200806.rzn ../pds/r200824.rzn ../pds/r200825.rzn ../pds/r200826.rzn ../pds/r200828.rzn ../pds/r200829.rzn ../pds/r200832.rzn
+* nt/hmerge ../pds/combined_3.rzn ../pds/r200833.rzn ../pds/r200834.rzn ../pds/r200835.rzn ../pds/r200847.rzn ../pds/r200851.rzn ../pds/r200853.rzn ../pds/r200854.rzn ../pds/r200976.rzn ../pds/r200978.rzn ../pds/r200979.rzn ../pds/r200981.rzn
+* nt/hmerge ../pds/combined_4.rzn ../pds/r200983.rzn ../pds/r200984.rzn ../pds/r201001.rzn ../pds/r201002.rzn ../pds/r201003.rzn ../pds/r201004.rzn ../pds/r201013.rzn ../pds/r201014.rzn ../pds/r201016.rzn ../pds/r201017.rzn ../pds/r201018.rzn
+* nt/hmerge ../pds/combined_5.rzn ../pds/r201019.rzn ../pds/r201021.rzn ../pds/r201023.rzn ../pds/r201024.rzn ../pds/r201026.rzn ../pds/r201027.rzn ../pds/r201028.rzn ../pds/r201029.rzn ../pds/r201030.rzn ../pds/r201031.rzn ../pds/r201035.rzn
+* nt/hmerge ../pds/combined_6.rzn ../pds/r201037.rzn ../pds/r201039.rzn ../pds/r201040.rzn ../pds/r201041.rzn ../pds/r201042.rzn ../pds/r201043.rzn ../pds/r201095.rzn ../pds/r201097.rzn ../pds/r201102.rzn ../pds/r201103.rzn ../pds/r201104.rzn
+* nt/hmerge ../pds/combined_7.rzn ../pds/r201105.rzn ../pds/r201106.rzn ../pds/r201107.rzn ../pds/r201108.rzn ../pds/r201135.rzn ../pds/r201142.rzn ../pds/r201144.rzn ../pds/r201145.rzn ../pds/r201146.rzn ../pds/r201147.rzn ../pds/r201148.rzn
+* nt/hmerge ../pds/combined_8.rzn ../pds/r201150.rzn ../pds/r201151.rzn ../pds/r201152.rzn ../pds/r201153.rzn ../pds/r201154.rzn ../pds/r201155.rzn ../pds/r201156.rzn ../pds/r201157.rzn ../pds/r201158.rzn ../pds/r201160.rzn ../pds/r201164.rzn
+* nt/hmerge ../pds/combined_9.rzn ../pds/r201166.rzn ../pds/r201167.rzn ../pds/r201170.rzn ../pds/r201171.rzn ../pds/r201172.rzn ../pds/r201173.rzn ../pds/r201174.rzn ../pds/r201175.rzn ../pds/r201181.rzn ../pds/r201184.rzn ../pds/r201188.rzn
+* nt/hmerge ../pds/combined_10.rzn ../pds/r201189.rzn ../pds/r201190.rzn ../pds/r201192.rzn ../pds/r201193.rzn ../pds/r201194.rzn ../pds/r201195.rzn ../pds/r201197.rzn ../pds/r201198.rzn ../pds/r201201.rzn ../pds/r201203.rzn ../pds/r201204.rzn
+* nt/hmerge ../pds/combined_11.rzn ../pds/r201205.rzn ../pds/r201206.rzn ../pds/r201213.rzn ../pds/r201277.rzn ../pds/r201285.rzn ../pds/r201303.rzn ../pds/r201318.rzn ../pds/r201319.rzn ../pds/r201366.rzn ../pds/r201385.rzn ../pds/r201387.rzn
+
+* nt/hmerge ../pds/combined.rzn ../pds/combined_1.rzn ../pds/combined_2.rzn ../pds/combined_3.rzn ../pds/combined_4.rzn ../pds/combined_5.rzn ../pds/combined_6.rzn ../pds/combined_7.rzn ../pds/combined_8.rzn ../pds/combined_9.rzn ../pds/combined_10.rzn ../pds/combined_11.rzn 
+
+* h/file 1 ../pds/combined.rzn
+* cd TRACSKCOLLECTOR
+
+* fortran/file 65 'combined.ps'
+* graphics/metafile 65 -111
+* igset mtype 1
+
+h/file 1 ../rzn/myst_awfultracks_201031.rzn
+cd TRACSKCOLLECTOR
+
+fortran/file 65 '../plots/bad_bhabha_cuts.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+zone 2 2
+
+opt logy
+opt sta
+set stat 0000010
+
+set htyp 0
+h/plot 10
+set htyp 344
+h/plot 1010 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.6 0.6 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 20
+set htyp 344
+h/plot 1020 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.5 0.5 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 30
+set htyp 344
+h/plot 1030 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 2.3 2.3 $SIGMA(low) $SIGMA(high)
+dline 15. 15. $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 33
+set htyp 344
+h/plot 1033 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 1.5 1.5 $SIGMA(low) $SIGMA(high)
+dline 2.5 2.5 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 37
+set htyp 344
+h/plot 1037 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.1 0.1 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 40
+set htyp 344
+h/plot 1040 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 1.5 1.5 $SIGMA(low) $SIGMA(high)
+dline 2.5 2.5 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 50
+set htyp 344
+h/plot 1050 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0. 0. $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 60
+set htyp 344
+h/plot 1060 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.5 0.5 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 70
+set htyp 344
+h/plot 1070 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.8 0.8 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 80
+set htyp 344
+h/plot 1080 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.01 0.01 $SIGMA(low) $SIGMA(high)
+dline -0.01 -0.01 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 90
+set htyp 344
+h/plot 1090 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.002 0.002 $SIGMA(low) $SIGMA(high)
+dline -0.002 -0.002 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 100
+set htyp 344
+h/plot 1100 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.10 0.10 $SIGMA(low) $SIGMA(high)
+dline -0.10 -0.10 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 103
+set htyp 344
+h/plot 1103 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.003 0.003 $SIGMA(low) $SIGMA(high)
+dline -0.003 -0.003 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 107
+set htyp 344
+h/plot 1107 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.03 0.03 $SIGMA(low) $SIGMA(high)
+dline -0.03 -0.03 $SIGMA(low) $SIGMA(high)
+
+* set htyp 0
+* h/plot 110
+* set htyp 344
+* h/plot 1110 s
+
+set htyp 0
+h/plot 120
+set htyp 344
+h/plot 1120 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.10 0.10 $SIGMA(low) $SIGMA(high)
+
+set htyp 0
+h/plot 130
+set htyp 344
+h/plot 1130 s
+set ltyp 2
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.10 0.10 $SIGMA(low) $SIGMA(high)
+dline -0.10 -0.10 $SIGMA(low) $SIGMA(high)
+
+close 65

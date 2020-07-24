@@ -1,0 +1,425 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2003.2.18)  10 DEC 2005 16:38
+**tweaks.tex
+(tweaks.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: dvips.def on input line 125.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2001/03/12 v1.5p LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)) (tweaks.aux)
+\openout1 = `tweaks.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+File: title.eps Graphic file (type eps)
+ <title.eps>
+File: title2.eps Graphic file (type eps)
+ <title2.eps> [1
+
+]
+File: ../diagram_qcd.eps Graphic file (type eps)
+
+<../diagram_qcd.eps>
+
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 77.
+
+
+Overfull \hbox (12.0352pt too wide) detected at line 77
+ \OML/cmm/m/it/24.88 P\OT1/cmr/m/n/24.88 (\OML/cmm/m/it/24.88 q[] \OMS/cmsy/m/n
+/24.88 ! \OML/cmm/m/it/24.88 q[]\OT1/cmr/m/n/24.88 ) \OMS/cmsy/m/n/24.88 / [][]
+  []
+ []
+
+[2] [3]
+File: title_outline.eps Graphic file (type eps)
+ <title_outline.eps> [4]
+File: ../ckm04.eps Graphic file (type eps)
+ <../ckm04.eps> [5]
+File: diagram_Bmix_box.eps Graphic file (type eps)
+ <diagram_Bmix_box.eps>
+File: diagram_Bmix.eps Graphic file (type eps)
+
+<diagram_Bmix.eps> [6]
+File: diagram_Btolnu.eps Graphic file (type eps)
+ <diagram_Btolnu.eps> [7]
+Underfull \hbox (badness 1997) in paragraph at lines 202--204
+[] \OT1/cmss/m/n/24.88 scales with num-ber of
+ []
+
+File: ../qcd_proton.eps Graphic file (type eps)
+<../qcd_proton.eps> [8]
+File: quenched.eps Graphic file (type eps)
+ <quenched.eps> [9]
+File: lqcd_success2.eps Graphic file (type eps)
+ <lqcd_success2.eps> [10]
+File: discovery_hc.eps Graphic file (type eps)
+
+<discovery_hc.eps>
+File: discovery_1d.eps Graphic file (type eps)
+ <discovery_1d.eps> [11]
+File: diagram_Btolnu.eps Graphic file (type eps)
+ <diagram_Btolnu.eps>
+File: diagram_GeeU.eps Graphic file (type eps)
+
+<diagram_GeeU.eps>
+File: diagram_Dtolnu.eps Graphic file (type eps)
+ <diagram_Dtolnu.eps> [12]
+File: title_GeeU.eps Graphic file (type eps)
+ <title_GeeU.eps> [13]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 321--321
+[][] 
+ []
+
+File: diagram_GeeU.eps Graphic file (type eps)
+<diagram_GeeU.eps>
+File: diagram_GeeU-reversed.eps Graphic file (type eps)
+ <diagram_GeeU-reversed.eps> [14]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 361--361
+[][] 
+ []
+
+File: individual07_noinset_1s.eps Graphic file (type eps)
+<individual07_noinset_1s.eps>
+File: aerial2.eps Graphic file (type eps)
+ <aerial2.eps> [15]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 409--409
+[][] 
+ []
+
+File: ../cartoon.eps Graphic file (type eps)
+<../cartoon.eps> [16]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 433--433
+[][] 
+ []
+
+File: cuts_p1.eps Graphic file (type eps)
+<cuts_p1.eps> [17]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 478--478
+[][] 
+ []
+
+File: cuts_visen.eps Graphic file (type eps)
+<cuts_visen.eps> [18]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 523--523
+[][] 
+ []
+
+File: cuts_d0close.eps Graphic file (type eps)
+<cuts_d0close.eps> [19]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 568--568
+[][] 
+ []
+
+File: cuts_anyz.eps Graphic file (type eps)
+<cuts_anyz.eps> [20]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 613--613
+[][] 
+ []
+
+File: /home/mccann/antithesis/plots/panic05/prettied_notau_backgrounds_6.eps Gr
+aphic file (type eps)
+</home/mccann/antithesis/plots/panic05/prettied_notau_backgrounds_6.eps>
+[21]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 622--622
+[][] 
+ []
+
+File: ../datasets_database_dxydzcuts.eps Graphic file (type eps)
+<../datasets_database_dxydzcuts.eps>
+Underfull \hbox (badness 6157) in paragraph at lines 642--643
+[]\OT1/cmss/m/n/24.88 (b) Beam-gas side-
+ []
+
+[22]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 654--654
+[][] 
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 668--669
+[]\OT1/cmss/m/n/24.88 Select []
+ []
+
+File: /home/mccann/antithesis/plots/panic05/prettied_plenary_justpipimass.eps G
+raphic file (type eps)
+</home/mccann/antithesis/plots/panic05/prettied_plenary_justpipimass.eps>
+Overfull \hbox (22.043pt too wide) in paragraph at lines 663--688
+[][] 
+ []
+
+[23]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 695--695
+[][] 
+ []
+
+File: proceedings_cuts2.eps Graphic file (type eps)
+<proceedings_cuts2.eps> [24]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 712--712
+[][] 
+ []
+
+File: ups_spectrum2.eps Graphic file (type eps)
+<ups_spectrum2.eps> [25]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 730--730
+[][] 
+ []
+
+File: ../beautiful_bcasll_2.eps Graphic file (type eps)
+<../beautiful_bcasll_2.eps> [26]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 758--758
+[][] 
+ []
+
+File: ../plenary_lumi.eps Graphic file (type eps)
+<../plenary_lumi.eps> [27]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 783--783
+[][] 
+ []
+
+File: ../stability.eps Graphic file (type eps)
+<../stability.eps> [28]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 802--802
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
+[]\OT1/cmss/m/n/24.88 Each res-o-nance was com-pletely
+ []
+
+File: ../plenary_fitorder.eps Graphic file (type eps)
+<../plenary_fitorder.eps>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 804--824
+[][] 
+ []
+
+[29]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 827--827
+[][] 
+ []
+
+File: ../proceedings_miscal.eps Graphic file (type eps)
+<../proceedings_miscal.eps> [30]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 852--852
+[][] 
+ []
+
+File: ../individual_noinset_1s.eps Graphic file (type eps)
+<../individual_noinset_1s.eps>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 854--881
+[][] 
+ []
+
+[31]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 884--884
+[][] 
+ []
+
+File: ../three_resonances_inset_squat2_nscans.eps Graphic file (type eps)
+<../three_resonances_inset_squat2_nscans.eps> [32]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 894--894
+[][] 
+ []
+
+File: novo_y1s.eps Graphic file (type eps)
+<novo_y1s.eps>
+File: argus_y2s.eps Graphic file (type eps)
+ <argus_y2s.eps>
+File: cleo1_y3s.eps Graphic file (type eps)
+ <cleo1_y3s.eps> [33]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 954--954
+[][] 
+ []
+
+File: ../plenary_pulls1.eps Graphic file (type eps)
+<../plenary_pulls1.eps> [34]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 965--965
+[][] 
+ []
+
+File: ../plenary_pulls2.eps Graphic file (type eps)
+<../plenary_pulls2.eps> [35]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 976--976
+[][] 
+ []
+
+File: ../plenary_pulls3.eps Graphic file (type eps)
+<../plenary_pulls3.eps> [36]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 987--987
+[][] 
+ []
+
+[37]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1014--1014
+[][] 
+ []
+
+[38]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1039--1039
+[][] 
+ []
+
+File: ../pdgplots2.eps Graphic file (type eps)
+<../pdgplots2.eps> [39]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1049--1049
+[][] 
+ []
+
+File: /home/mccann/antithesis/plots/panic05/prettied-zoomed_pdgplots2.eps Graph
+ic file (type eps)
+</home/mccann/antithesis/plots/panic05/prettied-zoomed_pdgplots2.eps> [40]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1057--1057
+[][] 
+ []
+
+File: dependence.eps Graphic file (type eps)
+<dependence.eps> [41]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1076--1076
+[][] 
+ []
+
+File: ../fuzzyloose-digital.eps Graphic file (type eps)
+<../fuzzyloose-digital.eps>
+File: ../fuzzyloose.eps Graphic file (type eps)
+ <../fuzzyloose.eps> [42]
+File: new_ratio_plot.eps Graphic file (type eps)
+ <new_ratio_plot.eps>
+[43]
+File: title_fD.eps Graphic file (type eps)
+ <title_fD.eps> [44]
+File: ../cleoc_2.eps Graphic file (type eps)
+ <../cleoc_2.eps> [45]
+File: ../dmunu_event.eps Graphic file (type eps)
+ <../dmunu_event.eps>
+Underfull \hbox (badness 1009) in paragraph at lines 1182--1183
+[]\OT1/cmss/m/n/24.88 Fully re-con-struct $\OML/cmm/m/it/24.88 D[]$ \OT1/cmss/m
+/n/24.88 de-cay,
+ []
+
+[46]
+File: ../rich_kpisep2.eps Graphic file (type eps)
+ <../rich_kpisep2.eps>
+File: ../dmunu_mbc.eps Graphic file (type eps)
+ <../dmunu_mbc.eps> [47]
+File: ../dmunu_mm.eps Graphic file (type eps)
+ <../dmunu_mm.eps>
+Overfull \hbox (8.69463pt too wide) in paragraph at lines 1250--1255
+[][] 
+ []
+
+[48]
+File: dmunu_comparison3.eps Graphic file (type eps)
+ <dmunu_comparison3.eps> [49]
+File: new_ratio_plot2.eps Graphic file (type eps)
+ <new_ratio_plot2.eps> [50]
+File: ../ckm04.eps Graphic file (type eps)
+ <../ckm04.eps>
+[51]
+File: title_Geepsi_again.eps Graphic file (type eps)
+ <title_Geepsi_again.eps> [52]
+File: psi_gamee2.eps Graphic file (type eps)
+ <psi_gamee2.eps> [53] [54]
+File: ../ckm04.eps Graphic file (type eps)
+ <../ckm04.eps>
+File: semilep_lauren3.eps Graphic file (type eps)
+
+<semilep_lauren3.eps>
+File: semilep_feng3.eps Graphic file (type eps)
+ <semilep_feng3.eps> [55]
+File: new_ratio_plot2.eps Graphic file (type eps)
+ <new_ratio_plot2.eps> [56]
+File: ../qcd_proton.eps Graphic file (type eps)
+
+<../qcd_proton.eps> [57] (tweaks.aux) ) 
+Here is how much of TeX's memory you used:
+ 1173 strings out of 20880
+ 14818 string characters out of 196184
+ 56304 words of memory out of 350001
+ 4092 multiletter control sequences out of 10000+15000
+ 17067 words of font info for 63 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,19n,24p,422b,623s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on tweaks.dvi (57 pages, 59876 bytes).

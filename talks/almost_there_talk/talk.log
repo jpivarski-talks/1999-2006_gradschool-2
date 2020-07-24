@@ -1,0 +1,712 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  10 SEP 2004 13:58
+**talk.tex
+(./talk.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: pdftex.def on input line 125.
+) (./talk.aux)
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks15
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks16
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 34.
+ [1
+
+{/usr/share/texmf/dvips/config/pdftex.map}]
+<white.pdf, id=23, 91.34125pt x 32.12pt>
+File: white.pdf Graphic file (type pdf)
+ <use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 63--63
+[]$[]$| 
+ []
+
+File: white.pdf Graphic file (type pdf)
+<use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 64--64
+[]$[]$| 
+ []
+
+File: white.pdf Graphic file (type pdf)
+<use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 65--65
+[]$[]$| 
+ []
+
+<all1_bblumi_normcc.pdf, id=24, 317.185pt x 476.78125pt>
+File: all1_bblumi_normcc.pdf Graphic file (type pdf)
+
+<use all1_bblumi_normcc.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+[2 <./white.pdf> <./all1_bblumi_normcc.pdf>]
+File: white.pdf Graphic file (type pdf)
+ <use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 97--97
+[]$[]$| 
+ []
+
+File: white.pdf Graphic file (type pdf)
+<use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 98--98
+[]$[]$| 
+ []
+
+File: white.pdf Graphic file (type pdf)
+<use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 99--99
+[]$[]$| 
+ []
+
+<all2_bblumi_normcc.pdf, id=39, 317.185pt x 476.78125pt>
+File: all2_bblumi_normcc.pdf Graphic file (type pdf)
+
+<use all2_bblumi_normcc.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+[3 <./all2_bblumi_normcc.pdf>]
+File: white.pdf Graphic file (type pdf)
+ <use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 131--131
+[]$[]$| 
+ []
+
+File: white.pdf Graphic file (type pdf)
+<use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 132--132
+[]$[]$| 
+ []
+
+File: white.pdf Graphic file (type pdf)
+<use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 133--133
+[]$[]$| 
+ []
+
+<all3_bblumi_normcc.pdf, id=49, 317.185pt x 476.78125pt>
+File: all3_bblumi_normcc.pdf Graphic file (type pdf)
+
+<use all3_bblumi_normcc.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+[4 <./all3_bblumi_normcc.pdf>] <green.pdf, id=59, 91.34125pt x 32.12pt>
+File: green.pdf Graphic file (type pdf)
+
+<use green.pdf>
+Overfull \hbox (10.0889pt too wide) in paragraph at lines 165--165
+[]$[]$| 
+ []
+
+File: white.pdf Graphic file (type pdf)
+<use white.pdf>
+Overfull \hbox (2.4pt too wide) in paragraph at lines 166--166
+[]$[]$| 
+ []
+
+<yellow.pdf, id=60, 91.34125pt x 32.12pt>
+File: yellow.pdf Graphic file (type pdf)
+ <use yellow.pdf>
+Overfull \hbox (10.0889pt too wide) in paragraph at lines 167--167
+[]$[]$| 
+ []
+
+File: all1_bblumi_normcc.pdf Graphic file (type pdf)
+<use all1_bblumi_normcc.pdf> [5 <./green.pdf> <./yellow.pdf>]
+<cheat_sheet.pdf, id=68, 357.335pt x 212.795pt>
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all1_bblumi_normcc_trigger.pdf, id=69, 508.90125pt x 508.90125pt>
+File: all1_bblumi_normcc_trigger.pdf Graphic file (type pdf)
+
+<use all1_bblumi_normcc_trigger.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 196--201
+[][]
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 210.
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--214
+
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 221--222
+[]/cmr17@20.74pt/Shifting CBLO=7 bin to match
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 194--231
+[][] 
+ []
+
+File: cheat_sheet.pdf Graphic file (type pdf)
+<use cheat_sheet.pdf>
+<all2_bblumi_normcc_trigger.pdf, id=70, 508.90125pt x 508.90125pt>
+File: all2_bblumi_normcc_trigger.pdf Graphic file (type pdf)
+
+<use all2_bblumi_normcc_trigger.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--252
+
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 259--260
+[]/cmr17@20.74pt/Shifting CBLO=7 bin to match
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 232--269
+[][] 
+ []
+
+[6 <./cheat_sheet.pdf> <./all1_bblumi_normcc_trigger.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+
+<use cheat_sheet.pdf>
+<all3_bblumi_normcc_trigger.pdf, id=87, 508.90125pt x 508.90125pt>
+File: all3_bblumi_normcc_trigger.pdf Graphic file (type pdf)
+
+<use all3_bblumi_normcc_trigger.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 272--277
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
+
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 297--298
+[]/cmr17@20.74pt/Shifting CBLO=7 bin to match
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 270--307
+[][] 
+ []
+
+[7 <./all2_bblumi_normcc_trigger.pdf>]
+File: white.pdf Graphic file (type pdf)
+ <use white.pdf>
+<final_cascades.pdf, id=94, 539.01375pt x 518.93875pt>
+File: final_cascades.pdf Graphic file (type pdf)
+
+<use final_cascades.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 310--316
+[][]
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 343--345
+[]/cmr17@20.74pt/Uncertainty in agree-ment in-tro-
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 308--351
+[][] 
+ []
+
+[8 <./all3_bblumi_normcc_trigger.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all1_bblumi_normcc_d0close.pdf, id=100, 508.90125pt x 508.90125pt>
+File: all1_bblumi_normcc_d0close.pdf Graphic file (type pdf)
+
+<use all1_bblumi_normcc_d0close.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 354--359
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 352--381
+[][] 
+ []
+
+[9 <./final_cascades.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all2_bblumi_normcc_d0close.pdf, id=106, 508.90125pt x 508.90125pt>
+File: all2_bblumi_normcc_d0close.pdf Graphic file (type pdf)
+
+<use all2_bblumi_normcc_d0close.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 384--389
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 382--411
+[][] 
+ []
+
+[10 <./all1_bblumi_normcc_d0close.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all3_bblumi_normcc_d0close.pdf, id=112, 508.90125pt x 508.90125pt>
+File: all3_bblumi_normcc_d0close.pdf Graphic file (type pdf)
+
+<use all3_bblumi_normcc_d0close.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 414--419
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 412--441
+[][] 
+ []
+
+[11 <./all2_bblumi_normcc_d0close.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all1_e1.pdf, id=118, 508.90125pt x 508.90125pt>
+File: superplots_all1_e1.pdf Graphic file (type pdf)
+
+<use superplots_all1_e1.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 444--449
+[][]
+ []
+
+
+Package pdftex.def Warning: Option `bb' does not make sense,
+(pdftex.def)                using `viewport' instead on input line 462.
+
+<alphas_used.pdf, id=119, 100.375pt x 501.875pt>
+File: alphas_used.pdf Graphic file (type pdf)
+ <use alphas_used.pdf>
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 442--471
+[][] 
+ []
+
+[12 <./all3_bblumi_normcc_d0close.pdf>]
+File: white.pdf Graphic file (type pdf)
+ <use white.pdf>
+<example_big_gggamma.pdf, id=125, 573.14125pt x 614.295pt>
+File: example_big_gggamma.pdf Graphic file (type pdf)
+
+<use example_big_gggamma.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 474--479
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 472--504
+[][] 
+ []
+
+[13 <./superplots_all1_e1.pdf> <./alphas_used.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all2_e1.pdf, id=138, 508.90125pt x 508.90125pt>
+File: superplots_all2_e1.pdf Graphic file (type pdf)
+
+<use superplots_all2_e1.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 507--512
+[][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 531--532
+[]/cmr17@20.74pt/Suppose /cmtt12@20.74pt/PHOTOS /cmr17@20.74pt/is 50% wrong:
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 505--537
+[][] 
+ []
+
+[14 <./example_big_gggamma.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all3_e1.pdf, id=151, 508.90125pt x 508.90125pt>
+File: superplots_all3_e1.pdf Graphic file (type pdf)
+
+<use superplots_all3_e1.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 540--545
+[][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 564--565
+[]/cmr17@20.74pt/Suppose /cmtt12@20.74pt/PHOTOS /cmr17@20.74pt/is 50% wrong:
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 538--570
+[][] 
+ []
+
+[15 <./superplots_all2_e1.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all1_p2.pdf, id=157, 508.90125pt x 508.90125pt>
+File: superplots_all1_p2.pdf Graphic file (type pdf)
+
+<use superplots_all1_p2.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 573--578
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 571--593
+[][] 
+ []
+
+[16 <./superplots_all3_e1.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all2_p2.pdf, id=163, 508.90125pt x 508.90125pt>
+File: superplots_all2_p2.pdf Graphic file (type pdf)
+
+<use superplots_all2_p2.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 596--601
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 594--616
+[][] 
+ []
+
+[17 <./superplots_all1_p2.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all3_p2.pdf, id=169, 508.90125pt x 508.90125pt>
+File: superplots_all3_p2.pdf Graphic file (type pdf)
+
+<use superplots_all3_p2.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 619--624
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 617--639
+[][] 
+ []
+
+[18 <./superplots_all2_p2.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all1_bblumi_normcc_wz.pdf, id=175, 508.90125pt x 508.90125pt>
+File: all1_bblumi_normcc_wz.pdf Graphic file (type pdf)
+
+<use all1_bblumi_normcc_wz.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 642--647
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+[]/cmr17@20.74pt/Suppress beam-gas by cut-ting
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 640--681
+[][] 
+ []
+
+[19 <./superplots_all3_p2.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all2_bblumi_normcc_wz.pdf, id=182, 508.90125pt x 508.90125pt>
+File: all2_bblumi_normcc_wz.pdf Graphic file (type pdf)
+
+<use all2_bblumi_normcc_wz.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 684--689
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
+[]/cmr17@20.74pt/Suppress beam-gas by cut-ting
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 682--723
+[][] 
+ []
+
+[20 <./all1_bblumi_normcc_wz.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all3_bblumi_normcc_wz.pdf, id=188, 508.90125pt x 508.90125pt>
+File: all3_bblumi_normcc_wz.pdf Graphic file (type pdf)
+
+<use all3_bblumi_normcc_wz.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 726--731
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 737--738
+[]/cmr17@20.74pt/Suppress beam-gas by cut-ting
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 724--765
+[][] 
+ []
+
+[21 <./all2_bblumi_normcc_wz.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all1_visen.pdf, id=194, 508.90125pt x 508.90125pt>
+File: superplots_all1_visen.pdf Graphic file (type pdf)
+
+<use superplots_all1_visen.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 768--773
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 766--793
+[][] 
+ []
+
+[22 <./all3_bblumi_normcc_wz.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all2_visen.pdf, id=200, 508.90125pt x 508.90125pt>
+File: superplots_all2_visen.pdf Graphic file (type pdf)
+
+<use superplots_all2_visen.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 796--801
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 794--821
+[][] 
+ []
+
+[23 <./superplots_all1_visen.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all3_visen.pdf, id=206, 508.90125pt x 508.90125pt>
+File: superplots_all3_visen.pdf Graphic file (type pdf)
+
+<use superplots_all3_visen.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 824--829
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 822--848
+[][] 
+ []
+
+[24 <./superplots_all2_visen.pdf>] [25 <./superplots_all3_visen.pdf>]
+<normcc_visen.pdf, id=218, 508.90125pt x 508.90125pt>
+File: normcc_visen.pdf Graphic file (type pdf)
+ <use normcc_visen.pdf>
+<coolcc_visen.pdf, id=219, 508.90125pt x 508.90125pt>
+File: coolcc_visen.pdf Graphic file (type pdf)
+ <use coolcc_visen.pdf>
+[26 <./normcc_visen.pdf> <./coolcc_visen.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all1_bblumi_normcc_tracks.pdf, id=227, 508.90125pt x 508.90125pt>
+File: all1_bblumi_normcc_tracks.pdf Graphic file (type pdf)
+
+<use all1_bblumi_normcc_tracks.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 891--896
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 889--913
+[][] 
+ []
+
+File: cheat_sheet.pdf Graphic file (type pdf)
+<use cheat_sheet.pdf>
+<all2_bblumi_normcc_tracks.pdf, id=228, 508.90125pt x 508.90125pt>
+File: all2_bblumi_normcc_tracks.pdf Graphic file (type pdf)
+
+<use all2_bblumi_normcc_tracks.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 916--921
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 914--938
+[][] 
+ []
+
+[27 <./all1_bblumi_normcc_tracks.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<all3_bblumi_normcc_tracks.pdf, id=234, 508.90125pt x 508.90125pt>
+File: all3_bblumi_normcc_tracks.pdf Graphic file (type pdf)
+
+<use all3_bblumi_normcc_tracks.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 941--946
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 939--963
+[][] 
+ []
+
+[28 <./all2_bblumi_normcc_tracks.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all1_ccen.pdf, id=240, 508.90125pt x 508.90125pt>
+File: superplots_all1_ccen.pdf Graphic file (type pdf)
+
+<use superplots_all1_ccen.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 966--971
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 964--988
+[][] 
+ []
+
+[29 <./all3_bblumi_normcc_tracks.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all2_ccen.pdf, id=246, 508.90125pt x 508.90125pt>
+File: superplots_all2_ccen.pdf Graphic file (type pdf)
+
+<use superplots_all2_ccen.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 991--996
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 989--1013
+[][] 
+ []
+
+[30 <./superplots_all1_ccen.pdf>]
+File: cheat_sheet.pdf Graphic file (type pdf)
+ <use cheat_sheet.pdf>
+<superplots_all3_ccen.pdf, id=252, 508.90125pt x 508.90125pt>
+File: superplots_all3_ccen.pdf Graphic file (type pdf)
+
+<use superplots_all3_ccen.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1021
+[][]
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 1014--1038
+[][] 
+ []
+
+[31 <./superplots_all2_ccen.pdf>] [32 <./superplots_all3_ccen.pdf>] [33]
+(./talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 1081 strings out of 50453
+ 15672 string characters out of 688420
+ 61465 words of memory out of 1500001
+ 4090 multiletter control sequences out of 10000+25000
+ 7203 words of font info for 26 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,24n,21p,305b,629s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/t
+exmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm
+/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texm
+f/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cm
+ex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/
+fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on talk.pdf (33 pages, 586574 bytes).

@@ -1,0 +1,22 @@
+ FCN=  0.6423132E-02 FROM SET PARM  STATUS=NEW VALUES     1 CALLS       78 TOTAL
+                     EDM= unknown    STRATEGY=1  ERROR MATRIX UNCERTAINTY=100.0%
+
+  EXT PARAMETER                APPROXIMATE     INTERNAL      INTERNAL  
+  NO.   NAME        VALUE          ERROR       STEP SIZE       VALUE   
+   1  x            0.19171E-03     fixed    
+   2  y           -0.15340E-01     fixed    
+   3  z           -0.10868E-01    2.6536       0.14306E-03  -0.10868E-02
+   4  rotx        -0.54526         fixed    
+   5  roty        -0.28372         fixed    
+   6  rotz         -4.1616         fixed    
+   7  t0_offset     1.7168        132.42       0.15598E-02   0.17168E-01
+   8  drift_spee    29.920        89.849       0.85446E-03  -0.64484    
+
+1 0 0 0 0 0 1 5 DEFAULT
+3
+1 7.54763e-06 -0.000603941 -0.000427862 -0.000545257 -0.00028372 -0.00416164
+2 0 0 0 0 0 -0.00025
+3 0 0 0 0 0 0.00025
+
+set par 7 1.7168
+set par 8 29.920

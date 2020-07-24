@@ -1,0 +1,77 @@
+*** Begin of history file: Fri Nov 21 11:48:47 2003
+h/file 1 ../rzn/read_pds.rzn
+cd mistereos
+nt/cuts $1 (layer==4&&(wire==1.or.wire==5.or.wire==6.or.wire==8.or.wire==27.or.wire==31.or.wire==43)).or.(layer==5&&(wire==19.or.wire==54)).or.(layer==6&&(wire==11))
+h/cr/prof 301 'layers 2,3 cotTheta cut 1.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 302 'layers 2,3 cotTheta cut 1.' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 303 'layers 2,3 cotTheta cut 0.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 311 'layers 4,5 cotTheta cut 1.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 312 'layers 4,5 cotTheta cut 1.' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 313 'layers 4,5 cotTheta cut 0.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/title 'ZD residual VS hit Z'
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(layer==2.or.layer==3)&&(!$1) ! ! 'N' 301
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(layer==2.or.layer==3)&&(!$1) ! ! ! 'N' 301
+nt/plot 1.(drift-dca)%z abs(cT)<1.0&&(layer==2.or.layer==3)&&(!$1) ! ! ! 'N' 302
+nt/plot 1.(drift-dca)%z abs(cT)<0.5&&(layer==2.or.layer==3)&&(!$1) ! ! ! 'N' 303
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(layer==4.or.layer==5)&&(!$1) ! ! ! 'N' 311
+nt/plot 1.(drift-dca)%z abs(cT)<1.0&&(layer==4.or.layer==5)&&(!$1) ! ! ! 'N' 312
+nt/plot 1.(drift-dca)%z abs(cT)<0.5&&(layer==4.or.layer==5)&&(!$1) ! ! ! 'N' 313
+zone 2 3
+h/plot 301
+h/plot 311
+h/plot 302
+h/plot 312
+h/plot 303
+h/plot 313
+min 301 -0.002
+max 301  0.002
+min 311 -0.002
+max 311  0.002
+min 302 -0.002
+max 302  0.002
+min 312 -0.002
+max 312  0.002
+min 303 -0.002
+max 303  0.002
+min 313 -0.002
+max 313  0.002
+zone 2 3
+h/plot 301
+h/plot 311
+h/plot 302
+h/plot 312
+h/plot 303
+h/plot 313
+min 301 -0.001
+max 301  0.001
+min 311 -0.001
+max 311  0.001
+min 302 -0.001
+max 302  0.001
+min 312 -0.001
+max 312  0.001
+min 303 -0.001
+max 303  0.001
+min 313 -0.001
+max 313  0.001
+zone 2 3
+h/plot 301
+h/plot 311
+h/plot 302
+h/plot 312
+h/plot 303
+h/plot 313
+min 301 -0.0005
+max 301  0.0005
+min 311 -0.0005
+max 311  0.0005
+min 302 -0.0005
+max 302  0.0005
+min 312 -0.0005
+max 312  0.0005
+min 303 -0.0005
+max 303  0.0005
+min 313 -0.0005
+max 313  0.0005
+zone 2 3
+*** End   of history file: Fri Nov 21 11:55:01 2003

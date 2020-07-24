@@ -1,0 +1,178 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2002.8.29)  17 OCT 2003 17:28
+**plots
+(plots.tex
+LaTeX2e <2000/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2000/05/19 v1.4b Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2000/05/19 v1.4b Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (plots.aux)
+\openout1 = `plots.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+File: batse.eps Graphic file (type eps)
+ <batse.eps>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 16.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 14--17
+[]$[]$ 
+ []
+
+[1
+
+]
+File: mollweide_equal_area.eps Graphic file (type eps)
+ <mollweide_equal_area.eps>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 20--24
+[]$[]$ 
+ []
+
+[2]
+File: hubble.eps Graphic file (type eps)
+ <hubble.eps>
+File: tammann1998.eps Graphic file (type eps)
+ <tammann1998.eps>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 27--37
+[]$[]$
+ []
+
+[3]
+File: wmap_flat.eps Graphic file (type eps)
+ <wmap_flat.eps>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 40--44
+[]$[]$ 
+ []
+
+
+Overfull \vbox (9.82259pt too high) has occurred while \output is active []
+
+
+[4]
+File: wmap_only.eps Graphic file (type eps)
+ <wmap_only.eps>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 47--51
+[]$[]$ 
+ []
+
+
+Overfull \vbox (9.82259pt too high) has occurred while \output is active []
+
+
+[5]
+File: power_spectrum2.eps Graphic file (type eps)
+ <power_spectrum2.eps>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 54--58
+[]$[]$ 
+ []
+
+[6]
+File: elemental_abundances2.eps Graphic file (type eps)
+ <elemental_abundances2.eps>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 61--65
+[]$[]$ 
+ []
+
+[7]
+File: scp_hubblediag.eps Graphic file (type eps)
+ <scp_hubblediag.eps>
+Overfull \hbox (16.16595pt too wide) in paragraph at lines 70--71
+[]  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 68--72
+[]$[]$ 
+ []
+
+[8]
+File: scp_hubblediag2.eps Graphic file (type eps)
+ <scp_hubblediag2.eps>
+Overfull \hbox (6.91032pt too wide) in paragraph at lines 77--78
+[]  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 75--79
+[]$[]$ 
+ []
+
+[9]
+File: scp_systematics.eps Graphic file (type eps)
+ <scp_systematics.eps>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 82--87
+[]$[]$ 
+ []
+
+[10] (plots.aux) ) 
+Here is how much of TeX's memory you used:
+ 535 strings out of 20887
+ 5939 string characters out of 196241
+ 50718 words of memory out of 350001
+ 3517 multiletter control sequences out of 10000+15000
+ 6376 words of font info for 23 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,5n,19p,181b,267s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on plots.dvi (10 pages, 2568 bytes).

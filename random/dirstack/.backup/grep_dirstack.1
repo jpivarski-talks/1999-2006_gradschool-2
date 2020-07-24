@@ -1,0 +1,11 @@
+#!/usr/local/bin/perl 
+
+use lib '/home/cplager/scripts/dirstack';
+use DirStack;
+
+$arg = $ARGV[0];
+
+if (defined $arg) {
+    grep_directory_names($arg);
+}
+print_dirstring();

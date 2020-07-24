@@ -1,0 +1,156 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  24 FEB 2005 11:41
+**scramble2.tex
+(./scramble2.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/misc/ulem.sty
+\UL@box=\box26
+\UL@hyphenbox=\box27
+\UL@skip=\skip43
+\UL@pe=\count87
+\UL@pixel=\dimen103
+\ULC@box=\box28
+Package: ulem 1997/04/21
+\ULdepth=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen105
+\Gin@req@width=\dimen106
+) (./scramble2.aux)
+\openout1 = `scramble2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count89
+\scratchcounter=\count90
+\scratchtoks=\toks15
+\scratchdimen=\dimen107
+\scratchskip=\skip44
+\scratchmuskip=\muskip10
+\scratchbox=\box29
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen108
+\nextbox=\box30
+\nextdepth=\dimen109
+\everyline=\toks16
+\!!counta=\count91
+\!!countb=\count92
+\recursecounter=\count93
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 18.
+ <charginos_left.pdf, id=1, 508.90125pt x 508.90125pt>
+File: charginos_left.pdf Graphic file (type pdf)
+
+<use charginos_left.pdf>
+<charginos_right.pdf, id=2, 508.90125pt x 508.90125pt>
+File: charginos_right.pdf Graphic file (type pdf)
+
+<use charginos_right.pdf>
+Overfull \hbox (9.55394pt too wide) in paragraph at lines 18--24
+ [] 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 32.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 32.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 32.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 38.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 38.
+[1
+
+{/usr/share/texmf/dvips/config/pdftex.map} <./charginos_left.pdf> <./charginos_
+right.pdf>] [2] <fakeit2_mass.pdf, id=38, 347.2975pt x 222.8325pt>
+File: fakeit2_mass.pdf Graphic file (type pdf)
+
+<use fakeit2_mass.pdf> <fakeit2_energy.pdf, id=39, 345.29pt x 222.8325pt>
+File: fakeit2_energy.pdf Graphic file (type pdf)
+
+<use fakeit2_energy.pdf> [3 <./fakeit2_mass.pdf> <./fakeit2_energy.pdf>]
+<fakeit2_chisquare_tmpbowl.pdf, id=55, 433.62pt x 425.59pt>
+File: fakeit2_chisquare_tmpbowl.pdf Graphic file (type pdf)
+
+<use fakeit2_chisquare_tmpbowl.pdf> [4 <./fakeit2_chisquare_tmpbowl.pdf>]
+<fakeit2_chisquare_tmpbowl2.pdf, id=65, 433.62pt x 425.59pt>
+File: fakeit2_chisquare_tmpbowl2.pdf Graphic file (type pdf)
+
+<use fakeit2_chisquare_tmpbowl2.pdf> [5 <./fakeit2_chisquare_tmpbowl2.pdf>]
+(./scramble2.aux) ) 
+Here is how much of TeX's memory you used:
+ 972 strings out of 50453
+ 11842 string characters out of 688420
+ 59616 words of memory out of 1500001
+ 4006 multiletter control sequences out of 10000+25000
+ 8656 words of font info for 31 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,15n,21p,608b,530s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/sh
+are/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/blues
+ky/cm/cmr17.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/
+texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/
+cmmi12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf
+/fonts/type1/bluesky/cm/cmr10.pfb>
+Output written on scramble2.pdf (5 pages, 117594 bytes).

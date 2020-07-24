@@ -1,0 +1,1256 @@
+* Chi1+Chi1-
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_0p1.rzn
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_0p2.rzn
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_1p1.rzn
+* Chi1+Chi2-
+nt/chain c1c2 rzn/chi20chi30v5_c1pc2m_l.rzn
+* Chi10Chi20
+nt/chain n1n3 rzn/chi20chi30v5_n1n3_l.rzn
+* Chi20Chi30
+nt/chain n2n3 rzn/chi20chi30v5_n2n3_l.rzn
+* Standard Model
+exec load_simd242.kumac
+
+sigma ssm   = 1.0
+sigma sn1n3 =   (250) / (281.6)
+sigma sc1c2 =   (250) / (163.5 + 511)
+sigma sn2n3 =   (250) / (254.4)
+sigma sc1c1 =   (250) / (127.6 + 138.2)
+global/create toplay simd242
+global/create layer5 sm
+global/create layer4 n2n3
+global/create layer3 n1n3
+global/create layer2 c1c2
+global/create layer1 c1c1
+exec color.kumac
+
+set GSIZ $SIGMA(0.28*1.5)
+set TSIZ $SIGMA(0.28*1.5)
+set ASIZ $SIGMA(0.28*1.5)
+set CSIZ $SIGMA(0.28*1.5)
+set PSIZ $SIGMA(0.28*1.5)
+set VSIZ $SIGMA(0.28)
+set yhti 1.0
+
+fortran/file 65 'charginos_left.eps'
+graphics/metafile 65 -111
+igset mtype 1
+
+zone 1 3
+opt nsta
+set stat 0000010
+set fit 001
+
+nt/cuts $4 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+
+sigma prefix=100
+exec fill.kumac 'Missing energy in 2 jet, 1 lepton events (GeV)' 100 280. 550. 5.500-eve $4
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 4 0.05 $SIGMA(0.28*1.5)
+exec cutline.kumac 300. 1. 0.9
+nt/cuts $1 500-eve>300
+
+sigma prefix=200
+exec fill.kumac 'Jet invariant mass (GeV)' 100 0. 100. 5.jinvm $4&&$1
+exec plot.kumac 0. 0. 0. 0. !
+exec cutline.kumac 60 -1. 0.9
+nt/cuts $2 jinvm<60.
+
+sigma prefix=300
+exec fill.kumac 'Jet transverse momentum (GeV)' 120 0. 120. 5.sqrt((j1px+j2px)**2+(j1py+j2py)**2) $4&&$1&&$2
+exec plot.kumac 0. 0. 0. 0. !
+exec cutline.kumac 25 1. 0.9
+nt/cuts $3 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+
+close 65
+
+
+
+
+nt/chain zpairs /home/mccann/lcdroot/pretty_plots/rcg24_again/chi20chi30v5_zpair_l_0p1.rzn
+nt/chain zpairs /home/mccann/lcdroot/pretty_plots/rcg24_again/chi20chi30v5_zpair_l_0p2.rzn
+nt/chain zpairs /home/mccann/lcdroot/pretty_plots/rcg24_again/chi20chi30v5_zpair_l_1p1.rzn
+h/cr/1d 100 'Jet invariant mass smearing from Z peak' 300 0 30
+nt/plot //zpairs/CHI20CHI30PROC/3.91.1876-jinvm ! ! ! ! ! 100
+ve/cr tmp(300)
+h/get_vect/contents 100 tmp
+sigma excess = tmp(300) + $HINFO(100,'OVERFLOW')
+ve/inp tmp(300) $SIGMA(excess)
+h/put_vect/contents 100 tmp
+h/plot 100
+pict/print 'z_smearing_with_overflow.eps'
+ve/print tmp 0
+h/plot 100
+
+h/cr/1d 100 'Jet invariant mass smearing from Z peak' 300 0 30
+h/cr/1d 200 'Jet invariant mass smearing from Z peak' 300 0 30
+nt/plot //zpairs/CHI20CHI30PROC/3.91.1876-jinvm ! ! ! ! ! 100
+nt/plot //zpairs/CHI20CHI30PROC/3.91.1876-jinvm (j1px*j2px+j1py*j2py+j1pz*j2pz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(j2px**2+j2py**2+j2pz**2)<0 ! ! ! ! 200
+normalize 100
+normalize 200
+h/plot 100(1:50)
+h/plot 200 's'
+
+
+
+
+
+
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_0p1.rzn
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_0p2.rzn
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_1p1.rzn
+nt/chain c1c1 	rzn/chi20chi30v5_c1pc1m_r_p1.rzn
+nt/chain c1c1 	rzn/chi20chi30v5_c1pc1m_r_p2.rzn
+exec load_allsim.kumac
+sigma sc1c1 =   (2*250) / (127.6 + 138.2 + 1010.0)
+h/file 2 /home/mccann/lcdroot/rzn/anew_left1.rzn
+
+nt/cuts $1 500-eve>300
+nt/cuts $2 jinvm<60.
+nt/cuts $3 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+nt/cuts $4 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+
+h/cr/1d 100 'jets invariant mass' 15 30. 60.
+h/cr/1d 200 'jets invariant mass' 15 30. 60.
+h/cr/1d 300 'jets invariant mass' 15 30. 60.
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm ! ! ! ! 'N' 100
+nt/plot //lun2/LCDEXAMPLEPROC/1.sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) survive==1 ! ! ! 'N' 300
+ve/cr tmp(15)
+ve/inp tmp(1) 894.124
+ve/inp tmp(2) 693.947
+ve/inp tmp(3) 934.16
+ve/inp tmp(4) 613.876
+ve/inp tmp(5) 613.876
+ve/inp tmp(6) 520.46
+ve/inp tmp(7) 387.009
+ve/inp tmp(8) 440.39
+ve/inp tmp(9) 427.044
+ve/inp tmp(10) 213.522
+ve/inp tmp(11) 66.7257
+ve/inp tmp(12) 0
+ve/inp tmp(13) 0
+ve/inp tmp(14) 0
+ve/inp tmp(15) 0
+
+h/put_vect/contents 200 tmp
+normalize 100
+normalize 200
+normalize 300
+h/plot 100
+h/plot 200 'se'
+
+
+h/cr/2d 100 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+h/cr/2d 200 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+h/cr/2d 300 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+h/cr/2d 400 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e%jinvm $1&&$2&&$3&&$4 ! ! ! 'N' 100
+nt/plot //simd242/CHI20CHI30PROC/5.j1e+j2e%jinvm (scale*250.0).and.($1&&$2&&$3&&$4) ! ! ! 'N' 200
+add 100 100 300 $SIGMA(sc1c1) 0.
+add 100 200 400 $SIGMA(sc1c1) 1.
+ve/cr vals(15,35)
+ve/cr err2s(15,35)
+h/get_vect/contents 300 vals
+h/get_vect/contents 400 err2s
+ve/print vals 0
+ve/print err2s 0
+
+h/cr/1d 500 'jets invariant mass' 15 30. 60.
+h/cr/1d 600 'jets energy' 35 70. 140.
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $1&&$2&&$3&&$4 ! ! ! ! 500
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $1&&$2&&$3&&$4 ! ! ! ! 600
+
+
+
+
+
+
+
+
+
+
+
+
+
+zone 1 2
+sigma prefix=400
+exec fill.kumac 'Jet 1 cos([Q])' 100 -1 1 5.j1pz/sqrt(j1px**2+j1py**2+j1pz**2) $1&&$2
+exec plot.kumac 0. 0. 0. 0. !
+exec cutline.kumac 0.9 -1. 0.9
+exec cutline.kumac -0.9 1. 0.9
+sigma prefix=500
+exec fill.kumac 'Jet 2 cos([Q])' 100 -1 1 5.j2pz/sqrt(j2px**2+j2py**2+j2pz**2) $1&&$2
+exec plot.kumac 0. 0. 0. 0. !
+exec cutline.kumac 0.9 -1. 0.9
+exec cutline.kumac -0.9 1. 0.9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zone 1 1
+set hcol 1
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $4
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $4&&$1 ! ! ! 's'
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $4&&$1&&$2 ! ! ! 's'
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $4&&$1&&$2&&$3 ! ! ! 's'
+
+
+zone 1 1
+set hcol 1
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $4
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $4&&$1 ! ! ! 's'
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $4&&$1&&$2 ! ! ! 's'
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $4&&$1&&$2&&$3 ! ! ! 's'
+
+
+
+
+
+
+sigma prefix=300
+exec fill.kumac 'Lepton cos([Q])' 120 -1 1 5.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec cutline.kumac 0.95 -1. 0.9
+exec cutline.kumac -0.95 1. 0.9
+
+
+
+
+
+sigma prefix=300
+exec fill.kumac 'Missing energy direction' 120 -1 1 5.(j1pz+j2pz+lpz)/sqrt((j1px+j2px+lpx)**2+(j1py+j2py+lpy)**2+(j1pz+j2pz+lpz)**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+
+sigma prefix=300
+exec fill.kumac 'Lepton transverse momentum (GeV)' 120 0 120 5.sqrt((lpx)**2+(lpy)**2+lpz**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+
+
+
+
+
+
+
+sigma prefix=200
+exec fill.kumac 'Missing momentum cos([Q])' 100 -1. 1. 5.(j1pz+j2pz+lpz)/sqrt((j1px+j2px+lpx)**2+(j1py+j2py+lpy)**2+(j1pz+j2pz+lpz)**2) $1
+opt logy
+exec plot.kumac 0 0 0 0. !
+exec cutline_log.kumac 0.8 -1. 0.9
+exec cutline_log.kumac -0.8 1. 0.9
+opt liny
+nt/cuts $2 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.8
+
+
+
+sigma prefix=300
+exec fill.kumac 'Cos(angle between jets)' 100 -1 1 5.(j1px*j2px+j1py*j2py+j1pz*j2pz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(j2px**2+j2py**2+j2pz**2) $1&&$3&&$2
+exec plot.kumac 0. 0. 0. 0. !
+nt/cuts $4 (j1px*j2px+j1py*j2py+j1pz*j2pz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(j2px**2+j2py**2+j2pz**2)<0.2
+
+
+set hcol 1
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $1&&$3
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $1&&$3&&$4 ! ! ! 's'
+
+
+
+* Maximal significance s/sqrt(s+b) in 30<jinvm<60&&70<j1e+j2e<140
+nt/cuts $9 30<jinvm<60&&70<j1e+j2e<140
+nt/cuts $3 jinvm<60.
+* not allowed to vary $3
+* do me = 320, 330, 5
+  do mdir = 1, 0.75, -0.05
+    do mpt = 0, 50, 5
+*      do jd = 1, 0, -0.5
+	nt/cuts $1 500-eve>300
+	nt/cuts $2 abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<[mdir]&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<[mdir]
+	nt/cuts $4 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>[mpt]
+	nt/cuts $5 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95
+	h/cr/1d 1000 'signal' 1 30 60
+	h/cr/1d 1001 'background' 1 30 60
+	nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $1&&$2&&$3&&$4&&$5&&$9 ! ! ! 'N' 1000
+	nt/plot //simd242/CHI20CHI30PROC/5.jinvm (scale*250.0).and.($1&&$2&&$3&&$4&&$5&&$9) ! ! ! 'N' 1001
+	sigma soverb = sc1c1*$HINFO(1000,'sum')/sqrt(sc1c1*$HINFO(1000,'sum')+$HINFO(1001,'sum'))
+	message [me] [mdir] [mpt] [jd] yields $SIGMA(soverb)
+*      enddo
+    enddo
+  enddo
+* enddo
+
+* first round:
+* me should be low, like 300-325
+* mdir should be 0.8 or 1 (nearly turned off)
+* mpt should be low, like 0-25
+* jd=0.5 best is 46, so jd should be 1 (turned off)
+
+* second round:
+* Cutting on mpt is better than mdir.  Optimization threw that away.
+* best: 325 1 25 [jd] yields 89.7578
+
+* third round:
+* yes, that ME = 325, MPT = 25 is perfect to the nearest +-5 GeV.
+
+* fourth round: I had been describing missing pT incorrectly, leaving
+* out the lepton's contribution.  When I put that in, the optimizer
+* now throws out MPT as a criterion, and the significance isn't as
+* good.  And I also noticed that MDIR has always been lepton angle,
+* not missing energy angle.
+
+* fifth round: Now I included missing energy direction along with
+* narrow bounds on ME and jet pT.  It's thrown out because the signal
+* also favors missing energy along the beampipe.
+
+* sixth round: I'm just a little incredulous about the optimization
+* throwing out lepton direction.  After the other two cuts, it looks
+* like a great thing to cut on.  I'll try that again.
+* The optimization can stand a cut at 0.95, and it probably depends a
+* great deal on the exact statistics of our SM sample.  I'll include
+* it for pedagogical purposes.
+*  325 0.9 25 [jd] yields 88.8984
+*  325 1 20 [jd] yields 89.0281
+*  320 1 30 [jd] yields 89.1465
+*  325 1 30 [jd] yields 89.208
+*  330 0.95 25 [jd] yields 89.2764
+*  330 1 25 [jd] yields 89.3474
+*  320 0.95 25 [jd] yields 89.4641
+*  320 1 25 [jd] yields 89.5876
+*  325 0.95 25 [jd] yields 89.6559
+*  325 1 25 [jd] yields 89.7578
+
+
+* Nth round:
+* An accident revealed to me that most of the background's jets are
+* along the beampipe, so I included a cut on these in the optimization
+* (after all, one would cut out jets that may have bogus jet
+* energies).
+* Optimization still likes a transverse jet momentum cut of 25 GeV,
+* and it prefers the jet cut between 0.95 and 1, rather than 0.9.  I
+* might go with 0.9 anyway, because my fit function doesn't take jet
+* clipping into account.  This imposes a s/sqrt(s+b) hit of 5 out of
+* 90.  Also in this round, I fixed the missing energy at >300 GeV,
+* since tight cuts into this shift the two-jet energy edge, where I
+* want to minimize systematic errors.
+
+*  [me] 0.9 25 [jd] yields 86.7883
+*  [me] 1 20 [jd] yields 87.154
+*  [me] 1 35 [jd] yields 87.3433
+*  [me] 1 30 [jd] yields 87.8208
+*  [me] 1 25 [jd] yields 88.2191
+*  [me] 0.95 0 [jd] yields 88.4963
+*  [me] 0.95 5 [jd] yields 88.5243
+*  [me] 0.95 35 [jd] yields 88.5975
+*  [me] 0.95 10 [jd] yields 88.6562
+*  [me] 0.95 15 [jd] yields 89.0066
+*  [me] 0.95 30 [jd] yields 89.6125
+*  [me] 0.95 20 [jd] yields 90.2383
+*  [me] 0.95 25 [jd] yields 90.3368
+
+* On the other hand, I see no distortions between the generated jet
+* spectrum and the observed jet spectrum for jets in 0.9-0.95
+* cos(theta), so I'll include them!
+
+* I just realized that I hadn't been scaling the signal to 250 fb^-1.
+* This is a small change, since the scale factor is 0.94, but it
+* really makes a difference!  Now the optimization throws out the
+* transverse momentum cut!  (Or at least, it's must less relevant.)
+* But I'm going to keep it anyway, because it really cuts signal
+* events I'm not interested in and throws out background events which
+* really do damage the measurement.  This might be optimizing signal
+* excess, but I want to optimize the LSP mass fit.
+*  [me] 0.95 30 [jd] yields 90.0527
+*  [me] 1 35 [jd] yields 90.4695
+*  [me] 0.95 25 [jd] yields 90.9775
+*  [me] 0.95 20 [jd] yields 91.6316
+*  [me] 0.95 15 [jd] yields 92.1281
+*  [me] 1 30 [jd] yields 92.1485
+*  [me] 0.95 10 [jd] yields 92.3728
+*  [me] 0.95 5 [jd] yields 92.5
+*  [me] 0.95 0 [jd] yields 92.566
+
+
+
+
+
+
+
+
+
+
+zone 1 2
+sigma prefix=400
+exec fill.kumac 'Lepton cos([Q]) after these cuts' 100 -1. 1. 5.lpz/sqrt(lpx**2+lpy**2+lpz**2) $1&&$2&&$3
+exec plot.kumac 0 0 0 0 !
+sigma prefix=500
+exec fill.kumac 'Missing transverse momentum after these cuts' 100 10. 125. 5.sqrt((j1px+j2px+lpx)**2+(j1py+j2py+lpy)**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+pict/print 'missing_pt_now.eps'
+
+nt/cuts $5 sqrt((j1px+j2px+lpx)**2+(j1py+j2py+lpy)**2)>50
+
+zone 1 2
+h/cr/title 'dashed red=angular cut, dotted blue = pt cut'
+h/cr/1d 600 'Jet invariant mass' 60 0. 60.
+h/cr/1d 601 'Jet invariant mass' 60 0. 60.
+h/cr/1d 602 'Jet invariant mass' 60 0. 60.
+set hwid 4
+set hcol 0
+set dmod 1
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $1&&$3 ! ! ! ! 600
+set hcol 2
+set dmod 2
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $1&&$3&&$2 ! ! ! 's' 601
+set hcol 4
+set dmod 3
+nt/plot //c1c1/CHI20CHI30PROC/5.jinvm $1&&$3&&$5 ! ! ! 's' 602
+set hwid 1
+h/cr/1d 700 'Jet total energy' 70 0. 140.
+h/cr/1d 701 'Jet total energy' 70 0. 140.
+h/cr/1d 702 'Jet total energy' 70 0. 140.
+set hwid 4
+set hcol 0
+set dmod 1
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $1&&$3 ! ! ! ! 700
+set hcol 2
+set dmod 2
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $1&&$3&&$2 ! ! ! 's' 701
+set hcol 4
+set dmod 3
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e+j2e $1&&$3&&$5 ! ! ! 's' 702
+set hwid 1
+pict/print 'comparison_of_cuts.eps'
+
+
+
+* sigma prefix=200
+* exec fill.kumac 'cos[Q] of jets' 100 -1. 1. 5.j1pz/sqrt(j1px**2+j1py**2+j1pz**2) $1&&$4
+* exec fillmore.kumac 'cos[Q] of jets' 100 -1. 1. 5.j2pz/sqrt(j2px**2+j2py**2+j2pz**2) $1&&$4
+* exec plot.kumac 0. 0. 0. 0. !
+* exec cutline.kumac 0.9 -1. 0.9
+* exec cutline.kumac -0.9 1. 0.9
+* nt/cuts $2 abs(j1pz/sqrt(j1px**2+j1py**2+j1pz**2))<0.9&&abs(j2pz/sqrt(j2px**2+j2py**2+j2pz**2))<0.9
+
+
+
+
+
+
+
+zone 1 2
+sigma prefix=500
+* exec fill.kumac 'Jet invariant mass' 60 0. 60. 5.jinvm $1&&$3&&$4
+exec plot.kumac 0. 0. 0. 0. !
+sigma prefix=600
+* exec fill.kumac 'Jet total energy' 60 0. 130. 5.j1e+j2e $1&&$3&&$4
+exec plot.kumac 0. 0. 0. 0. !
+
+h/file 35 /home/mccann/lcdroot/pretty_plots/rcg24/hist_gen.rzn
+
+zone 1 1
+h/cr/1d 900 'Initial-state radiation (GeV)' 200 0 200
+h/cr/1d 901 'Initial-state radiation (GeV)' 200 0 200
+nt/plot //lun35/GENLEVELPROC/1.500-(n2e+n3e) n2e>0&&n3e>0 ! ! ! 'N' 900
+opt logx
+opt logy
+h/plot 900
+
+
+nt/plot //lun35/GENLEVELPROC/1. c1e>0&&c2e==0&&c1dec>199 100
+
+
+
+h/cr/1d 1000 'cos(angle between jets)' 100 -1 1
+h/cr/1d 1001 'cos(angle between jets)' 100 -1 1
+h/cr/1d 1002 'jet finding efficiency versus cos(angle between jets)' 100 -1 1
+nt/plot //lun35/GENLEVELPROC/1.(c11px*c12px+c11py*c12py+c11pz*c12pz)/sqrt(c11px**2+c11py**2+c11pz**2)/sqrt(c12px**2+c12py**2+c12pz**2) c1e>0&&c2e==0&&c1dec>199 ! ! ! ! 1000
+nt/plot //c1c1/CHI20CHI30PROC/5.(j1px*j2px+j1py*j2py+j1pz*j2pz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(j2px**2+j2py**2+j2pz**2) ! ! ! ! ! 1001
+
+set hcol 0
+set dmod 2
+h/plot 1000
+set dmod 1
+h/plot 1001 's'
+
+div 1001 1000 1002 1.42 ! 'e'
+h/plot 1002
+
+
+
+
+
+
+
+
+
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_0p1.rzn
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_0p2.rzn
+nt/chain c1c1 rzn/chi20chi30v5_c1pc1m_l_1p1.rzn
+h/file 1 /home/mccann/lcdroot/rzn/anew_left1.rzn
+
+nt/cuts $4 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+nt/cuts $1 500-eve>300
+nt/cuts $2 jinvm<60.
+nt/cuts $3 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+
+* I see slight distortions!
+h/cr/1d 100 'jet energy 0.9"l#cos([Q])"l#0.95 generator (solid) and reconstructed (dashed)' 25 0 100
+h/cr/1d 200 'jet energy 0.9"l#cos([Q])"l#0.95 generator (solid) and reconstructed (dashed)' 25 0 100
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e 0.9<abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95 ! ! ! 'N' 100
+nt/plot //lun1/LCDEXAMPLEPROC/1.j1e 0.9<abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&survive==1 ! ! ! 'N' 200
+normalize 100
+normalize 200
+h/plot 200 'e'
+h/plot 100 'es'
+sigma err = $HINFO(200,'RMS')/sqrt($HINFO(200,'ENTRIES'))
+text 80 0.08 $HINFO(200,'MEAN')+-$SIGMA(err) ! ! 'c'
+sigma err = $HINFO(100,'RMS')/sqrt($HINFO(100,'ENTRIES'))
+text 80 0.07 $HINFO(100,'MEAN')+-$SIGMA(err) ! ! 'c'
+pict/print 'high-angle_energy_distortion.eps'
+
+* I see slight distortions!
+h/cr/1d 100 'jet energy 0.85"l#cos([Q])"l#0.9 generator (solid) and reconstructed (dashed)' 25 0 100
+h/cr/1d 200 'jet energy 0.85"l#cos([Q])"l#0.9 generator (solid) and reconstructed (dashed)' 25 0 100
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e 0.85<abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.9 ! ! ! 'N' 100
+nt/plot //lun1/LCDEXAMPLEPROC/1.j1e 0.85<abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.9&&survive==1 ! ! ! 'N' 200
+normalize 100
+normalize 200
+h/plot 200 'e'
+h/plot 100 'es'
+sigma err = $HINFO(200,'RMS')/sqrt($HINFO(200,'ENTRIES'))
+text 80 0.08 $HINFO(200,'MEAN')+-$SIGMA(err) ! ! 'c'
+sigma err = $HINFO(100,'RMS')/sqrt($HINFO(100,'ENTRIES'))
+text 80 0.07 $HINFO(100,'MEAN')+-$SIGMA(err) ! ! 'c'
+pict/print 'high-angle_energy_distortion2.eps'
+
+* I see slight distortions!
+h/cr/1d 100 'jet energy for all cos([Q]) generator (solid) and reconstructed (dashed)' 25 0 100
+h/cr/1d 200 'jet energy for all cos([Q]) generator (solid) and reconstructed (dashed)' 25 0 100
+nt/plot //c1c1/CHI20CHI30PROC/5.j1e ! ! ! ! 'N' 100
+nt/plot //lun1/LCDEXAMPLEPROC/1.j1e survive==1 ! ! ! 'N' 200
+normalize 100
+normalize 200
+h/plot 200 'e'
+h/plot 100 'es'
+sigma err = $HINFO(200,'RMS')/sqrt($HINFO(200,'ENTRIES'))
+text 80 0.08 $HINFO(200,'MEAN')+-$SIGMA(err) ! ! 'c'
+sigma err = $HINFO(100,'RMS')/sqrt($HINFO(100,'ENTRIES'))
+text 80 0.07 $HINFO(100,'MEAN')+-$SIGMA(err) ! ! 'c'
+pict/print 'high-angle_energy_distortion3.eps'
+
+
+
+
+
+
+
+
+
+
+
+
+h/cr/1d 100 'Transverse Momentum (solid=Full MC, dashed=Toy)' 100 0. 100.
+h/cr/1d 200 'Transverse Momentum (solid=Full MC, dashed=Toy)' 100 0. 100.
+nt/plot //lun1/LCDEXAMPLEPROC/1.sqrt((j1px+j2px+llpx)**2+(j1py+j2py+llpy)**2) ! ! ! ! 'N' 100
+ve/read tmp tmp.txt
+ve/hfill tmp 200
+normalize 100
+normalize 200
+h/plot 100
+h/plot 200 's'
+set ltyp 2
+dline 50 50 0 $GRAFINFO('WNYMAX')
+pict/print 'transverse_comparison.eps'
+
+
+
+
+
+
+
+
+*    v[k_j1E] = j1p.E();
+*    v[k_j1px] = j1p.Px();
+*    v[k_j1py] = j1p.Py();
+*    v[k_j1pz] = j1p.Pz();
+*    v[k_j2E] = j2p.E();
+*    v[k_j2px] = j2p.Px();
+*    v[k_j2py] = j2p.Py();
+*    v[k_j2pz] = j2p.Pz();
+*    v[k_llE] = ll.E();
+*    v[k_llpx] = ll.Px();
+*    v[k_llpy] = ll.Py();
+*    v[k_llpz] = ll.Pz();
+*    v[k_survive] = (survive_cuts ? 1. : 0.);
+
+h/file 1 /home/mccann/lcdroot/rzn/anew_left1.rzn
+nt/cuts $3 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+nt/cuts $4 abs(llpz)/sqrt(llpx**2+llpy**2+llpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+
+zone 2 2
+h/cr/1d 100 'topology cut' 100 -1 1
+h/cr/1d 200 'normalized topology cut' 100 -1 1
+h/cr/1d 300 'cos(angle between jets)' 100 -1 1
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*j2px+j1py*j2py+j1pz*j2pz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(j2px**2+j2py**2+j2pz**2) $3&&$4 ! ! ! ! 100
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*j2px+j1py*j2py+j1pz*j2pz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(j2px**2+j2py**2+j2pz**2) $3&&$4&&survive==1 ! ! ! 's' 200
+ve/cr boink(100)
+h/get_vect/contents 100 boink
+sigma ents = $HINFO(100,'ENTRIES')
+normalize 100 $SIGMA(5*ents/(boink(96)+boink(97)+boink(98)+boink(99)+boink(100)))
+ve/cr boink(100)
+h/get_vect/contents 200 boink
+sigma ents = $HINFO(200,'ENTRIES')
+normalize 200 $SIGMA(5*ents/(boink(96)+boink(97)+boink(98)+boink(99)+boink(100)))
+h/plot 100
+h/plot 200 's'
+dline -1 1 1 1
+zone 1 2 2 's'
+div 200 100 300
+ve/cr num(100)
+ve/cr den(100)
+ve/cr err(100)
+h/get_vect/contents 200 num
+h/get_vect/contents 100 den
+do i = 1, 100
+  ve/inp err([i]) $SIGMA(sqrt((num([i])/den([i]))*(1-num([i])/den([i]))/den([i])))
+enddo
+h/put_vect/errors 300 err
+h/fit 300 p6
+pict/print 'jet_confusion1.eps'
+
+zone 2 2
+h/cr/1d 100 'topology cut' 100 -1 1
+h/cr/1d 200 'normalized topology cut' 100 -1 1
+h/cr/1d 300 'cos(angle between jet 1 and lepton)' 100 -1 1
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2) $3&&$4 ! ! ! ! 100
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2) $3&&$4&&survive==1 ! ! ! 's' 200
+ve/cr boink(100)
+h/get_vect/contents 100 boink
+sigma ents = $HINFO(100,'ENTRIES')
+normalize 100 $SIGMA(5*ents/(boink(1)+boink(2)+boink(3)+boink(4)+boink(5)))
+ve/cr boink(100)
+h/get_vect/contents 200 boink
+sigma ents = $HINFO(200,'ENTRIES')
+normalize 200 $SIGMA(5*ents/(boink(1)+boink(2)+boink(3)+boink(4)+boink(5)))
+h/plot 100
+h/plot 200 's'
+dline -1 1 1 1
+zone 1 2 2 's'
+div 200 100 300
+ve/cr num(100)
+ve/cr den(100)
+ve/cr err(100)
+h/get_vect/contents 200 num
+h/get_vect/contents 100 den
+do i = 1, 100
+  ve/inp err([i]) $SIGMA(sqrt((num([i])/den([i]))*(1-num([i])/den([i]))/den([i])))
+enddo
+h/put_vect/errors 300 err
+ve/cr par(7)
+h/fit 300 p6 ! 7 par
+pict/print 'jet_confusion2.eps'
+
+zone 2 2
+h/cr/1d 100 'topology cut' 100 -1 1
+h/cr/1d 200 'normalized topology cut' 100 -1 1
+h/cr/1d 300 'cos(jet 1, lepton) with cos(2, l) "l# -0.8' 100 -1 1
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2) (j2px*llpx+j2py*llpy+j2pz*llpz)/sqrt(j2px**2+j2py**2+j2pz**2)/sqrt(llpx**2+llpy**2+llpz**2)<-0.8&&$3&&$4 ! ! ! ! 100
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2) (j2px*llpx+j2py*llpy+j2pz*llpz)/sqrt(j2px**2+j2py**2+j2pz**2)/sqrt(llpx**2+llpy**2+llpz**2)<-0.8&&$3&&$4&&survive==1 ! ! ! 's' 200
+ve/cr boink(100)
+h/get_vect/contents 100 boink
+sigma ents = $HINFO(100,'ENTRIES')
+normalize 100 $SIGMA(5*ents/(boink(1)+boink(2)+boink(3)+boink(4)+boink(5)))
+ve/cr boink(100)
+h/get_vect/contents 200 boink
+sigma ents = $HINFO(200,'ENTRIES')
+normalize 200 $SIGMA(5*ents/(boink(1)+boink(2)+boink(3)+boink(4)+boink(5)))
+h/plot 100
+h/plot 200 's'
+dline -1 1 1 1
+zone 1 2 2 's'
+div 200 100 300
+ve/cr num(100)
+ve/cr den(100)
+ve/cr err(100)
+h/get_vect/contents 200 num
+h/get_vect/contents 100 den
+do i = 1, 100
+  ve/inp err([i]) $SIGMA(sqrt((num([i])/den([i]))*(1-num([i])/den([i]))/den([i])))
+enddo
+h/put_vect/errors 300 err
+ve/cr par(7)
+h/fit 300 p6 ! 7 par
+pict/print 'jet_confusion3.eps'
+
+zone 2 2
+h/cr/1d 100 'topology cut' 100 -1 1
+h/cr/1d 200 'normalized topology cut' 100 -1 1
+h/cr/1d 300 'cos(jet 1, lepton) with cos(1, l) = cos(2, l)' 100 -1 1
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2) abs((j2px*llpx+j2py*llpy+j2pz*llpz)/sqrt(j2px**2+j2py**2+j2pz**2)/sqrt(llpx**2+llpy**2+llpz**2)-(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2))<0.4&&$3&&$4 ! ! ! ! 100
+nt/plot //lun1/LCDEXAMPLEPROC/1.(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2) abs((j2px*llpx+j2py*llpy+j2pz*llpz)/sqrt(j2px**2+j2py**2+j2pz**2)/sqrt(llpx**2+llpy**2+llpz**2)-(j1px*llpx+j1py*llpy+j1pz*llpz)/sqrt(j1px**2+j1py**2+j1pz**2)/sqrt(llpx**2+llpy**2+llpz**2))<0.4&&$3&&$4&&survive==1 ! ! ! 's' 200
+ve/cr boink(100)
+h/get_vect/contents 100 boink
+sigma ents = $HINFO(100,'ENTRIES')
+normalize 100 $SIGMA(5*ents/(boink(1)+boink(2)+boink(3)+boink(4)+boink(5)))
+ve/cr boink(100)
+h/get_vect/contents 200 boink
+sigma ents = $HINFO(200,'ENTRIES')
+normalize 200 $SIGMA(5*ents/(boink(1)+boink(2)+boink(3)+boink(4)+boink(5)))
+h/plot 100
+h/plot 200 's'
+dline -1 1 1 1
+zone 1 2 2 's'
+div 200 100 300
+ve/cr num(100)
+ve/cr den(100)
+ve/cr err(100)
+h/get_vect/contents 200 num
+h/get_vect/contents 100 den
+do i = 1, 100
+  ve/inp err([i]) $SIGMA(sqrt((num([i])/den([i]))*(1-num([i])/den([i]))/den([i])))
+enddo
+h/put_vect/errors 300 err
+ve/cr par(4)
+h/fit 300 p3 ! 4 par
+pict/print 'jet_confusion4.eps'
+
+ve/print par
+*  PAR(1) = 0.476704
+*  PAR(2) = -0.189485
+*  PAR(3) = -0.134047
+*  PAR(4) = -0.139817
+f/plot 0.476704-0.189485*x-0.134047*x**2-0.139817*x**3 -1 1 's'
+f/plot 0.476704-0.189485*x-0.134047*x**2-0.139817*x**3 -1 1
+
+
+
+
+nt/chain left /home/mccann/lcdroot/rzn/anew_left1.rzn
+nt/chain left /home/mccann/lcdroot/rzn/anew_left2.rzn
+nt/chain right /home/mccann/lcdroot/rzn/anew_right1.rzn
+nt/chain c1c1l rzn/chi20chi30v5_c1pc1m_l_0p1.rzn
+nt/chain c1c1l rzn/chi20chi30v5_c1pc1m_l_0p2.rzn
+nt/chain c1c1l rzn/chi20chi30v5_c1pc1m_l_1p1.rzn
+nt/chain c1c1r rzn/chi20chi30v5_c1pc1m_r_p1.rzn
+nt/chain c1c1r rzn/chi20chi30v5_c1pc1m_r_p2.rzn
+
+h/cr/1d 100 'jets invariant mass' 60 0 60
+h/cr/1d 200 'jets invariant mass' 60 0 60
+nt/plot //left/LCDEXAMPLEPROC/1.sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) survive==1 ! ! ! ! 100
+nt/plot //c1c1l/CHI20CHI30PROC/5.sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) ! ! ! ! 's' 200
+normalize 100
+normalize 200
+h/plot 200 'e'
+h/plot 100 'se'
+
+h/cr/1d 100 'jets total energy' 140 0 140
+h/cr/1d 200 'jets total energy' 140 0 140
+nt/plot //left/LCDEXAMPLEPROC/1.j1e+j2e survive==1 ! ! ! ! 100
+nt/plot //c1c1l/CHI20CHI30PROC/5.j1e+j2e ! ! ! ! ! 200
+
+h/cr/1d 100 'jets total energy' 140 0 140
+h/cr/1d 200 'jets total energy' 140 0 140
+nt/plot //right/LCDEXAMPLEPROC/1.j1e+j2e survive==1 ! ! ! ! 100
+nt/plot //c1c1r/CHI20CHI30PROC/5.j1e+j2e ! ! ! ! ! 200
+
+
+nt/cuts $4 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+nt/cuts $1 500-eve>300
+nt/cuts $2 jinvm<60.
+nt/cuts $3 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+
+nt/plot //c1c1r/CHI20CHI30PROC/5.j1e+j2e $1&&$2&&$3&&$4 ! ! ! ! 200
+
+
+
+
+h/cr/1d 100 'jets total energy' 140 0 140
+h/cr/1d 200 'jets total energy' 140 0 140
+nt/plot //lun1/LCDEXAMPLEPROC/1.j1E+j2E survive==1&&j1E+j2E>0 ! ! ! 'N' 100
+nt/plot //c1c1/CHI20CHI30PROC/5.j1E+j2E j1E+j2E>0 ! ! ! 'N' 200
+normalize 100
+normalize 200
+h/plot 200 'e'
+h/plot 100 'se'
+
+h/cr/1d 100 'jets transverse momentum' 140 0 140
+h/cr/1d 200 'jets transverse momentum' 140 0 140
+nt/plot //lun1/LCDEXAMPLEPROC/1.sqrt((j1px+j2px)**2+(j1py+j2py)**2) survive==1 ! ! ! 'N' 100
+nt/plot //c1c1/CHI20CHI30PROC/5.sqrt((j1px+j2px)**2+(j1py+j2py)**2) ! ! ! ! 'N' 200
+normalize 100
+normalize 200
+h/plot 200
+h/plot 100 's'
+
+
+
+
+
+
+
+
+
+
+
+
+
+nt/chain left /home/mccann/lcdroot/rzn/anew_left1.rzn
+nt/chain left /home/mccann/lcdroot/rzn/anew_left2.rzn
+nt/chain right /home/mccann/lcdroot/rzn/anew_right1.rzn
+nt/cuts $3 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+nt/cuts $4 abs(llpz)/sqrt(llpx**2+llpy**2+llpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+
+h/cr/2d 100 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+set pmci 2
+nt/plot //left/LCDEXAMPLEPROC/1.j1e+j2e%sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) survive==1&&$3&&$4 ! ! ! ! 100
+set pmci 4
+nt/plot //right/LCDEXAMPLEPROC/1.j1e+j2e%sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) survive==1&&$3&&$4 ! ! ! 's' 100
+
+
+h/cr/1d 100 'jets invariant mass' 60 0 60
+h/cr/1d 200 'jets invariant mass' 60 0 60
+nt/plot //left/LCDEXAMPLEPROC/1.sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) survive==1&&$3&&$4 ! ! ! 'N' 100
+nt/plot //right/LCDEXAMPLEPROC/1.sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) survive==1&&$3&&$4 ! ! ! 'N' 200
+normalize 100
+normalize 200
+set hcol 2
+h/plot 100
+set hcol 4
+h/plot 200 's'
+
+h/cr/1d 100 'jets total energy' 140 0 140
+h/cr/1d 200 'jets total energy' 140 0 140
+nt/plot //left/LCDEXAMPLEPROC/1.j1E+j2E survive==1&&$3&&$4 ! ! ! 'N' 100
+nt/plot //right/LCDEXAMPLEPROC/1.j1E+j2E survive==1&&$3&&$4 ! ! ! 'N' 200
+normalize 100
+normalize 200
+set hcol 2
+h/plot 100 'e'
+set hcol 4
+h/plot 200 'se'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nt/chain gen /home/mccann/lcdroot/rzn/anew_left1.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anew_left2.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anew_right1.rzn
+exec load_simd242.kumac
+exec load_simd243.kumac
+nt/cuts $1 abs(llpz)/sqrt(llpx**2+llpy**2+llpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+nt/cuts $2 500-(j1e+j2e+lle)>300
+nt/cuts $3 sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+nt/cuts $4 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95
+nt/cuts $5 500-(j1e+j2e+le)>300
+
+h/cr/2d 100 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+h/cr/2d 200 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+h/cr/2d 300 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+h/cr/2d 400 'jets energy VERSUS jets invariant mass' 15 30. 60. 35 70. 140.
+nt/plot //gen/LCDEXAMPLEPROC/1.j1e+j2e%sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) survive==1&&$1&&$2&&$3 64945 ! ! ! 100
+nt/plot //simd242/CHI20CHI30PROC/5.j1e+j2e%jinvm (scale*250.0).and.($3&&$4&&$5) ! ! ! ! 200
+nt/plot //simd243/CHI20CHI30PROC/5.j1e+j2e%jinvm (scale*250.0).and.($3&&$4&&$5) ! ! ! ! 300
+add 200 300 400
+
+* left and right have the same distributions
+* left:  940 fb * 0.076508 * 250 fb^-1 = should be 17979.38 events
+* right: 119 fb * 0.105892 * 250 fb^-1 = should be  3150.29 events
+*                                           total: 21129.67
+* I can get this by limiting the ntuple to 64945 candidates
+
+* left backgrounds: 2431, right backgrounds: 1290
+
+* left cross-section measurement has precision +-0.79%
+message $SIGMA(sqrt(17979.38+2431)/17979.38*100)
+* right cross-section measurement has precision +-2.12%
+message $SIGMA(sqrt(3150.29+1290)/3150.29*100)
+
+ve/cr sig(15,35)
+h/get_vect/contents 100 sig
+ve/print sig 0
+ve/cr bak(15,35)
+h/get_vect/contents 400 bak
+ve/print bak 0
+
+
+
+
+
+nt/plot //gen/LCDEXAMPLEPROC/1.llpz/sqrt(llpx**2+llpy**2+llpz**2) 
+message $SIGMA(84479/89130)
+* 0.947818
+
+h/cr/1d 100 'jets invariant mass' 15 30. 60.
+h/cr/1d 200 'jets invariant mass' 15 30. 60.
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) abs(llpz)/sqrt(llpx**2+llpy**2+llpz**2)<0.95 ! ! ! ! 100
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((j1E+j2E)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) abs(llpz)/sqrt(llpx**2+llpy**2+llpz**2)>0.95 ! ! ! ! 200
+normalize 100
+normalize 200
+h/plot 100
+h/plot 200 'se'
+
+h/cr/1d 100 'jets total energy' 35 70 140
+h/cr/1d 200 'jets total energy' 35 70 140
+nt/plot //gen/LCDEXAMPLEPROC/1.j1e+j2e abs(llpz)/sqrt(llpx**2+llpy**2+llpz**2)<0.95 ! ! ! ! 100
+nt/plot //gen/LCDEXAMPLEPROC/1.j1e+j2e abs(llpz)/sqrt(llpx**2+llpy**2+llpz**2)>0.95 ! ! ! ! 200
+normalize 100
+normalize 200
+h/plot 100
+h/plot 200 'se'
+
+
+
+
+
+
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left1.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left2.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_right1.rzn
+
+h/cr/1d 100 'When youre a jet youre a jet all the way' 120 0. 120.
+h/cr/1d 200 'from your first cigarette to your last dying day' 120 0. 120.
+nt/plot //gen/LCDEXAMPLEPROC/1.j1e+j2e ! ! ! ! 'N' 100
+ve/read tmp tmp.txt
+ve/hfill tmp 200
+normalize 100
+normalize 200
+h/plot 100
+h/plot 200 's'
+
+h/cr/1d 300 'cosine' 100 -1. 1.
+h/cr/1d 301 'cosine' 100 -1. 1.
+nt/plot //gen/LCDEXAMPLEPROC/1.chippz/sqrt(chippx**2+chippy**2+chippz**2) ! ! ! ! ! 300
+nt/project 300 //gen/LCDEXAMPLEPROC/1.chimpz/sqrt(chimpx**2+chimpy**2+chimpz**2)
+h/fit 300 p2
+h/plot 300 'hist'
+f/plot 2850*(1+0.457*x**2) -1 1 's'
+
+normalize 300
+ve/hfill tmp 301
+normalize 301
+h/plot 300
+h/plot 301 's'
+
+
+h/cr/1d 400 'com energy' 180 320 500
+h/cr/1d 401 'com energy' 180 320 500
+nt/plot //gen/LCDEXAMPLEPROC/1.chipe+chime ! ! ! ! ! 400
+ve/read tmp tmp.txt
+ve/hfill tmp 401
+normalize 400
+normalize 401
+h/plot 400
+h/plot 401 's'
+
+
+
+h/cr/1d 1000 'when youre a jet' 140 0. 140.
+h/cr/1d 1001 'youre a jet all the way' 140 -140. 140.
+h/cr/1d 1002 'from your first cigarette' 140 -140. 140.
+h/cr/1d 1003 'to your last dyin day' 140 -140. 140.
+nt/plot //gen/LCDEXAMPLEPROC/1.j1e+j2e ! ! ! ! ! 1000
+nt/plot //gen/LCDEXAMPLEPROC/1.j1px+j2px ! ! ! ! ! 1001
+nt/plot //gen/LCDEXAMPLEPROC/1.j1py+j2py ! ! ! ! ! 1002
+nt/plot //gen/LCDEXAMPLEPROC/1.j1pz+j2pz ! ! ! ! ! 1003
+h/cr/1d 1010 'when youre a jet' 140 0. 140.
+h/cr/1d 1011 'youre a jet all the way' 140 -140. 140.
+h/cr/1d 1012 'from your first cigarette' 140 -140. 140.
+h/cr/1d 1013 'to your last dyin day' 140 -140. 140.
+ve/read tmp0 tmp0.txt
+ve/read tmp1 tmp1.txt
+ve/read tmp2 tmp2.txt
+ve/read tmp3 tmp3.txt
+ve/hfill tmp0 1010
+ve/hfill tmp1 1011
+ve/hfill tmp2 1012
+ve/hfill tmp3 1013
+normalize 1000
+normalize 1001
+normalize 1002
+normalize 1003
+normalize 1010
+normalize 1011
+normalize 1012
+normalize 1013
+h/plot 1000
+h/plot 1010 's'
+h/plot 1001
+h/plot 1011 's'
+h/plot 1002
+h/plot 1012 's'
+h/plot 1003
+h/plot 1013 's'
+
+h/cr/1d 2000 'masses' 60 0 60
+h/cr/1d 2001 'masses' 60 0 60
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((j1e+j2e)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) ! ! ! ! ! 2000
+ve/read tmpn tmpn.txt
+ve/hfill tmpn 2001
+normalize 2000
+normalize 2001
+h/plot 2000
+h/plot 2001 's'
+
+h/cr/1d 3000 'pt' 100 0 100
+h/cr/1d 3001 'pt' 100 0 100
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((j1px+j2px)**2+(j1py+j2py)**2) ! ! ! ! ! 3000
+ve/read tmpm tmpm.txt
+ve/hfill tmpm 3001
+normalize 3000
+normalize 3001
+h/plot 3000
+h/plot 3001 's'
+
+
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left1.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left2.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_right1.rzn
+
+nt/print //gen/LCDEXAMPLEPROC/1
+
+h/cr/1d 100 'angular dependence in rest frame' 100 -1 1
+nt/plot //gen/LCDEXAMPLEPROC/1.abs(jj1pz+jj2pz)/sqrt((jj1px+jj2px)**2+(jj1py+jj2py)**2+(jj1pz+jj2pz)**2) lle>0 ! ! ! ! 100
+nt/project 100 //gen/LCDEXAMPLEPROC/1.-abs(jj1pz+jj2pz)/sqrt((jj1px+jj2px)**2+(jj1py+jj2py)**2+(jj1pz+jj2pz)**2) lle>0
+h/fit 100 p2
+
+
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((jj1e+jj2e)**2-(jj1px+jj2px)**2-(jj1py+jj2py)**2-(jj1pz+jj2pz)**2)
+
+h/cr/1d 1000 'boingy' 100 0 2
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt(jj1e**2-jj1px**2-jj1py**2-jj1pz**2)%sqrt(jj2e**2-jj2px**2-jj2py**2-jj2pz**2)
+
+
+
+
+
+
+
+
+h/cr/1d 1000 'when youre a jet' 140 0. 140.
+h/cr/1d 1001 'youre a jet all the way' 140 -140. 140.
+h/cr/1d 1002 'from your first cigarette' 140 -140. 140.
+h/cr/1d 1003 'to your last dyin day' 140 -140. 140.
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1e+jj2e lle>0 ! ! ! ! 1000
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1px+jj2px lle>0 ! ! ! ! 1001
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1py+jj2py lle>0 ! ! ! ! 1002
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1pz+jj2pz lle>0 ! ! ! ! 1003
+
+
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1e%j1e lle>0&&chime+chipe<360
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left1.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left2.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_right1.rzn
+
+h/cr/1d 1000 'when youre a jet' 140 0. 140.
+h/cr/1d 1001 'youre a jet all the way' 140 -140. 140.
+h/cr/1d 1002 'from your first cigarette' 140 -140. 140.
+h/cr/1d 1003 'to your last dyin day' 140 -140. 140.
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1e+jj2e lle<0&&gluee==0 ! ! ! ! 1000
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1px+jj2px lle<0&&gluee==0 ! ! ! ! 1001
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1py+jj2py lle<0&&gluee==0 ! ! ! ! 1002
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1pz+jj2pz lle<0&&gluee==0 ! ! ! ! 1003
+h/cr/1d 1010 'when youre a jet' 140 0. 140.
+h/cr/1d 1011 'youre a jet all the way' 140 -140. 140.
+h/cr/1d 1012 'from your first cigarette' 140 -140. 140.
+h/cr/1d 1013 'to your last dyin day' 140 -140. 140.
+ve/read dmp0 dmp0.txt
+ve/read dmp1 dmp1.txt
+ve/read dmp2 dmp2.txt
+ve/read dmp3 dmp3.txt
+ve/hfill dmp0 1010
+ve/hfill dmp1 1011
+ve/hfill dmp2 1012
+ve/hfill dmp3 1013
+normalize 1000
+normalize 1001
+normalize 1002
+normalize 1003
+normalize 1010
+normalize 1011
+normalize 1012
+normalize 1013
+h/plot 1000(40:60)
+h/plot 1010 'se'
+h/plot 1001
+h/plot 1011 'se'
+h/plot 1002
+h/plot 1012 'se'
+h/plot 1003
+h/plot 1013 'se'
+
+h/cr/1d 2000 'masses' 60 0 60
+h/cr/1d 2001 'masses' 60 0 60
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((jj1e+jj2e)**2-(jj1px+jj2px)**2-(jj1py+jj2py)**2-(jj1pz+jj2pz)**2) lle<0&&gluee==0 ! ! ! ! 2000
+ve/read dmpn dmpn.txt
+ve/hfill dmpn 2001
+normalize 2000
+normalize 2001
+h/plot 2000
+h/plot 2001 'se'
+
+h/cr/1d 3000 'pt' 100 0 100
+h/cr/1d 3001 'pt' 100 0 100
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((jj1px+jj2px)**2+(jj1py+jj2py)**2) lle<0&&gluee==0 ! ! ! ! 3000
+ve/read dmpm dmpm.txt
+ve/hfill dmpm 3001
+normalize 3000
+normalize 3001
+h/plot 3000
+h/plot 3001 'se'
+
+
+
+
+
+h/cr/1d 100 'isr spectrum' 140 0. 140.
+nt/plot //gen/LCDEXAMPLEPROC/1.abs(-(chippz+chimpz)/(chipe+chime)/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chipe+1/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chippz-(chippz+chimpz)/(chipe+chime)/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chime+1/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chimpz) ! ! ! ! ! 100
+h/plot 100
+ve/cr tmp(140)
+h/get_vect/contents 100 tmp
+ve/print tmp 0
+
+h/cr/1d 100 'chi angular correlation' 100 -1 1
+* I had to boost these to their rest frame (get rid of ISR)
+nt/plot //gen/LCDEXAMPLEPROC/1.(-(chippz+chimpz)/(chipe+chime)/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chipe+1/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chippz)/sqrt(chippx**2+chippy**2+(-(chippz+chimpz)/(chipe+chime)/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chipe+1/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chippz)**2) ! ! ! ! ! 100
+nt/project 100 //gen/LCDEXAMPLEPROC/1.(-(chippz+chimpz)/(chipe+chime)/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chime+1/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chimpz)/sqrt(chippx**2+chippy**2+(-(chippz+chimpz)/(chipe+chime)/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chime+1/sqrt(1-((chippz+chimpz)/(chipe+chime))**2)*chimpz)**2)
+h/fit 100 p2
+
+h/cr/1d 100 'W angular correlation (no gluon radiation)' 100 -1 1
+nt/plot //gen/LCDEXAMPLEPROC/1.(jj1pz+jj2pz)/sqrt((jj1px+jj2px)**2+(jj1py+jj2py)**2+(jj1pz+jj2pz)**2) lle<0&&gluee==0 ! ! ! ! 100
+h/fit 100 p2
+
+nt/plot //gen/LCDEXAMPLEPROC/1.jj1e+jj2e lle<0&&gluee==0
+
+nt/plot //gen/LCDEXAMPLEPROC/1.gluee lle<0&&gluee==0
+
+
+
+
+
+
+
+
+
+
+
+
+
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left1.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_left2.rzn
+nt/chain gen /home/mccann/lcdroot/rzn/anewnew_right1.rzn
+
+h/cr/1d 1000 'when youre a jet' 140 0. 140.
+h/cr/1d 1001 'youre a jet all the way' 140 -140. 140.
+h/cr/1d 1002 'from your first cigarette' 140 -140. 140.
+h/cr/1d 1003 'to your last dyin day' 140 -140. 140.
+nt/plot //gen/LCDEXAMPLEPROC/1.j1e+j2e gluee==0 ! ! ! ! 1000
+nt/plot //gen/LCDEXAMPLEPROC/1.j1px+j2px gluee==0 ! ! ! ! 1001
+nt/plot //gen/LCDEXAMPLEPROC/1.j1py+j2py gluee==0 ! ! ! ! 1002
+nt/plot //gen/LCDEXAMPLEPROC/1.j1pz+j2pz gluee==0 ! ! ! ! 1003
+h/cr/1d 1010 'when youre a jet' 140 0. 140.
+h/cr/1d 1011 'youre a jet all the way' 140 -140. 140.
+h/cr/1d 1012 'from your first cigarette' 140 -140. 140.
+h/cr/1d 1013 'to your last dyin day' 140 -140. 140.
+ve/read tmp0 tmp0.txt
+ve/read tmp1 tmp1.txt
+ve/read tmp2 tmp2.txt
+ve/read tmp3 tmp3.txt
+ve/hfill tmp0 1010
+ve/hfill tmp1 1011
+ve/hfill tmp2 1012
+ve/hfill tmp3 1013
+normalize 1000
+normalize 1001
+normalize 1002
+normalize 1003
+normalize 1010
+normalize 1011
+normalize 1012
+normalize 1013
+h/plot 1000
+h/plot 1010 'se'
+h/plot 1001
+h/plot 1011 'se'
+h/plot 1002
+h/plot 1012 'se'
+h/plot 1003
+h/plot 1013 'se'
+
+h/cr/1d 2000 'masses' 60 0 60
+h/cr/1d 2001 'masses' 60 0 60
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((j1e+j2e)**2-(j1px+j2px)**2-(j1py+j2py)**2-(j1pz+j2pz)**2) gluee==0 ! ! ! ! 2000
+ve/read tmpn tmpn.txt
+ve/hfill tmpn 2001
+normalize 2000
+normalize 2001
+h/plot 2000
+h/plot 2001 'se'
+
+h/cr/1d 3000 'pt' 100 0 100
+h/cr/1d 3001 'pt' 100 0 100
+nt/plot //gen/LCDEXAMPLEPROC/1.sqrt((j1px+j2px)**2+(j1py+j2py)**2) gluee==0 ! ! ! ! 3000
+ve/read tmpm tmpm.txt
+ve/hfill tmpm 3001
+normalize 3000
+normalize 3001
+h/plot 3000
+h/plot 3001 'se'
+
+
+
+nt/plot //gen/LCDEXAMPLEPROC/1.abs(lle)
+
+
+
+
+
+
+
+
+
+

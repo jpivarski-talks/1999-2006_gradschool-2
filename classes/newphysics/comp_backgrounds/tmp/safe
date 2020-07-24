@@ -1,0 +1,17 @@
+#Model 3
+#nIn 2
+#nOut 3
+#beam_1 pb
+#beam_2 Pb
+#beam_energy_1 1000.000000
+#beam_energy_2 1000.000000
+#strfun_1 cteq6l1(proton)
+#strfun_2 cteq6l1(anti-proton)
+#Final_state W+, b, B
+#Remove_Virtual H
+#Keep_Virtual 
+#nSubproc(ampl) 12
+#nSubproc(squared) 12
+#ConservationLaw 0
+#Nc==inf 0
+#ExitCode 6

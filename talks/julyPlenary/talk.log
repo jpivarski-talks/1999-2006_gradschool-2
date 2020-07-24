@@ -1,0 +1,246 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  18 JUL 2005 20:19
+**talk.tex
+(./talk.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)) (./talk.aux)
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks16
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks17
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks18
+) <title.pdf, id=1, 191.71625pt x 26.0975pt>
+File: title.pdf Graphic file (type pdf)
+ <use title.pdf> [1
+
+{/usr/share/texmf/dvips/config/pdftex.map} <./title.pdf>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+<../proceedings_cartoon.pdf, id=19, 504.88625pt x 301.125pt>
+File: ../proceedings_cartoon.pdf Graphic file (type pdf)
+
+<use ../proceedings_cartoon.pdf> [2 <../proceedings_cartoon.pdf>]
+
+Package pdftex.def Warning: Option `bb' does not make sense,
+(pdftex.def)                using `viewport' instead on input line 62.
+
+<../proceedings_cuts3.pdf, id=49, 569.12625pt x 569.12625pt>
+File: ../proceedings_cuts3.pdf Graphic file (type pdf)
+
+<use ../proceedings_cuts3.pdf>
+Overfull \hbox (9.5429pt too wide) in paragraph at lines 50--65
+ [] 
+ []
+
+[3 <../proceedings_cuts3.pdf>] [4]
+<../plenary_justpipimass.pdf, id=62, 291.0875pt x 260.975pt>
+File: ../plenary_justpipimass.pdf Graphic file (type pdf)
+
+<use ../plenary_justpipimass.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 101--118
+ [] 
+ []
+
+<../cascade_correction_white.pdf, id=63, 292.09125pt x 261.97874pt>
+File: ../cascade_correction_white.pdf Graphic file (type pdf)
+
+<use ../cascade_correction_white.pdf>
+File: ../cascade_correction_white.pdf Graphic file (type pdf)
+ <use ../cascade_correction_white.pdf>
+[5 <../plenary_justpipimass.pdf> <../cascade_correction_white.pdf>]
+File: ../plenary_justpipimass.pdf Graphic file (type pdf)
+
+<use ../plenary_justpipimass.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 152--169
+ [] 
+ []
+
+<../cascade_correction_2s.pdf, id=71, 291.0875pt x 260.975pt>
+File: ../cascade_correction_2s.pdf Graphic file (type pdf)
+
+<use ../cascade_correction_2s.pdf>
+<../cascade_correction_3s.pdf, id=72, 291.0875pt x 260.975pt>
+File: ../cascade_correction_3s.pdf Graphic file (type pdf)
+
+<use ../cascade_correction_3s.pdf> [6 <../cascade_correction_2s.pdf> <../cascad
+e_correction_3s.pdf>] <../jed_backgrounds.pdf, id=80, 473.77pt x 334.24875pt>
+File: ../jed_backgrounds.pdf Graphic file (type pdf)
+
+<use ../jed_backgrounds.pdf> [7 <../jed_backgrounds.pdf>]
+<../plenary_lumi.pdf, id=87, 454.69875pt x 274.02374pt>
+File: ../plenary_lumi.pdf Graphic file (type pdf)
+
+<use ../plenary_lumi.pdf> [8 <../plenary_lumi.pdf>]
+<stability.pdf, id=93, 465.74pt x 221.82875pt>
+File: stability.pdf Graphic file (type pdf)
+ <use stability.pdf> [9 <./stability.pdf>] <../proceedings_miscal_white.pdf, id
+=102, 464.73625pt x 245.91875pt>
+File: ../proceedings_miscal_white.pdf Graphic file (type pdf)
+
+<use ../proceedings_miscal_white.pdf>
+<../plenary_fitorder.pdf, id=103, 264.99pt x 467.7475pt>
+File: ../plenary_fitorder.pdf Graphic file (type pdf)
+
+<use ../plenary_fitorder.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 240--261
+[][] 
+ []
+
+[10 <../proceedings_miscal_white.pdf> <../plenary_fitorder.pdf>]
+<../proceedings_miscal.pdf, id=111, 463.7325pt x 244.915pt>
+File: ../proceedings_miscal.pdf Graphic file (type pdf)
+
+<use ../proceedings_miscal.pdf>
+File: ../plenary_fitorder.pdf Graphic file (type pdf)
+ <use ../plenary_fitorder.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 264--285
+[][] 
+ []
+
+[11 <../proceedings_miscal.pdf>]
+<../individual_noinset_1s.pdf, id=117, 264.99pt x 467.7475pt>
+File: ../individual_noinset_1s.pdf Graphic file (type pdf)
+
+<use ../individual_noinset_1s.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 288--323
+[][] 
+ []
+
+[12 <../individual_noinset_1s.pdf>]
+<../three_resonances_inset_squat2_nscans.pdf, id=123, 481.8pt x 327.2225pt>
+File: ../three_resonances_inset_squat2_nscans.pdf Graphic file (type pdf)
+
+<use ../three_resonances_inset_squat2_nscans.pdf> [13 <../three_resonances_inse
+t_squat2_nscans.pdf>] <../plenary_pulls1.pdf, id=135, 473.77pt x 380.42125pt>
+File: ../plenary_pulls1.pdf Graphic file (type pdf)
+
+<use ../plenary_pulls1.pdf> [14 <../plenary_pulls1.pdf>]
+<../plenary_pulls2.pdf, id=141, 476.78125pt x 380.42125pt>
+File: ../plenary_pulls2.pdf Graphic file (type pdf)
+
+<use ../plenary_pulls2.pdf> [15 <../plenary_pulls2.pdf>]
+<../plenary_pulls3.pdf, id=147, 476.78125pt x 380.42125pt>
+File: ../plenary_pulls3.pdf Graphic file (type pdf)
+
+<use ../plenary_pulls3.pdf> [16 <../plenary_pulls3.pdf>] [17] [18]
+<pdgplots2.pdf, id=159, 624.3325pt x 461.725pt>
+File: pdgplots2.pdf Graphic file (type pdf)
+ <use pdgplots2.pdf> [19 <./pdgplots2.pdf>] <dependence.pdf, id=175, 440.64626p
+t x 200.75pt>
+File: dependence.pdf Graphic file (type pdf)
+
+<use dependence.pdf> [20 <./dependence.pdf>] (./talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 1323 strings out of 50453
+ 17114 string characters out of 688420
+ 58718 words of memory out of 1500001
+ 4322 multiletter control sequences out of 10000+25000
+ 15705 words of font info for 60 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,18n,24p,232b,486s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fo
+nts/type1/bluesky/symbols/msam10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/c
+mex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf
+/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi
+12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fo
+nts/type1/bluesky/cm/cmr17.pfb>
+Output written on talk.pdf (20 pages, 594436 bytes).

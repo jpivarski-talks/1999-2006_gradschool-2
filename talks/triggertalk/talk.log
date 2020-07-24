@@ -1,0 +1,165 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  13 OCT 2004 10:54
+**talk.tex
+(./talk.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (./talk.aux)
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks15
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks16
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 24.
+ [1
+
+{/usr/share/texmf/dvips/config/pdftex.map}] [2]
+<triggercuts.pdf, id=17, 611.28375pt x 164.615pt>
+File: triggercuts.pdf Graphic file (type pdf)
+ <use triggercuts.pdf>
+[3 <./triggercuts.pdf>] [4]
+Overfull \hbox (24.73955pt too wide) in paragraph at lines 150--153
+/cmr17@20.74pt/sented by the num-ber of qual-ity tracks), how much does trig-ge
+r track ef-fi-ciency/overcounting
+ []
+
+[5]
+Overfull \hbox (24.73955pt too wide) in paragraph at lines 196--199
+/cmr17@20.74pt/sented by the num-ber of qual-ity tracks), how much does trig-ge
+r track ef-fi-ciency/overcounting
+ []
+
+[6] <cascades_tracks_boost_tt.pdf, id=45, 569.12625pt x 569.12625pt>
+File: cascades_tracks_boost_tt.pdf Graphic file (type pdf)
+
+<use cascades_tracks_boost_tt.pdf>
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 252--276
+[][] 
+ []
+
+[7 <./cascades_tracks_boost_tt.pdf>] [8] [9]
+<effcheck_datavmc1.pdf, id=61, 289.08pt x 158.5925pt>
+File: effcheck_datavmc1.pdf Graphic file (type pdf)
+
+<use effcheck_datavmc1.pdf>
+<effcheck_datavmc2.pdf, id=62, 289.08pt x 158.5925pt>
+File: effcheck_datavmc2.pdf Graphic file (type pdf)
+
+<use effcheck_datavmc2.pdf> [10 <./effcheck_datavmc1.pdf> <./effcheck_datavmc2.
+pdf>]
+File: effcheck_datavmc1.pdf Graphic file (type pdf)
+ <use effcheck_datavmc1.pdf>
+File: effcheck_datavmc2.pdf Graphic file (type pdf)
+ <use effcheck_datavmc2.pdf> [11]
+<yellow.pdf, id=81, 59.22125pt x 28.105pt>
+File: yellow.pdf Graphic file (type pdf)
+ <use yellow.pdf>
+Overfull \hbox (0.40971pt too wide) in paragraph at lines 450--454
+[][]
+ []
+
+[12 <./yellow.pdf>]
+File: yellow.pdf Graphic file (type pdf)
+ <use yellow.pdf>
+Overfull \hbox (0.40971pt too wide) in paragraph at lines 498--502
+[][]
+ []
+
+[13] <cascade_still_missing3_tt.pdf, id=91, 291.0875pt x 260.975pt>
+File: cascade_still_missing3_tt.pdf Graphic file (type pdf)
+
+<use cascade_still_missing3_tt.pdf> [14 <./cascade_still_missing3_tt.pdf>]
+(./talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 885 strings out of 50453
+ 10958 string characters out of 688420
+ 57658 words of memory out of 1500001
+ 3929 multiletter control sequences out of 10000+25000
+ 7034 words of font info for 25 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,16n,21p,252b,397s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/te
+xmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/
+cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texm
+f/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cm
+mi12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on talk.pdf (14 pages, 90295 bytes).

@@ -1,0 +1,4 @@
+c3rel Mar04_04_MC
+export LCDROOT=/cdat/tem/cdj/lcdroot/v01_00_00/LCDRootApps
+export LD_LIBRARY_PATH=${LCDROOT}/lib:${LD_LIBRARY_PATH}
+export C3_SHLIB=/cdat/tem/cdj/lcdroot/v01_00_00/shlib:${C3_SHLIB}

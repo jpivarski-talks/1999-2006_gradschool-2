@@ -1,0 +1,31 @@
+#!/bin/sh
+###########################################################
+# Copyright (C) 2001-2003, CompHEP Collaboration
+#------------------------------------------------------
+# Start numerical CompHEP
+#-----------------------------------------------------------
+# $Id: n_comphep,v 1.6 2003/06/25 18:46:42 kryukov Exp $
+# $Log: n_comphep,v $
+# Revision 1.6  2003/06/25 18:46:42  kryukov
+# *** empty log message ***
+#
+# Revision 1.5  2003/04/05 10:40:31  kryukov
+# Fix problem with DEBUG mode and COMPHEP env. var.
+#
+# Revision 1.4  2003/04/04 18:43:43  kryukov
+# Fix minor bug in debug mode
+#
+# Revision 1.3  2003/03/10 19:11:56  sherstnv
+# In num_batch clean functions are included.
+#
+# Revision 1.2  2003/01/25 17:20:23  kryukov
+# Insert "./" before n_comphep
+#
+###########################################################
+export COMPHEP=/A/lns183/cdat/daf9/mccann/software/src/comphep-4.4.0
+
+if [ x$1 = xDEBUG ]; then
+  ( export COMPHEP=$COMPHEP; ddd n_comphep.exe $2 $3 )
+else
+  ./n_comphep.exe $1 $2
+fi

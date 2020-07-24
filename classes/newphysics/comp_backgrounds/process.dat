@@ -1,0 +1,32 @@
+############################################################
+#         Data file for symb_script.pl
+#       For the symb_batch script version 0.1
+############################################################
+
+#  You have to set the number of model, which you'd like to use.
+#  The model number corresponds the string number of the model
+#  in the CompHEP model menu in GUI mode. 
+model number: 4
+
+#  In the process string you can use model particles or particles 
+#  from a composite particles list of the model.
+process: e,E->m,M
+
+#  Energy of collision in c.m.s. of the colliding particles.
+energy(GeV): 14000
+
+#  If you'd like to exclude feynman diagrams with some model
+#  particles, enter the particles names here
+exclude diagrams with:
+
+#  If you'd like to exclude feynman diagrams with some model
+#  particles, enter the particles names here
+keep diagrams with:
+
+#  If you enter no, the s_comphep program generates diagrams 
+#  and exits with no symbolic calculations.
+make symbolic calculations(yes/no): yes
+
+#If you enter no, the s_comphep program calculates
+#all squared diagrams, but n_comphep is not created.
+make n_comphep generator(yes/no): yes

@@ -1,0 +1,105 @@
+YOUR RESERVATION NUMBER IS: 669347
+
+From info@venere.com Mon Jul 28 20:45:38 2003
+Date: Tue, 29 Jul 2003 02:43:36 +0200
+From: info@venere.com
+To: mccann@watson.org
+Subject: Your reservation at Nouvel Hotel
+
+Hello James Pivarski,
+
+Thanks for using Internet Hotel Reservation.
+
+A message with your reservation data has been sent to Nouvel Hotel.
+
+This mail is a summary of your new reservation for your reference.
+
+YOUR RESERVATION IS CONFIRMED.
+
+You can review the status of your reservation by accessing the following URL
+
+http://www.venere.com/cgi/user/index.php
+
+or just clicking 'view reservation' on the home page of the Internet Hotel Reservation site.
+---------------------------------------------------------------------
+
+PROPERTY DATA
+
+Name     : Nouvel Hotel
+Address  : 
+            Nice
+Email	 : 
+Fax n.   : 
+Phone n. : 
+---------------------------------------------------------------------
+
+RESERVATION DATA
+
+Reservation request code: 669347
+Rooms requested :
+1 Single                      57.00 EUR  
+Total price :         57.00 EUR
+
+Reservation:  
+
+Arriving date  : 02 August 2003
+Departure date : 03 August 2003
+Number of nights : 1
+
+---------------------------------------------------------------------
+CANCELLATION POLICY
+Timeline for cancellation without penalties:
+Thursday 31 Jul 2003 23:59 (local time)
+
+
+
+This reservation request is visible for other properties in my selected city: never
+---------------------------------------------------------------------
+
+YOUR PERSONAL DATA 
+
+First Name    : James
+Last Name     : Pivarski
+Company       : 
+Address       : Gaslight Village #4A
+Zip Code      : 14850
+City          : Ithaca
+Country       : USA
+State         : NY
+Phone         : (607) 257 3510
+Fax           : 
+Email         : mccann@watson.org
+
+---------------------------------------------------------------------
+OTHER INFORMATIONS
+You asked for the special offer.
+
+Additional notes:
+
+My plane arrives at 23h, how do I check in late at night?
+
+Thanks!
+-- Jim
+
+---------------------------------------------------------------------
+
+CREDIT CARD DATA, SENT TO THE PROPERTY, HAS NOT BEEN INCLUDED IN THIS REPORT FOR SECURITY REASONS.
+
+Please note that Venere.com never charges users' credit cards for their reservations. Unless different specifications on the property webpages or cancellation policy, any balance is to be settled at the property reception at the end of your stay using cash, cheques or any credit card accepted by the property.
+---------------------------------------------------------------------
+
+IN ORDER TO VIEW,MODIFY OR CANCEL YOUR RESERVATION PLEASE CLICK ON THE LINK:
+
+http://www.venere.com/cgi/user/index.php 
+
+OR TYPE www.venere.com AND CLICK ON  "YOUR RESERVATIONS" ON THE UPPER RIGHT CORNER.
+---------------------------------------------------------------------
+
+For any additional information or suggestions you need please contact us!
+
+http://www.venere.com/ or http://www.italyhotel.com/
+
+email: info@venere.com
+
+
+Thank you again for using Internet Hotel Reservation!

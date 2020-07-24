@@ -1,0 +1,7 @@
+close 1
+CHAIN -c1pc1m
+CHAIN c1pc1m rzn/chi20chi30v5_c1pc1m_l_0p1.rzn
+CHAIN c1pc1m rzn/chi20chi30v5_c1pc1m_l_0p2.rzn
+CHAIN c1pc1m rzn/chi20chi30v5_c1pc1m_l_1p1.rzn
+cd //c1pc1m
+cdir CHI20CHI30PROC

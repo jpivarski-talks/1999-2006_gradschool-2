@@ -1,0 +1,182 @@
+* This is needed for pict/print 'name.eps' to work... you might
+* already have it set correctly, but in case you don't, here it is!
+opt zfl1
+
+* Get your ntuples from wherever you want, but the filehandles must
+* have these names!
+nt/chain n1n3 	/home/mccann/lcdroot/rzn2/n1n3.rzn  
+nt/chain c1c2 	/home/mccann/lcdroot/rzn2/c1c2.rzn 
+nt/chain n2n3 	/home/mccann/lcdroot/rzn2/n2n3.rzn
+nt/chain c1c1 	/home/mccann/lcdroot/rzn2/c1c1.rzn
+nt/chain zpairs /home/mccann/lcdroot/rzn2/zpairs.rzn
+nt/chain ttbar  /home/mccann/lcdroot/rzn2/ttbar.rzn
+nt/chain wpairs /home/mccann/lcdroot/rzn2/wpairs.rzn
+
+* scale factors
+*
+* (215 fb^-1) / ((generated luminosity)*(number in ntuple)/(number in generated MC))
+*
+* number in ntuple != number in generated MC only if you stopped the
+* ntuple filling before it finished
+sigma sn1n3 =   (215) / ((449.1) * (12620) / (12620))
+sigma sc1c2 =   (215) / ((1405.) * (22300) / (22300))
+sigma sn2n3 =   (215) / ((479.3) * (20000) / (20000))
+sigma sc1c1 =   (215) / ((431.0) * (65836) / (120000))
+sigma szpairs = (215) / ((250.0) * (27854) / (106725))
+sigma sttbar =  (215) / ((155.8) * (10844) / (88330))
+sigma swpairs = (215) / ((13.82) * (23859) / (100000))
+
+* You get to choose your own stacking order (layer1 is on the bottom)
+global/create layer7 wpairs
+global/create layer6 ttbar
+global/create layer5 zpairs
+global/create layer4 c1c1
+global/create layer3 n2n3
+global/create layer2 c1c2
+global/create layer1 n1n3
+
+* This sets up the color scheme--- everyone gets the same color scheme
+* for minimum confusion.
+exec color.kumac
+
+* Histogram id spacing (make each a multiple of 100)
+sigma prefix = 100
+
+* fill.kumac declares histograms and fills them from the ntuples;
+* the arguments are: [1] title
+*                    [2] number of bins
+*                    [3] low value
+*                    [4] high value
+*                    [5] hbook_directory/ntuple_id.variable to plot
+*                    [6] cuts to apply (can be '!', but this must be explicit)
+* errors in HDELET are okay (in fact, expected)
+exec fill.kumac 'Missing energy' 100 0. 500. LCProc/1000.(500-esumiso-esumtrk) !
+
+* plot.kumac draws the completed histograms to HIGZ;
+* the arguments are: [1] left border (always use a decimal point!!!)
+*                    [2] right border (set them equal for full histogram domain)
+*                    [3] bottom border
+*                    [4] top border (set them equal for default range determination)
+*                    [5] 's' to superimpose, ! otherwise
+* Please no log scale!  I can't handle it!  If you're going to do log
+* scale, forget about the key and cutline!
+exec plot.kumac 0. 0. 0. 0. !
+
+* key.kumac draws a key in the corner
+* the arguments are: [1] == 1 for zone 1 1 (or 2 1 or anything else) plots
+*                        == 2 for zone 2 2 (or 2 2, etc.)
+*                        == anything else for complete failure
+*                    [2] == 0. if you have no other keys
+*                        == 0.2 if you have a statistics box
+*                        == more if you have a long fit result
+exec key.kumac 1 0.
+
+* cutline.kumac draws a cut line
+* the arguments are: [1] the value of the cut
+*                    [2] == 1 if you're keeping events above the cut
+*                        == -1 if you're keeping events below the cut
+*                        == 0 if it doesn't make sense to draw the arrow
+*                    [3] how high in the plot you wish to set the arrow
+*                        (usually 0.9)
+exec cutline.kumac 250 1 0.9
+
+* If you want to get everything out to eps, this is how you do it
+* (after each plot)
+* pict/print 'pretty_1.eps'
+
+nt/cut $1 (500-esumiso-esumtrk)>250
+
+sigma prefix = 200
+exec fill.kumac 'Number of tracks' 62 -10.5 51.5 LCProc/1000.numtrks $1
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 1 0.
+exec cutline.kumac 1.5 0 0.9
+exec cutline.kumac 2.5 0 0.9
+* pict/print 'pretty_2.eps'
+
+* (bigp*secp<0 is charge balance)
+nt/cut $2 numtrks==2&&bigp*secp<0
+
+zone 1 2
+sigma prefix = 300
+exec fill.kumac 'Biggest track electron ID' 30 0. 1.5 LCProc/1000.bigem/abs(bigp) $1&&$2
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+exec cutline.kumac 0.9 1. 0.9
+exec cutline.kumac 1.1 -1. 0.8
+sigma prefix = 400
+exec fill.kumac 'Second-biggest track electron ID' 30 0. 1.5 LCProc/1000.secem/abs(secp) $1&&$2
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+exec cutline.kumac 0.9 1. 0.9
+exec cutline.kumac 1.1 -1. 0.8
+* pict/print 'pretty_3.eps'
+
+nt/cut $3 0.9<bigem/abs(bigp)<1.1&&0.9<secem/abs(secp)<1.1
+
+zone 1 2
+sigma prefix = 500
+exec fill.kumac 'Biggest electron momentum' 50 0. 200 LCProc/1000.abs(bigp) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+sigma prefix = 600
+exec fill.kumac 'Second-biggest electron momentum' 50 0. 200 LCProc/1000.abs(secp) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+* pict/print 'pretty_4.eps'
+
+zone 1 2
+sigma prefix = 700
+exec fill.kumac 'Biggest electron cos(theta)' 50 -1. 1. LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+sigma prefix = 800
+exec fill.kumac 'Second-biggest electron cos(theta)' 50 -1. 1. LCProc/1000.p2z/sqrt(p2x**2+p2y**2+p2z**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+* pict/print 'pretty_5.eps'
+
+zone 1 1
+sigma prefix = 900
+exec fill.kumac 'cos(positron, electron)' 100 0. 1. LCProc/1000.(p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 1 0.
+* pict/print 'pretty_6.eps'
+
+zone 1 2
+sigma prefix = 1000
+exec fill.kumac 'Vector sum of positron, electron momenta' 100 0. 150. LCProc/1000.sqrt((p1x+p2x)**2+(p1y+p2y)**2+(p1z+p2z)**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+exec cutline.kumac 70. 1. 0.9
+sigma prefix = 1100
+exec fill.kumac 'Cosine of vector sum of positron, electron' 100 -1. 1. LCProc/1000.(p1z+p2z)/sqrt((p1x+p2x)**2+(p1y+p2y)**2+(p1z+p2z)**2) $1&&$2&&$3
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 2 0.
+* pict/print 'pretty_7.eps'
+
+nt/cut $4 sqrt((p1x+p2x)**2+(p1y+p2y)**2+(p1z+p2z)**2)>70
+nt/cut $5 (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0
+
+global/create layer7 wpairs
+global/create layer6 n1n3
+global/create layer5 ttbar
+global/create layer4 zpairs
+global/create layer3 c1c1
+global/create layer2 n2n3
+global/create layer1 c1c2
+
+zone 1 1
+sigma prefix = 1200
+exec fill.kumac 'Invariant mass of electrons' 100 0. 200. LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $1&&$2&&$3&&$4&&$5
+exec plot.kumac 0. 0. 0. 0. !
+exec key.kumac 1 0.
+* pict/print 'pretty_8.eps'
+
+zone 1 1
+sigma prefix = 1300
+exec fill2.kumac 'Invariant mass VS angle between leptons' 15 -1. 1. 15 0. 150. LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2)%(p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2) $1&&$2&&$3&&$5
+exec plot2.kumac
+exec key.kumac 1 0.
+pict/print 'pretty_9.eps'
+

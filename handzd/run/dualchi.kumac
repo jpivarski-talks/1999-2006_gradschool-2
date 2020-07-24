@@ -1,0 +1,111 @@
+h/file 1 ../rzn/tmp.rzn
+cd zdhitstudy
+
+ ********************************************************
+ * NTUPLE ID=    2  ENTRIES= 102782   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * dualchi2  * 0.346621E-02 * 0.520223E+04 *
+ *      2     * d0        * -.500116E-03 * 0.499884E-03 *
+ *      3     * z0        * -.150000E-01 * 0.150000E-01 *
+ *      4     * px        * -.751004E-01 * 0.744580E-01 *
+ *      5     * py        * -.753174E-01 * 0.751035E-01 *
+ *      6     * pz        * -.754971E-01 * 0.755203E-01 *
+ *      7     * ed0       * 0.103394E-07 * 0.742024E-06 *
+ *      8     * ez0       * 0.100028E-04 * 0.479952E-02 *
+ *      9     * epx       * 0.317274E-06 * 0.269494E-02 *
+ *     10     * epy       * 0.302013E-06 * 0.204556E-02 *
+ *     11     * epz       * 0.500757E-04 * 0.550642E-01 *
+ *     12     * ad0       * -.182146E-16 * 0.277556E-16 *
+ *     13     * az0       * -.210769E-14 * 0.856953E-15 *
+ *     14     * apx       * -.822479E-01 * 0.394681E-01 *
+ *     15     * apy       * -.406695E-01 * 0.464995E-01 *
+ *     16     * apz       * -.545511E-01 * 0.921281E-01 *
+ ********************************************************
+
+fortran/file 65 '../plots/dualfit_constraints.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+h/cr/title ' '
+opt sta
+set stat 0111110
+
+zone 2 3
+h/cr/1d 201 'd0miss' 100 -0.5e-3 0.5e-3
+h/cr/1d 202 'z0miss' 100 -0.015 0.015
+h/cr/1d 203 'pxmiss' 100 -0.076 0.076
+h/cr/1d 204 'pymiss' 100 -0.076 0.076
+h/cr/1d 205 'pzmiss' 100 -0.076 0.076
+nt/plot 2.d0 ! ! ! ! ! 201
+nt/plot 2.z0 ! ! ! ! ! 202
+nt/plot 2.px ! ! ! ! ! 203
+nt/plot 2.py ! ! ! ! ! 204
+nt/plot 2.pz ! ! ! ! ! 205
+
+zone 2 3
+h/cr/1d 301 'normalized d0miss' 100 -10 10
+h/cr/1d 302 'normalized z0miss' 100 -10 10
+h/cr/1d 303 'normalized pxmiss' 100 -10 10
+h/cr/1d 304 'normalized pymiss' 100 -10 10
+h/cr/1d 305 'normalized pzmiss' 100 -10 10
+nt/plot 2.d0/sqrt(ed0) ! ! ! ! ! 301
+nt/plot 2.z0/sqrt(ez0) ! ! ! ! ! 302
+nt/plot 2.px/sqrt(epx) ! ! ! ! ! 303
+nt/plot 2.py/sqrt(epy) ! ! ! ! ! 304
+nt/plot 2.pz/sqrt(epz) ! ! ! ! ! 305
+
+zone 2 3
+h/cr/1d 401 'd0miss after constraint' 100 -0.1e-16 0.1e-16
+h/cr/1d 402 'z0miss after constraint' 100 -0.1e-15 0.1e-15
+h/cr/1d 403 'pxmiss after constraint' 100 -0.01 0.01
+h/cr/1d 404 'pymiss after constraint' 100 -0.01 0.01
+h/cr/1d 405 'pzmiss after constraint' 100 -0.01 0.01
+nt/plot 2.ad0 ! ! ! ! ! 401
+nt/plot 2.az0 ! ! ! ! ! 402
+nt/plot 2.apx ! ! ! ! ! 403
+nt/plot 2.apy ! ! ! ! ! 404
+nt/plot 2.apz ! ! ! ! ! 405
+
+h/cr/title 'bad reduced dual[h]^2! only ("g# 20)'
+
+zone 2 3
+h/cr/1d 501 'd0miss' 100 -0.5e-3 0.5e-3
+h/cr/1d 502 'z0miss' 100 -0.015 0.015
+h/cr/1d 503 'pxmiss' 100 -0.076 0.076
+h/cr/1d 504 'pymiss' 100 -0.076 0.076
+h/cr/1d 505 'pzmiss' 100 -0.076 0.076
+nt/plot 2.d0 dualchi2>20 ! ! ! ! 501
+nt/plot 2.z0 dualchi2>20 ! ! ! ! 502
+nt/plot 2.px dualchi2>20 ! ! ! ! 503
+nt/plot 2.py dualchi2>20 ! ! ! ! 504
+nt/plot 2.pz dualchi2>20 ! ! ! ! 505
+
+zone 2 3
+h/cr/1d 601 'normalized d0miss' 100 -10 10
+h/cr/1d 602 'normalized z0miss' 100 -10 10
+h/cr/1d 603 'normalized pxmiss' 100 -10 10
+h/cr/1d 604 'normalized pymiss' 100 -10 10
+h/cr/1d 605 'normalized pzmiss' 100 -10 10
+nt/plot 2.d0/sqrt(ed0) dualchi2>20 ! ! ! ! 601
+nt/plot 2.z0/sqrt(ez0) dualchi2>20 ! ! ! ! 602
+nt/plot 2.px/sqrt(epx) dualchi2>20 ! ! ! ! 603
+nt/plot 2.py/sqrt(epy) dualchi2>20 ! ! ! ! 604
+nt/plot 2.pz/sqrt(epz) dualchi2>20 ! ! ! ! 605
+
+zone 1 2
+opt nsta
+h/cr/title ' '
+
+h/cr/2d 700 'reduced dual[h]^2! VS pz' 1 -0.076 0.076 1 0. 50.
+h/cr/2d 701 'reduced dual[h]^2! VS pz' 50 -0.076 0.076 50 0. 5.
+nt/plot 2.dualchi2%pz ! ! ! ! ! 700
+nt/plot 2.dualchi2%pz ! ! ! ! 'box' 701
+
+* h/cr/2d 800 'reduced dual[h]^2! VS pperp' 1 0. 0.076 1 0. 50.
+* h/cr/2d 801 'reduced dual[h]^2! VS pperp' 50 0. 0.076 50 0. 5.
+* nt/plot 2.dualchi2%sqrt(px**2+py**2) ! ! ! ! ! 800
+* nt/plot 2.dualchi2%sqrt(px**2+py**2) ! ! ! ! 'box' 801
+
+close 65

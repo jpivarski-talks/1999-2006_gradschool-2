@@ -1,0 +1,2450 @@
+\documentstyle[11pt,graphicx,fancybox,semcolor,semlayer,doublespace,portrait]
+{seminar}
+\input clp_utils
+
+\def\cesr{{\sc Cesr}}
+\def\cleo{{\sc Cleo}}
+\def\cleoii{{\sc Cleo II}}
+\def\cleoiii{{\sc Cleo III}}
+\def\cleoc{{\sc Cleo-c}}
+
+\def\qed{{\sc Qed}}
+\def\qcd{{\sc Qcd}}
+
+% The following strings are needed by the title page and 
+% page style definitions in map_utils.tex
+\newcommand{\talktitle}[0]{Event Types and Analysis Types at CLEO}
+\newcommand{\fmttitle}[0]{}
+\newcommand{\conftitle}[0]{CrossTalk 2003}
+\newcommand{\myname}[0]{Jim Pivarski}
+\newcommand{\affila}[0]{Cornell University}
+\newcommand{\talkdate}[0]{June 18, 2003}
+
+\pagestyle{conference}   % From clp_utils.tex
+
+% slide magnification
+\slidesmag 1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start document
+\begin{document}
+
+% Set page size
+\slideheight 7.0in
+\slidewidth 8.8in 
+
+% Set array stretch
+\renewcommand{\arraystretch}{0.3}
+\renewcommand{\slidetopmargin}{0.4in}
+\renewcommand{\slidebottommargin}{0.9in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+
+\begin{center}
+\vspace{4 cm}
+{\Huge Event Types and Analysis Types \\
+\vspace{0.25 cm}
+(A Crib Sheet for \cleo\ Analyses)}  \\
+\vspace{1 cm}
+{\LARGE	Jim Pivarski } \\
+\end{center}
+
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Target Audience}
+\begin{minipage}[t]{\linewidth}
+
+\vspace{0.1 cm}
+\huge
+Appropriateness versus Year
+\vspace{0.5 cm}
+
+\includegraphics[width=\linewidth]{apropriateness.eps}
+
+\end{minipage}
+
+\vspace{1.3 cm}
+
+\heading{\huge Scope}
+\begin{minipage}[t]{\linewidth}
+
+\vspace{0.1 cm}
+\huge
+\begin{enumerate}
+
+  \item Fundumental Particle Physics in Real-Life
+
+  \item Peculiarities of \cesr/\cleo
+
+  \item Types of events you can expect to see in \mbox{\cleoiii} and \cleoc\ data
+
+  \item What kinds of analyses are there for you to get involved in?
+
+\end{enumerate}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Real-Life Particle Physics: $e^+e^- \to \mu^+ \mu^-$}
+\begin{minipage}[t]{\linewidth}
+\Large
+
+\vspace{0.1 cm}
+
+\begin{center}
+  \begin{tabular}{p{0.55\linewidth} p{0.35\linewidth}}
+    \begin{minipage}{\linewidth}
+      Selected events with:
+      \begin{itemize}
+
+	\item two tracks with more than 40\% of beam energy each.
+
+	\item They must deposit less than 85\% of their energy in the
+	calorimeter,
+
+        \item and originate within 1 mm of the collision point.
+
+      \end{itemize}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{mupair.eps}
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+\vspace{1 cm}
+
+\begin{minipage}{\linewidth}
+  \huge Peskin and Schroeder Chapter 5:
+  \begin{center}
+    \begin{tabular}{p{0.15\linewidth} p{0.1\linewidth} p{0.15\linewidth}}
+      \begin{minipage}{\linewidth}
+	\includegraphics[width=\linewidth]{qed_diagram.eps}
+      \end{minipage} &
+      \begin{minipage}{\linewidth}
+	\Huge \[ \sim \]
+      \end{minipage} &
+      \begin{minipage}{\linewidth}
+	\Huge \[ 1 + \cos^2 \theta \]
+      \end{minipage}
+    \end{tabular}
+    \begin{minipage}{\linewidth}
+      \vspace{-1 cm}
+      \begin{center}
+	\includegraphics[width=\linewidth]{mupair_costh.eps}
+      \end{center}
+    \end{minipage}
+  \end{center}
+\end{minipage}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge How about a $\Lambda$ Particle?  (Why not?)}
+\begin{minipage}[t]{\linewidth}
+
+\vspace{0.1 cm}
+
+\begin{center}
+  \includegraphics[width=0.85\linewidth]{2lambdas_sidebyside_small.eps}
+
+  \vspace{-0.1 cm} \begin{tabular}{p{0.4\linewidth} p{0.55\linewidth}}
+    \begin{minipage}{\linewidth}
+      Reconstruct $\Lambda$ mass from the two observed tracks: \\
+      \[ \begin{array}{r c l}
+           \mbox{$m_\Lambda$}^2 &=& \mbox{$E_\Lambda$}^2 - \mbox{$\vec{p}_\Lambda$}^2 \\
+	   \vspace{-0.3 cm} & & \\
+	                        &=& \bigg(\sqrt{\left|\mbox{$\vec{p}_p$}\right|^2 + \mbox{$m_p$}^2} \\
+                                & & \hspace{1.2 cm} + \sqrt{\left|\mbox{$\vec{p}_\pi$}\right|^2 + \mbox{$m_\pi$}^2}\bigg)^2 \\
+				& & \hspace{0.4 cm} - \bigg| \, \vec{p}_p + \vec{p}_\pi \, \bigg|^2 \\
+         \end{array} \]
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{lambdamass.eps}
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Peculiarities of \cesr/\cleo}
+\begin{minipage}[t]{\linewidth}
+\huge
+
+\vspace{0.1 cm}
+
+Initial state is always $e^+ \rightarrow \leftarrow e^-$, so
+all diagrams start like this:
+\begin{center}
+  \vspace{-1 cm}
+  \includegraphics[height=2 cm]{diagram_start.eps}
+\end{center}
+
+\vspace{-0.3 cm}
+Final state is predictable!  Conserved quantities:
+\begin{itemize}
+
+  \item Center-of-Mass Energy is fixed \\
+  \begin{minipage}{\linewidth}
+    \LARGE
+    \[ M^2 = \left(\mbox{known beam energy}\right)^2
+       - \left| \, \sum_{\mbox{\scriptsize daughters}} \vec{p}_i \ \ \right|^2 \vspace{-0.4 cm} \]
+    is much more precise than \vspace{-0.2 cm}
+    \[ M^2 = \left(\, \sum_{\mbox{\scriptsize daughters}} \sqrt{\, \left|\vec{p}_i\right|^2 + \mbox{$m_i$}^2} \ \right)^2
+       - \left| \, \sum_{\mbox{\scriptsize daughters}} \vec{p}_i \ \ \right|^2 \]
+  \end{minipage}
+
+  \item Total momentum is zero \\
+  \begin{minipage}{\linewidth}
+    \LARGE
+    A missing neutrino can sometimes be identified.
+  \end{minipage}
+
+  \item Angular momentum is $J=1$
+  \begin{center}
+    \includegraphics[width=0.45\linewidth]{diagram_jpsi.eps} \hspace{0.2 cm}
+    \includegraphics[width=0.45\linewidth]{diagram_etac.eps}
+  \end{center}
+
+  \vspace{-0.5 cm}
+  \item Total charge is zero
+
+\end{itemize}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge The {\sc Cleo iii/c} Detector}
+\begin{minipage}[t]{\linewidth}
+\huge
+
+\vspace{0.1 cm}
+
+\begin{center}
+  \includegraphics[width=0.9\linewidth]{cleo_endview.eps}
+\end{center}
+
+\begin{itemize}
+  \item No hadron calorimeter
+  \item No time-of-flight TDC's
+\end{itemize}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Particle Identification}
+\begin{minipage}[t]{\linewidth}
+\huge
+
+\vspace{0.1 cm}
+
+Visible tracks: $e^\pm$, $\mu^\pm$, $\pi^\pm$, $K^\pm$, $p$, $\bar{p}${\gray, $\Sigma^\pm$, $\Xi^\pm$, $\Omega^\pm$} \\
+
+\vspace{-0.5 cm}
+
+Methods of Track $\to$ Particle Identification: \\
+\vspace{-0.5 cm}
+
+\begin{tabular}{p{0.45\linewidth} c p{0.5\linewidth}}
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+      \item \begin{minipage}{\linewidth}
+              {\large Energy loss in the drift chamber:} \\
+	      \includegraphics[height=6 cm]{dedx.eps}
+	    \end{minipage}
+    \end{itemize}
+  \end{minipage} & &
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+      \item \begin{minipage}{\linewidth}
+	      {\large Ring-Imaging \v{C}erenkov Detector:} \\
+	      \includegraphics[height=6 cm]{rich_kpisep2.eps}
+	    \end{minipage}
+    \end{itemize}
+  \end{minipage} \\
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+      \item \begin{minipage}{\linewidth}
+              {\large Energy deposited in Calorimeter:} \\
+	      \includegraphics[height=6 cm]{cc.eps}
+	    \end{minipage}
+    \end{itemize}
+  \end{minipage} & &
+  \begin{minipage}{0.9\linewidth}
+    \begin{itemize}
+      \item If a track reaches the {\sc Mu} chamber, it is a muon.
+    \end{itemize}
+  \end{minipage} \\
+\end{tabular}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Event Types I: Calibration Types}
+\begin{minipage}[t]{\linewidth}
+\Large
+
+\vspace{1 cm}
+
+\begin{tabular}{p{0.67\linewidth} p{5 cm}}
+\begin{minipage}{\linewidth}
+  Bhabha ($e^+e^- \to e^+e^-$)
+\end{minipage} & \begin{minipage}{\linewidth}
+  \includegraphics[height=2 cm]{bhabha_diagrams.eps} 
+\end{minipage} \\
+\end{tabular}
+\begin{itemize}
+
+  \item Most prevalent: about $\frac{1}{2}$ of events (depends on dataset)
+
+%%   \item Undefined total cross-section:
+%%         \[ \int_0^{\mbox{\scriptsize cut-off}} \frac{d\sigma}{d(\cos\theta)} d(\cos\theta)
+%%         \mbox{ diverges as cut-off $\to \infty$.} \]
+
+  \item Used for luminosity measurement
+
+  \item May show up in 4+ track samples (electrons convert in material)
+
+\end{itemize}
+
+\vspace{1.5 cm}
+
+\begin{tabular}{p{0.79\linewidth} p{5 cm}}
+\begin{minipage}{\linewidth}
+  Mu-Pair ($e^+e^- \to \mu^+\mu^-$)
+\end{minipage} & \begin{minipage}{\linewidth}
+  \includegraphics[height=1.4 cm]{mupair_diagrams.eps}
+\end{minipage} \\
+\end{tabular}
+%% \begin{itemize}
+
+%%   \item Everyone's favorite \qed\ process\ldots
+
+%% \end{itemize}
+
+\vspace{1.5 cm}
+
+\begin{tabular}{p{0.67\linewidth} p{5 cm}}
+\begin{minipage}{\linewidth}
+  Gam-Gam ($e^+e^- \to \gamma \gamma$)
+\end{minipage} & \begin{minipage}{\linewidth}
+  \includegraphics[height=1.5 cm]{gamgam_diagrams.eps}
+\end{minipage} \\
+\end{tabular}
+\begin{itemize}
+
+  \item These are not ``two-photon'' events
+
+%%   \item Undefined total cross-section
+
+  \item Also used for luminosity measurement
+
+\end{itemize}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Event Types II: $e^+e^- \to \tau^+\tau^-$}
+\begin{minipage}[t]{\linewidth}
+\large
+
+\vspace{0.2 cm}
+
+\hspace{-0.6 cm} \begin{tabular}{p{0.47\linewidth} c p{0.47\linewidth}}
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+      \item Heavy enough to decay to hadrons
+	\begin{center}
+	  \includegraphics[width=\linewidth]{tau_event.eps}
+	\end{center}
+    \end{itemize}
+  \end{minipage} & &
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+      \item Measure $\tau$ mass near threshold
+	\begin{center}
+	  \includegraphics[width=\linewidth]{tau_threshold.eps}
+	\end{center}
+	\vspace{0.5 cm}
+    \end{itemize}
+  \end{minipage} \\
+  & & \\
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+      \item Michaelson Parameters
+	{\normalsize
+	    \[ \frac{d^2\Gamma_{\tau \to \ell\bar{\nu}\nu}}{dx\,d\cos\theta}
+                            = f(E, P_\tau, \cos\theta, \rho, \eta, \xi, \delta) \]
+            \begin{tabular}{c c c}
+	      Param.\ & $\tau \to \mu\bar{\nu}\nu$ & SM Value \\\hline
+	      $\rho$ & $0.752 \pm 0.021$ & $0.75$ \\
+	      {\bf $\eta^*$} & {\bf $-0.013 \pm 0.097$} & {\bf $0$} \\
+	      $\xi$ & $1.046 \pm 0.065$ & $1$ \\
+	      $\delta$ & $0.774 \pm 0.043$ & $0.75$ \\
+	    \end{tabular}
+	} \vspace{0.1 cm}
+
+	$^*$Sensitive to Supersymmetric Higgs\ldots
+    \end{itemize}
+  \end{minipage} & &
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+      \item Test CVC Hypothesis
+	\[ \sigma_{e^+e^- \to \mbox{}^{\mbox{\scriptsize anything with}}_{\mbox{\scriptsize isospin $I=1$}}}(s)
+           = \nu_{\tau \to \mbox{\scriptsize that state}}(s) \]
+	\begin{center}
+	  \includegraphics[width=\linewidth, height=4 cm]{tau_spectralfunction.eps}
+	\end{center}
+	Has implications for $g-2$\ldots
+    \end{itemize}
+  \end{minipage} \\
+\end{tabular}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Event Types IIIa: Hadronic Events}
+\begin{minipage}[t]{\linewidth}
+\LARGE
+
+\vspace{0.1 cm}
+
+\begin{center}
+  \begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
+    \begin{minipage}{\linewidth}
+      \begin{center}
+	\begin{tabular}{p{0.25\linewidth} p{0.75\linewidth}}
+	  \begin{minipage}{\linewidth}
+	    \begin{center}
+	      Continuum
+	    \end{center}
+	  \end{minipage} &
+	  \begin{minipage}{\linewidth}
+	    \begin{center}
+              \includegraphics[height=2 cm]{qqbar_cont_diagrams.eps}
+	    \end{center}
+	  \end{minipage}
+	\end{tabular}
+      \end{center}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \begin{center}
+	\begin{tabular}{p{0.25\linewidth} p{0.75\linewidth}}
+	  \begin{minipage}{\linewidth}
+	    \begin{center}
+	      Resonance
+	    \end{center}
+	  \end{minipage} &
+	  \begin{minipage}{\linewidth}
+	    \begin{center}
+              \includegraphics[height= 2 cm]{qqbar_res_diagrams.eps}
+	    \end{center}
+	  \end{minipage}
+	\end{tabular}
+      \end{center}
+    \end{minipage} \\
+    \begin{minipage}{\linewidth}
+      \begin{center}
+        \includegraphics[width=0.75\linewidth]{qqbar_cont_event.eps}
+      \end{center}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \begin{center}
+        \includegraphics[width=0.75\linewidth]{qqbar_res_event.eps}
+      \end{center}
+    \end{minipage} \\
+  \end{tabular} \\
+  \vspace{0.3 cm}
+  \includegraphics[width=0.85\linewidth]{qqbar_rescont.eps}
+\end{center}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Event Types IIIb: Analyses with $D\bar{D}$ Events}
+\begin{minipage}[t]{\linewidth}
+\large
+
+\vspace{0.2 cm}
+
+{\huge CKM Matrix}
+
+\begin{tabular}{p{0.7 cm} p{2.2 cm}}
+  \begin{minipage}{\linewidth}
+    $V_{qq^\prime} \sim $
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    \includegraphics[height=2 cm]{vertex_w.eps}
+  \end{minipage}
+\end{tabular}
+where
+$\left( \begin{array}{c c c}
+          V_{ud} & V_{us} & V_{ub} \\
+          V_{cd} & V_{cs} & V_{cb} \\
+          V_{td} & V_{ts} & V_{tb} \end{array} \right)$ is known to
+$\left( \begin{array}{c c c}
+          0.1\% & 1\%  & 25\% \\
+          7\%   & 16\% &  5\% \\
+          36\%  & 39\% & 29\% \end{array} \right)$.
+
+\Large
+\begin{itemize}
+
+  \item \cleoiii\ produced $B$ and $\bar{B}$ mesons from
+  $\Upsilon(4S)$ decays and measured $B$ decay rates that depend on
+  $V_{ub}$, $V_{cb}$, and $V_{tb}$.
+
+  \item \cleoiii\ produced $D$ and $\bar{D}$ mesons in continuum to
+  measure $D$ decay rates.  These are useful to distinguish the
+  $V_{qq'}$ contribution from the \qcd\ contribution, and for $V_{cd}$
+  and $V_{cs}$ as well.
+
+  \item \cleoc\ will produce a larger sample of $D$ and $\bar{D}$
+  mesons from $\psi^{\prime\prime}$ decays.
+
+\end{itemize}
+
+\vspace{0.5 cm}
+
+{\huge Beyond the Standard Model}
+\begin{itemize}
+
+  \item Search for $D^0$-$\bar{D}^0$ mixing
+
+  \item Search for CP violation in $D$ mesons
+
+\end{itemize}
+
+\vspace{1 cm}
+
+\begin{center}
+  \includegraphics[width=0.85\linewidth]{r_plot_bottom.eps}
+\end{center}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Event Types IIIc: Other Hadronic Analyses}
+\begin{minipage}[t]{\linewidth}
+\Large
+
+\vspace{0.1 cm}
+
+{\huge Charmonium ($c\bar{c}$) Spectroscopy}
+\vspace{-0.3 cm}
+\begin{itemize}
+  \item Only $\psi$'s ($J^{PC}=1^{--}$) are directly produced.
+\end{itemize}
+\begin{center}
+  \includegraphics[width=0.75\linewidth]{pdg_charmonium2.eps}
+\end{center}
+
+\vspace{0.1 cm}
+
+{\huge Light Meson Physics ($u$, $d$ \& $s$ quarks)}
+\vspace{-0.3 cm}
+\begin{itemize}
+  \item Glueballs and glueball/hybrids fall outside of this table\ldots
+\end{itemize}
+\begin{center}
+  \includegraphics*[width=0.65\linewidth]{periodic_table.eps}
+\end{center}
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Event Types IV: Two-Photon Events}
+\begin{minipage}[t]{\linewidth}
+\Large
+
+\vspace{0.5 cm}
+\begin{tabular}{p{0.55\linewidth} p{0.5\linewidth}}
+  \begin{minipage}{\linewidth}
+    Sometimes $e^+$ and $e^-$ don't annihilate:
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    \includegraphics[height=3 cm]{two_photon.eps}
+  \end{minipage}
+\end{tabular}
+
+\vspace{0.8 cm}
+Can reach states with different quantum numbers
+\begin{center}
+  \begin{tabular}{c p{2 cm} c}
+    $e^+ e^- \to \gamma^* \to X$ & &
+    $e^+ e^- \to e^+ e^- \gamma^* \gamma^* \to e^+ e^- X$ \\\hline
+    $J_X=1$ & & $J_X=0\mbox{ or }2$ \\
+    $C_X=-$ & & $C_X=+$
+  \end{tabular}
+\end{center}
+
+\vspace{0.8 cm}
+\begin{tabular}{p{0.5\linewidth} p{0.45\linewidth}}
+  \begin{minipage}{\linewidth}
+    \begin{itemize}
+
+      \item Usually the $e^+$ and $e^-$ are lost down the beampipe
+
+      \item Low total energy
+
+      \item Low transverse momentum:
+      $\displaystyle \left(\sum_i \vec{p}_i\right)_T < E_{\mbox{\scriptsize center-of-mass}} / 20$
+
+      \item Otherwise unbalanced $\vec{p}$
+
+    \end{itemize}
+  \end{minipage} &
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=\linewidth]{two_photon_event.eps}
+  \end{minipage}
+\end{tabular}
+
+\vspace{0.8 cm}
+One application: anti-searches for glueballs/hybrids
+
+\end{minipage}
+\end{slide*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Event Types V: Garbage Types}
+\begin{minipage}[t]{\linewidth}
+\Large
+
+\vspace{0.2 cm}
+
+{\huge Cosmic Rays}
+\begin{itemize}
+  \item Far from interaction point
+  \item One track is actually reconstructed backwards
+\end{itemize}
+\begin{center}
+  \begin{tabular}{p{0.4\linewidth} c p{0.45\linewidth}}
+    \begin{minipage}{\linewidth}
+      \begin{center}
+	\includegraphics[width=\linewidth]{cosmic_event.eps}
+      \end{center}
+    \end{minipage} & &
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{cosmic_phi.eps}
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+\vspace{0.2 cm}
+
+{\huge Beam-Gas, Beam-Wall}
+\begin{center}
+  \begin{tabular}{p{0.4\linewidth} c p{0.45\linewidth}}
+    \begin{minipage}{\linewidth}
+      \begin{itemize}
+      \item Net positive charge
+      \item Net $|p_z| > 0$
+      \item Low total energy
+      \item Vertex is far from interaction point
+      \end{itemize}
+    \end{minipage} & &
+    \begin{minipage}{\linewidth}
+      \begin{center}
+	\includegraphics[width=\linewidth]{beamgaswall.eps}
+      \end{center}
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+\end{minipage}
+\end{slide*}
+
+%% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% \begin{slide*}
+%% \slideframe{}
+%% \slideframe*[\dkblue]{Oval}
+%% \heading{\huge Summary}
+%% \begin{minipage}[t]{\linewidth}
+%% \large
+
+%% \vspace{0.2 cm}
+
+%% \begin{tabular}{p{0.8\linewidth} p{0 cm}}
+%%  \begin{minipage}{\linewidth}
+%%    $e^+ e^-$ initial state $\Longrightarrow$ clean (predictable) final state
+%%    \begin{itemize}
+%%      \item Energy is constrained (and tunable)
+%%      \item Total momentum is zero
+%%      \item $J^{PC} = 1^{--}$
+%%    \end{itemize}
+%%  \end{minipage} &
+%% \end{tabular}
+
+%% \begin{tabular}{p{4.7 cm} p{0.8\linewidth}}
+%%   & \begin{minipage}{\linewidth}
+%%     Means of Particle Identification:
+%%     \begin{itemize}
+%%       \item Track energy loss ($dE/dx$)
+%%       \item Ring-Imaging \v{C}erenkov Detector ({\sc Rich})
+%%       \item Energy fraction deposited in calorimeter ($E/|\vec{p}|$)
+%%       \item Muon Chamber ({\sc Mu})
+%%     \end{itemize}
+%%   \end{minipage}
+%% \end{tabular}
+
+%% \begin{center}
+%%   \begin{minipage}{0.8\linewidth}
+%%     Types of Events
+%%     \begin{itemize}
+
+%%       \item Calibration \begin{itemize}
+%%         \item Bhabha ($e^+e^- \to e^+e^-$)
+%%         \item Mu-Pair ($e^+e^- \to \mu^+\mu^-$)
+%%         \item Gam-Gam ($e^+e^- \to \gamma \gamma$)
+%%       \end{itemize}
+
+%%       \item Tau-Pairs ($e^+e^- \to \tau^+\tau^-$)
+
+%%       \item Hadronic ($e^+e^- \to q\bar{q} \to$ \ldots) \begin{itemize}
+%%         \item Continuum
+%%         \item Resonance $e^+e^- \to \psi^{\prime\prime} \to D\bar{D}$
+%%         \item Resonance Spectroscopy $J/\psi \to \eta_c$
+%%         \item Light Meson Physics (search for glueballs, hybrids\ldots)
+%%       \end{itemize}
+
+%%       \item Two-Photon ($e^+ e^- \gamma^* \gamma^* \to e^+ e^- X$)
+
+%%       \item Garbage \begin{itemize}
+%%         \item Cosmic Rays
+%%         \item Beam-Wall and Beam-Gas
+%%       \end{itemize}
+
+%%     \end{itemize}
+
+%%   \end{minipage}
+%% \end{center}
+
+%% \end{minipage}
+%% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{slide*}
+\slideframe{}
+\slideframe*[\dkblue]{Oval}
+\heading{\huge Summary}
+\begin{minipage}[t]{\linewidth}
+\vspace{0.2 cm}
+
+\begin{center}
+  \begin{minipage}{0.9\linewidth}
+
+    \large
+     $e^+ e^-$ initial state $\Longrightarrow$ clean (predictable) final state
+     \begin{itemize}
+       \item Energy is constrained (and tunable)
+       \item Total momentum is zero
+       \item $J^{PC} = 1^{--}$
+       \item Total charge is zero
+     \end{itemize}
+
+    \Large
+    \vspace{0.2 cm}
+    Types of Events
+    \begin{itemize}
+
+      \item Calibration \begin{itemize}
+        \item Bhabha ($e^+e^- \to e^+e^-$)
+        \item Mu-Pair ($e^+e^- \to \mu^+\mu^-$)
+        \item Gam-Gam ($e^+e^- \to \gamma \gamma$)
+      \end{itemize}
+
+      \item Tau-Pairs ($e^+e^- \to \tau^+\tau^-$)
+
+      \item Hadronic ($e^+e^- \to q\bar{q} \to$ \ldots) \begin{itemize}
+        \item Continuum
+        \item Resonance $e^+e^- \to \psi^{\prime\prime} \to D\bar{D}$
+        \item Resonance Spectroscopy $J/\psi \to \eta_c \gamma$
+        \item Light Meson Physics (search for glueballs, hybrids\ldots)
+      \end{itemize}
+
+      \item Two-Photon ($e^+ e^- \gamma^* \gamma^* \to e^+ e^- X$)
+
+      \item Garbage \begin{itemize}
+        \item Cosmic Rays
+        \item Beam-Wall and Beam-Gas
+      \end{itemize}
+
+    \end{itemize}
+
+  \end{minipage}
+\end{center}
+
+\end{minipage}
+\end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{slide*}
+% \slideframe{}
+% \slideframe*[\dkblue]{Oval}
+% \heading{\huge REPLACEME}
+% \begin{minipage}[t]{\linewidth}
+
+% \end{minipage}
+% \end{slide*}
+
+\end{document}
+

@@ -1,0 +1,548 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  14 FEB 2006 12:28
+**talk
+(./talk.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+(/usr/share/texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2001/03/12 v1.5p LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)) (./talk.aux)
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks18
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read2
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks19
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks20
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+ (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+<title.pdf, id=1, 54.2025pt x 11.04124pt>
+File: title.pdf Graphic file (type pdf)
+ <use title.pdf>
+<title2.pdf, id=2, 158.5925pt x 11.04124pt>
+File: title2.pdf Graphic file (type pdf)
+ <use title2.pdf> [1
+
+{/usr/share/texmf/dvips/config/pdftex.map} <./title.pdf> <./title2.pdf>]
+<../diagram_qcd.pdf, id=36, 388.45125pt x 99.37125pt>
+File: ../diagram_qcd.pdf Graphic file (type pdf)
+ <use ../diagram_qcd.pdf>
+
+LaTeX Font Warning: Command \LARGE invalid in math mode on input line 77.
+
+
+Overfull \hbox (12.0352pt too wide) detected at line 77
+ /cmmi12@24.88pt/P/cmr17@24.88pt/(/cmmi12@24.88pt/q[] /cmsy10@24.88pt/! /cmmi12
+@24.88pt/q[]/cmr17@24.88pt/) /cmsy10@24.88pt// [][]  []
+ []
+
+[2 <../diagram_qcd.pdf>] [3]
+<title_outline.pdf, id=67, 33.12375pt x 9.03375pt>
+File: title_outline.pdf Graphic file (type pdf)
+ <use title_outline.pdf>
+[4 <./title_outline.pdf>] <../ckm04.pdf, id=79, 264.99pt x 212.795pt>
+File: ../ckm04.pdf Graphic file (type pdf)
+
+<use ../ckm04.pdf> [5 <../ckm04.pdf>]
+<diagram_Bmix_box.pdf, id=86, 506.89375pt x 145.54375pt>
+File: diagram_Bmix_box.pdf Graphic file (type pdf)
+
+<use diagram_Bmix_box.pdf>
+<diagram_Bmix.pdf, id=87, 506.89375pt x 145.54375pt>
+File: diagram_Bmix.pdf Graphic file (type pdf)
+ <use diagram_Bmix.pdf>
+Overfull \hbox (26.08171pt too wide) in paragraph at lines 167--168
+[]/cmss17@24.88pt/Spatial ex-tent of this wave-func-tion (and its value at the 
+ori-gin) is []
+ []
+
+[6 <./diagram_Bmix_box.pdf> <./diagram_Bmix.pdf>]
+<diagram_Btolnu.pdf, id=103, 506.89375pt x 149.55875pt>
+File: diagram_Btolnu.pdf Graphic file (type pdf)
+
+<use diagram_Btolnu.pdf> [7 <./diagram_Btolnu.pdf>]
+Underfull \hbox (badness 1997) in paragraph at lines 205--207
+[] /cmss17@24.88pt/scales with num-ber of
+ []
+
+<../qcd_proton.pdf, id=126, 1043.9pt x 847.165pt>
+File: ../qcd_proton.pdf Graphic file (type pdf)
+ <use ../qcd_proton.pdf>
+[8 <../qcd_proton.pdf>] <quenched.pdf, id=133, 84.315pt x 84.315pt>
+File: quenched.pdf Graphic file (type pdf)
+
+<use quenched.pdf> [9 <./quenched.pdf>]
+<lqcd_success2.pdf, id=143, 371.3875pt x 221.82875pt>
+File: lqcd_success2.pdf Graphic file (type pdf)
+ <use lqcd_success2.pdf>
+[10 <./lqcd_success2.pdf>]
+<discovery_hc.pdf, id=214, 482.80376pt x 435.6275pt>
+File: discovery_hc.pdf Graphic file (type pdf)
+ <use discovery_hc.pdf>
+<discovery_1d.pdf, id=216, 489.83pt x 468.75125pt>
+File: discovery_1d.pdf Graphic file (type pdf)
+ <use discovery_1d.pdf>
+[11 <./discovery_hc.pdf> <./discovery_1d.pdf>]
+File: diagram_Btolnu.pdf Graphic file (type pdf)
+ <use diagram_Btolnu.pdf>
+<diagram_GeeU.pdf, id=234, 506.89375pt x 149.55875pt>
+File: diagram_GeeU.pdf Graphic file (type pdf)
+ <use diagram_GeeU.pdf>
+<diagram_Dtolnu.pdf, id=235, 506.89375pt x 150.5625pt>
+File: diagram_Dtolnu.pdf Graphic file (type pdf)
+
+<use diagram_Dtolnu.pdf> [12 <./diagram_GeeU.pdf> <./diagram_Dtolnu.pdf>]
+<title_GeeU.pdf, id=266, 148.555pt x 13.04875pt>
+File: title_GeeU.pdf Graphic file (type pdf)
+ <use title_GeeU.pdf> [13 <./title_GeeU.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 328--328
+[][] 
+ []
+
+File: diagram_GeeU.pdf Graphic file (type pdf)
+<use diagram_GeeU.pdf>
+<diagram_GeeU-reversed.pdf, id=282, 510.90875pt x 149.55875pt>
+File: diagram_GeeU-reversed.pdf Graphic file (type pdf)
+
+<use diagram_GeeU-reversed.pdf> [14 <./diagram_GeeU-reversed.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 368--368
+[][] 
+ []
+
+<individual07_noinset_1s.pdf, id=300, 471.7625pt x 335.2525pt>
+File: individual07_noinset_1s.pdf Graphic file (type pdf)
+
+<use individual07_noinset_1s.pdf>
+<aerial2.pdf, id=301, 239.89626pt x 114.4275pt>
+File: aerial2.pdf Graphic file (type pdf)
+ <use aerial2.pdf> [15 <./individual07_noinset_1s.pdf> <./aerial2.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 416--416
+[][] 
+ []
+
+<../cartoon.pdf, id=310, 504.88625pt x 301.125pt>
+File: ../cartoon.pdf Graphic file (type pdf)
+ <use ../cartoon.pdf> [16 <../cartoon.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 440--440
+[][] 
+ []
+
+<cuts_p1.pdf, id=328, 485.815pt x 485.815pt>
+File: cuts_p1.pdf Graphic file (type pdf)
+ <use cuts_p1.pdf> [17 <./cuts_p1.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 485--485
+[][] 
+ []
+
+<cuts_visen.pdf, id=334, 485.815pt x 483.8075pt>
+File: cuts_visen.pdf Graphic file (type pdf)
+ <use cuts_visen.pdf> [18 <./cuts_visen.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 530--530
+[][] 
+ []
+
+<cuts_d0close.pdf, id=340, 482.80376pt x 465.74pt>
+File: cuts_d0close.pdf Graphic file (type pdf)
+ <use cuts_d0close.pdf>
+[19 <./cuts_d0close.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 575--575
+[][] 
+ []
+
+<cuts_anyz.pdf, id=347, 479.7925pt x 470.75874pt>
+File: cuts_anyz.pdf Graphic file (type pdf)
+ <use cuts_anyz.pdf> [20 <./cuts_anyz.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 620--620
+[][] 
+ []
+
+<../jed_backgrounds.pdf, id=353, 473.77pt x 334.24875pt>
+File: ../jed_backgrounds.pdf Graphic file (type pdf)
+
+<use ../jed_backgrounds.pdf> [21 <../jed_backgrounds.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 628--628
+[][] 
+ []
+
+<../datasets_database_dxydzcuts.pdf, id=359, 483.8075pt x 488.82625pt>
+File: ../datasets_database_dxydzcuts.pdf Graphic file (type pdf)
+
+<use ../datasets_database_dxydzcuts.pdf>
+Underfull \hbox (badness 6157) in paragraph at lines 648--649
+[]/cmss17@24.88pt/(b) Beam-gas side-
+ []
+
+[22 <../datasets_database_dxydzcuts.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 660--660
+[][] 
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 674--675
+[]/cmss17@24.88pt/Select []
+ []
+
+<../plenary_justpipimass.pdf, id=365, 291.0875pt x 260.975pt>
+File: ../plenary_justpipimass.pdf Graphic file (type pdf)
+
+<use ../plenary_justpipimass.pdf>
+Overfull \hbox (22.043pt too wide) in paragraph at lines 669--694
+[][] 
+ []
+
+[23 <../plenary_justpipimass.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 701--701
+[][] 
+ []
+
+<proceedings_cuts2.pdf, id=371, 569.12625pt x 569.12625pt>
+File: proceedings_cuts2.pdf Graphic file (type pdf)
+
+<use proceedings_cuts2.pdf> [24 <./proceedings_cuts2.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 718--718
+[][] 
+ []
+
+<ups_spectrum2.pdf, id=377, 468.75125pt x 465.74pt>
+File: ups_spectrum2.pdf Graphic file (type pdf)
+ <use ups_spectrum2.pdf>
+[25 <./ups_spectrum2.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 736--736
+[][] 
+ []
+
+<../beautiful_bcasll_2.pdf, id=501, 485.815pt x 235.88126pt>
+File: ../beautiful_bcasll_2.pdf Graphic file (type pdf)
+
+<use ../beautiful_bcasll_2.pdf> [26 <../beautiful_bcasll_2.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 764--764
+[][] 
+ []
+
+<../plenary_lumi.pdf, id=510, 454.69875pt x 274.02374pt>
+File: ../plenary_lumi.pdf Graphic file (type pdf)
+
+<use ../plenary_lumi.pdf> [27 <../plenary_lumi.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 789--789
+[][] 
+ []
+
+<../stability.pdf, id=516, 465.74pt x 221.82875pt>
+File: ../stability.pdf Graphic file (type pdf)
+ <use ../stability.pdf>
+[28 <../stability.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 808--808
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 819--820
+[]/cmss17@24.88pt/Each res-o-nance was com-pletely
+ []
+
+<../plenary_fitorder.pdf, id=525, 264.99pt x 467.7475pt>
+File: ../plenary_fitorder.pdf Graphic file (type pdf)
+
+<use ../plenary_fitorder.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 810--830
+[][] 
+ []
+
+[29 <../plenary_fitorder.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 833--833
+[][] 
+ []
+
+<../proceedings_miscal.pdf, id=531, 463.7325pt x 244.915pt>
+File: ../proceedings_miscal.pdf Graphic file (type pdf)
+
+<use ../proceedings_miscal.pdf> [30 <../proceedings_miscal.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 858--858
+[][] 
+ []
+
+<../individual_noinset_1s.pdf, id=537, 264.99pt x 467.7475pt>
+File: ../individual_noinset_1s.pdf Graphic file (type pdf)
+
+<use ../individual_noinset_1s.pdf>
+Overfull \hbox (9.55392pt too wide) in paragraph at lines 860--887
+[][] 
+ []
+
+[31 <../individual_noinset_1s.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 890--890
+[][] 
+ []
+
+<../three_resonances_inset_squat2_nscans.pdf, id=544, 481.8pt x 327.2225pt>
+File: ../three_resonances_inset_squat2_nscans.pdf Graphic file (type pdf)
+
+<use ../three_resonances_inset_squat2_nscans.pdf> [32 <../three_resonances_inse
+t_squat2_nscans.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 900--900
+[][] 
+ []
+
+<novo_y1s.pdf, id=555, 215.80624pt x 225.84375pt>
+File: novo_y1s.pdf Graphic file (type pdf)
+ <use novo_y1s.pdf>
+<argus_y2s.pdf, id=556, 238.8925pt x 188.705pt>
+File: argus_y2s.pdf Graphic file (type pdf)
+ <use argus_y2s.pdf>
+<cleo1_y3s.pdf, id=557, 166.6225pt x 98.3675pt>
+File: cleo1_y3s.pdf Graphic file (type pdf)
+ <use cleo1_y3s.pdf> [33 <./novo_y1s.pdf> <./argus_y2s.pdf> <./cleo1_y3s.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 960--960
+[][] 
+ []
+
+<../plenary_pulls1.pdf, id=595, 473.77pt x 380.42125pt>
+File: ../plenary_pulls1.pdf Graphic file (type pdf)
+
+<use ../plenary_pulls1.pdf> [34 <../plenary_pulls1.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 971--971
+[][] 
+ []
+
+<../plenary_pulls2.pdf, id=601, 476.78125pt x 380.42125pt>
+File: ../plenary_pulls2.pdf Graphic file (type pdf)
+
+<use ../plenary_pulls2.pdf> [35 <../plenary_pulls2.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 982--982
+[][] 
+ []
+
+<../plenary_pulls3.pdf, id=607, 476.78125pt x 380.42125pt>
+File: ../plenary_pulls3.pdf Graphic file (type pdf)
+
+<use ../plenary_pulls3.pdf> [36 <../plenary_pulls3.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 993--993
+[][] 
+ []
+
+[37]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1020--1020
+[][] 
+ []
+
+[38]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1045--1045
+[][] 
+ []
+
+<../pdgplots2.pdf, id=620, 624.3325pt x 461.725pt>
+File: ../pdgplots2.pdf Graphic file (type pdf)
+ <use ../pdgplots2.pdf>
+[39 <../pdgplots2.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1055--1055
+[][] 
+ []
+
+<dependence.pdf, id=635, 306.14375pt x 217.81375pt>
+File: dependence.pdf Graphic file (type pdf)
+ <use dependence.pdf>
+[40 <./dependence.pdf>]
+Overfull \hbox (4.23425pt too wide) in paragraph at lines 1074--1074
+[][] 
+ []
+
+<../fuzzyloose-digital.pdf, id=725, 217.81375pt x 304.13625pt>
+File: ../fuzzyloose-digital.pdf Graphic file (type pdf)
+
+<use ../fuzzyloose-digital.pdf>
+<../fuzzyloose.pdf, id=727, 202.7575pt x 289.08pt>
+File: ../fuzzyloose.pdf Graphic file (type pdf)
+ <use ../fuzzyloose.pdf>
+[41 <../fuzzyloose-digital.pdf> <../fuzzyloose.pdf>]
+<new_ratio_plot.pdf, id=739, 142.5325pt x 122.4575pt>
+File: new_ratio_plot.pdf Graphic file (type pdf)
+ <use new_ratio_plot.pdf>
+[42 <./new_ratio_plot.pdf>] <title_fD.pdf, id=757, 90.3375pt x 12.045pt>
+File: title_fD.pdf Graphic file (type pdf)
+
+<use title_fD.pdf> [43 <./title_fD.pdf>]
+<../cleoc_2.pdf, id=779, 769.87625pt x 534.99875pt>
+File: ../cleoc_2.pdf Graphic file (type pdf)
+ <use ../cleoc_2.pdf>
+[44 <../cleoc_2.pdf>] <../dmunu_event.pdf, id=795, 490.83376pt x 563.10374pt>
+File: ../dmunu_event.pdf Graphic file (type pdf)
+
+<use ../dmunu_event.pdf>
+Underfull \hbox (badness 1009) in paragraph at lines 1183--1184
+[]/cmss17@24.88pt/Fully re-con-struct $/cmmi12@24.88pt/D[]$ /cmss17@24.88pt/de-
+cay,
+ []
+
+[45 <../dmunu_event.pdf>] <../rich_kpisep2.pdf, id=805, 477.785pt x 501.875pt>
+File: ../rich_kpisep2.pdf Graphic file (type pdf)
+
+<use ../rich_kpisep2.pdf> <../dmunu_mbc.pdf, id=806, 296.10625pt x 220.825pt>
+File: ../dmunu_mbc.pdf Graphic file (type pdf)
+
+<use ../dmunu_mbc.pdf> [46 <../dmunu_mbc.pdf> <../rich_kpisep2.pdf>]
+<../dmunu_mm.pdf, id=843, 366.36874pt x 351.3125pt>
+File: ../dmunu_mm.pdf Graphic file (type pdf)
+ <use ../dmunu_mm.pdf>
+Overfull \hbox (8.69463pt too wide) in paragraph at lines 1251--1256
+[][] 
+ []
+
+[47 <../dmunu_mm.pdf>]
+<dmunu_comparison3.pdf, id=856, 828.09375pt x 789.95125pt>
+File: dmunu_comparison3.pdf Graphic file (type pdf)
+
+<use dmunu_comparison3.pdf> [48 <./dmunu_comparison3.pdf>]
+<new_ratio_plot2.pdf, id=863, 142.5325pt x 122.4575pt>
+File: new_ratio_plot2.pdf Graphic file (type pdf)
+
+<use new_ratio_plot2.pdf> [49 <./new_ratio_plot2.pdf>]
+Underfull \hbox (badness 1371) in paragraph at lines 1325--1326
+[]$/cmmi12@24.88pt/D$ /cmss17@24.88pt/and $/cmmi12@24.88pt/D[]$ /cmss17@24.88pt
+/mea-sure-ments are
+ []
+
+File: ../ckm04.pdf Graphic file (type pdf)
+<use ../ckm04.pdf> [50]
+<title_Geepsi_again.pdf, id=885, 82.3075pt x 13.04875pt>
+File: title_Geepsi_again.pdf Graphic file (type pdf)
+
+<use title_Geepsi_again.pdf> [51 <./title_Geepsi_again.pdf>]
+<psi_gamee2.pdf, id=906, 462.72874pt x 257.96375pt>
+File: psi_gamee2.pdf Graphic file (type pdf)
+ <use psi_gamee2.pdf>
+[52 <./psi_gamee2.pdf>] [53]
+File: ../ckm04.pdf Graphic file (type pdf)
+ <use ../ckm04.pdf>
+<semilep_lauren2.pdf, id=954, 508.90125pt x 213.79875pt>
+File: semilep_lauren2.pdf Graphic file (type pdf)
+
+<use semilep_lauren2.pdf> <semilep_feng2.pdf, id=955, 507.8975pt x 188.705pt>
+File: semilep_feng2.pdf Graphic file (type pdf)
+
+<use semilep_feng2.pdf> [54 <./semilep_lauren2.pdf> <./semilep_feng2.pdf>]
+File: new_ratio_plot2.pdf Graphic file (type pdf)
+
+<use new_ratio_plot2.pdf> [55]
+File: ../qcd_proton.pdf Graphic file (type pdf)
+ <use ../qcd_proton.pdf> [56] (./talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 1582 strings out of 50453
+ 21800 string characters out of 688420
+ 60680 words of memory out of 1500001
+ 4533 multiletter control sequences out of 10000+25000
+ 21122 words of font info for 78 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,19n,24p,377b,584s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/blues
+ky/symbols/msam10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/
+share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/blue
+sky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbsy10.pfb></usr/shar
+e/texmf/fonts/type1/bluesky/cm/cmmib10.pfb></usr/share/texmf/fonts/type1/bluesk
+y/cm/cmss10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/share
+/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/
+cm/cmr17.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/te
+xmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/
+cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texm
+f/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr
+10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmss17.pfb>
+Output written on talk.pdf (56 pages, 1864358 bytes).

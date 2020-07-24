@@ -1,0 +1,8 @@
+close 1
+CHAIN -ttbar
+CHAIN ttbar rzn/chi20chi30v5_ttbar_l_0p1.rzn
+CHAIN ttbar rzn/chi20chi30v5_ttbar_l_0p2.rzn
+CHAIN ttbar rzn/chi20chi30v5_ttbar_l_1p1.rzn
+CHAIN ttbar rzn/chi20chi30v5_ttbar_l_1p2.rzn
+cd //ttbar
+cdir CHI20CHI30PROC

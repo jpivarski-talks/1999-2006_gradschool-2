@@ -1,0 +1,34 @@
+comm[ el1_, el2_ ] = el1 . el2 - el2 . el1
+
+conj[ el1_ ] = Conjugate[ Transpose[ el1 ] ]
+
+r = { 1, 0, 0 } ; g = { 0, 1, 0 } ; b = { 0, 0, 1 }
+
+
+
+
+conji[ { real_, imag_ } ] = { real, -imag }
+
+magi[ { real_, imag_ } ] = real^2 + imag^2
+
+prod[ { real1_, imag1_ }, { real2_, imag2_ } ] = { real1 * real2 - imag1 * imag2, real1 * imag2 + imag1 * real2 }
+
+aa = { ar, ai } ; bb = { br, bi } ; cc = { cr, ci } ; dd = { dr, di } ; ee = { er, ei } ; ff = { fr, fi } ; 
+
+sols = Solve[ { prod[ cc, conji[ aa ] ] == prod[ -dd, conji[ bb ] ], 
+                prod[ ee, conji[ aa ] ] == prod[ -ff, conji[ bb ] ],
+                prod[ ee, conji[ cc ] ] == prod[ -ff, conji[ dd ] ] },
+              { ar, ai, br, bi, cr, ci, dr, di, er, ei, fr, fi } ]
+
+sols2 = Solve[ { prod[ cc, conji[ aa ] ] == prod[ -dd, conji[ bb ] ], 
+                 prod[ ee, conji[ aa ] ] == prod[ -ff, conji[ bb ] ],
+                 prod[ ee, conji[ cc ] ] == prod[ -ff, conji[ dd ] ],
+                 magi[ aa ] + magi[ bb ] == 1,
+                 magi[ cc ] + magi[ dd ] == 1,
+                 magi[ ee ] + magi[ ff ] == 1 },
+               { ar, ai, br, bi, cr, ci, dr, di, er, ei, fr, fi } ]
+
+
+ReplaceAll[ { magi[ aa ] + magi[ bb ], magi[ cc ] + magi[ dd ], magi[ ee ] + magi[ ff ] }, sols[[24]] ]
+
+Length[ sols ]

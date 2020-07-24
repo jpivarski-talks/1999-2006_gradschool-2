@@ -1,0 +1,8 @@
+alias cdd 'cdtitle `/home/cplager/scripts/dirstack/current_dirstack`'
+alias cdtitle 'chdir \!*;~cplager/xtitle "`echo $SHORTHOST : $PWD`"'
+alias cd 'setenv DIRSTACK `/home/cplager/scripts/dirstack/chdir_dirstack \!*`;cdd'
+alias up 'setenv DIRSTACK `/home/cplager/scripts/dirstack/up_dirstack \!*`;cdd'
+alias list '/home/cplager/scripts/dirstack/dirlist_dirstack'
+alias back 'setenv DIRSTACK `/home/cplager/scripts/dirstack/back_dirstack \!*`;cdd'
+alias cdgr 'setenv DIRSTACK `/home/cplager/scripts/dirstack/grep_dirstack \!*`;cdd'
+

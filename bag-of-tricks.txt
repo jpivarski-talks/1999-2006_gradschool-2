@@ -1,0 +1,266 @@
+To format a list copied from Mathematica (in {#,{#.,#.,#.}} format):
+
+perl -e '$f=""; while(<>){ $f.= $_; } while( $f=~ s/\s*\{\s*([0-9]+),\s*\{\s*([0-9\.]+),\s*([0-9\.]+),\s*([0-9\.]+)\s*\}\s*\}\s*// ) { print "{ $1, { $2, $3, $4 } },\n"; }'
+
+To partition the same by their proximity to 5.165 GeV:
+
+awk 'function abs(x){ return sqrt( x*x ) } BEGIN{ cont="" } (abs($4-5.165)<0.001){ cont = cont $0 "\n" } (abs($4-5.165)>0.001){ print $0 } END{ print; print cont }'
+
+Weighted average of xc (when there are spaces between commas and numbers)
+
+awk 'BEGIN{ esum = n = xwsum = wsum = 0 } ( $2>0 && $5>0 && $7>0 && $9>0 ){ esum += $5; n++; w=1/$9/$9; xwsum += $7*w; wsum += w; } END{ print (esum/n) " : " (xwsum/wsum) " +/- " sqrt(1/wsum) }'
+
+If you don't want no-data exceptions to bother you:
+
+try {
+    extract ( iFrame.record( Stream::kEvent ), m_crystals ) ;
+}
+catch(NO_ITEM_EXCEPTION( CcEventSummary ) & iNoProxyExcept) {
+    throw ; // It is foolish to proceed. Rethrow the exception and
+		    let suez die.
+}
+catch( DAExceptionBase& iException ) { // Proxy returned 0
+				       // (invalid or missing data)
+    report( WARNING, kFacilityString) << iException.what() << endl;
+}
+
+# to find dead suez jobs on sol333
+ps -aef | grep mccann
+
+uidvalidity problems:
+M-x gnus-group-clear-data RET
+then `G p'
+restart
+
+To create a multi-page postscript from PAW:
+fortran/file 65 'stereo_splitting.ps'
+graphics/metafile 65 -111
+igset mtype 1
+* -113 for eps (but the bounding box isn't as good as the ones I picked)
+zone 1 1:
+%%BoundingBox: 30 145 537 652
+zone 1 2:
+%%BoundingBox: 30 400 537 652
+zone 2 2:
+%%BoundingBox: 10 260 300 520
+
+calculate weighted means in Mathematica
+WeightedMean[ points:{ { ( _Integer | _Real ), ( _Integer | _Real ) } .. } ] := Module[
+    { xoversig2sum, oneoversig2sum },
+    xoversig2sum = Plus @@ ( ( #[[1]] / #[[2]]^2 )& /@ points );
+    oneoversig2sum = Plus @@ ( ( 1 / #[[2]]^2 )& /@ points );
+    If[ oneoversig2sum == 0, { 0, 0 },
+	{ xoversig2sum / oneoversig2sum, Sqrt[ 1 / oneoversig2sum ] } ] ];
+
+a great little bisection tool
+epsilon = 1*^-12;
+bisect[f_, {low_, high_}, {flow_, fhigh_}] :=
+    Module[{mid, fmid},
+	   mid = N[-flow * (high - low)/(fhigh - flow) + low];
+	   fmid = N[f[mid]];
+	   If[fmid > epsilon, bisect[f, {low, mid}, {flow, fmid}],
+	      If[fmid < -epsilon, bisect[f, {mid, high}, {fmid, fhigh}],
+		 mid]]];
+bisect[f_, {low_, high_}] := bisect[f, {low, high}, {f[low], f[high]}];
+
+a 1d minimization tool, maybe not so useful
+mini1DEpsilon = 1*^-3;
+mini1D[f_, start_?VectorQ, step_?VectorQ] :=
+    Module[{fm = f[start - step],
+	    fz = f[start],
+	    fp = f[start + step],
+	    min, end},
+	   min = N[(1/2)*((fp - fm)/(2*fz - fp - fm))];
+	   end = start + min*step;
+	   If[Abs[min] > 1,
+	      mini1D[f, end, step],
+	      If[Sqrt[Plus @@ (#^2& /@ step)] > mini1DEpsilon,
+		 mini1D[f, end, min*step],
+		 end]
+	     ]
+	  ] /; Length[start] == Length[step];
+mini1D[f_, start:(_Integer | _Real), step:(_Integer | _Real)] :=
+	mini1D[f, {start}, {step}];
+
+%% null Latex edges
+\oddsidemargin  0.0in
+\evensidemargin 0.0in
+\textwidth      6.5in
+\headheight     0.0in
+\topmargin      0.0in
+\textheight=9.0in
+
+%% but I prefer this
+\oddsidemargin  -0.5 cm
+\evensidemargin 0.0 cm
+\textwidth      6.5in
+\headheight     0.0in
+\topmargin      -1 cm
+\textheight=9.0in
+
+% and for pdflatex talks, I use this
+\documentclass[landscape]{article}
+\usepackage{graphicx}
+\pagestyle{empty}
+\oddsidemargin  -0.5 in
+\evensidemargin -0.5 in
+\headheight     0 in
+\topmargin      -1 in
+\textheight     7.7 in
+\textwidth      10 in
+\newenvironment{slide}[1][ ]{\mbox{\bf #1 } \vfill}{\vfill \mbox{ } \pagebreak}
+\begin{document}
+\huge
+\renewcommand{\labelitemi}{-}
+\setlength{\parindent}{0 cm}
+
+% double-space
+\renewcommand{\baselinestretch}{2}
+
+And this \nonumber is great!
+
+This stretches tabular and arrays:
+\renewcommand{\arraystretch}{1.25}
+
+This adds to itemize and enumerate
+\begin{itemize}\setlength{\itemsep}{0.5 cm}
+
+\hyphenpenalty=5000
+\tolerance=1000
+
+* Look at all the PAW colors (palette 0 is graylevels)
+set ncol 16
+palette 1
+ve/cr tmp(16)
+ve/inp tmp 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ve/cr colors(16)
+ve/inp colors 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+label 1 16 '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11' '12' '13' '14' '15' '16'
+null -1 1 -1 1
+set fais 1
+set bord 1
+pie 0 0 0.8 16 tmp 'cl' ! ! colors
+
+module sel DBModule
+database in /nfs/cleo3/database/data##/db event startrun beginrun endrun
+database read_collection pass2 hadron
+database run ###### ######
+
+sometimes something like /nfs/objy/data9c/db
+
+sink_format sel PDSSinkFormat
+file out ../chib_rzn/cont.pds {event{\
+    DBTrackerValues FATable<TRTrack> FATable<TRHelixPionFit> FATable<TRPionQuality> FATable<TRSeedTrack> FATable<TRSeedTrackQuality>\
+    FATable<CcBasicShowerAttsArg> TrackShowerLattice FATable<CcConRegAttributes> CcConRegShowerLattice\
+    EventProperties DBEventHeader\
+}} startrun beginrun endrun
+
+sink_format sel PDSSinkFormat
+file sink tmp.pds {event {DBEventHeader SeedTrackCathodeHitLattice SeedTrackDRHitLattice SeedTrackSVRHitLattice SeedTrackSVZHitLattice FATable<CalibratedCathodeHit> FATable<CalibratedDRHit> FATable<CalibratedSVRphiHit> FATable<CalibratedSVZHit> FATable<TRSeedTrack> FATable<TRSeedTrackQuality> FATable<CcBasicShowerAttsArg> TrackShowerLattice FATable<CcConRegAttributes> CcConRegShowerLattice}}
+
+const char* label[kNumEntries] = {
+   "plpperp", "plpz", "pld0", "plphi0", "plcotTh", "plz0",
+   "mipperp", "mipz", "mid0", "miphi0", "micotTh", "miz0",
+   "px", "py", "pperp", "pz", "d0", "phi0", "cotTh", "z0" };
+m_ntuple = iHistoManager.ntuple(
+   1, "vars", kNumEntries, 262144, label);
+
+default prompt off
+exception continueEventLoop on
+
+module sel LoadHbook4MModule
+module sel HbookHistogramModule
+hbook file ../rzn/stuff.rzn
+hbook init
+
+# This is a qsub script
+#$ -l calibration
+#$ -o /cdat/tem/mccann/mcres16_01.log
+#$ -S /bin/bash
+#$ -j y
+cd /home/mccann/efficiency/run
+. /nfs/cleo3/scripts/cleo3defs
+c3rel Apr18_03_P2
+suez -f mcres16_01.tcl
+
+// probability of chi^2's
+extern "C" float prob_(const float&, const int&);
+CERN_LIBS  := packlib mathlib                     
+
+# get a constant
+. /nfs/cleo3/groups/SlowControl/scripts/sc_setups
+/home/ccon3/EXE/CleoConstantsReader $C3_CONST
+# and remember to change the first entry from 0 to 1
+
+* make vertical lines in a log plot
+sigma low  = exp(log(10)*$GRAFINFO('WNYMIN'))
+sigma high = exp(log(10)*$GRAFINFO('WNYMAX'))
+dline 0.002 0.002 $SIGMA(low) $SIGMA(high)
+dline -0.002 -0.002 $SIGMA(low) $SIGMA(high)
+
+These are the mk commands provided by CLEO
+    mkfortproc
+    mkitermod
+    mkmod
+    mkproc
+    mkprod
+    mkproxymany
+    mkproxyone
+    mkskel
+    mkstorelattice
+    mkstoremany
+    mkstoreone
+
+Mathematica plotting to a file:
+Display["name.eps", Show[...], "EPS", ImageSize -> 72*10]; Run["epstopdf --exact ", "boink.eps"];
+
+This makes a nifty little list of measurement errors
+
+<< Graphics`MultipleListPlot`
+plot = MultipleListPlot[{{{1, 2.75}, ErrorBar[0.16]},
+			 {{1.1, 3.646}, ErrorBar[0.054]},
+			 {{1.2, 3.198}, ErrorBar[0.448]}}];
+Display["/home/mccann/acceptance/run5/alphas_used.eps", Show[Graphics[{
+    Text["Direct measurement (2.75% +/- 0.16)", {1, 2.4}, {0, 1}, {0, 1}]
+    , Text["From PDG-averaged alpha_strong (3.65% +/- 0.54)", {1.1, 2.4}, {0, 1}, {0, 1}]
+    , Text["What I used (3.20% +/- 0.45)", {1.2, 2.4}, {0, 1}, {0, 1}]
+	      }], plot
+     , AspectRatio -> 5
+     , ImageSize -> 100
+     , PlotRange -> {{1-0.2, 1.2+0.2}, {-2, 4.5}}
+    ], "EPS"];
+
+Turning a 4-vector into a coordinate transformation:
+
+b1 = p1/p0;
+b2 = p2/p0;
+b3 = p3/p0;
+gam = 1/Sqrt[1-b1^2-b2^2-b3^2];
+bgam = gam^2/(1+gam);
+(* Note that 1+bgam*b^2 is gam when b is along the boost axis. *)
+boost = {{gam,    gam*b1,      gam*b2,      gam*b3     },
+	 {gam*b1, 1+bgam*b1^2, bgam*b1*b2,  bgam*b1*b3 },
+	 {gam*b2, bgam*b1*b2,  1+bgam*b2^2, bgam*b2*b3 },
+	 {gam*b3, bgam*b1*b3,  bgam*b2*b3,  1+bgam*b3^2}};
+eta = {{-1, 0, 0, 0},
+       { 0, 1, 0, 0},
+       { 0, 0, 1, 0},
+       { 0, 0, 0, 1}};
+zoinks[gamma_, delta_] := Sum[boost[[alpha,gamma]] * boost[[beta, delta]] * eta[[alpha, beta]], {alpha, 1, 4}, {beta, 1, 4}];
+Simplify[Table[zoinks[i,j], {i,1,4}, {j,1,4}]] // TableForm;
+Simplify[Simplify[Inverse[boost]] . {p0, p1, p2, p3}, Assumptions -> {p0>0, p1>0, p2>0, p3>0}];
+Simplify[boost . {p0, -p1, -p2, -p3}, Assumptions -> {p0>0, p1>0, p2>0, p3>0}];
+Simplify[boost . (boost /. {p1 -> -p1, p2 -> -p2, p3 -> -p3}), Assumptions -> {p0>0, p1>0, p2>0, p3>0}] // TableForm;
+
+Printing out a text file:
+a2ps -nn -nf -ns -nw -nh -p tmp.txt > tmp.ps
+
+python recipes:
+
+# reading an ascii ntuple:
+t = Numeric.array(map(lambda x: map(lambda y: float(y), x.split()), open("/cdat/dafe/mccann/luminosity/tunes.dat", "r").read().splitlines()))
+
+# unzipping:
+zip(*something)
+some, thing = zip(*filter(lambda (x,y): x>y, zip(some, thing)))
+

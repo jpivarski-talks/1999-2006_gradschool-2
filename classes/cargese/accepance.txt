@@ -1,0 +1,81 @@
+Return-Path: <m.croize@ipnl.in2p3.fr>
+Received: from cyrus.watson.org ([unix socket])
+        by cyrus.watson.org (Cyrus v2.1.12) with LMTP; Tue, 13 May 2003 08:38:15 -0400
+X-Sieve: CMU Sieve 2.2
+Received: from lyoserv2.in2p3.fr (lyoserv2.in2p3.fr [134.158.138.101])
+        by cyrus.watson.org (Postfix) with ESMTP id 57EEDAC79
+        for <mccann+physics@cyrus.watson.org>; Tue, 13 May 2003 08:38:13 -0400 (EDT)
+Received: from LYOPC263 (lyopc263.in2p3.fr [134.158.137.213])
+        by lyoserv2.in2p3.fr (8.9.1a/8.9.1) with SMTP id OAA22451
+        for <mccann+physics@cyrus.watson.org>; Tue, 13 May 2003 14:38:12 +0200 (MET DST)
+Message-ID: <000a01c3194c$2c4cdeb0$d5899e86@LYOPC263>
+From: "Monique Croize" <m.croize@ipnl.in2p3.fr>
+To: <mccann+physics@cyrus.watson.org>
+Subject: cargese school
+Date: Tue, 13 May 2003 14:35:44 +0200
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+        boundary="----=_NextPart_000_0007_01C3195C.EFC66C70"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.50.4522.1200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4910.0300
+Parts/Attachments:
+   1 Shown    ~56 lines  Text
+   2   OK    ~149 lines  Text
+----------------------------------------
+
+ 
+May 12th  2003
+
+ 
+
+Dear participant,
+
+ 
+
+We are happy to inform you that your application to the Advanced Study Institute on Particle
+Physics and Cosmology at Carg%G�%@se, August 2003 has been accepted.
+
+ 
+
+The registration fee for the School is 150 euros .
+
+ 
+
+The housing costs of participants will be covered by the School (camping sites, on site of the
+Institute domain are still available).
+
+
+
+Some support for travel expenses will be given at the end of the School.
+
+                        
+
+Would you please confirm your participation to the School by sending an e-mail to:
+
+Ms. Croiz%G�%@: croize@ipnl.in2p3.fr
+
+ 
+
+ 
+
+ 
+Should a matter arise, please contact:
+
+D. Kazakov: KazakovD@thsun1.jinr.dubna.su
+
+or
+
+G. Smadja: g.smadja@ipnl.in2p3.fr
+
+ 
+
+Best regards,
+
+ 
+
+ 
+
+The organisers
+

@@ -1,0 +1,157 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  22 JUL 2004 12:49
+**charginos.tex
+(./charginos.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (./charginos.aux)
+\openout1 = `charginos.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks15
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks16
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 28.
+ <charginos_1.pdf, id=1, 569.12625pt x 569.12625pt>
+File: charginos_1.pdf Graphic file (type pdf)
+ <use charginos_1.pdf>
+<charginos_signal.pdf, id=2, 173.64874pt x 168.63pt>
+File: charginos_signal.pdf Graphic file (type pdf)
+
+<use charginos_signal.pdf>
+<charginos_background.pdf, id=3, 151.56625pt x 168.63pt>
+File: charginos_background.pdf Graphic file (type pdf)
+
+<use charginos_background.pdf> [1
+
+{/usr/share/texmf/dvips/config/pdftex.map} <./charginos_1.pdf> <./charginos_sig
+nal.pdf> <./charginos_background.pdf>]
+<charginos_2.pdf, id=33, 569.12625pt x 569.12625pt>
+File: charginos_2.pdf Graphic file (type pdf)
+ <use charginos_2.pdf>
+File: charginos_signal.pdf Graphic file (type pdf)
+
+<use charginos_signal.pdf>
+Underfull \hbox (badness 6236) in paragraph at lines 53--55
+[]$[][]$/cmr17/--LSP mass
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 53--55
+/cmr17/dif-fer-ence from
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 53--55
+/cmr17/of jet in-vari-ant
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 57--58
+[]/cmr17/Fortunately far
+ []
+
+
+Underfull \hbox (badness 2961) in paragraph at lines 60--61
+/cmr17/a-tion in study
+ []
+
+[2 <./charginos_2.pdf>] <charginos_5.pdf, id=45, 569.12625pt x 569.12625pt>
+File: charginos_5.pdf Graphic file (type pdf)
+
+<use charginos_5.pdf>
+File: charginos_signal.pdf Graphic file (type pdf)
+ <use charginos_signal.pdf>
+Underfull \hbox (badness 2961) in paragraph at lines 75--76
+/cmr17/lower thresh-old
+ []
+
+[3 <./charginos_5.pdf>] (./charginos.aux) ) 
+Here is how much of TeX's memory you used:
+ 872 strings out of 50453
+ 10694 string characters out of 688420
+ 56658 words of memory out of 1500001
+ 3919 multiletter control sequences out of 10000+25000
+ 5467 words of font info for 20 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,14n,21p,204b,410s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesk
+y/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/
+texmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on charginos.pdf (3 pages, 90227 bytes).

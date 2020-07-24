@@ -1,0 +1,21 @@
+* 16 fun colors to choose from!
+set ncol 16
+palette 1
+
+* arguments to 'set hcol'
+sigma cwpairs = 07
+sigma cttbar  = 05
+sigma czpairs = 03
+sigma cc1c1   = 15
+sigma cn2n3   = 06
+sigma cc1c2   = 04
+sigma cn1n3   = 02
+
+* names for the samples to go into the key
+global/create nwpairs 'W^+! W^-!'
+global/create nttbar  'tt'
+global/create nzpairs 'Z^0! Z^0!'
+global/create nc1c1   '[v]^+!?1! [v]^-!?1!'
+global/create nn2n3   '[v]^0!?2! [v]^0!?3!'
+global/create nc1c2   '[v]^+!?1! [v]^-!?2!'
+global/create nn1n3   '[v]^0!?1! [v]^0!?3!'

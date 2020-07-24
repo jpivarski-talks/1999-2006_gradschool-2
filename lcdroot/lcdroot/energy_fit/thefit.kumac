@@ -1,0 +1,47 @@
+Application COMIS Quit
+	real function badist(invm, m2, m1, a)
+	implicit none
+	real p, mw, m1, m2, invm, a
+	
+	mw = 80.419
+	
+	if (invm.gt.(m2-m1)) then
+	   badist = 0
+	   return
+	endif
+	
+	p = sqrt(((m2**2 + m1**2 - invm**2)/2/m2)**2 - m1**2)
+	
+	badist = m1**4 + m2**4 + invm**2*m2**2
+	badist = badist - 2*invm**4 + m1**2*(invm**2-2*m2**2)
+	badist = badist - 6*a*invm**2*m1*m2
+	badist = badist * (invm*p/m2**2/(invm**2-mw**2)**2)
+	
+	return
+	end
+
+	real function bnorm(mn,mlsp,ep2,dx)
+	real mn,mlsp,ep2,dx
+	real x
+	real xmin,xmax
+	real hold
+	real badist
+	int steps,i
+
+	xmin=0.0
+	xmax=100.0
+C	dx=0.1
+	steps=xmax/dx
+
+	hold=0.0
+	x=xmin
+	do i=1,steps
+	x=x+dx
+	hold=hold+dx*badist(x,mn,mlsp,ep2)
+	enddo
+
+	bnorm=1.0/hold
+	return
+	end
+Quit
+

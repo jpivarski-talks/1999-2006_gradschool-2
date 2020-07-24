@@ -1,0 +1,74 @@
+h/file 1 ../rzn/stuff.rzn
+cd lcdexampleproc
+
+fortran/file 65 'look.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+opt nsta
+set stat 0001100
+
+zone 1 3
+h/cr/1d 100 'Number of MC particles' 300 -0.5 299.5
+h/cr/1d 101 '... with an SM id' 300 -0.5 299.5
+h/cr/1d 102 '... with an other id' 300 -0.5 299.5
+nt/plot 4.sm+susy ! ! ! ! ! 100
+nt/plot 4.sm ! ! ! ! ! 101
+nt/plot 4.susy ! ! ! ! ! 102
+
+h/cr/1d 500 'Distance between track and shower' 100 0. 10.
+nt/plot 2.dist ! ! ! ! ! 500
+h/cr/1d 501 'EM calorimeter energy / track momentum' 100 0. 2.
+nt/plot 2.e/p p>0&&e/p<5&&system==0&&dist<3. ! ! ! ! 501
+h/cr/1d 502 'Hadron calorimeter energy / track momentum' 100 0. 2.
+nt/plot 2.e/p p>0&&e/p<5&&system==1&&dist<3 ! ! ! ! 502
+
+zone 1 1
+h/cr/1d 200 'MC energy' 100 1500. 4500.
+nt/plot 4.esm+esu ! ! ! ! ! 200
+h/cr/2d 201 'MC momentum Y vs X' 1 -1000. 1000. 1 -1000. 1000.
+nt/plot 4.pxsm+pxsu%pysm+pysu ! 10000 ! ! ! 201
+h/cr/2d 202 'MC momentum Perp vs Z' 1 -1000. 1000. 1 0 1000.
+nt/plot 4.sqrt((pxsm+pxsu)**2+(pysm+pysu)**2)%pzsm+pzsu 10000 ! ! ! ! 202
+
+zone 2 2
+h/cr/1d 301 'Track d0' 100 -0.01 0.01
+opt sta
+nt/plot 1.d0 ! ! ! ! ! 301
+opt nsta
+h/cr/1d 302 'Track phi0' 100 -3.1415926 3.1415926
+nt/plot 1.phi0 ! ! ! ! ! 302
+h/cr/1d 303 'Track z0' 100 -0.01 0.01
+opt sta
+nt/plot 1.z0 ! ! ! ! ! 303
+opt nsta
+h/cr/2d 304 'Track omega VS momentum' 1 0. 2. 1 -0.5 0.5
+nt/plot 1.omega%momentum ! 100000 ! ! ! 304
+h/cr/2d 305 'tan[Q] from momentum VS Track tanl' 1 -8. 8. 1 -8. 8.
+nt/plot 1.sqrt(momentum**2-pperp**2)/pperp%tanl pperp>0. 10000 ! ! ! 305
+h/cr/1d 306 'Track cos[Q]' 100 -1. 1.
+nt/plot 1.tanl/abs(tanl)/sqrt(tanl**2+1) ! ! ! ! ! 306
+h/cr/1d 307 'Track [v]^2!' 100 0. 30.
+opt sta
+nt/plot 1.chi2 ! ! ! ! ! 307
+opt nsta
+h/cr/1d 308 'Track [v]^2!/dof' 100 0. 6.
+opt sta
+nt/plot 1.chi2/dof ! ! ! ! ! 308
+opt nsta
+
+zone 1 2
+h/cr/2d 400 'EM Calorimeter' 1 -350. 350. 1 0 300.
+h/cr/2d 401 'Hadron Calorimeter' 1 -350. 350. 1 0 300.
+nt/plot 3.r*sin(theta)%r*cos(theta) system==1 100000 ! ! ! 401
+nt/plot 3.r*sin(theta)%r*cos(theta) system==0 100000 ! ! ! 400
+h/cr/1d 403 'Hadron Energy' 100 0. 30.
+opt sta
+nt/plot 3.energy system==1 ! ! ! ! 403
+opt nsta
+h/cr/1d 402 'EM Energy' 100 0. 30.
+opt sta
+nt/plot 3.energy system==0 ! ! ! ! 402
+opt nsta
+
+close 65

@@ -1,0 +1,20 @@
+#$ -l arch=glinux
+#$ -o /cdat/tem/mccann/sm_r65.log
+#$ -S /bin/bash
+#$ -j y
+
+cd /home/mccann/lcdroot/run_anew/
+. /nfs/cleo3/scripts/cleo3defs
+
+c3rel Mar04_04_MC
+export LCDROOT=/cdat/tem/cdj/lcdroot/v01_00_00/LCDRootApps
+export LD_LIBRARY_PATH=${LCDROOT}/lib:${LD_LIBRARY_PATH}
+export C3_SHLIB=/cdat/tem/cdj/lcdroot/v01_00_00/shlib:${C3_SHLIB}
+export USER_SIDE=r
+export USER_NUMBER=65
+export USER_FILE=/cdat/linux/tem/rcg24/proc_slac/simd24365_FMCSD.root
+
+suez -f run_sm_anewer.tcl
+rm -f core
+
+exit

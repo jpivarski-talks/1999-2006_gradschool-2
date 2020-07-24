@@ -1,0 +1,278 @@
+h/file 1 ../rzn/read_pds.rzn
+cd mistereos
+
+ ********************************************************
+ * NTUPLE ID=    1  ENTRIES=   1859   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * curv      * -.191133E+00 * 0.192407E+00 *
+ *      2     * phi0      * 0.147050E-01 * 0.624637E+01 *
+ *      3     * d0        * -.988558E-03 * 0.930442E-03 *
+ *      4     * cT        * -.222592E+01 * 0.223356E+01 *
+ *      5     * z0        * -.429976E-01 * 0.344274E-01 *
+ *      6     * layer     * 0.100000E+01 * 0.600000E+01 *
+ *      7     * wire      * 0.000000E+00 * 0.650000E+02 *
+ *      8     * phi       * 0.271590E-01 * 0.627868E+01 *
+ *      9     * z         * -.252191E+00 * 0.233161E+00 *
+ *     10     * drift     * -.195071E-01 * 0.302332E-01 *
+ *     11     * dca       * -.177311E-01 * 0.322106E-01 *
+ *     12     * drhits    * 0.200000E+02 * 0.490000E+02 *
+ *     13     * pperp     * 0.186308E-02 * 0.158703E+00 *
+ *     14     * pz        * -.168812E+00 * 0.128650E+00 *
+ *     15     * ebeam     * 0.188532E+01 * 0.188532E+01 *
+ ********************************************************
+
+h/cr/1d 100 'number of DR hits (shaded have cotTheta "g# 1.5)' 61 -0.5 60.5
+set htyp 0
+nt/plot 1.drhits ! ! ! ! ! 100
+set htyp 344
+nt/plot 1.drhits abs(cT)>1.5 ! ! ! 's' 100
+pict/print '../plots/hit_times_are_okay.ps'
+
+nt/cuts $1 (layer==4&&(wire==1.or.wire==5.or.wire==6.or.wire==8.or.wire==27.or.wire==31.or.wire==43)).or.(layer==5&&(wire==19.or.wire==54)).or.(layer==6&&(wire==11))
+
+nt/plot 1.pperp/ebeam
+nt/plot 1.pz/ebeam
+
+
+zone 1 1
+nt/plot 1.wire layer==1
+nt/plot 1.wire layer==2
+nt/plot 1.wire layer==3
+nt/plot 1.wire layer==4
+nt/plot 1.wire layer==5
+nt/plot 1.wire layer==6
+
+
+
+h/cr/prof 301 'layers 2,3 cotTheta cut 1.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 302 'layers 2,3 cotTheta cut 1.' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 303 'layers 2,3 cotTheta cut 0.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 311 'layers 4,5 cotTheta cut 1.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 312 'layers 4,5 cotTheta cut 1.' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 313 'layers 4,5 cotTheta cut 0.5' 50 -0.2 0.2 -0.001 0.001
+h/cr/title 'ZD residual VS hit Z'
+
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(layer==2.or.layer==3)&&(!$1) ! ! ! 'N' 301
+nt/plot 1.(drift-dca)%z abs(cT)<1.0&&(layer==2.or.layer==3)&&(!$1) ! ! ! 'N' 302
+nt/plot 1.(drift-dca)%z abs(cT)<0.5&&(layer==2.or.layer==3)&&(!$1) ! ! ! 'N' 303
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(layer==4.or.layer==5)&&(!$1) ! ! ! 'N' 311
+nt/plot 1.(drift-dca)%z abs(cT)<1.0&&(layer==4.or.layer==5)&&(!$1) ! ! ! 'N' 312
+nt/plot 1.(drift-dca)%z abs(cT)<0.5&&(layer==4.or.layer==5)&&(!$1) ! ! ! 'N' 313
+
+min 301 -0.0005
+max 301  0.0005
+min 311 -0.0005
+max 311  0.0005
+min 302 -0.0005
+max 302  0.0005
+min 312 -0.0005
+max 312  0.0005
+min 303 -0.0005
+max 303  0.0005
+min 313 -0.0005
+max 313  0.0005
+
+zone 2 3
+h/plot 301
+h/plot 311
+h/plot 302
+h/plot 312
+h/plot 303
+h/plot 313
+pict/print '../plots/theta_cut_biases_residuals.ps'
+
+
+
+
+
+
+
+
+
+
+
+fortran/file 65 '../plots/colinearity_cuts_not_helpful.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+h/cr/2d 200 'no colinearity cut' 50 -0.2 0.2 50 -0.003 0.003
+h/cr/2d 201 'pperp, pz within 2"Y# eBeam' 50 -0.2 0.2 50 -0.003 0.003
+h/cr/2d 202 'pperp, pz within 0.5"Y# eBeam' 50 -0.2 0.2 50 -0.003 0.003
+h/cr/prof 300 'no colinearity cut' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 301 'pperp, pz within 2"Y# eBeam' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 302 'pperp, pz within 0.5"Y# eBeam' 50 -0.2 0.2 -0.001 0.001
+opt sta
+set stat 0000010
+nt/plot 1.(drift-dca)%z (!$1)&&abs(cT)<1.5&&(layer==2.or.layer==3) ! ! ! 'N' 300
+nt/plot 1.(drift-dca)%z (!$1)&&abs(cT)<1.5&&(layer==2.or.layer==3)&&pperp/ebeam<0.05&&pz/ebeam<0.02 ! ! ! 'N' 301
+nt/plot 1.(drift-dca)%z (!$1)&&abs(cT)<1.5&&(layer==2.or.layer==3)&&pperp/ebeam<0.05&&pz/ebeam<0.005 ! ! ! 'N' 302
+
+zone 2 3
+h/cr/title 'ZD layers 2-3 residual VS Z                 cotTheta"l#1.5, resid"l#1 mm'
+
+min 300 -0.0003
+max 300 0.0003
+min 301 -0.0003
+max 301 0.0003 
+min 302 -0.0003
+max 302 0.0003 
+
+nt/plot 1.(drift-dca)%z (!$1)&&(layer==2.or.layer==3) ! ! ! ! 200
+h/plot 300
+nt/plot 1.(drift-dca)%z (!$1)&&(layer==2.or.layer==3)&&pperp/ebeam<0.05&&pz/ebeam<0.02 ! ! ! ! 201
+h/plot 301
+nt/plot 1.(drift-dca)%z (!$1)&&(layer==2.or.layer==3)&&pperp/ebeam<0.05&&pz/ebeam<0.005 ! ! ! ! 202
+h/plot 302
+
+wait
+
+h/cr/2d 200 'no colinearity cut' 50 -0.2 0.2 50 -0.003 0.003
+h/cr/2d 201 'pperp, pz within 2"Y# eBeam' 50 -0.2 0.2 50 -0.003 0.003
+h/cr/2d 202 'pperp, pz within 0.5"Y# eBeam' 50 -0.2 0.2 50 -0.003 0.003
+h/cr/prof 300 'no colinearity cut' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 301 'pperp, pz within 2"Y# eBeam' 50 -0.2 0.2 -0.001 0.001
+h/cr/prof 302 'pperp, pz within 0.5"Y# eBeam' 50 -0.2 0.2 -0.001 0.001
+opt sta
+set stat 0000010
+nt/plot 1.(drift-dca)%z (!$1)&&abs(cT)<1.5&&(layer==4.or.layer==5) ! ! ! 'N' 300
+nt/plot 1.(drift-dca)%z (!$1)&&abs(cT)<1.5&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.02 ! ! ! 'N' 301
+nt/plot 1.(drift-dca)%z (!$1)&&abs(cT)<1.5&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.005 ! ! ! 'N' 302
+
+zone 2 3
+h/cr/title 'ZD layers 4-5 residual VS Z                 cotTheta"l#1.5, resid"l#1 mm'
+
+min 300 -0.0003
+max 300 0.0003
+min 301 -0.0003
+max 301 0.0003 
+min 302 -0.0003
+max 302 0.0003 
+
+nt/plot 1.(drift-dca)%z (!$1)&&(layer==4.or.layer==5) ! ! ! ! 200
+h/plot 300
+nt/plot 1.(drift-dca)%z (!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.02 ! ! ! ! 201
+h/plot 301
+nt/plot 1.(drift-dca)%z (!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.005 ! ! ! ! 202
+h/plot 302
+
+
+
+
+
+
+* pict/print '../plots/colinearity_cuts_on_residvz.ps'
+
+
+
+
+
+
+* zone 1 1
+
+* h/cr/prof 401 'timelike residual VS Z layer 1' 30 -0.12 0.12 -0.001 0.001
+* h/cr/prof 402 'timelike residual VS Z layer 2' 30 -0.12 0.12 -0.001 0.001
+* h/cr/prof 403 'timelike residual VS Z layer 3' 30 -0.12 0.12 -0.001 0.001
+* h/cr/prof 404 'timelike residual VS Z layer 4' 30 -0.12 0.12 -0.001 0.001
+* h/cr/prof 405 'timelike residual VS Z layer 5' 30 -0.12 0.12 -0.001 0.001
+* h/cr/prof 406 'timelike residual VS Z layer 6' 30 -0.12 0.12 -0.001 0.001
+
+* nt/plot 1.abs(drift)-abs(dca)%z layer==1&&abs(cT)<1.5 ! ! ! ! 401
+* nt/plot 1.abs(drift)-abs(dca)%z layer==2&&abs(cT)<1.5 ! ! ! ! 402
+* nt/plot 1.abs(drift)-abs(dca)%z layer==3&&abs(cT)<1.5 ! ! ! ! 403
+* nt/plot 1.abs(drift)-abs(dca)%z layer==4&&abs(cT)<1.5 ! ! ! ! 404
+* nt/plot 1.abs(drift)-abs(dca)%z layer==5&&abs(cT)<1.5 ! ! ! ! 405
+* nt/plot 1.abs(drift)-abs(dca)%z layer==6&&abs(cT)<1.5 ! ! ! ! 406
+
+
+
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.05 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.04 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.03 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.02 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.01 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.009 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.008 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.007 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.006 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.005 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.004 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.003 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.002 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.001 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0009 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0008 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0007 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0006 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0005 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0004 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0003 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0002 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.0001 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00009 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00008 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00007 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00006 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00005 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00004 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00003 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00002 ! ! ! ! 200
+nt/plot 1.(drift-dca)%z abs(cT)<1.5&&(!$1)&&(layer==4.or.layer==5)&&pperp/ebeam<0.05&&pz/ebeam<0.00001 ! ! ! ! 200
+
+
+
+
+
+
+nt/hmerge ../rzn/bhabhacuts1.rzn ../rzn/goodcuts_pds.rzn ../rzn/goodcuts_pds200669.rzn ../rzn/goodcuts_pds200733.rzn ../rzn/goodcuts_pds200734.rzn ../rzn/goodcuts_pds200746.rzn ../rzn/goodcuts_pds200750.rzn ../rzn/goodcuts_pds200788.rzn ../rzn/goodcuts_pds200791.rzn ../rzn/goodcuts_pds200797.rzn ../rzn/goodcuts_pds200798.rzn ../rzn/goodcuts_pds200801.rzn ../rzn/goodcuts_pds200802.rzn ../rzn/goodcuts_pds200805.rzn ../rzn/goodcuts_pds200806.rzn ../rzn/goodcuts_pds200810.rzn ../rzn/goodcuts_pds200812.rzn ../rzn/goodcuts_pds200814.rzn ../rzn/goodcuts_pds200815.rzn ../rzn/goodcuts_pds200817.rzn ../rzn/goodcuts_pds200818.rzn ../rzn/goodcuts_pds200819.rzn ../rzn/goodcuts_pds200822.rzn ../rzn/goodcuts_pds200823.rzn ../rzn/goodcuts_pds200824.rzn ../rzn/goodcuts_pds200825.rzn ../rzn/goodcuts_pds200826.rzn
+nt/hmerge ../rzn/bhabhacuts2.rzn ../rzn/goodcuts_pds200828.rzn ../rzn/goodcuts_pds200829.rzn ../rzn/goodcuts_pds200832.rzn ../rzn/goodcuts_pds200833.rzn ../rzn/goodcuts_pds200834.rzn ../rzn/goodcuts_pds200835.rzn ../rzn/goodcuts_pds200847.rzn ../rzn/goodcuts_pds200851.rzn ../rzn/goodcuts_pds200853.rzn ../rzn/goodcuts_pds200854.rzn ../rzn/goodcuts_pds200868.rzn ../rzn/goodcuts_pds200908.rzn ../rzn/goodcuts_pds200909.rzn ../rzn/goodcuts_pds200911.rzn ../rzn/goodcuts_pds200920.rzn ../rzn/goodcuts_pds200937.rzn ../rzn/goodcuts_pds200940.rzn ../rzn/goodcuts_pds200945.rzn ../rzn/goodcuts_pds200950.rzn ../rzn/goodcuts_pds200957.rzn ../rzn/goodcuts_pds200963.rzn ../rzn/goodcuts_pds200964.rzn ../rzn/goodcuts_pds200966.rzn ../rzn/goodcuts_pds200967.rzn ../rzn/goodcuts_pds200968.rzn ../rzn/goodcuts_pds200976.rzn ../rzn/goodcuts_pds200978.rzn ../rzn/goodcuts_pds200979.rzn
+nt/hmerge ../rzn/bhabhacuts3.rzn ../rzn/goodcuts_pds200981.rzn ../rzn/goodcuts_pds200983.rzn ../rzn/goodcuts_pds200984.rzn ../rzn/goodcuts_pds201001.rzn ../rzn/goodcuts_pds201002.rzn ../rzn/goodcuts_pds201003.rzn ../rzn/goodcuts_pds201004.rzn ../rzn/goodcuts_pds201013.rzn ../rzn/goodcuts_pds201014.rzn ../rzn/goodcuts_pds201016.rzn ../rzn/goodcuts_pds201017.rzn ../rzn/goodcuts_pds201018.rzn ../rzn/goodcuts_pds201019.rzn ../rzn/goodcuts_pds201021.rzn ../rzn/goodcuts_pds201023.rzn ../rzn/goodcuts_pds201024.rzn ../rzn/goodcuts_pds201026.rzn ../rzn/goodcuts_pds201027.rzn ../rzn/goodcuts_pds201028.rzn ../rzn/goodcuts_pds201029.rzn ../rzn/goodcuts_pds201030.rzn ../rzn/goodcuts_pds201031.rzn ../rzn/goodcuts_pds201035.rzn ../rzn/goodcuts_pds201037.rzn ../rzn/goodcuts_pds201039.rzn ../rzn/goodcuts_pds201040.rzn ../rzn/goodcuts_pds201041.rzn ../rzn/goodcuts_pds201042.rzn ../rzn/goodcuts_pds201043.rzn
+nt/hmerge ../rzn/bhabhacuts4.rzn ../rzn/goodcuts_pds201095.rzn ../rzn/goodcuts_pds201097.rzn ../rzn/goodcuts_pds201102.rzn ../rzn/goodcuts_pds201103.rzn ../rzn/goodcuts_pds201104.rzn ../rzn/goodcuts_pds201105.rzn ../rzn/goodcuts_pds201106.rzn ../rzn/goodcuts_pds201107.rzn ../rzn/goodcuts_pds201108.rzn ../rzn/goodcuts_pds201135.rzn ../rzn/goodcuts_pds201142.rzn ../rzn/goodcuts_pds201144.rzn ../rzn/goodcuts_pds201145.rzn ../rzn/goodcuts_pds201146.rzn ../rzn/goodcuts_pds201147.rzn ../rzn/goodcuts_pds201148.rzn ../rzn/goodcuts_pds201150.rzn ../rzn/goodcuts_pds201151.rzn ../rzn/goodcuts_pds201152.rzn ../rzn/goodcuts_pds201153.rzn ../rzn/goodcuts_pds201154.rzn ../rzn/goodcuts_pds201155.rzn ../rzn/goodcuts_pds201156.rzn ../rzn/goodcuts_pds201157.rzn ../rzn/goodcuts_pds201158.rzn ../rzn/goodcuts_pds201160.rzn ../rzn/goodcuts_pds201164.rzn ../rzn/goodcuts_pds201165.rzn ../rzn/goodcuts_pds201166.rzn
+nt/hmerge ../rzn/bhabhacuts5.rzn ../rzn/goodcuts_pds201167.rzn ../rzn/goodcuts_pds201170.rzn ../rzn/goodcuts_pds201171.rzn ../rzn/goodcuts_pds201172.rzn ../rzn/goodcuts_pds201173.rzn ../rzn/goodcuts_pds201174.rzn ../rzn/goodcuts_pds201175.rzn ../rzn/goodcuts_pds201176.rzn ../rzn/goodcuts_pds201179.rzn ../rzn/goodcuts_pds201180.rzn ../rzn/goodcuts_pds201181.rzn ../rzn/goodcuts_pds201184.rzn ../rzn/goodcuts_pds201186.rzn ../rzn/goodcuts_pds201188.rzn ../rzn/goodcuts_pds201189.rzn ../rzn/goodcuts_pds201190.rzn ../rzn/goodcuts_pds201192.rzn ../rzn/goodcuts_pds201193.rzn ../rzn/goodcuts_pds201194.rzn ../rzn/goodcuts_pds201195.rzn ../rzn/goodcuts_pds201196.rzn ../rzn/goodcuts_pds201197.rzn ../rzn/goodcuts_pds201198.rzn ../rzn/goodcuts_pds201199.rzn ../rzn/goodcuts_pds201201.rzn ../rzn/goodcuts_pds201202.rzn ../rzn/goodcuts_pds201203.rzn ../rzn/goodcuts_pds201204.rzn ../rzn/goodcuts_pds201205.rzn ../rzn/goodcuts_pds201206.rzn ../rzn/goodcuts_pds201213.rzn ../rzn/goodcuts_pds201265.rzn ../rzn/goodcuts_pds201277.rzn
+nt/hmerge ../rzn/bhabhacuts6.rzn ../rzn/goodcuts_pds201285.rzn ../rzn/goodcuts_pds201301.rzn ../rzn/goodcuts_pds201302.rzn ../rzn/goodcuts_pds201303.rzn ../rzn/goodcuts_pds201312.rzn ../rzn/goodcuts_pds201314.rzn ../rzn/goodcuts_pds201318.rzn ../rzn/goodcuts_pds201319.rzn ../rzn/goodcuts_pds201352.rzn ../rzn/goodcuts_pds201366.rzn ../rzn/goodcuts_pds201385.rzn ../rzn/goodcuts_pds201387.rzn ../rzn/goodcuts_pds201390.rzn ../rzn/goodcuts_pds201429.rzn ../rzn/goodcuts_pds201431.rzn ../rzn/goodcuts_pds201434.rzn ../rzn/goodcuts_pds201439.rzn ../rzn/goodcuts_pds201441.rzn ../rzn/goodcuts_pds201443.rzn ../rzn/goodcuts_pds201444.rzn ../rzn/goodcuts_pds201447.rzn ../rzn/goodcuts_pds201450.rzn ../rzn/goodcuts_pds201464.rzn ../rzn/goodcuts_pds201466.rzn ../rzn/goodcuts_pds201473.rzn ../rzn/goodcuts_pds201479.rzn
+
+h/file 1 ../rzn/bhabhacuts1.rzn
+cd bhabhacuts
+*           1 (1)   (pertrack) fit succeeded
+*           2 (1)   (pertrack) [h]^2! / dof 
+*           3 (1)   (pertrack) layers hit / expected
+*           4 (1)   (pertrack) d0   
+*           5 (1)   (pertrack) z0   
+*           6 (1)   (pertrack) pmag 
+*           7 (1)   (pertrack) cotTheta 
+*           8 (1)   (pertrack) err?cotTheta!
+*           9 (1)   (pertrack) err?z0!  
+*          10 (1)   good showers
+*          11 (1)   bad showers 
+*          12 (1)   showers momentum
+*          13 (1)   good tracks 
+*          14 (1)   bad tracks  
+*          15 (1)   charge  
+*          16 (1)   d0?pos! + d0?neg!   
+*          17 (1)   z0?pos! - z0?neg!   
+*          18 (1)   tracks momentum perp
+*          19 (1)   tracks momentum z   
+
+opt logy
+h/plot 10
+h/plot 11
+h/plot 12
+h/plot 13
+h/plot 14
+h/plot 15
+h/plot 16
+h/fit 17 g
+h/plot 18
+h/plot 19
+
+
+h/plot 1
+h/plot 2
+h/plot 3
+h/plot 4
+h/plot 5
+h/plot 6
+h/plot 7
+h/plot 8
+h/plot 9

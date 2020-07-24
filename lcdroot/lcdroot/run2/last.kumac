@@ -1,0 +1,27 @@
+*** Begin of history file: Mon Jul 19 16:06:59 2004
+exec two_hours
+nt/print //lun1/lcproc/1000
+nt/cuts $1 bigp*secp<0&&abs(bigem/abs(bigp)-1)<0.1&&abs(secem/abs(secp)-1)<0.1&&numtrks==2
+exec /tmp/pawtmp-2139.kumac
+exec /tmp/pawtmp-1593.kumac
+nt/cuts $1 bigp*secp<0&&abs(bigem/abs(bigp)-1)<0.1&&abs(secem/abs(secp)-1)<0.1&&numleps==2
+exec /tmp/pawtmp-2018.kumac
+exec /tmp/pawtmp-1322.kumac
+nt/cuts $1 bigp*secp<0&&abs(bigem/abs(bigp)-1)<0.1&&abs(secem/abs(secp)-1)<0.1&&numtrks==2
+exec /tmp/pawtmp-2665.kumac
+zone 1 1
+nt/plot //lun1/LCProc/1000.numtrks
+exec /tmp/pawtmp-8196.kumac
+exec /tmp/pawtmp-4618.kumac
+sigma pre = 3000
+h/delete $SIGMA(pre+01) 'Number of tracks' 51 -0.5 50.5
+h/delete $SIGMA(pre+02) 'Number of tracks' 51 -0.5 50.5
+h/delete $SIGMA(pre+03) 'Number of tracks' 51 -0.5 50.5
+h/delete $SIGMA(pre+04) 'Number of tracks' 51 -0.5 50.5
+h/delete $SIGMA(pre+05) 'Number of tracks' 51 -0.5 50.5
+h/delete $SIGMA(pre+06) 'Number of tracks' 51 -0.5 50.5
+h/delete $SIGMA(pre+07) 'Number of tracks' 51 -0.5 50.5
+h/cr/1d $SIGMA(pre+01) 'Number of tracks' 51 -0.5 50.5
+h/cr/1d $SIGMA(pre+02) 'Number of tracks' 51 -0.5 50.5
+h/cr/1d $SIGMA(pre+03) 'Number of tracks' 51 -0.5 50.5
+*** End   of history file: Mon Jul 19 17:37:08 2004

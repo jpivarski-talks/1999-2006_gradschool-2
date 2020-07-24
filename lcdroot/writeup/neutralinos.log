@@ -1,0 +1,156 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  29 SEP 2004 17:24
+**neutralinos.tex
+(./neutralinos.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (./neutralinos.aux)
+\openout1 = `neutralinos.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count88
+\scratchcounter=\count89
+\scratchtoks=\toks15
+\scratchdimen=\dimen105
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen106
+\nextbox=\box27
+\nextdepth=\dimen107
+\everyline=\toks16
+\!!counta=\count90
+\!!countb=\count91
+\recursecounter=\count92
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 17.
+ <../pretty_plots/two_leptons_1_fixed.pdf, id=1, 569.12625pt x 569.12625pt>
+File: ../pretty_plots/two_leptons_1_fixed.pdf Graphic file (type pdf)
+
+<use ../pretty_plots/two_leptons_1_fixed.pdf>
+<../pretty_plots/two_leptons_1_fixed_pol.pdf, id=2, 569.12625pt x 569.12625pt>
+File: ../pretty_plots/two_leptons_1_fixed_pol.pdf Graphic file (type pdf)
+
+<use ../pretty_plots/two_leptons_1_fixed_pol.pdf>
+Overfull \hbox (14.61003pt too wide) in paragraph at lines 51--57
+ [] 
+ []
+
+[1
+
+{/usr/share/texmf/dvips/config/pdftex.map}]
+<../pretty_plots/two_leptons_fixed_2.pdf, id=31, 569.12625pt x 569.12625pt>
+File: ../pretty_plots/two_leptons_fixed_2.pdf Graphic file (type pdf)
+
+<use ../pretty_plots/two_leptons_fixed_2.pdf>
+<../pretty_plots/two_leptons_fixed_2_pol.pdf, id=32, 569.12625pt x 569.12625pt>
+File: ../pretty_plots/two_leptons_fixed_2_pol.pdf Graphic file (type pdf)
+<use ../pretty_plots/two_leptons_fixed_2_pol.pdf>
+Overfull \hbox (14.61003pt too wide) in paragraph at lines 119--125
+ [] 
+ []
+
+[2 <../pretty_plots/two_leptons_1_fixed.pdf> <../pretty_plots/two_leptons_1_fix
+ed_pol.pdf>]
+Overfull \hbox (28.36588pt too wide) in paragraph at lines 193--194
+ [] 
+ []
+
+
+Overfull \hbox (28.36588pt too wide) in paragraph at lines 195--196
+ [] 
+ []
+
+
+Overfull \hbox (28.36588pt too wide) in paragraph at lines 198--199
+ [] 
+ []
+
+
+Overfull \hbox (28.36588pt too wide) in paragraph at lines 200--201
+ [] 
+ []
+
+[3 <../pretty_plots/two_leptons_fixed_2.pdf> <../pretty_plots/two_leptons_fixed
+_2_pol.pdf>] [4] [5] (./neutralinos.aux) ) 
+Here is how much of TeX's memory you used:
+ 889 strings out of 50453
+ 11228 string characters out of 688420
+ 62703 words of memory out of 1500001
+ 3929 multiletter control sequences out of 10000+25000
+ 7587 words of font info for 27 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,19n,21p,698b,662s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesky
+/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/tex
+mf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/c
+msy8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fo
+nts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.
+pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb>
+Output written on neutralinos.pdf (5 pages, 119425 bytes).

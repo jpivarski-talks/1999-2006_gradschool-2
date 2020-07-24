@@ -1,0 +1,17 @@
+#Model 11
+#nIn 2
+#nOut 3
+#beam_1 pb
+#beam_2 pb
+#beam_energy_1 7000.000000
+#beam_energy_2 7000.000000
+#strfun_1 cteq6l1(proton)
+#strfun_2 cteq6l1(proton)
+#Final_state j3, j3, H
+#Remove_Virtual 
+#Keep_Virtual 
+#nSubproc(ampl) 500
+#nSubproc(squared) 500
+#ConservationLaw 0
+#Nc==inf 0
+#ExitCode 6

@@ -1,0 +1,52 @@
+*** Begin of history file: Wed Jun 16 16:11:02 2004
+h/file 40 /home/mccann/lcdroot/run2/mcmatch.rzn
+h/file 41 /home/mccann/lcdroot/run2/datamatch.rzn
+h/plot //lun40/lcdtwoleptons/10
+zone 2 3
+zone 2 3
+h/plot //lun40/lcdtwoleptons/10
+h/plot //lun41/lcdtwoleptons/10
+h/plot //lun40/lcdtwoleptons/11(0.:1.)
+h/plot //lun41/lcdtwoleptons/11(0.:1.)
+h/plot //lun40/lcdtwoleptons/12(0.:1.)
+h/plot //lun41/lcdtwoleptons/12(0.:1.)
+zone 1 1
+h/plot //lun41/lcdtwoleptons/10
+f/plot x**2 0 15
+f/plot sqrt(x) 0 15
+h/plot //lun41/lcdtwoleptons/10
+f/plot sqrt(x) 0 15
+h/plot //lun41/lcdtwoleptons/10
+f/plot 100*sqrt(x) 0 15 's'
+h/plot //lun41/lcdtwoleptons/10
+f/plot 50*sqrt(x) 0 15 's'
+h/plot //lun41/lcdtwoleptons/10
+f/plot 40*sqrt(x) 0 15 's'
+h/plot //lun41/lcdtwoleptons/10
+f/plot 45*sqrt(x) 0 15 's'
+h/plot //lun41/lcdtwoleptons/10
+f/plot 43*sqrt(x) 0 15 's'
+h/plot //lun41/lcdtwoleptons/10(0.:1.)
+h/plot //lun40/lcdtwoleptons/10(0.:1.)
+h/cr/title 'PERFECT MATCHING (cm)            DATA-BASED MATCHING (cm)'
+zone 2 3
+h/plot //lun40/lcdtwoleptons/10
+h/plot //lun41/lcdtwoleptons/10
+f/plot 43*sqrt(x) 0 15 's'
+h/plot //lun40/lcdtwoleptons/11(0.:1.)
+h/plot //lun41/lcdtwoleptons/11(0.:1.)
+h/plot //lun40/lcdtwoleptons/12(0.:1.)
+h/plot //lun41/lcdtwoleptons/12(0.:1.)
+h/cr/title 'PERFECT MATCHING (cm)                   DATA-BASED MATCHING (cm)'
+zone 2 3
+h/plot //lun40/lcdtwoleptons/10
+h/plot //lun41/lcdtwoleptons/10
+h/cr/title 'PERFECT MATCHING (cm)                           DATA-BASED MATCHING (cm)'
+zone 2 3
+h/plot //lun40/lcdtwoleptons/10
+h/plot //lun41/lcdtwoleptons/10
+f/plot 43*sqrt(x) 0 15 's'
+h/plot //lun40/lcdtwoleptons/11(0.:1.)
+h/plot //lun41/lcdtwoleptons/11(0.:1.)
+h/plot //lun40/lcdtwoleptons/12(0.:1.)
+*** End   of history file: Wed Jun 16 16:15:05 2004

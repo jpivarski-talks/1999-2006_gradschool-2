@@ -1,0 +1,417 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 4.0,
+MathReader 4.0, or any compatible application. The data for the notebook 
+starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12539,        350]*)
+(*NotebookOutlinePosition[     13196,        374]*)
+(*  CellTagsIndexPosition[     13152,        370]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(<< HighEnergyPhysics`fc`\)], "Input"],
+
+Cell[TextData[{
+  StyleBox["FeynCalc",
+    FontWeight->"Bold"],
+  " ",
+  "4.1.0.3b",
+  "    ",
+  " Evaluate ?FeynCalc for help or visit ",
+  ButtonBox["www.feyncalc.org",
+    ButtonData:>{
+      URL[ "http://www.feyncalc.org"], None},
+    ButtonStyle->"Hyperlink",
+    ButtonNote->"http://www.feyncalc.org"]
+}], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(factor1 = \((GS[Pe] + Me)\) . GA[\[Alpha]] . \((1 - GA[5])\) . 
+        GS[Pnue] . GA[\[Beta]] . \((1 - GA[5])\)\), "\n", 
+    \(factor2 = 
+      GS[Pnumu] . GA[\[Alpha]] . \((1 - GA[5])\) . \((GS[Pmu] + Mmu)\) . 
+        GA[\[Beta]] . \((1 - GA[5])\)\)}], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\((Me + \[Gamma]\[NoBreak]\[CenterDot]\[NoBreak]Pe)\) \
+. \[Gamma]\^\[Alpha] . \((1 - \[Gamma]\^5)\) . \((\[Gamma]\[NoBreak]\
+\[CenterDot]\[NoBreak]Pnue)\) . \[Gamma]\^\[Beta] . \((1 - \[Gamma]\^5)\)\)], \
+"Output"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\((\[Gamma]\[NoBreak]\[CenterDot]\[NoBreak]Pnumu)\) . \
+\[Gamma]\^\[Alpha] . \((1 - \[Gamma]\^5)\) . \((Mmu + \[Gamma]\[NoBreak]\
+\[CenterDot]\[NoBreak]Pmu)\) . \[Gamma]\^\[Beta] . \((1 - \[Gamma]\^5)\)\)], \
+"Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(Clear[MyDot];\)\), "\n", 
+    \(MyDot[1, x_] := x\), "\n", 
+    \(MyDot[x_, 1] := x\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(Clear[PairIt];\)\), "\n", 
+    \(PairIt[expr_MyDot] := 
+      If[Length[expr] > 2, MyDot[First[expr], PairIt[Drop[expr, 1]]], 
+        expr]\n\), "\n", 
+    \(PairIt[Dot[a, b, c, d] /. Dot \[Rule] MyDot]\)}], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`MyDot(a, MyDot(b, MyDot(c, d)))\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(Clear[MyExpand];\)\), "\n", 
+    \(MyExpand[MyDot[a_ + b_, x_ + y_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] + MyDot[MyExpand[a], MyExpand[y]] + 
+        MyDot[MyExpand[b], MyExpand[x]] + 
+        MyDot[MyExpand[b], MyExpand[y]]\), "\n", 
+    \(MyExpand[MyDot[a_ + b_, x_ - y_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] - MyDot[MyExpand[a], MyExpand[y]] + 
+        MyDot[MyExpand[b], MyExpand[x]] - 
+        MyDot[MyExpand[b], MyExpand[y]]\), "\n", 
+    \(MyExpand[MyDot[a_ - b_, x_ + y_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] + MyDot[MyExpand[a], MyExpand[y]] - 
+        MyDot[MyExpand[b], MyExpand[x]] - 
+        MyDot[MyExpand[b], MyExpand[y]]\), "\n", 
+    \(MyExpand[MyDot[a_ - b_, x_ - y_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] - MyDot[MyExpand[a], MyExpand[y]] - 
+        MyDot[MyExpand[b], MyExpand[x]] + 
+        MyDot[MyExpand[b], MyExpand[y]]\), "\n", 
+    \(MyExpand[MyDot[a_ + b_, x_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] + 
+        MyDot[MyExpand[b], MyExpand[x]]\), "\n", 
+    \(MyExpand[MyDot[a_ - b_, x_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] - 
+        MyDot[MyExpand[b], MyExpand[x]]\), "\n", 
+    \(MyExpand[MyDot[a_, x_ + y_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] + 
+        MyDot[MyExpand[a], MyExpand[y]]\), "\n", 
+    \(MyExpand[MyDot[a_, x_ - y_]] := 
+      MyDot[MyExpand[a], MyExpand[x]] - 
+        MyDot[MyExpand[a], MyExpand[y]]\), "\n", 
+    \(MyExpand[MyDot[a_, x_]] := MyDot[MyExpand[a], MyExpand[x]]\), "\n", 
+    \(MyExpand[a_] := a\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MyExpand[PairIt[factor1 /. Dot \[Rule] MyDot]] /. 
+      MyDot \[Rule] Dot\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`Me . \[Gamma]\^\[Alpha] . \((\((\[Gamma]\[NoBreak]\
+\[CenterDot]\[NoBreak]Pnue)\) . \((\[Gamma]\^\[Beta] - \[Gamma]\^\[Beta] . \
+\[Gamma]\^5)\) - \[Gamma]\^5 . \
+\((\[Gamma]\[NoBreak]\[CenterDot]\[NoBreak]Pnue)\) . \((\[Gamma]\^\[Beta] - \
+\[Gamma]\^\[Beta] . \[Gamma]\^5)\))\) + \((\[Gamma]\[NoBreak]\[CenterDot]\
+\[NoBreak]Pe)\) . \[Gamma]\^\[Alpha] . \((\((\[Gamma]\[NoBreak]\[CenterDot]\
+\[NoBreak]Pnue)\) . \((\[Gamma]\^\[Beta] - \[Gamma]\^\[Beta] . \[Gamma]\^5)\) \
+- \[Gamma]\^5 . \((\[Gamma]\[NoBreak]\[CenterDot]\[NoBreak]Pnue)\) . \((\
+\[Gamma]\^\[Beta] - \[Gamma]\^\[Beta] . \[Gamma]\^5)\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(traces = Tr[factor1]*Tr[factor2]\)], "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{"16", " ", 
+        RowBox[{"(", 
+          RowBox[{
+            RowBox[{\(-2\), " ", "\[ImaginaryI]", " ", 
+              SuperscriptBox["\[Epsilon]", 
+                RowBox[{
+                  FormBox[
+                    FormBox["\[Alpha]",
+                      "TraditionalForm"],
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox[
+                    FormBox["\[Beta]",
+                      "TraditionalForm"],
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox["Pe",
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox["Pnue",
+                    "TraditionalForm"]}]]}], "+", 
+            RowBox[{"2", " ", 
+              SuperscriptBox[
+                FormBox["Pnue",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Alpha]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]], " ", 
+              SuperscriptBox[
+                FormBox["Pe",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Beta]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]]}], "+", 
+            RowBox[{"2", " ", 
+              SuperscriptBox[
+                FormBox["Pe",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Alpha]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]], " ", 
+              SuperscriptBox[
+                FormBox["Pnue",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Beta]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]]}], "-", 
+            RowBox[{"2", " ", \(g\^\(\[Alpha]\[NoBreak]\[Beta]\)\), " ", 
+              RowBox[{
+                FormBox["Pe",
+                  "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", 
+                "\[NoBreak]", 
+                FormBox["Pnue",
+                  "TraditionalForm"]}]}]}], ")"}], " ", 
+        RowBox[{"(", 
+          RowBox[{
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+              SuperscriptBox["\[Epsilon]", 
+                RowBox[{
+                  FormBox[
+                    FormBox["\[Alpha]",
+                      "TraditionalForm"],
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox[
+                    FormBox["\[Beta]",
+                      "TraditionalForm"],
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox["Pmu",
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox["Pnumu",
+                    "TraditionalForm"]}]]}], "+", 
+            RowBox[{"2", " ", 
+              SuperscriptBox[
+                FormBox["Pnumu",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Alpha]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]], " ", 
+              SuperscriptBox[
+                FormBox["Pmu",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Beta]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]]}], "+", 
+            RowBox[{"2", " ", 
+              SuperscriptBox[
+                FormBox["Pmu",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Alpha]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]], " ", 
+              SuperscriptBox[
+                FormBox["Pnumu",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Beta]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]]}], "-", 
+            RowBox[{"2", " ", \(g\^\(\[Alpha]\[NoBreak]\[Beta]\)\), " ", 
+              RowBox[{
+                FormBox["Pmu",
+                  "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", 
+                "\[NoBreak]", 
+                FormBox["Pnumu",
+                  "TraditionalForm"]}]}]}], ")"}]}], 
+      TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Contract[traces]\)], "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{
+        RowBox[{"64", " ", "\[ImaginaryI]", " ", 
+          SuperscriptBox["\[Epsilon]", 
+            RowBox[{
+              FormBox["Pe",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pnue",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pmu",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pnumu",
+                "TraditionalForm"]}]]}], "-", 
+        RowBox[{"64", " ", "\[ImaginaryI]", " ", 
+          SuperscriptBox["\[Epsilon]", 
+            RowBox[{
+              FormBox["Pmu",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pnumu",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pe",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pnue",
+                "TraditionalForm"]}]]}], "+", 
+        RowBox[{"64", " ", "\[ImaginaryI]", " ", 
+          SuperscriptBox["\[Epsilon]", 
+            RowBox[{
+              FormBox["Pnue",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pe",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pmu",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pnumu",
+                "TraditionalForm"]}]]}], "-", 
+        RowBox[{"64", " ", "\[ImaginaryI]", " ", 
+          SuperscriptBox["\[Epsilon]", 
+            RowBox[{
+              FormBox["Pnumu",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pmu",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pe",
+                "TraditionalForm"], "\[NoBreak]", 
+              FormBox["Pnue",
+                "TraditionalForm"]}]]}], "+", 
+        RowBox[{"256", " ", 
+          RowBox[{
+            FormBox["Pe",
+              "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", "\[NoBreak]", 
+            
+            FormBox["Pnumu",
+              "TraditionalForm"]}], " ", 
+          RowBox[{
+            FormBox["Pmu",
+              "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", "\[NoBreak]", 
+            
+            FormBox["Pnue",
+              "TraditionalForm"]}]}]}], TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+The imaginary epsilon factors (wherever\.18 they came from) cancel \
+because abcd \[Rule] +cdab and abcd \[Rule] +dcba.\
+\>", "Text"]
+},
+FrontEndVersion->"4.0 for X",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+WindowSize->{875, 680},
+WindowMargins->{{7, Automatic}, {4, Automatic}},
+Magnification->1.5
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1717, 49, 57, 1, 39, "Input"],
+Cell[1777, 52, 369, 14, 46, "Text"],
+
+Cell[CellGroupData[{
+Cell[2171, 70, 286, 5, 62, "Input"],
+Cell[2460, 77, 252, 4, 47, "Output"],
+Cell[2715, 83, 255, 4, 47, "Output"]
+}, Open  ]],
+Cell[2985, 90, 120, 3, 85, "Input"],
+
+Cell[CellGroupData[{
+Cell[3130, 97, 240, 5, 131, "Input"],
+Cell[3373, 104, 82, 1, 40, "Output"]
+}, Open  ]],
+Cell[3470, 108, 1532, 31, 545, "Input"],
+
+Cell[CellGroupData[{
+Cell[5027, 143, 107, 2, 39, "Input"],
+Cell[5137, 147, 654, 9, 78, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5828, 161, 65, 1, 39, "Input"],
+Cell[5896, 164, 4163, 111, 78, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10096, 280, 49, 1, 39, "Input"],
+Cell[10148, 283, 2229, 59, 72, "Output"]
+}, Open  ]],
+Cell[12392, 345, 143, 3, 46, "Text"]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

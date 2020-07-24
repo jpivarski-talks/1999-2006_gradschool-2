@@ -1,0 +1,231 @@
+/****************************************************************************
+** HVHistogramsListView meta object code from reading C++ file 'HVHistogramsListView.h'
+**
+** Created: Thu Nov 13 17:54:34 2003
+**      by: The Qt MOC ($Id: qt/moc_yacc.cpp   3.2.2   edited Oct 10 03:44 $)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <qmetaobject.h>
+#include <qapplication.h>
+
+#include <private/qucomextra_p.h>
+#if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
+#error "This file was generated using the moc from 3.2.2. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+const char *HVHistogramsListView::className() const
+{
+    return "HVHistogramsListView";
+}
+
+QMetaObject *HVHistogramsListView::metaObj = 0;
+static QMetaObjectCleanUp cleanUp_HVHistogramsListView( "HVHistogramsListView", &HVHistogramsListView::staticMetaObject );
+
+#ifndef QT_NO_TRANSLATION
+QString HVHistogramsListView::tr( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "HVHistogramsListView", s, c, QApplication::DefaultCodec );
+    else
+	return QString::fromLatin1( s );
+}
+#ifndef QT_NO_TRANSLATION_UTF8
+QString HVHistogramsListView::trUtf8( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "HVHistogramsListView", s, c, QApplication::UnicodeUTF8 );
+    else
+	return QString::fromUtf8( s );
+}
+#endif // QT_NO_TRANSLATION_UTF8
+
+#endif // QT_NO_TRANSLATION
+
+QMetaObject* HVHistogramsListView::staticMetaObject()
+{
+    if ( metaObj )
+	return metaObj;
+    QMetaObject* parentObject = QListView::staticMetaObject();
+    static const QUParameter param_slot_0[] = {
+	{ 0, &static_QUType_ptr, "QListViewItem", QUParameter::In }
+    };
+    static const QUMethod slot_0 = {"slotDoubleClicked", 1, param_slot_0 };
+    static const QUParameter param_slot_1[] = {
+	{ 0, &static_QUType_ptr, "QListViewItem", QUParameter::In }
+    };
+    static const QUMethod slot_1 = {"slotReturnPressed", 1, param_slot_1 };
+    static const QMetaData slot_tbl[] = {
+	{ "slotDoubleClicked(QListViewItem*)", &slot_0, QMetaData::Public },
+	{ "slotReturnPressed(QListViewItem*)", &slot_1, QMetaData::Public }
+    };
+    static const QUParameter param_signal_0[] = {
+	{ 0, &static_QUType_ptr, "HIHist1D", QUParameter::In }
+    };
+    static const QUMethod signal_0 = {"doubleClicked", 1, param_signal_0 };
+    static const QUParameter param_signal_1[] = {
+	{ 0, &static_QUType_ptr, "HIHist1D", QUParameter::In }
+    };
+    static const QUMethod signal_1 = {"returnPressed", 1, param_signal_1 };
+    static const QUParameter param_signal_2[] = {
+	{ 0, &static_QUType_ptr, "HIHist2D", QUParameter::In }
+    };
+    static const QUMethod signal_2 = {"doubleClicked", 1, param_signal_2 };
+    static const QUParameter param_signal_3[] = {
+	{ 0, &static_QUType_ptr, "HIHist2D", QUParameter::In }
+    };
+    static const QUMethod signal_3 = {"returnPressed", 1, param_signal_3 };
+    static const QUParameter param_signal_4[] = {
+	{ 0, &static_QUType_ptr, "HIHistProf", QUParameter::In }
+    };
+    static const QUMethod signal_4 = {"doubleClicked", 1, param_signal_4 };
+    static const QUParameter param_signal_5[] = {
+	{ 0, &static_QUType_ptr, "HIHistProf", QUParameter::In }
+    };
+    static const QUMethod signal_5 = {"returnPressed", 1, param_signal_5 };
+    static const QMetaData signal_tbl[] = {
+	{ "doubleClicked(const HIHist1D*)", &signal_0, QMetaData::Public },
+	{ "returnPressed(const HIHist1D*)", &signal_1, QMetaData::Public },
+	{ "doubleClicked(const HIHist2D*)", &signal_2, QMetaData::Public },
+	{ "returnPressed(const HIHist2D*)", &signal_3, QMetaData::Public },
+	{ "doubleClicked(const HIHistProf*)", &signal_4, QMetaData::Public },
+	{ "returnPressed(const HIHistProf*)", &signal_5, QMetaData::Public }
+    };
+    metaObj = QMetaObject::new_metaobject(
+	"HVHistogramsListView", parentObject,
+	slot_tbl, 2,
+	signal_tbl, 6,
+#ifndef QT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+#endif // QT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_HVHistogramsListView.setMetaObject( metaObj );
+    return metaObj;
+}
+
+void* HVHistogramsListView::qt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "HVHistogramsListView" ) )
+	return this;
+    return QListView::qt_cast( clname );
+}
+
+#include <qobjectdefs.h>
+#include <qsignalslotimp.h>
+
+// SIGNAL doubleClicked
+void HVHistogramsListView::doubleClicked( const HIHist1D* t0 )
+{
+    if ( signalsBlocked() )
+	return;
+    QConnectionList *clist = receivers( staticMetaObject()->signalOffset() + 0 );
+    if ( !clist )
+	return;
+    QUObject o[2];
+    static_QUType_ptr.set(o+1,t0);
+    activate_signal( clist, o );
+}
+
+// SIGNAL returnPressed
+void HVHistogramsListView::returnPressed( const HIHist1D* t0 )
+{
+    if ( signalsBlocked() )
+	return;
+    QConnectionList *clist = receivers( staticMetaObject()->signalOffset() + 1 );
+    if ( !clist )
+	return;
+    QUObject o[2];
+    static_QUType_ptr.set(o+1,t0);
+    activate_signal( clist, o );
+}
+
+// SIGNAL doubleClicked
+void HVHistogramsListView::doubleClicked( const HIHist2D* t0 )
+{
+    if ( signalsBlocked() )
+	return;
+    QConnectionList *clist = receivers( staticMetaObject()->signalOffset() + 2 );
+    if ( !clist )
+	return;
+    QUObject o[2];
+    static_QUType_ptr.set(o+1,t0);
+    activate_signal( clist, o );
+}
+
+// SIGNAL returnPressed
+void HVHistogramsListView::returnPressed( const HIHist2D* t0 )
+{
+    if ( signalsBlocked() )
+	return;
+    QConnectionList *clist = receivers( staticMetaObject()->signalOffset() + 3 );
+    if ( !clist )
+	return;
+    QUObject o[2];
+    static_QUType_ptr.set(o+1,t0);
+    activate_signal( clist, o );
+}
+
+// SIGNAL doubleClicked
+void HVHistogramsListView::doubleClicked( const HIHistProf* t0 )
+{
+    if ( signalsBlocked() )
+	return;
+    QConnectionList *clist = receivers( staticMetaObject()->signalOffset() + 4 );
+    if ( !clist )
+	return;
+    QUObject o[2];
+    static_QUType_ptr.set(o+1,t0);
+    activate_signal( clist, o );
+}
+
+// SIGNAL returnPressed
+void HVHistogramsListView::returnPressed( const HIHistProf* t0 )
+{
+    if ( signalsBlocked() )
+	return;
+    QConnectionList *clist = receivers( staticMetaObject()->signalOffset() + 5 );
+    if ( !clist )
+	return;
+    QUObject o[2];
+    static_QUType_ptr.set(o+1,t0);
+    activate_signal( clist, o );
+}
+
+bool HVHistogramsListView::qt_invoke( int _id, QUObject* _o )
+{
+    switch ( _id - staticMetaObject()->slotOffset() ) {
+    case 0: slotDoubleClicked((QListViewItem*)static_QUType_ptr.get(_o+1)); break;
+    case 1: slotReturnPressed((QListViewItem*)static_QUType_ptr.get(_o+1)); break;
+    default:
+	return QListView::qt_invoke( _id, _o );
+    }
+    return TRUE;
+}
+
+bool HVHistogramsListView::qt_emit( int _id, QUObject* _o )
+{
+    switch ( _id - staticMetaObject()->signalOffset() ) {
+    case 0: doubleClicked((const HIHist1D*)static_QUType_ptr.get(_o+1)); break;
+    case 1: returnPressed((const HIHist1D*)static_QUType_ptr.get(_o+1)); break;
+    case 2: doubleClicked((const HIHist2D*)static_QUType_ptr.get(_o+1)); break;
+    case 3: returnPressed((const HIHist2D*)static_QUType_ptr.get(_o+1)); break;
+    case 4: doubleClicked((const HIHistProf*)static_QUType_ptr.get(_o+1)); break;
+    case 5: returnPressed((const HIHistProf*)static_QUType_ptr.get(_o+1)); break;
+    default:
+	return QListView::qt_emit(_id,_o);
+    }
+    return TRUE;
+}
+#ifndef QT_NO_PROPERTIES
+
+bool HVHistogramsListView::qt_property( int id, int f, QVariant* v)
+{
+    return QListView::qt_property( id, f, v);
+}
+
+bool HVHistogramsListView::qt_static_property( QObject* , int , int , QVariant* ){ return FALSE; }
+#endif // QT_NO_PROPERTIES

@@ -1,0 +1,104 @@
+Application Comis Quit
+
+
+	real function badist(invm,mn,mlsp,ep2)
+	real invm,mn,mlsp,ep2
+	real p,hold,mz
+	real gnij,hold2,en,pole
+	real ep1
+C Use GeV
+	mz=91.1882
+	ep1=1.0
+
+
+C this will be Andreas prediction for the neutralino distribution to within
+C a constant
+
+
+C We get p from griffiths Appendix B page 376
+c p=1/(2mn)*sqrt(mn^4+mlsp^4+invm^4-2(mn^2)(mlsp^2) - 2(mn^2)(invm^2)
+C                -2(mlsp^2)(invm^2)) 
+	p=mn*mn*mn*mn
+	p=p+mlsp*mlsp*mlsp*mlsp
+	p=p+invm*invm*invm*invm
+	p=p-2.0*mn*mn*invm*invm
+	p=p-2.0*mn*mn*mlsp*mlsp
+	p=p-2.0*invm*invm*mlsp*mlsp
+	if(p.lt.0.0) then
+	badist=0.0
+	return
+	endif 
+	p=sqrt(p)/(2.0*mn)
+
+	
+	pole=(invm*invm-mz*mz)
+
+	hold=mn*mn*mn*mn
+	hold=hold+mlsp*mlsp*mlsp*mlsp
+	hold=hold+invm*invm*mlsp*mlsp
+	hold=hold-2.0*invm*invm*invm*invm
+	hold=hold+mn*mn*(invm*invm-2.0*mlsp*mlsp)
+	hold=hold+6.0*ep1*ep2*invm*invm*mn*mlsp
+
+	hold=hold*invm*p
+	hold=hold/(mlsp*mlsp*pole*pole)
+
+	badist=hold
+	return 
+	end
+	
+
+
+	real function bnorm(mn,mlsp,ep2,dx)
+	real mn,mlsp,ep2,dx
+	real x
+	real xmin,xmax
+	real hold
+	real badist
+	int steps,i
+
+	xmin=0.0
+	xmax=100.0
+C	dx=0.1
+	steps=xmax/dx
+
+	hold=0.0
+	x=xmin
+	do i=1,steps
+	x=x+dx
+	hold=hold+dx*badist(x,mn,mlsp,ep2)
+	enddo
+
+	bnorm=1.0/hold
+	return
+	end
+	
+
+	real function bn2n3(invm,mlsp,dm2,dm3,con2,con3)
+	real invm,mlsp,dm2,dm3,con2,con3
+	real hold, nrm2,nrm3,f2,f3,m2,m3
+	real sign2,sign3
+	real tnorm
+
+	sign2=1.0
+	sign3=-1.0
+
+	m2=mlsp+dm2
+	m3=mlsp+dm3
+	nrm2=bnorm(m2,mlsp,sign2,0.25)
+	nrm3=bnorm(m3,mlsp,sign3,0.25)
+	f2=badist(invm,m2,mlsp,sign2)
+	f3=badist(invm,m3,mlsp,sign3)
+	tnorm=1.0/(con2+con3)
+	hold=con2*tnorm*nrm2*f2
+	hold=hold+con3*tnorm*nrm3*f3
+	
+	bn2n3=hold
+	return
+	end
+	
+	
+
+
+quit
+

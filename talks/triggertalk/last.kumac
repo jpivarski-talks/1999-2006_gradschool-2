@@ -1,0 +1,52 @@
+*** Begin of history file: Wed Oct 13 14:24:55 2004
+exec /tmp/pawtmp-1072.kumac
+exec /tmp/pawtmp-6178.kumac
+help set
+set YHTI 1.0
+exec /tmp/pawtmp-3295.kumac
+set YHTI 0.5
+zone 3 4
+set dmod 1
+set hcol 0
+h/plot 100
+set dmod 1
+set hcol 0
+h/plot 200
+set hcol 4
+h/plot 201 's'
+set bord 1
+set fais 0
+set pcli 0
+box $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+set dmod 1
+set hcol 0
+h/plot 300(-0.5:7.5)
+set hcol 4
+h/plot 301 's'
+box $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+pict/print 'drawplots.eps'
+set GSIZ $SIGMA(0.28*0.5)
+set TSIZ $SIGMA(0.28)
+set ASIZ $SIGMA(0.28*0.5)
+set CSIZ $SIGMA(0.28*0.5)
+set PSIZ $SIGMA(0.28*0.5)
+set VSIZ $SIGMA(0.28*0.5)
+set YHTI 0.5
+zone 3 4
+set dmod 1
+set hcol 0
+h/plot 100
+set dmod 1
+set hcol 0
+h/plot 200
+set hcol 4
+h/plot 201 's'
+set bord 1
+set fais 0
+set pcli 0
+box $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')
+set dmod 1
+set hcol 0
+h/plot 300(-0.5:7.5)
+set hcol 4
+*** End   of history file: Wed Oct 13 14:28:39 2004

@@ -1,0 +1,6 @@
+%\cite{Cavalli:2002vs}
+\bibitem{Cavalli:2002vs}
+D.~Cavalli {\it et al.},
+%``The Higgs working group: Summary report,''
+arXiv:hep-ph/0203056.
+%%CITATION = HEP-PH 0203056;%%

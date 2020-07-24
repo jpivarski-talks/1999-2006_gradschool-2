@@ -1,0 +1,208 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdflatex 2003.2.18)  3 FEB 2005 10:36
+**talk.tex
+(./talk.tex{/usr/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2001/11/29 v0.03i graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+(/usr/share/texmf/tex/latex/misc/rotating.sty
+Package: rotating 1997/09/26, v2.13 Rotation package
+
+(/usr/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count88
+\rot@float@box=\box26
+)
+(/usr/share/texmf/tex/latex/misc/ulem.sty
+\UL@box=\box27
+\UL@hyphenbox=\box28
+\UL@skip=\skip43
+\UL@pe=\count89
+\UL@pixel=\dimen105
+\ULC@box=\box29
+Package: ulem 1997/04/21
+\ULdepth=\dimen106
+) (./talk.aux)
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count90
+\scratchcounter=\count91
+\scratchtoks=\toks15
+\scratchdimen=\dimen107
+\scratchskip=\skip44
+\scratchmuskip=\muskip10
+\scratchbox=\box30
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen108
+\nextbox=\box31
+\nextdepth=\dimen109
+\everyline=\toks16
+\!!counta=\count92
+\!!countb=\count93
+\recursecounter=\count94
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count95
+\nofMParguments=\count96
+\everyMPtoPDFconversion=\toks17
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <24.88> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 23.
+ [1
+
+{/usr/share/texmf/dvips/config/pdftex.map}]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 57.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 57.
+ [2]
+<visen.pdf, id=20, 508.90125pt x 252.945pt>
+File: visen.pdf Graphic file (type pdf)
+ <use visen.pdf> [3 <./visen.pdf>]
+<subtraction.pdf, id=29, 508.90125pt x 252.945pt>
+File: subtraction.pdf Graphic file (type pdf)
+ <use subtraction.pdf>
+[4 <./subtraction.pdf>] <visen2.pdf, id=41, 508.90125pt x 252.945pt>
+File: visen2.pdf Graphic file (type pdf)
+
+<use visen2.pdf> [5 <./visen2.pdf>] [6]
+<visen3_revamp.pdf, id=57, 508.90125pt x 252.945pt>
+File: visen3_revamp.pdf Graphic file (type pdf)
+ <use visen3_revamp.pdf>
+[7 <./visen3_revamp.pdf>]
+<versus_multiplicity_revamp.pdf, id=68, 508.90125pt x 252.945pt>
+File: versus_multiplicity_revamp.pdf Graphic file (type pdf)
+
+<use versus_multiplicity_revamp.pdf> [8 <./versus_multiplicity_revamp.pdf>]
+<multiplicity_revamp.pdf, id=78, 508.90125pt x 252.945pt>
+File: multiplicity_revamp.pdf Graphic file (type pdf)
+
+<use multiplicity_revamp.pdf> [9 <./multiplicity_revamp.pdf>]
+<toymodel1_revamp.pdf, id=88, 508.90125pt x 252.945pt>
+File: toymodel1_revamp.pdf Graphic file (type pdf)
+
+<use toymodel1_revamp.pdf> [10 <./toymodel1_revamp.pdf>]
+<toymodel2_revamp.pdf, id=98, 508.90125pt x 252.945pt>
+File: toymodel2_revamp.pdf Graphic file (type pdf)
+
+<use toymodel2_revamp.pdf> [11 <./toymodel2_revamp.pdf>]
+<toymodel3_revamp.pdf, id=108, 508.90125pt x 252.945pt>
+File: toymodel3_revamp.pdf Graphic file (type pdf)
+
+<use toymodel3_revamp.pdf> [12 <./toymodel3_revamp.pdf>]
+<toymodel4_revamp.pdf, id=118, 508.90125pt x 252.945pt>
+File: toymodel4_revamp.pdf Graphic file (type pdf)
+
+<use toymodel4_revamp.pdf> [13 <./toymodel4_revamp.pdf>]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 344--345
+[][] 
+ []
+
+<cutbycut_2s_redux.pdf, id=129, 409.53pt x 421.575pt>
+File: cutbycut_2s_redux.pdf Graphic file (type pdf)
+
+<use cutbycut_2s_redux.pdf>
+Overfull \hbox (10.34738pt too wide) in paragraph at lines 325--353
+[]$[]$ [] [] $[]$ 
+ []
+
+[14 <./cutbycut_2s_redux.pdf>] <plotme1.pdf, id=139, 216.81pt x 252.945pt>
+File: plotme1.pdf Graphic file (type pdf)
+
+<use plotme1.pdf> <plotme2.pdf, id=140, 216.81pt x 252.945pt>
+File: plotme2.pdf Graphic file (type pdf)
+
+<use plotme2.pdf> <plotme3.pdf, id=141, 216.81pt x 252.945pt>
+File: plotme3.pdf Graphic file (type pdf)
+
+<use plotme3.pdf> [15 <./plotme1.pdf> <./plotme2.pdf> <./plotme3.pdf>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 437.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 437--438
+[][] 
+ []
+
+[16] (./talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 1146 strings out of 50453
+ 14287 string characters out of 688420
+ 60998 words of memory out of 1500001
+ 4166 multiletter control sequences out of 10000+25000
+ 9137 words of font info for 33 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 25i,9n,21p,199b,423s stack positions out of 3000i,500n,3000p,50000b,5000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmti12.pfb></usr/sh
+are/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/blues
+ky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share
+/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/
+cm/cmtt12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/t
+exmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on talk.pdf (16 pages, 291192 bytes).

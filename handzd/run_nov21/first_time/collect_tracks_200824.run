@@ -1,0 +1,15 @@
+#$ -l calibration
+#$ -o /cdat/tem/mccann/collect_tracks_200824.log
+#$ -S /bin/bash
+#$ -j y
+
+cd /home/mccann/handzd/run
+. /nfs/cleo3/scripts/cleo3defs
+c3rel Oct15_03_MC
+
+export DIRTY_WHICH=b
+export DIRTY_STRETCH=500
+
+export USER_RUN=200824
+
+suez -f collect_tracks.tcl

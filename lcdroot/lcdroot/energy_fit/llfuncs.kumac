@@ -1,0 +1,511 @@
+Application Comis Quit
+
+C  -------------------- Zero Common Blocks ----------------------
+	subroutine zero_common
+	common /llfuncs/lldata,llndat
+	real lldata(20000,2)
+	int llndat
+	int i
+
+	llndat=0	
+
+	do i=1,20000
+	lldata(i,1)=0.0
+	lldata(i,2)=0.0
+	enddo
+	write(*,*) llndat
+	return
+	end
+	
+C  -------------------- Zero Common Blocks: DONE ----------------------
+
+
+
+
+C ------------------------- Zero Dist Common Block --------------------
+	subroutine zero_ecom
+	implicit none
+	common /ecom/endist,enimax
+	real endist(150,2)
+	int enimax
+	int i
+
+	write(*,*) enimax
+	enimax=0
+	write(*,*) enimax
+
+	do i=1,150
+	endist(i,1)=0.0
+	endist(i,2)=0.0
+	enddo
+	return
+	end
+
+C ------------------------- Zero Dist Common Block: Done ------------------
+
+
+C ----------------------- Fill the edistribution function -----------------
+	subroutine fill_edfunc(mlsp)
+	implicit none
+	common /ecom/endist,enimax
+	real endist(150,2)
+	real mlsp
+	int enimax
+	real bdilepedist
+	real emin,emax,de,ener
+	int i,j,k,imax
+
+C Zero the common block before you fill it
+	call zero_ecom
+	write(*,*) 'Filling Energy Distribution function '
+	write(*,*) 'Mlsp is ',mlsp
+	emin=20.0
+	ener=emin
+	de=1.0
+	enimax=150
+	do i=1,enimax
+	ener=ener+de
+	endist(i,1)=ener
+	endist(i,2)=bdilepedist(ener,mlsp)
+	enddo	
+	
+	return
+	end
+C ----------------------- Fill the edist func: Done -----------------------
+
+
+C ------------------------ Get the Energy Distribution Function     --------
+
+	real function bendist(ener)
+	implicit none
+	common /ecom/endist,enimax
+	real endist(150,2)
+	int enimax
+	real ener
+	real m,x1,y1,x2,y2,eff
+	real soft
+	int i,j,k
+
+	x1=0.0
+	y1=0.0
+c	soft=0.0003
+	soft=1.0e-20
+
+	bendist=0.0
+	do i=1,enimax
+	x2=endist(i,1)
+	y2=endist(i,2)
+	if(ener.gt.x1.and.ener.lt.(x2*1.001)) then
+	m=(y2-y1)/(x2-x1)
+	bendist=y1+m*(ener-x1)+soft
+
+	if ener.gt.97 then
+	ener = 97
+	endif
+	eff = 0.34717 - 0.28155E-01*ener
+	eff = eff + 0.66701E-03*ener**2 - 0.35965E-05*ener**3
+	bendist = bendist * eff
+
+	return
+	endif
+	x1=x2
+	y1=y2
+	enddo
+
+
+	return
+	end
+
+	real function bendiss(ener)
+	implicit none
+	common /ecom/endist,enimax
+	real endist(150,2)
+	int enimax
+	real ener
+	real m,x1,y1,x2,y2,eff
+	real soft
+	int i,j,k
+
+	x1=0.0
+	y1=0.0
+c	soft=0.0003
+	soft=1.0e-20
+
+	bendiss=0.0
+	do i=1,enimax
+	x2=endist(i,1)
+	y2=endist(i,2)
+	if(ener.gt.x1.and.ener.lt.(x2*1.001)) then
+	m=(y2-y1)/(x2-x1)
+	bendiss=y1+m*(ener-x1)+soft
+
+	return
+	endif
+	x1=x2
+	y1=y2
+	enddo
+
+
+	return
+	end
+C ------------------------ Get the Energy Distribution Function: DONE --------
+
+C -------------- Normailze the Energy Distribution Funciton ------------
+
+	real function bnendist(emax,emin,de)
+	implicit none
+	real emax,emin,de
+	real e
+	real bendist
+	real hold
+	int i, steps
+	
+	steps=(emax-emin)/de
+	e=emin
+	hold=0.0
+	do i=1, steps
+	e=emin+de*(i-0.5)
+	hold=hold+bendist(e)*de
+	enddo
+
+	write(*,*) 'integral is ',hold
+	if(hold.gt.0.0) then
+	hold=1.0/hold
+	else
+	write(*,*) 'WARNING WARNING Norm is infinite'
+	endif
+	
+	write(*,*) 'norm is ',hold
+	bnendist=hold
+	return
+	end
+
+
+C -------------- Normailze the Energy Distribution Funciton: Done ------------
+
+
+
+C ----------------    Calculate Edist LogLike for an Mlsp     ----------------
+
+	real function bedllike(mlsp)
+	common /llfuncs/lldata,llndat
+	real lldata(20000,2)
+	int llndat
+	real mlsp
+	real bendist
+	real bnendist
+	real x,s,soft,prb,hold,norm
+	
+	int i
+
+C Fill the table with the energy distribution function at this energy
+C so we don't have to calculate it over and over again for each point
+C Note, this only saves time if we have less than 75 data points
+	call fill_edfunc(mlsp)
+	norm=bnendist(180.0,10.0,0.5)
+	hold=0.0
+	bedllike=0.0
+	if(llndat.lt.2) then
+	bedllike=0.0
+	return
+	endif
+	soft=1.0e-20
+	do i=1,llndat
+	x=lldata(i,1)
+	s=lldata(i,2)
+	prb=norm*bendist(x)
+	if(prb.lt.soft) then
+	prb=soft
+	endif
+	hold=hold-log(prb)*s
+	enddo
+
+	bedllike=hold
+	return
+	end
+
+
+C ----------------  Calculate Edist LogLike for an Mlsp:Done  ----------------
+
+
+
+
+
+
+
+
+C  -------------------- Fill Common Blocks ----------------------
+	real function bfillcom(x,s)
+	real x,s
+	common /llfuncs/lldata,llndat
+	real lldata(20000,2)
+	int llndat
+	int i
+
+
+	if(llndat.lt.20000) then
+	llndat=llndat+1
+	i=llndat
+	lldata(i,1)=x
+	lldata(i,2)=s
+	endif
+	
+	write(*,*) llndat
+	bfillcom=x
+	return
+	end
+
+
+C  -------------------- Fill Common Blocks ----------------------
+C  up to 20,000 events with scale factors.
+
+
+
+C  -------------------- Calc nLogLike ----------------------
+
+	real function bllike(dm20,dm30)
+	real dm20,dm30
+	common /llfuncs/lldata,llndat
+	real lldata(20000,2)
+	int llndat
+	real badist
+	real bnorm
+	real f20,f30,fall
+	real nrm20,nrm30
+	real mlsp,m20,m30
+	real sig20,sig30
+
+	int i
+	real x,s,hold
+	real soft,nrm
+
+	sig20=-1.0
+	sig30=-1.0
+
+	if(llndat.lt.2) then
+	bllike=0.0
+	return
+	endif
+	mlsp=100.0
+	m20=mlsp+dm20
+	m30=mlsp+dm30
+
+      	nrm20=bnorm(mlsp+51.72,mlsp,0.95,0.05)
+
+	hold=0.0
+	do i=1,llndat
+	x=lldata(i,1)
+	s=lldata(i,2)
+
+	f20=badist(x,mlsp+51.72,mlsp,0.95)
+	soft=0.1e-20
+	nrm=1.0/(1.0+soft*10.0)
+	fall=nrm*nrm20*f20
+	if(x.gt.51.72) then
+	fall=soft
+	endif
+	hold=hold-log(fall)*s
+	enddo
+
+	bllike=hold
+	return
+	end
+
+C  -------------------- Calc nLogLike ----------------------
+
+
+
+
+C  -------------------- Calc nLogLike 3param----------------------
+
+	real function bllike3p(mlsp,dm20,dm30)
+	real mlsp,dm20,dm30
+	common /llfuncs/lldata,llndat
+	real lldata(20000,2)
+	int llndat
+	real badist
+	real bnorm
+	real f20,f30,fall
+	real nrm20,nrm30
+	real m20,m30
+
+	int i
+	real x,s,hold
+	real soft,nrm
+
+
+
+	if(llndat.lt.2) then
+	bllike=0.0
+	return
+	endif
+C	mlsp=100.0
+	m20=mlsp+dm20
+	m30=mlsp+dm30
+
+      	nrm20=bnorm(mlsp+51.72,mlsp,0.95,0.05)
+
+	hold=0.0
+	do i=1,llndat
+	x=lldata(i,1)
+	s=lldata(i,2)
+
+	f20=badist(x,mlsp+51.72,mlsp,0.95)
+	soft=0.1e-20
+	nrm=1.0/(1.0+soft*10.0)
+	fall=nrm*nrm20*f20
+	if(x.gt.51.72) then
+	fall=soft
+	endif
+	hold=hold-log(fall)*s
+	enddo
+
+	bllike3p=hold
+	return
+	end
+
+C  -------------------- Calc nLogLike 3param----------------------
+
+
+
+
+C  -------------------- write nLogLike ----------------------
+
+
+	subroutine wllike
+	real bllike
+	real dm2mn,dm2mx,ddm2,dm2
+	real dm3mn,dm3mx,ddm3,dm3,hold
+	int i,j,imax,jmax
+
+	dm2mn=55.0
+	dm2mx=70.0
+	ddm2=0.5
+	dm3mn=65.0
+	dm3mx=85.0
+	ddm3=0.5
+
+	write(*,*) 'I am in wllike'
+	imax=(dm2mx-dm2mn)/ddm2
+	jmax=(dm3mx-dm3mn)/ddm3
+	
+	write(*,*) 'imax is ',imax
+	write(*,*) 'jmax is ',jmax
+
+	open(UNIT=1,FILE='llfile.txt')
+
+	do i=0,imax
+	do j=0,jmax
+	dm2=dm2mn+i*ddm2
+	dm3=dm3mn+j*ddm3
+	hold=bllike(dm2,dm3)
+	write(*,*) dm2,dm3,hold
+	write(1,*) dm2,dm3,hold
+	enddo
+	enddo	
+	
+	close(1)
+	return
+	end
+
+C  -------------------- write nLogLike ----------------------
+
+
+
+
+
+C  -------------------- write nLogLike 3 param ----------------------
+
+
+	subroutine wllike3p
+	real bllike3p
+	real dm2mn,dm2mx,ddm2,dm2
+	real dm3mn,dm3mx,ddm3,dm3,hold
+	real mlspmn,mlspmx,dmlsp,mlsp
+	int i,j,imax,jmax,k,kmax
+
+	dm2mn=56.0
+	dm2mx=62.0
+	ddm2=0.5
+	dm3mn=79.0
+	dm3mx=84.0
+	ddm3=0.5
+
+	mlspmn=25.0
+	mlspmx=180.0
+	dmlsp=5.0
+
+	write(*,*) 'I am in wllike'
+	imax=(dm2mx-dm2mn)/ddm2
+	jmax=(dm3mx-dm3mn)/ddm3
+	kmax=(mlspmx-mlspmn)/dmlsp	
+
+	write(*,*) 'imax is ',imax
+	write(*,*) 'jmax is ',jmax
+	write(*,*) 'kmax is ',kmax
+
+	open(UNIT=1,FILE='llfile3p.txt')
+
+	do k=0,kmax
+	do i=0,imax
+	do j=0,jmax
+	dm2=dm2mn+i*ddm2
+	dm3=dm3mn+j*ddm3
+	mlsp=mlspmn+k*dmlsp
+	hold=bllike3p(mlsp,dm2,dm3)
+	write(*,*) mlsp,dm2,dm3,hold
+	write(1,*) mlsp,dm2,dm3,hold
+	enddo
+	enddo	
+	enddo
+
+	close(1)
+	return
+	end
+
+C  -------------------- write nLogLike ----------------------
+
+
+
+C  -------------------- write E nLogLike ----------------------
+
+
+	subroutine wellike
+	implicit none
+	real bedllike
+	real mlspx,mlspn,mlsp,dmlsp
+	real hold
+	int i,imax
+
+	mlspx=104.76+1.0
+	mlspn=104.76-1.0
+	dmlsp=0.2
+
+	write(*,*) 'I am in wellike'
+	imax=(mlspx-mlspn)/dmlsp
+	write(*,*) 'imax is ',imax
+
+
+	open(UNIT=1,FILE='ellfile.txt')
+
+	do i=0,imax
+	mlsp=mlspn+i*dmlsp
+	hold=bedllike(mlsp)
+	write(*,*) mlsp,hold
+	write(1,*) mlsp,hold
+	enddo	
+	
+	close(1)
+	return
+	end
+
+C  -------------------- write E nLogLike: Done  ----------------------
+
+
+
+
+
+
+quit
+
+

@@ -1,0 +1,592 @@
+%!PS-Adobe-1.0
+/$a2psdict 100 dict def
+$a2psdict begin
+% Initialize page description variables.
+/inch {72 mul} bind def
+/landscape true def
+/twinpage true def
+/sheetheight 11 inch def
+/sheetwidth 8.5 inch def
+/margin 1.2 inch def
+/noborder false def
+/noheader false def
+/headersize 0.22 inch def
+/bodyfontsize 6.8 def
+/lines 73 def
+/columns 85 def
+/date (Mar 22 2004 08:09:33) def
+%!  PostScript Source Code
+%
+%  File: imag:/users/local/a2ps/header.ps
+%  Created: Tue Nov 29 12:14:02 1988 by miguel@imag (Miguel Santana)
+%  Version: 2.0
+%  Description: PostScript prolog for a2ps ascii to PostScript program.
+% 
+%  Edit History:
+%  - Original version by evan@csli (Evan Kirshenbaum).
+%  - Modified by miguel@imag to:
+%    1) Correct an overflow bug when printing page number 10 (operator
+%	cvs).
+%    2) Define two other variables (sheetwidth, sheetheight) describing
+%	the physical page (by default A4 format).
+%    3) Minor changes (reorganization, comments, etc).
+%  - Modified by tullemans@apolloway.prl.philips.nl
+%    1) Correct stack overflows with regard to operators cvs and copy.
+%       The resulting substrings where in some cases not popped off 
+%       the stack, what can result in a stack overflow.
+%    2) Replaced copypage and erasepage by showpage. Page througput
+%       degrades severely (see red book page 140) on our ps-printer
+%       after printing sheet 16 (i.e. page 8) of a file which was 
+%       actually bigger. For this purpose the definitions of startdoc
+%       and startpage are changed.
+%  - Modified by Tim Clark <T.Clark@uk.ac.warwick> to:
+%    1) Print one page per sheet (portrait) as an option.
+%    2) Reduce size of file name heading, if it's too big.
+%    3) Save and restore PostScript state at begining/end. It now uses
+%	conventional %%Page %%Trailer markers.
+%    4) Print one wide page per sheet in landscape mode as an option.
+%  - Modified by miguel@imag.fr to
+%    1) Add new option to print n copies of a file.
+%    2) Add new option to suppress heading printing.
+%    3) Add new option to suppress page surrounding border printing.
+%    4) Add new option to change font size. Number of lines and columns
+%	are now automatically adjusted, depending on font size and
+%	printing mode used.
+%    5) Minor changes (best layout, usage message, etc).
+%
+
+% Copyright (c) 1988, Miguel Santana, miguel@imag.imag.fr
+%
+% Permission is granted to copy and distribute this file in modified
+% or unmodified form, for noncommercial use, provided (a) this copyright
+% notice is preserved, (b) no attempt is made to restrict redistribution
+% of this file, and (c) this file is not distributed as part of any
+% collection whose redistribution is restricted by a compilation copyright.
+%
+
+
+% General macros.
+/xdef {exch def} bind def
+/getfont {exch findfont exch scalefont} bind def
+
+% Page description variables and inch function are defined by a2ps program.
+
+% Character size for differents fonts.
+   landscape
+   { /filenamefontsize 12 def }
+   { /filenamefontsize 16 def }
+ifelse
+/datefontsize filenamefontsize 0.8 mul def
+/headermargin filenamefontsize 0.25 mul def
+/bodymargin bodyfontsize 0.7 mul def
+
+% Font assignment to differents kinds of "objects"
+/filenamefontname /Helvetica-Bold def
+/stdfilenamefont filenamefontname filenamefontsize getfont def
+/datefont /Helvetica datefontsize getfont def
+/bodyfont /Courier bodyfontsize getfont def
+
+% Logical page attributs (a half of a real page or sheet).
+/pagewidth
+   bodyfont setfont (0) stringwidth pop columns mul bodymargin dup add add
+   def
+/pageheight
+   bodyfontsize lines mul bodymargin dup add add headersize add
+   def
+
+% Coordinates for upper corner of a logical page and for sheet number.
+% Coordinates depend on format mode used.
+% In twinpage mode, coordinate x of upper corner is not the same for left
+% and right pages: upperx is an array of two elements, indexed by sheetside.
+/rightmargin margin 3 div def
+/leftmargin margin 2 mul 3 div def
+/topmargin margin twinpage {3} {2} ifelse div def
+landscape
+{  % Landscape format
+   /uppery rightmargin pageheight add bodymargin add def
+   /sheetnumbery sheetwidth leftmargin pageheight add datefontsize add sub def
+   twinpage
+   {  % Two logical pages
+      /upperx [ topmargin			% upperx for left page
+		dup 2 mul pagewidth add		% upperx for right page
+	      ] def
+      /sheetnumberx sheetheight topmargin sub def
+   }
+   {  /upperx [ topmargin dup ] def
+      /sheetnumberx sheetheight topmargin sub datefontsize sub def
+   }
+   ifelse
+}
+{  % Portrait format
+   /uppery topmargin pageheight add def
+   /upperx [ leftmargin dup ] def
+   /sheetnumberx sheetwidth rightmargin sub datefontsize sub def
+   /sheetnumbery
+	 sheetheight 
+	 topmargin pageheight add datefontsize add headermargin add
+      sub
+      def
+
+}
+ifelse
+
+% Strings used to make easy printing numbers
+/pnum 12 string def
+/empty 12 string def
+
+% Other initializations.
+/datewidth date stringwidth pop def
+/filenameroom
+         pagewidth
+	 filenamefontsize 4 mul datewidth add (Page 999) stringwidth pop add
+      sub
+   def
+
+
+% Function startdoc: initializes printer and global variables.
+/startdoc
+    { /sheetside 0 def			% sheet side that contains current page
+      /sheet 1 def			% sheet number
+   } bind def
+
+% Function newfile: init file name and reset page number for each new file.
+/newfile
+    { cleanup
+      /filename xdef
+      /filenamewidth filename stringwidth pop def
+      /filenamefont
+	 filenamewidth filenameroom gt
+	 {
+	       filenamefontname
+	       filenamefontsize filenameroom mul filenamewidth div
+	    getfont
+	 }
+	 {  stdfilenamefont }
+	 ifelse
+	 def
+      /pagenum 1 def
+    } bind def
+
+% Function printpage: Print a physical page.
+/printpage
+    { /sheetside 0 def
+      twinpage
+      {  noborder not
+	    { sheetnumber }
+	 if
+      }
+      {  noheader noborder not and
+	    { sheetnumber }
+	 if
+      }
+      ifelse
+      showpage 
+%      pagesave restore
+      /sheet sheet 1 add def
+    } bind def
+
+% Function cleanup: terminates printing, flushing last page if necessary.
+/cleanup
+    { twinpage sheetside 1 eq and
+         { printpage }
+      if
+    } bind def
+
+%
+% Function startpage: prints page header and page border and initializes
+% printing of the file lines.
+/startpage
+    { sheetside 0 eq
+	{ % /pagesave save def
+	  landscape
+	    { sheetwidth 0 inch translate	% new coordinates system origin
+	      90 rotate				% landscape format
+	    } if
+	} if
+      noborder not { printborder } if
+      noheader not { printheader } if
+	 upperx sheetside get  bodymargin  add
+	    uppery
+	    bodymargin bodyfontsize add  noheader {0} {headersize} ifelse  add
+	 sub
+      moveto
+      bodyfont setfont
+    } bind def
+
+% Function printheader: prints page header.
+/printheader
+    { upperx sheetside get  uppery headersize sub 1 add  moveto
+      datefont setfont
+      gsave
+        datefontsize headermargin rmoveto
+	date show					% date/hour
+      grestore
+      gsave
+	pagenum pnum cvs pop
+	   pagewidth (Page 999) stringwidth pop sub
+	   headermargin
+	rmoveto
+        (Page ) show pnum show				% page number
+      grestore
+      empty pnum copy pop
+      gsave
+        filenamefont setfont
+	      filenameroom filename stringwidth pop sub 2 div datewidth add
+	      bodymargin 2 mul 
+	   add 
+	   headermargin
+	rmoveto
+        filename show						% file name
+      grestore
+    } bind def
+
+% Function printborder: prints border page.
+/printborder 
+    { upperx sheetside get uppery moveto
+      gsave					% print the four sides
+        pagewidth 0 rlineto			% of the square
+        0 pageheight neg rlineto
+        pagewidth neg 0 rlineto
+        closepath stroke
+      grestore
+      noheader not
+         { 0 headersize neg rmoveto pagewidth 0 rlineto stroke }
+      if
+    } bind def
+
+%
+% Function endpage: adds a sheet number to the page (footnote) and prints
+% the formatted page (physical impression). Activated at the end of each
+% source page (lines reached or FF character).
+/endpage
+   { /pagenum pagenum 1 add def
+     twinpage  sheetside 0 eq  and
+        { /sheetside 1 def }
+        { printpage }
+     ifelse
+   } bind def
+
+% Function sheetnumber: prints the sheet number.
+/sheetnumber
+    { sheetnumberx sheetnumbery moveto
+      datefont setfont
+      sheet pnum cvs
+	 dup stringwidth pop (0) stringwidth pop sub neg 0 rmoveto show
+      empty pnum copy pop
+    } bind def
+
+% Function s: print a source line
+/s  { gsave
+        show
+      grestore
+      0 bodyfontsize neg rmoveto
+    } bind def
+%%EndProlog
+
+/docsave save def
+startdoc
+(letter_to_mike.txt) newfile
+/sheet 1 def
+%%Page: 1 1
+startpage
+(1     From mccann@watson.org Mon Mar 22 08:08:31 2004) s
+(2     Date: Thu, 6 Dec 2001 07:33:13 -0500) s
+(3     From: "Jim Pivarski \(McCann\)" <mccann@watson.org>) s
+(4     To: Mike Schuresko <mds@watson.org>) s
+(5     Subject: bell's theorem) s
+(6     ) s
+(7     On Tue, Dec 04, 2001 at 04:12:11PM -0500, Mike Schuresko wrote:) s
+(8     > On Tue, 4 Dec 2001, Jim Pivarski \(McCann\) wrote:) s
+(9     > ) s
+(10    > > In 196X, Bell found a quantity that could distinguish between the two) s
+(11    > > interpretations in a stremlined version of the experiment Einstein,) s
+(12    > > Podolsky and Rosen proposed. \(I can look it up for you if you want) s
+(13    > > something more specific than "a quantity"\).) s
+(14    > ) s
+(15    > please do.) s
+(16    ) s
+(17    Here's the simplest scenario:) s
+(18    ) s
+(19    The spin-0 state decays into two electrons \(spin-1/2 particles\).) s
+(20    Spin-1/2 particles, when measured, will only ever be found in a +1/2) s
+(21    or a -1/2 state, never spin 0. To conserve angular momentum, if one of) s
+(22    them is found in a +1/2 state, the other MUST be found in a -1/2) s
+(23    state, if the measurement is done along the same axis.) s
+(24    ) s
+(25        z) s
+(26        |_ x) s
+(27    ) s
+(28        spin-measuring   /________  decay of    ________\\  spin-measuring) s
+(29           device A      \\         spin-0 state         /     device B) s
+(30    ) s
+(31    Experimentally, this is done with photons \(spin-1 particles\). The same) s
+(32    logic applies \(a photon will never be found with a spin of zero along) s
+(33    any axis\) but the derivation is more involved. Aspect and Grangier in) s
+(34    the 70's did exactly the above with photon pairs from a decaying) s
+(35    nucleus.) s
+(36    ) s
+(37    The two detectors are placed far enough apart that the time to measure) s
+(38    and record a spin measurement is shorter than the time for a signal at) s
+(39    speed c to propogate from one detector to the other.) s
+(40    ) s
+(41    Device A will be measuring spins along the z axis \(perpendicular to) s
+(42    the beamline\). Device B will be measuring spin along an axis which is) s
+(43    perpendicular to the beamline but an angle theta from the z axis. When) s
+(44    theta is zero, device B will always measure a spin opposite to the) s
+(45    spin measured by device A \(exactly anti-correlated\), by conservation) s
+(46    of angular momentum. When theta is pi/2, device B will measure a spin) s
+(47    which is completely uncorrelated with the measurement of device A. For) s
+(48    intermediate values of theta, the value will be partially correlated.) s
+(49    Here is the explaination and calculation given by quantum mechanics:) s
+(50    ) s
+(51    \(I decided to include all the background to really understand the) s
+(52    calculation... I don't remember there being any vector space) s
+(53    formulation of QM in physics 3.\)) s
+(54    ) s
+(55    The state of a particle is given by a normalized vector in a vector) s
+(56    space. For spin-1/2 particles \(as it is for spin-1 particles\), this) s
+(57    vector space \(or the relevant part of it\) is two-dimensional. If we) s
+(58    choose a basis in this vector space to be "spin measurements in the) s
+(59    z-direction", then one basis vector may be associated with "spin =) s
+(60    +1/2" and the other with "spin = -1/2". An unobserved particle may) s
+(61    take a state represented by any normalized vector in this space, but) s
+(62    when the particle is observed, it is then projected onto the "spin) s
+(63    measurements in teh z-direction" basis vectors. The component on the) s
+(64    "spin = +1/2" vector is interpreted as the sqrt of the probability of) s
+(65    finding the particle in the +1/2 state. Alternatively, we can say) s
+(66    that the probability of getting a measurement corresponding to state x) s
+(67    from a particle which was originally in a state y is the \(square of) s
+(68    the\) inner product                                2) s
+(69                       P\( measurement x \) == \( x . y \)) s
+(70    ) s
+(71    The two particles in our experimental apparatus are in an entangled) s
+(72    state--- neither particle can be expressed in terms of a state alone,) s
+(73    the system of both particles together are expressed as the following) s
+endpage
+startpage
+(74    state) s
+(75    ) s
+(76       y = \( "A = +1/2, B = -1/2"  -  "A = -1/2, B = +1/2" \) / sqrt\(2\)) s
+(77    ) s
+(78    where the vector space is a four-dimensional space. This space is) s
+(79    spanned by the following set of orthonormal basis vectors:) s
+(80      "A = +1/2, B = +1/2"    A measures spin +1/2 zhat, B has +1/2 zhat) s
+(81      "A = +1/2, B = -1/2"    A measures spin +1/2 zhat, B has -1/2 zhat) s
+(82      "A = -1/2, B = +1/2"    A measures spin -1/2 zhat, B has +1/2 zhat) s
+(83      "A = -1/2, B = -1/2"    A measures spin -1/2 zhat, B has -1/2 zhat) s
+(84    ) s
+(85    Notice that if we take the inner products) s
+(86      \( "A = +1/2, B = +1/2"  .  y \)^2  ==  0) s
+(87      \( "A = +1/2, B = -1/2"  .  y \)^2  ==  1/2) s
+(88      \( "A = -1/2, B = +1/2"  .  y \)^2  ==  1/2) s
+(89      \( "A = -1/2, B = -1/2"  .  y \)^2  ==  0) s
+(90    because you'll never see A and B with the same spin \(theta=0\), and) s
+(91    you'll see either of the two antiparallel combinations with equal) s
+(92    probability. The axiom of probability that) s
+(93                    sum of all disjoint probabilities == 1) s
+(94    is equivalent to the completeness relation of basis vectors that span) s
+(95    a space.) s
+(96    ) s
+(97    Now, when you do a spin measurement of a particle NOT along the) s
+(98    z-axis, that measurement picks a different basis set. It can be) s
+(99    derived that the unitary transformation from the "spin measurement in) s
+(100   the z-direction" basis to the "spin measurement at an angle theta from) s
+(101   z" basis is) s
+(102   ) s
+(103                    /  cos\( theta / 2 \)    -sin\( theta / 2 \)  \\) s
+(104            R  ==  |                                           |) s
+(105                    \\  sin\( theta / 2 \)     cos\( theta / 2 \)  /) s
+(106   ) s
+(107   In our four-dimensional abstract spin space, the rotation is only) s
+(108   applied to the B measurement part. \(R4 = identity $\\otimes$ R\)) s
+(109   ) s
+(110                           /  cos  -sin    0     0   \\) s
+(111                    R  == |   sin   cos    0     0    |) s
+(112                     4    |    0     0    cos  -sin   |) s
+(113                           \\   0     0    sin   cos  /) s
+(114   ) s
+(115   Our entangled state y is expressed \(above\) in terms of the theta=0) s
+(116   basis. The measurement is going to pick out basis vectors in a) s
+(117   non-zero theta basis, so we need to inner product y onto transformed) s
+(118   basis vectors                                       2) s
+(119                   P\( measurement x \) == \( x . R4 . y \)) s
+(120   ) s
+(121   Here are the results:) s
+(122             P\( A = +1/2, B = +1/2 \) == sin^2\( theta / 2 \) / 2) s
+(123             P\( A = +1/2, B = -1/2 \) == cos^2\( theta / 2 \) / 2) s
+(124             P\( A = -1/2, B = +1/2 \) == cos^2\( theta / 2 \) / 2) s
+(125             P\( A = -1/2, B = -1/2 \) == sin^2\( theta / 2 \) / 2) s
+(126   These add up to one and quantify a correlation that continuously) s
+(127   varies with theta from perfect anticorrelation at theta=0 to being) s
+(128   perfectly uncorrelated at theta=pi/2.) s
+(129   ) s
+(130   This is the quantum mechanical prediction. Notice that I haven't) s
+(131   assumed that any more fundumental information exists about the state) s
+(132   of a particle other than a recipe for calculating the probabilities) s
+(133   for a set of results, given a measurement technique. We can think of) s
+(134   the quantum mechanical description of the state as supplying a) s
+(135   function from experimental setup \(angle theta of detector B\) to a set) s
+(136   of disjoint < result, probability > pairs. \(The vector y and a choice) s
+(137   of orthonormal basis can be mapped to a set of components-squared of) s
+(138   y.\)) s
+(139   ) s
+(140   It would seem that this is not enough: for a particle in some given) s
+(141   state, there must exist a function from experimental setup to the) s
+(142   result of the measurement, even if we don't know what that function) s
+(143   is. This is what you described, thinking that there was conflict) s
+(144   between QM and locality, in terms of cryptography theory: the particle) s
+(145   state is effectively a pseudorandom generator, a mapping from) s
+(146   measurement strategy to the result of that measurement which is too) s
+endpage
+%%Page: 2 2
+startpage
+(147   complicated for us to compute and therefore predict. \(If I'm putting) s
+(148   words into your mouth, I'm sure you'll stop me.\)) s
+(149   ) s
+(150   Bell's inequality comes from the following argument. Suppose that) s
+(151   there are three experimental setups under consideration:) s
+(152     1. detector A is aligned along z, B is angled at theta = 10 degrees) s
+(153     2. detector A is aligned along z, B is angled at theta = 20 degrees) s
+(154     3. detector A is angled at theta = 10 degrees, B is at 20 degrees) s
+(155   ) s
+(156   The result of any measurement will only ever be +/- 1/2, so there are) s
+(157   eight relevant states \(A at 10 deg == - B at 10 deg\).) s
+(158   ) s
+(159     population   A at 0 deg   A at 10 deg   B at 10 deg   B at 20 deg) s
+(160         N1         + 1/2        - 1/2         + 1/2         + 1/2) s
+(161         N2         + 1/2        - 1/2         + 1/2         - 1/2) s
+(162         N3         + 1/2        + 1/2         - 1/2         + 1/2) s
+(163         N4         + 1/2        + 1/2         - 1/2         - 1/2) s
+(164         N5         - 1/2        - 1/2         + 1/2         + 1/2) s
+(165         N6         - 1/2        - 1/2         + 1/2         - 1/2) s
+(166         N7         - 1/2        + 1/2         - 1/2         + 1/2) s
+(167         N8         - 1/2        + 1/2         - 1/2         - 1/2) s
+(168   ) s
+(169   Even in this deterministic theory, it is not necessarily possible to) s
+(170   identify which of the eight states the system was in by measurement) s
+(171   because you can only measure B at 10 degrees or at 20 degrees, not) s
+(172   both. The measurement process could, in principle, change the state so) s
+(173   that a subsequent 60-degree measurement would not be valid to) s
+(174   distiguish state 7 from state 8. \(This is somethingthing that people) s
+(175   erroneously think is novel about QM.\)) s
+(176   ) s
+(177   This situation is different from quantum mechanics because of the) s
+(178   assertion that each of these lines represents a distinct state of the) s
+(179   system. Even if we can't necessarily measure it with instruments, in) s
+(180   the deterministic theory we can consider a state that would read +1/2) s
+(181   if we turned B 10 degrees and would read -1/2 if we turned B 20) s
+(182   degrees. This is impossible in \(modern\) QM since the "B is 10 degrees") s
+(183   basis vectors and the "B is 20 degrees" basis vectors have non-zero,) s
+(184   non-one projections onto each other, so even if you knew that B@10 deg) s
+(185   would yield +1/2, you could only make a probabilistic statement about) s
+(186   what you would measure for B@20 degrees.) s
+(187   ) s
+(188   For some large dataset \(N == N1+N2+N3+N4+N5+N6+N7+N8 events\), the) s
+(189   details of the deterministic theory may predict populations Ni for) s
+(190   each of the possible states. Whatever these Ni are, they are certainly) s
+(191   non-negative. So we can say) s
+(192   ) s
+(193            N1 + N3       <=     N1 + N3 + N2 + N7) s
+(194   ) s
+(195          \( N1 + N3 \)     <=      \( N1 + N2 \)    +      \( N3 + N7 \)) s
+(196   ) s
+(197          \( N1 + N3 \)     <=      \( N1 + N2 \)    +      \( N3 + N7 \)) s
+(198         -------------           -----------------------------------) s
+(199               N                                 N) s
+(200   ) s
+(201      P\( A@0 +, B@20 + \)  <=  P\( A@0 +, B@10 + \) + P\( A@10 +, B@20 + \)) s
+(202   ) s
+(203   This is a special case of Bell's inequality. It can be generalized to) s
+(204   arbitrary angles easily, and for arbitrary-spin particles with) s
+(205   difficulty. ) s
+(206   ) s
+(207   As a reminder, the probability for getting +1/2 in both detectors) s
+(208   according to QM was) s
+(209   ) s
+(210             P\( A = +1/2, B = +1/2 \) == sin^2\( theta / 2 \) / 2) s
+(211   ) s
+(212   where theta is the angle between the measurement axes of the two) s
+(213   detectors.) s
+(214   ) s
+(215      P\( A@0  +, B@20 + \) == sin^2\( 20 / 2 \) / 2 == 0.0151) s
+(216      P\( A@0  +, B@10 + \) == sin^2\( 10 / 2 \) / 2 == 0.0038) s
+(217      P\( A@10 +, B@20 + \) == sin^2\( 10 / 2 \) / 2 == 0.0038) s
+(218   ) s
+(219   and 0.0038 + 0.0038 == 0.0076 is not greater than or equal to 0.0151.) s
+endpage
+startpage
+(220   This is not a special case of small numbers or anything like that,) s
+(221   Bell's inequality is violated by QM through the range 0 < theta <) s
+(222   pi/2. Once the technology to produce pure entangled states developed,) s
+(223   the QM prediction was verifed to many standard deviations outside of) s
+(224   the deterministic theory bound. Experiments usually work with the) s
+(225   spin-1 version of Bell's theorem, measuring the "spin" \(polarization\)) s
+(226   of photons by passing them through polarizing filters.) s
+(227   ) s
+(228   Even this doesn't entirely rule out deterministic theories, though---) s
+(229   it is still possible for a deterministic theory to reproduce the QM) s
+(230   predictions by allowing the measurement process at one detector to) s
+(231   alter the state of the particle near the other detector. Since the two) s
+(232   detectors can be separated by a distance much larger than the) s
+(233   resolution times of the two detectors, this communication is non-local) s
+(234   and violates causality as it is understood in the framework of special) s
+(235   relativity. Most physicists prefer to believe non-deterministic) s
+(236   quantum mechanics.) s
+(237   ) s
+(238   It may seem that QM is violating locality here, too, since a mixed) s
+(239   state \( "A = +1/2, B = -1/2" - "A = -1/2, B = +1/2" \) / sqrt\(2\)) s
+(240   becomes either "A = +1/2, B = -1/2" or "A = -1/2, B = +1/2" when it is) s
+(241   measured at A, forcing the measurement at B to be known with) s
+(242   certainty. This is an opportunity to refine our definition of) s
+(243   locality: the quantum state of a system is an inherantly unobservable) s
+(244   object. When we believe that we have created a pure ensemble of) s
+(245   particles in a given state, we can deduce or impose bounds on parts of) s
+(246   the quantum state by observing the frequency of collapses to this) s
+(247   basis or that basis, but the state of an arbitrary particle can't be) s
+(248   determined by any single measurement. \(And one measurement is all you) s
+(249   get!\) Most physicists take the position that locality, and hence) s
+(250   causality, only matters for in-principly observable things. Thus QM is) s
+(251   local and those deterministic theories which reproduce QM are not) s
+(252   because in any deterministic theory, the state of a system is in) s
+(253   principle observable.) s
+(254   ) s
+(255   Observer A may have resolved \( y1 - y2 \) / sqrt\(2\) ---> y1, but) s
+(256   observer B doesn't know that. When he sees a measurement of y1, he) s
+(257   might as well think that he did the state collapse for observer A.) s
+(258   There is no causal connection between the two measurements, and the) s
+(259   partial ordering is preserved.) s
+(260   ) s
+(261   It's getting to be daylight. I've been staying up in the control room) s
+(262   while data that I'll be using in my thesis is being taken \(not that I) s
+(263   have much to do with it--- I just check to see that the numbers are) s
+(264   reasonable as they come in... every... hour... or... two...\). What) s
+(265   I've really been doing is trying to get an analysis job to run while) s
+(266   relearning and typesetting Bell's theorem. I thought it was fun, I) s
+(267   hope it's understandable.) s
+(268   ) s
+(269   > btw, i like your new name .) s
+(270   ) s
+(271   :\)) s
+(272   ) s
+(273   I've been meaning to do it for some time, to disambiguate child names,) s
+(274   but have never gotten around to it. Now the level of having gotten) s
+(275   around to it is that I'm on the CLEO author list as Pivarski but) s
+(276   everything else says McCann. Entangled state references have not come) s
+(277   up, but I'm sometimes called "The Graduate Student Formerly Known as) s
+(278   McCann.") s
+(279   ) s
+(280   Uh-oh, morning people are getting here and asking me questions. Good) s
+(281   night!) s
+(282   ) s
+(283   -- Jim) s
+(284   ) s
+(285   ===================================================) s
+(286      Jim Pivarski \(a.k.a. McCann\)) s
+(287      Physics graduate student, CLEO, Cornell University) s
+(288      mailto:mccann@watson.org) s
+(289   ) s
+endpage
+
+%%Trailer
+cleanup
+docsave restore end

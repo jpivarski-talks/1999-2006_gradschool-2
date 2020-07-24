@@ -1,0 +1,235 @@
+#!/usr/local/bin/perl
+
+#$max_files_shown = 15;
+
+$show_jobs = 1;
+$show_people = 1;
+$show_files = 1;
+
+if ( $ARGV[0] =~ /^jobs$/i )
+{
+    $show_people = 0;
+    $show_files = 0;
+}
+if ( $ARGV[0] =~ /^people$/i )
+{
+    $show_jobs = 0;
+    $show_files = 0;
+}
+if ( $ARGV[0] =~ /^files$/i )
+{
+    $show_jobs = 0;
+    $show_people = 0;
+}
+
+open( LESS, "> /home/mccann/tmp/vomitfile.txt" );
+
+print LESS "  > > > Very Organized Monitor of Information Transcribed in PERL < < <\n\n";
+
+open( UNAME, "uname -a |" );
+
+$_ = <UNAME>;
+($type, $machine, $release, $version, $hardware ) = split( /\s+/, $_ );
+
+if ( $show_jobs == 1 )
+{
+
+$line = "================================================================================\n";
+if ( $type eq "OSF1" )
+{
+    $overlay = " Job Queue on Digital Machines ";
+}
+elsif ( $type eq "SunOS" )
+{
+    $overlay = " Job Queue on Sun Machines ";
+}
+$hardware = " $hardware ";
+substr( $line, 4, length( $overlay ) ) = $overlay;
+substr( $line, 68, length( $hardware ) ) = $hardware;
+
+print LESS $line;
+print LESS "Username Script    Machine         Job #  Quantity      State     Date\n";
+print LESS "--------------------------------------------------------------------------------\n";
+open( QSTAT, "qstat |" );
+while( <QSTAT> )
+{
+    chop $_;
+    print LESS substr( $_, 0, 80 ) . "\n";
+}
+
+}
+
+if ( $show_people == 1 )
+{
+$machine = " $machine ";
+$type = " $type ";
+$line = "================================================================================\n";
+substr( $line, 4, length( $machine ) ) = $machine;
+substr( $line, 68, length( $type ) ) = $type;
+
+print LESS $line;
+
+open( FINGER, "finger |" );
+
+%u = ();
+$count = 0;
+
+while(<FINGER>)
+{
+    if ( $count == 0 )
+    {
+	print LESS $_;
+	print LESS "--------------------------------------------------------------------------------\n";
+    }
+    else
+    {
+	if ( $type eq " OSF1 " )
+	{
+	    $idle = substr( $_, 34, 4 );
+	    $oldidle = substr( $u{substr( $_, 0, 9 )}, 34, 4 );
+	}
+	elsif ( $type eq " SunOS " )
+	{
+	    $idle = substr( $_, 43, 4 );
+	    $oldidle = substr( $u{substr( $_, 0, 9 )}, 43, 4 );
+	}
+
+	if ( $idle eq "    " )
+	{
+	    $min = 0;
+	}
+	elsif ( $idle =~ /d$/i )
+	{
+	    $min = 9999999999999999;
+	}
+	elsif ( $idle =~ /([0-9]{1,2})/ )
+	{
+	    $min = $1;
+	}
+	elsif ( $idle =~ /([0-9]):([0-9]{2})/ )
+	{
+	    $min = $1 * 60 + $2;
+	}
+	else
+	{
+	    $min = 9999999999999999;
+	}
+	
+	if ( $oldidle eq "    " )
+	{
+	    $oldmin = 0;
+	}
+	elsif ( $oldidle =~ /([0-9]):([0-9]{2})/ )
+	{
+	    $oldmin = $1 * 60 + $2;
+	}
+	else
+	{
+	    $oldmin = 9999999999999999;
+	}
+	
+	if ( $min < 9999999999999999  &&  $min < $oldmin )
+	{
+	    $u{substr( $_, 0, 9 )} = $_;
+	}
+    }
+    $count++;
+}
+
+foreach $name ( sort byusage keys %u )
+{
+    print LESS $u{$name};
+}
+
+sub byusage {
+    local( $ause, $buse, $ausage, $busage );
+    if ( $type eq " OSF1 " )
+    {
+	$ause = substr( $u{$a}, 34, 4 );
+	$buse = substr( $u{$b}, 34, 4 );
+    }
+    elsif ( $type eq " SunOS " )
+    {
+	$ause = substr( $u{$a}, 43, 4 );
+	$buse = substr( $u{$b}, 43, 4 );
+    }
+
+    if ( $ause =~ /([0-9]):([0-9]{2})/ )
+    {
+	$ausage = ( $1 * 60 + $2 );
+	$ausage = 0 if ( $1 eq ""  &&  $2 eq "" );
+    }
+    else
+    {
+	$ausage = $ause;
+    }
+
+    if ( $buse =~ /([0-9]):([0-9]{2})/ )
+    {
+	$busage = ( $1 * 60 + $2 );
+	$busage = 0 if ( $1 eq ""  &&  $2 eq "" );
+    }
+    else
+    {
+	$busage = $buse;
+    }
+
+    $ausage cmp $busage;
+}
+
+print LESS "\n";
+
+}
+if ( $show_files == 1 )
+{
+open( LS, "ls -lF . |" );
+$count = 0;
+while( <LS> )
+{
+    if ( $count == 0 )
+    {
+	chop( $_ );
+	( $word, $total ) = split( /\s+/, $_ );
+
+	$total = " $total K ";
+	$line = "================================================================================\n";
+
+	$pwd = `pwd`;
+	chop( $pwd );
+	$pwd =~ s/\/.*mccann/~/;
+	$pwd =~ s/\/a\/lns101\/nfs\/homes\/cleo\//~/;
+	$pwd = " $pwd ";
+
+	substr( $line, 4, length( $pwd ) ) = $pwd;
+	substr( $line, 68, length( $total ) ) = $total;
+
+	print LESS $line;
+	print LESS "Permissions  # Owner    Group      Bytes     Date     Filename
+--------------------------------------------------------------------------------\n";
+    }
+#    elsif ( $count < $max_files_shown )
+    else
+    {
+	chop $_;
+	print LESS substr( $_, 0, 80 ) . "\n";
+	if ( substr( $_, 80, 24 ) ne "" )
+	{
+	    print LESS "                                                    ... " . substr( $_, 80, 24 ) . "\n";
+	}
+    }
+#    elsif ( $count == $max_files_shown )
+#    {
+#	print LESS "                                                      ... etc.\n";
+#    }
+    $count++;
+}
+
+$du = `du -ks .`;
+( $number, $dot ) = split( /\s+/, $du );
+
+print LESS "\nData stored under this tree: $number K.\n\n";
+}
+
+close( LESS );
+system( "less /home/mccann/tmp/vomitfile.txt" );
+unlink( "/home/mccann/tmp/vomitfile.txt" );

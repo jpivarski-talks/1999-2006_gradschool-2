@@ -1,0 +1,11 @@
+#!/bin/sh
+###########################################################
+# $Id $
+# $Log $
+###########################################################
+export COMPHEP=/A/lns183/cdat/daf9/mccann/software/src/comphep-4.4.0
+if [ x$1 = xDEBUG ]; then
+  ( export COMPHEP=$COMPHEP; ddd $COMPHEP/tab_view.exe )
+else
+  $COMPHEP/tab_view.exe $1 $2 $3 $4 $5 $6
+fi

@@ -1,0 +1,1169 @@
+%!PS-Adobe-3.0
+%%Title: outline.txt
+%%For: Jim Pivarski
+%%Creator: a2ps version 4.13
+%%CreationDate: Mon Oct 20 14:55:06 2003
+%%BoundingBox: 24 24 588 768
+%%DocumentData: Clean7Bit
+%%Orientation: Portrait
+%%Pages: 6
+%%PageOrder: Ascend
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-BoldOblique
+%%+ font Courier-Oblique
+%%+ font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Symbol
+%%+ font Times-Bold
+%%+ font Times-Roman
+%%DocumentProcessColors: Black 
+%%DocumentSuppliedResources: procset a2ps-a2ps-hdr
+%%+ procset a2ps-black+white-Prolog
+%%+ encoding ISO-8859-1Encoding
+%%EndComments
+/a2psdict 200 dict def
+a2psdict begin
+%%BeginProlog
+%%Copyright: (c) 1988, 89, 90, 91, 92, 93 Miguel Santana
+%%Copyright: (c) 1995, 96, 97, 98 Akim Demaille, Miguel Santana
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+
+% EPSF import as in the Red Book
+/BeginInclude {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack 
+  userdict begin
+    0 setgray 0 setlinecap
+    1 setlinewidth 0 setlinejoin
+    10 setmiterlimit [ ] 0 setdash newpath
+    gs_languagelevel 1 ne {
+      false setstrokeadjust false setoverprint 
+    } if
+} bind def
+
+/EndInclude {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+/BeginEPSF {
+  BeginInclude
+  /showpage { } def
+} bind def
+
+/EndEPSF {
+  EndInclude
+} bind def
+
+% Page prefeed
+/page_prefeed {         % bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} bind def
+
+/deffont {
+  findfont exch scalefont def
+} bind def
+
+/reencode_font {
+  findfont reencode 2 copy definefont pop def
+} bind def
+
+% Function c-show (str => -)
+% centers text only according to x axis.
+/c-show { 
+  dup stringwidth pop
+  2 div neg 0 rmoveto
+  show
+} bind def
+
+% Function l-show (str => -)
+% prints texts so that it ends at currentpoint
+/l-show {
+  dup stringwidth pop neg 
+  0 
+  rmoveto show
+} bind def
+
+% center-fit show (str w => -)
+% show centered, and scale currentfont so that the width is less than w
+/cfshow {
+  exch dup stringwidth pop
+  % If the title is too big, try to make it smaller
+  3 2 roll 2 copy
+  gt
+  { % if, i.e. too big
+    exch div
+    currentfont exch scalefont setfont
+  } { % ifelse
+    pop pop 
+  }
+  ifelse
+  c-show			% center title
+} bind def
+
+% Return the y size of the current font
+% - => fontsize
+/currentfontsize {
+  currentfont /FontType get 0 eq {
+    currentfont /FontMatrix get 3 get
+  }{
+    currentfont /FontMatrix get 3 get 1000 mul
+  } ifelse
+} bind def
+
+% reencode the font
+% <encoding-vector> <fontdict> -> <newfontdict>
+/reencode { %def
+  dup length 5 add dict begin
+    { %forall
+      1 index /FID ne 
+      { def }{ pop pop } ifelse
+    } forall
+    /Encoding exch def
+
+    % Use the font's bounding box to determine the ascent, descent,
+    % and overall height; don't forget that these values have to be
+    % transformed using the font's matrix.
+    % We use `load' because sometimes BBox is executable, sometimes not.
+    % Since we need 4 numbers an not an array avoid BBox from being executed
+    /FontBBox load aload pop
+    FontMatrix transform /Ascent exch def pop
+    FontMatrix transform /Descent exch def pop
+    /FontHeight Ascent Descent sub def
+
+    % Define these in case they're not in the FontInfo (also, here
+    % they're easier to get to.
+    /UnderlinePosition 1 def
+    /UnderlineThickness 1 def
+    
+    % Get the underline position and thickness if they're defined.
+    currentdict /FontInfo known {
+      FontInfo
+      
+      dup /UnderlinePosition known {
+	dup /UnderlinePosition get
+	0 exch FontMatrix transform exch pop
+	/UnderlinePosition exch def
+      } if
+      
+      dup /UnderlineThickness known {
+	/UnderlineThickness get
+	0 exch FontMatrix transform exch pop
+	/UnderlineThickness exch def
+      } if
+      
+    } if
+    currentdict 
+  end 
+} bind def
+
+% composite fonts for ASCII-EUC mixed string
+% Version 1.2 1/31/1990
+% Orignal Ken'ichi HANDA (handa@etl.go.jp)
+% Modified Norio Katayama (katayama@rd.nacsis.ac.jp),1998
+% Extend & Fix Koji Nakamaru (maru@on.cs.keio.ac.jp), 1999
+% Anyone can freely copy, modify, distribute this program.
+
+/copyfont {	% font-dic extra-entry-count  copyfont  font-dic
+	1 index maxlength add dict begin
+	{	1 index /FID ne 2 index /UniqueID ne and
+		{def} {pop pop} ifelse
+	} forall
+	currentdict
+	end
+} bind def
+
+/compositefont { % ASCIIFontName EUCFontName RomanScale RomanOffset Rot(T/F) compositefont font
+    /RomanRotation exch def
+    /RomanOffset exch def
+    /RomanScale exch def
+    userdict /fixeucfont_dict known not {
+	userdict begin
+	    /fixeucfont_dict 2 dict begin
+		/UpperByteEncoding [
+		    16#00 1 16#20 { pop 0 } for
+		    16#21 1 16#28 { 16#20 sub } for
+		    16#29 1 16#2F { pop 0 } for
+		    16#30 1 16#74 { 16#27 sub } for
+		    16#75 1 16#FF { pop 0 } for
+		] def
+	        /LowerByteEncoding [
+		    16#00 1 16#A0 { pop /.notdef } for
+		    16#A1 1 16#FE { 16#80 sub 16 2 string cvrs
+				    (cXX) dup 1 4 -1 roll
+				    putinterval cvn } for
+		    /.notdef
+		] def
+		currentdict
+	    end def
+	end
+    } if
+    findfont dup /FontType get 0 eq {
+	14 dict begin
+	    %
+	    % 7+8 bit EUC font
+	    %
+	    12 dict begin
+		/EUCFont exch def
+		/FontInfo (7+8 bit EUC font) readonly def
+		/PaintType 0 def
+		/FontType 0 def
+		/FontMatrix matrix def
+		% /FontName
+		/Encoding fixeucfont_dict /UpperByteEncoding get def
+		/FMapType 2 def
+		EUCFont /WMode known
+		{ EUCFont /WMode get /WMode exch def }
+		{ /WMode 0 def } ifelse
+		/FDepVector [
+		    EUCFont /FDepVector get 0 get
+		    [ 16#21 1 16#28 {} for 16#30 1 16#74 {} for ]
+		    {
+			13 dict begin
+			    /EUCFont EUCFont def
+			    /UpperByte exch 16#80 add def	
+			    % /FontName
+			    /FontInfo (EUC lower byte font) readonly def
+			    /PaintType 0 def
+			    /FontType 3 def
+			    /FontMatrix matrix def
+			    /FontBBox {0 0 0 0} def
+			    /Encoding
+				fixeucfont_dict /LowerByteEncoding get def
+			    % /UniqueID
+			    % /WMode
+			    /BuildChar {
+				gsave
+				exch dup /EUCFont get setfont
+				/UpperByte get
+				2 string
+				dup 0 4 -1 roll put
+				dup 1 4 -1 roll put
+				dup stringwidth setcharwidth
+				0 0 moveto show
+				grestore
+			    } bind def
+			    currentdict
+			end
+			/lowerbytefont exch definefont
+		    } forall
+		] def
+		currentdict
+	    end
+	    /eucfont exch definefont
+	    exch
+	    findfont 1 copyfont dup begin
+		RomanRotation {
+			/FontMatrix FontMatrix
+			[ 0 RomanScale neg RomanScale 0 RomanOffset neg 0 ]
+			matrix concatmatrix def
+		}{
+			/FontMatrix FontMatrix
+			[ RomanScale 0 0 RomanScale 0 RomanOffset ] matrix concatmatrix
+			def
+			/CDevProc
+			    {pop pop pop pop 0 exch -1000 exch 2 div 880} def
+		} ifelse
+	    end
+	    /asciifont exch definefont
+	    exch
+	    /FDepVector [ 4 2 roll ] def
+	    /FontType 0 def
+	    /WMode 0 def
+	    /FMapType 4 def
+	    /FontMatrix matrix def
+	    /Encoding [0 1] def
+	    /FontBBox {0 0 0 0} def
+%	    /FontHeight 1.0 def % XXXX
+	    /FontHeight RomanScale 1.0 ge { RomanScale }{ 1.0 } ifelse def
+	    /Descent -0.3 def   % XXXX
+	    currentdict
+	end
+	/tmpfont exch definefont
+	pop
+	/tmpfont findfont
+    }{
+	pop findfont 0 copyfont
+    } ifelse
+} def	
+
+/slantfont {	% FontName slant-degree  slantfont  font'
+    exch findfont 1 copyfont begin
+    [ 1 0 4 -1 roll 1 0 0 ] FontMatrix exch matrix concatmatrix
+    /FontMatrix exch def
+    currentdict
+    end
+} def
+
+% Function print line number (<string> # -)
+/# {
+  gsave
+    sx cw mul neg 2 div 0 rmoveto
+    f# setfont
+    c-show
+  grestore
+} bind def
+
+% -------- Some routines to enlight plain b/w printings ---------
+
+% Underline
+% width --
+/dounderline {
+  currentpoint
+  gsave
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    0 rlineto
+    stroke
+  grestore
+} bind def
+
+% Underline a string
+% string --
+/dounderlinestring {
+  stringwidth pop
+  dounderline
+} bind def
+
+/UL {
+  /ul exch store
+} bind def
+
+% Draw a box of WIDTH wrt current font
+% width --
+/dobox {
+  currentpoint
+  gsave
+    newpath
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    dup 0 rlineto
+    0 currentfont /FontHeight get currentfontsize mul rlineto
+    neg 0 rlineto
+    closepath
+    stroke
+  grestore
+} bind def
+
+/BX {
+  /bx exch store
+} bind def
+
+% Box a string
+% string --
+/doboxstring {
+  stringwidth pop
+  dobox
+} bind def
+
+%
+% ------------- Color routines ---------------
+%
+/FG /setrgbcolor load def
+
+% Draw the background
+% width --
+/dobackground {
+  currentpoint
+  gsave
+    newpath
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    dup 0 rlineto
+    0 currentfont /FontHeight get currentfontsize mul rlineto
+    neg 0 rlineto
+    closepath
+    bgcolor aload pop setrgbcolor
+    fill
+  grestore
+} bind def
+
+% Draw bg for a string
+% string --
+/dobackgroundstring {
+  stringwidth pop
+  dobackground
+} bind def
+
+
+/BG {
+  dup /bg exch store
+  { mark 4 1 roll ] /bgcolor exch store } if
+} bind def
+
+
+/Show {
+  bg { dup dobackgroundstring } if
+  ul { dup dounderlinestring } if
+  bx { dup doboxstring } if
+  show
+} bind def
+
+% Function T(ab), jumps to the n-th tabulation in the current line
+/T {
+  cw mul x0 add
+  bg { dup currentpoint pop sub dobackground } if
+  ul { dup currentpoint pop sub dounderline } if
+  bx { dup currentpoint pop sub dobox } if
+  y0 moveto
+} bind def
+
+% Function n: move to the next line
+/n {
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+% Function N: show and move to the next line
+/N {
+  Show
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+/S {
+  Show
+} bind def
+
+%%BeginResource: procset a2ps-a2ps-hdr 2.0 2
+%%Copyright: (c) 1988, 89, 90, 91, 92, 93 Miguel Santana
+%%Copyright: (c) 1995, 96, 97, 98 Akim Demaille, Miguel Santana
+% Function title: prints page header.
+% <ct> <rt> <lt> are passed as argument
+/title { 
+  % 1. Draw the background
+  x v get y v get moveto
+  gsave
+    0 th 2 div neg rmoveto 
+    th setlinewidth
+    0.95 setgray
+    pw 0 rlineto stroke
+  grestore
+  % 2. Border it
+  gsave
+    0.7 setlinewidth
+    pw 0 rlineto
+    0 th neg rlineto
+    pw neg 0 rlineto
+    closepath stroke
+  grestore
+  % stk: ct rt lt
+  x v get y v get th sub 1 add moveto
+%%IncludeResource: font Helvetica
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  % 3. The left title
+  gsave
+    dup stringwidth pop fnfs 0.8 mul add exch % leave space took on stack
+    fnfs 0.8 mul hm rmoveto
+    show			% left title
+  grestore
+  exch
+  % stk: ct ltw rt
+  % 4. the right title
+  gsave
+    dup stringwidth pop fnfs 0.8 mul add exch % leave space took on stack
+    dup
+    pw exch stringwidth pop fnfs 0.8 mul add sub
+    hm
+    rmoveto
+    show			% right title
+  grestore
+  % stk: ct ltw rtw
+  % 5. the center title
+  gsave
+    pw 3 1 roll
+    % stk: ct pw ltw rtw
+    3 copy 
+    % Move to the center of the left room
+    sub add 2 div hm rmoveto
+    % What is the available space in here?
+    add sub fnfs 0.8 mul sub fnfs 0.8 mul sub
+    % stk: ct space_left
+%%IncludeResource: font Helvetica-Bold
+  fHelvetica-Bold fnfs scalefont setfont
+    cfshow
+  grestore
+} bind def
+
+% Function border: prints virtual page border
+/border { %def
+  gsave				% print four sides
+    0 setgray
+    x v get y v get moveto
+    0.7 setlinewidth		% of the square
+    pw 0 rlineto
+    0 ph neg rlineto
+    pw neg 0 rlineto
+    closepath stroke
+  grestore
+} bind def
+
+% Function water: prints a water mark in background
+/water { %def
+  gsave
+    scx scy moveto rotate
+%%IncludeResource: font Times-Bold
+  fTimes-Bold 100 scalefont setfont
+    .97 setgray
+    dup stringwidth pop 2 div neg -50 rmoveto
+    show
+  grestore
+} bind def
+
+% Function rhead: prints the right header
+/rhead {  %def
+  lx ly moveto
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  l-show
+} bind def
+
+% Function footer (cf rf lf -> -)
+/footer {
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  dx dy moveto
+  show
+
+  snx sny moveto
+  l-show
+  
+  fnx fny moveto
+  c-show
+} bind def
+%%EndResource
+%%BeginResource: procset a2ps-black+white-Prolog 2.0 1
+
+% Function T(ab), jumps to the n-th tabulation in the current line
+/T { 
+  cw mul x0 add y0 moveto
+} bind def
+
+% Function n: move to the next line
+/n { %def
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+% Function N: show and move to the next line
+/N {
+  Show
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+}  bind def
+
+/S {
+  Show
+} bind def
+
+/p {
+  false UL
+  false BX
+  fCourier bfs scalefont setfont
+  Show
+} bind def
+
+/sy {
+  false UL
+  false BX
+  fSymbol bfs scalefont setfont
+  Show
+} bind def
+
+/k {
+  false UL
+  false BX
+  fCourier-Oblique bfs scalefont setfont
+  Show
+} bind def
+
+/K {
+  false UL
+  false BX
+  fCourier-Bold bfs scalefont setfont
+  Show
+} bind def
+
+/c {
+  false UL
+  false BX
+  fCourier-Oblique bfs scalefont setfont
+  Show
+} bind def
+
+/C {
+  false UL
+  false BX
+  fCourier-BoldOblique bfs scalefont setfont
+  Show 
+} bind def
+
+/l {
+  false UL
+  false BX
+  fHelvetica bfs scalefont setfont
+  Show
+} bind def
+
+/L {
+  false UL
+  false BX
+  fHelvetica-Bold bfs scalefont setfont
+  Show 
+} bind def
+
+/str{
+  false UL
+  false BX
+  fTimes-Roman bfs scalefont setfont
+  Show
+} bind def
+
+/e{
+  false UL
+  true BX
+  fHelvetica-Bold bfs scalefont setfont
+  Show
+} bind def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier
+%%IncludeResource: font Courier-Oblique
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Times-Roman
+%%IncludeResource: font Symbol
+%%IncludeResource: font Courier-BoldOblique
+%%BeginResource: encoding ISO-8859-1Encoding
+/ISO-8859-1Encoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright 
+/parenleft /parenright /asterisk /plus /comma /minus /period /slash 
+/zero /one /two /three /four /five /six /seven 
+/eight /nine /colon /semicolon /less /equal /greater /question 
+/at /A /B /C /D /E /F /G 
+/H /I /J /K /L /M /N /O 
+/P /Q /R /S /T /U /V /W 
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore 
+/quoteleft /a /b /c /d /e /f /g 
+/h /i /j /k /l /m /n /o 
+/p /q /r /s /t /u /v /w 
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section 
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron 
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /bullet 
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown 
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla 
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis 
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply 
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls 
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla 
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis 
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide 
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis 
+] def
+%%EndResource
+% Initialize page description variables.
+/sh 792 def
+/sw 612 def
+/llx 24 def
+/urx 588 def
+/ury 768 def
+/lly 24 def
+/#copies 1 def
+/th 0.000000 def
+/fnfs 11 def
+/bfs 11.547912 def
+/cw 6.928747 def
+
+% Dictionary for ISO-8859-1 support
+/iso1dict 8 dict begin
+  /fCourier ISO-8859-1Encoding /Courier reencode_font
+  /fCourier-Bold ISO-8859-1Encoding /Courier-Bold reencode_font
+  /fCourier-BoldOblique ISO-8859-1Encoding /Courier-BoldOblique reencode_font
+  /fCourier-Oblique ISO-8859-1Encoding /Courier-Oblique reencode_font
+  /fHelvetica ISO-8859-1Encoding /Helvetica reencode_font
+  /fHelvetica-Bold ISO-8859-1Encoding /Helvetica-Bold reencode_font
+  /fTimes-Bold ISO-8859-1Encoding /Times-Bold reencode_font
+  /fTimes-Roman ISO-8859-1Encoding /Times-Roman reencode_font
+currentdict end def
+/bgcolor [ 0 0 0 ] def
+/bg false def
+/ul false def
+/bx false def
+% The font for line numbering
+/f# /Helvetica findfont bfs .6 mul scalefont def
+/fSymbol /Symbol findfont def
+/hm fnfs 0.25 mul def
+/pw
+   cw 81.400000 mul
+def
+/ph
+   735.601972 th add
+def
+/pmw 0 def
+/pmh 0 def
+/v 0 def
+/x [
+  0
+] def
+/y [
+  pmh ph add 0 mul ph add
+] def
+/scx sw 2 div def
+/scy sh 2 div def
+/snx urx def
+/sny lly 2 add def
+/dx llx def
+/dy sny def
+/fnx scx def
+/fny dy def
+/lx snx def
+/ly ury fnfs 0.8 mul sub def
+/sx 0 def
+/tab 8 def
+/x0 0 def
+/y0 0 def
+%%EndSetup
+
+%%Page: (1) 1
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 0 add translate
+/v 0 store
+/x0 x v get 4.850123 add sx cw mul add store
+/y0 y v get bfs  sub store
+x0 y0 moveto
+(OUTLINE) p n
+(=======) N
+() N
+([Reminder: time is always to the right, not up!]) N
+() N
+([projector]) N
+() N
+(1. Cosmological perspective, observations, and hypotheses) N
+() N
+(   A. Perspective: on a universal scale, matter is a diffuse, homogeneous fluid) N
+() N
+(      * Granularity appears on the "small" scale of ~500 million light-years) N
+() N
+(   B. Observation: fluid is uniform \(1:10^5\) and flowing away from us \(1929\)) N
+() N
+(      * Can measure recession velocity easily \(Doppler shift in atomic spectra\),) N
+(        distance with more difficulty \(variety of techniques\)) N
+() N
+(      * Recession velocity is proportional to distance!) N
+(      ) N
+([blackboard]) N
+() N
+(   C. Hypotheses) N
+() N
+(      * Radial distribution of matter around Earth, with matter receeding from) N
+(        us \(philosophically disfavored\)) N
+() N
+(      * Distribution is homogeneous with the whole thing spreading out) N
+() N
+(        - Yields linear relationship between velocity and distance) N
+() N
+(      * Homogeneity is the big assumtion: "Cosmological Principle") N
+() N
+(        - Light-cone: how far we can see; homogeneous within that) N
+() N
+(2. Extrapolating expansion backward) N
+() N
+(   A. Observations give current scale a\(now\) and its slope VS time a'\(now\)) N
+() N
+(   B. Extrapolations can lead to finitely-old and infinitely-old universes) N
+() N
+(   C. Another observation: space is black \(1744, Olber 1826\)) N
+() N
+(      * Uniformly distributed stars appear to us in shells whose surface area) N
+(        scales as r^2 and intensity as 1/r^2) N
+() N
+(        - Superposition should therefore diverge \(or at least be as bright as) N
+(          the surface of a star, since every line of sight terminates on a star\)) N
+() N
+(      * Edgar Allen Poe _Eureka_ \(1848\)) N
+() N
+() S 8 T ("Were the succession of stars endless, then the background of the sky) N
+() S 8 T (would present us an uniform luminosity, like that displayed by the) N
+() S 8 T (Galaxy --- since there could be absolutely no point, in all that) N
+() S 8 T (background, at which would not exist a star.) N
+() N
+(        \(list of potential solutions\)) N
+() N
+() S 8 T ("...or, lastly, from the mere interval being so vast, that the electric) N
+() S 8 T (tidings of their presence in Space, have not yet --- through the lapsing) N
+() S 8 T (myriads of years --- been enabled to traverse that interval?") N
+() N
+(        In other words, star-shining had to start at some point \(draw line on) N
+grestore
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (2) 2
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 0 add translate
+/v 0 store
+/x0 x v get 4.850123 add sx cw mul add store
+/y0 y v get bfs  sub store
+x0 y0 moveto
+(        light-cone\): universe may be infinite in extent but there hasn't been) p n
+(        enough time for the light to get to us) N
+() N
+(   D. To extrapolate quantitatively, one needs a theory of gravity \(a theory of) N
+(      how motion is related to matter density\)) N
+() N
+([keep this derivation]) N
+() N
+(   E. Because matter is diffuse and non-relativistic, we can use Newton's) N
+(      theory: m x'' = F = G m M / x^2 for x\(t\)) N
+() N
+(      * Thm: no force inside a radially-symmetric shell) N
+() N
+(      * Thm: force due to a radially-symmetric distribution is equal to the) N
+(             force due to an equally-massive point) N
+() N
+(      * Construct a sphere that grows with matter density and consider force on) N
+(        particles on the surface --> r''\(t\) = -4/3 pi G r\(t\) rho\(t\) \(A\)) N
+() N
+(      * The total mass inside the sphere is constant: d\(rho 4/3 pi r^3\)/dt = 0) N
+(        -->  rho\(t\) propto 1/r\(t\)^3 \(B\)) N
+() N
+(      * Combine: r''\(t\) propto -4/3 pi G / r\(t\)^2 \(C\)  -->  r\(t\) propto t^2/3) N
+() N
+(        - add to a VS t plot \(identifying a and r\)) N
+() N
+(      * Recession speed \(a'\(0\)/a\(0\) = 2/3 t^-1 = 2.3 +/- 0.3 x 10^-18 /s\) -->) N
+(        age of the universe \(2.9 x 10^17 s = 9.1 billion years\)) N
+() S 8 T (\("H_0 = 72 +/- 8 km/s per Mpc \(2001 Hubble Key Project\)"\)) N
+() N
+([end derivation]) N
+() N
+(3. Expansion in General Relativity) N
+() N
+(   A. Source for gravity is now energy density, rather than mass) N
+() N
+(      * energy density comes in two forms: mass \(E_mass = m c^2\) and kinetic) N
+(        energy of constituent particles) N
+() N
+(        - Rotating planet attracts more than a stationary one; any large energy) N
+(          reserve is equivalent to mass: inhabitants could use energy resource) N
+(          to turn gold into lead \(heavier\) or create stockpiles of matter and) N
+(          antimatter, but planet's gravitational pull is unaffected) N
+() N
+(      * Small correction: typical galactic velocity \(our own\) is 600 km/s; this) N
+() S 8 T (is a correction to the mass density of 4 x 10^-6 \(p/mc = 2 x 10^-3\)) N
+() N
+(      * Becomes relevant before about t = 20,000 years when ambient light) N
+(        contributed more to energy density than matter \(tiny fraction of cosmic) N
+(        history, but the first fraction!\)) N
+() S 8 T (\(Lookback time = 2/3 H_0^-1 \(1 - \(1+z\)^-2/3\) with redshift of 6000.\)) N
+() N
+(   B. GR has a greater impact on our interpretation of a\(t\) than its calculation) N
+(      Reinterpretation of the meaning of "acceleration due to gravity") N
+() N
+(      * Analyze a simple physics event: I drop a piece of chalk) N
+() N
+(        - First impose coordinate system to talk about the event quantitatively:) N
+(          y VS t \(draw parabolic arc down\) y_chalk\(t\) = -1/2 g t^2) N
+() N
+() S 8 T (- y_chalk\(0\) didn't have to be 0; that was a choice.  In fact, I was) N
+(          free to choose any y offset, any t offset, or even...) N
+() N
+grestore
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (3) 3
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 0 add translate
+/v 0 store
+/x0 x v get 4.850123 add sx cw mul add store
+/y0 y v get bfs  sub store
+x0 y0 moveto
+(        - Y VS t has chalk going up and down Y_chalk\(t\) = -1/2 g t^2 + v t; the) p n
+(          coordinate transformation depends on t \(linearly\): Y = y + v t) N
+() N
+(        - Once the chalk's path is expressed in a coordinate system, Newton's) N
+(          law of gravity is a differential equation on y_chalk\(t\) or Y_chalk\(t\)) N
+() S 8 T (  y_chalk''\(t\) = -g) N
+() N
+(      * Einstein wanted a theory of gravity in which only local properties) N
+(        matter: in this event, we expect the chalk to fall because we know that) N
+(        there's an Earth just under it.  But the chalk doesn't know about Earth) N
+(        until it hits it; moreover, riders on the chalk "feel" weightless.) N
+() N
+(        - He wanted to describe chalk's "natural" coordinate system this way:) N
+(          horizontal motion with yogh_chalk\(t\) = 0 \(yogh = y + 1/2 g t^2\)) N
+() N
+() S 8 T (- If you're allowed to do this, you're not going to find a law of) N
+(          gravity like Newton's, since the description of the chalk's path is as) N
+(          unconstrained as the choice of coordinate systems) N
+() N
+(        - So instead of finding an equation that relates paths to their) N
+(          derivatives, Einstein found an equation that relates mass-energy) N
+(          density at a point to curvature at that point) N
+() N
+(        - Space-time occupied by Earth is curved, space-time far from Earth is) N
+(          not, everything in between makes up the difference so that the) N
+(          manifold in which we live is differentiable) N
+(          \(Not just curvature between two space dimensions, curvature between a) N
+(          space dimension and a time dimension\)) N
+() S 8 T (  nonzero curvature --> nontrivial geodesics) N
+() N
+(        - Yogh coordinate system is natural because it is the one in which) N
+(          coordinate lines follow geodesics) N
+() S 8 T (  y VS t geodesics bend down; I don't know how to draw that as a) N
+(          manifold) N
+() N
+(      * An embeddable case: homogeneous, expanding gas: the Universe!) N
+() N
+(        - Reinterpret a\(t\): scale of the slow-down of galactic expansion under) N
+() S 8 T (  gravity; in GR, natural coordinates leave galaxies at rest, so a\(t\)) N
+() S 8 T (  describes expansion of coordinate system) N
+(          \(The comoving sphere in the derivation is now a stationary sphere\)) N
+() S 8 T (  \(There's twice as much space now than there was 5 billion years ago\)) N
+() N
+(        - To make this embeddable \(visualizable\), suppose one dimension of space) N
+(          is wrapped cylindrically \(little to no evidence that this is true\) so) N
+(          that east end is identified with west end \(paper cylinder\) \(Note) N
+(          that this is not itself curvature, space \(alone\) is flat in this case\)) N
+() N
+(        - Since there's more space at later times, the space-time manifold is) N
+(          like a cone \(demonstrate\)) N
+(          The geodesics, on which the galaxies lie, diverge) N
+() N
+([refer back to derivation]) N
+() N
+(   C. Extrapolating expansion rate in the first 20,000 years, using GR) N
+() N
+(      * Consider energy density dominated by ambient light) N
+() N
+(      * rho\(t\) in \(A\) is now energy density: from homogeneity, as much light) N
+(        leaves the sphere as enters it, so \(A\) is unchanged in form) N
+() N
+(      * \(B\) needs modification: as space expands, not only does energy density) N
+(        scale with volume, but wavelengths are redshifted) N
+grestore
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (4) 4
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 0 add translate
+/v 0 store
+/x0 x v get 4.850123 add sx cw mul add store
+/y0 y v get bfs  sub store
+x0 y0 moveto
+() p n
+() S 8 T (- Standing wave on cylindrical Universe: wavelength scales with a\(t\)) N
+() N
+(        - Total scaling is d/dt\(rho a^4\) = 0  -->  rho\(t\) propto 1/a\(t\)^4) N
+() N
+(      * \(C\) becomes a''\(t\) propto -1 / a\(t\)^3  -->  a\(t\) propto t^1/2) N
+() N
+(      * Our cylindrical Universe starts out shaped like a radio dish) N
+() N
+(        - It even has a differentiable point at t = 0.  Isn't that nice?  \(It) N
+(          won't last...\)) N
+() N
+(4. Doubts about the Very Beginning) N
+() N
+(   A. The Universe having a beginning can, in principle, introduce a problem) N
+(      with causality \(and it does\)) N
+() N
+(      * Draw worldlines of galaxies in natural \(yogh\) coordinates: wall at t=0,) N
+(        light-cone extending back from t=now \(10 billion years\)) N
+() N
+(      * Wavy line at t=400,000 years before which matter is in plasma state) N
+(        \(glowing ultraviolet\), afterwards atomic gas \(transparent\)) N
+() N
+([projector]) N
+() N
+(      * We can see this glow: it's almost perfectly uniform) N
+(        It took 40 years of fine measurements to see the deviations: 1 in 10^5) N
+() N
+([both?]) N
+() N
+(      * Add little light-cones at surface of plasma: they don't overlap.  They) N
+(        would overlap if extended well below t=0, but that's the Beginning) N
+() N
+([chalkboard]) N
+() N
+(   B. In curved space-time, light-cones aren't cones \(they're trumpets\)) N
+() N
+(      * Speed of light = c = a\(t\) dx/dt \(depending on which side of the equation) N
+(        you put a\(t\), you can think of space expanding with a constant speed of) N
+(        light, or fixed space with a slowing speed of light: galaxies look) N
+(        further away with time because light is taking longer to get to us...\)) N
+() N
+(      * distance covered by light = int_r{there}^0{here} dx =) N
+(        c int_t{then}^t_0{now} dt' / a\(t'\)) N
+() N
+(      * a\(t\) propto t^2/3 yields distance propto 3 c \(t_0^1/3 - t^1/3\)) N
+(        a\(t\) propto t^1/2 yields distance propto 2 c \(t_0^1/2 - t^1/2\)) N
+() N
+(      * Light-cones reach for each other but they still have finite support \(so) N
+(        to speak\), and they're still way far apart.) N
+() N
+(   C. We've opened the door to a way out: what if a\(t\) had some extreme shape) N
+(      very early on?  Light-cones might extend enough to overlap...) N
+() N
+(      * Consider, for instance, a\(t\) propto t^p p >= 1) N
+() N
+(        - c int_t^t_0 dt' / t^p = / c \(1-p\) \(t_0^\(1-p\) - t^\(1-p\)  for p > 1) N
+(                                  \\ c \(ln t_0 - ln t\)             for p = 1) N
+() N
+(        - Light-cones diverge as t -> 0: they overlap for sure!) N
+() N
+(      * Or even consider this: a\(t\) propto e^t) N
+() N
+grestore
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (5) 5
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 0 add translate
+/v 0 store
+/x0 x v get 4.850123 add sx cw mul add store
+/y0 y v get bfs  sub store
+x0 y0 moveto
+(        - c int_t^t_0 dt' / e^t = c \(e^-t - e^-t_0\)) p n
+() N
+() S 8 T (- Light-cones don't diverge, but a\(t\) doesn't have a beginning!) N
+(          Light-cones will overlap in the t < 0 past) N
+() N
+(        - \(Radio dish with a long mount\)) N
+() N
+(   D. Changing a\(t\) at very early times requires a new type of matter:) N
+(      speculative particle physics) N
+() N
+(   E. This problem is usually solved by an exponential that both turns on and) N
+(      off, and is numerically large enough to superimpose the light-cones) N
+(      \("Inflation Models"\): this will only homogenize a patch of the Universe,) N
+(      but a patch larger than we can see) N
+() N
+([projector]) N
+() N
+(5. Turn-of-the-Century Developments) N
+() N
+(   A. Study of the temperature distribution of the plasma phase has become a) N
+(      precision science) N
+() N
+(      * Spacial curvature is zero to two decimal places \(with homogeneity) N
+(        assumtion, space could have constant curvature\)) N
+() N
+(      * Age of the Universe is 13.7 +/- 0.2 billion years) N
+() N
+(   B. Hubble diagrams \(recession velocity VS distance\) are beginning to "reach) N
+(      around the bend" and experimentally observe the second derivative of a\(t\)) N
+() N
+(      * We expect: a\(t\) = b t^2/3 a'\(t\)/a = 2/3 1/t > 0 a''\(t\)/a = -2/9 t^-2 < 0) N
+() N
+(      * We observe: a *positive* second derivative!) N
+() N
+(      * We've already seen a theoretical a''\(t\) > 0 in the very early universe,) N
+(        this is an experimental measurement of a''\(t\) > 0 now.) N
+() N
+(      * Calls for a new type of matter component, relevant today.  a''\(t\) > 0) N
+(        implies that the dominant matter component has negative pressure or) N
+(        negative energy density or both \(therefore exotic\) since it is causing) N
+(        space to be pushed apart) N
+() N
+(      * "Cosmological constant" is a ready-made explaination: it's a constant) N
+(        that enters the GR equation through integration) N
+() N
+() S 8 T (- Lagrangian = int Action --> R_munu - 1/2 R g_munu + Lambda_1 g_munu =) N
+(          Lambda_2 T_munu where Lambda_1,2 are Lagrange multipliers) N
+() N
+() S 8 T (- Lambda_2 = 8 pi G_N to agree with Newton in the limit.) N
+() N
+() S 8 T (- If Lambda_1 g_munu is small and non-zero, move it to the right-hand) N
+(          side and interpret it as an energy density: it has the form) N
+() S 8 T (            /rho 0 0 0 \\                    / 1  0  0  0 \\) N
+() S 8 T (  T_munu = \(  0  p 0 0  \) = Omega_Lambda_1 \(  0 -1  0  0  \)) N
+() S 8 T (           \(  0  0 p 0  \)                  \(  0  0 -1  0  \)) N
+() S 8 T (            \\ 0  0 0 p /                    \\ 0  0  0 -1 /) N
+(          so the pressure is negative.) N
+() N
+(        - An Omega_Lambda_1 term will give a\(t\) propto e^t) N
+() N
+(6. A little more Poe) N
+() N
+(   A. "And, in fact, astronomers, without at any time reaching the idea here) N
+grestore
+end % of iso1dict
+pagesave restore
+showpage
+%%Page: (6) 6
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+iso1dict begin
+gsave
+llx lly 0 add translate
+/v 0 store
+/x0 x v get 4.850123 add sx cw mul add store
+/y0 y v get bfs  sub store
+x0 y0 moveto
+(      suggested, seem to have been approximating it... that is to say, from a) p n
+(      consideration of Matter as they find it, they reach a conclusion at which) N
+(      I deductively arrive. That so pregnant a suggestion as the one quoted) N
+(      should have been permitted to remain so long unfruitful, is, nevertheless,) N
+(      a mystery which I find it difficult to fathom.") N
+() N
+(   B. Unfortunately, what he was discussing in the previous paragraph was) N
+(      something akin to a Big Crunch, which this observation of acceleration) N
+(      makes untenable... perhaps instead we should end with this quote:) N
+() N
+(   C. "It is as a Poem only that I wish this work to be judged after I am dead.") N
+() N
+([fin]) N
+grestore
+end % of iso1dict
+pagesave restore
+showpage
+
+%%Trailer
+end
+%%EOF

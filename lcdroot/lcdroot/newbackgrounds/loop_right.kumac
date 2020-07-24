@@ -1,0 +1,106 @@
+CHAIN s21 rzn/simd24301.rzn
+CHAIN s22 rzn/simd24302.rzn
+CHAIN s23 rzn/simd24303.rzn
+CHAIN s24 rzn/simd24304.rzn
+CHAIN s25 rzn/simd24305.rzn
+CHAIN s26 rzn/simd24306.rzn
+CHAIN s27 rzn/simd24307.rzn
+CHAIN s28 rzn/simd24308.rzn
+CHAIN s29 rzn/simd24309.rzn
+CHAIN s30 rzn/simd24310.rzn
+CHAIN s31 rzn/simd24311.rzn
+CHAIN s32 rzn/simd24312.rzn
+CHAIN s33 rzn/simd24313.rzn
+CHAIN s34 rzn/simd24314.rzn
+CHAIN s35 rzn/simd24315.rzn
+CHAIN s36 rzn/simd24316.rzn
+CHAIN s37 rzn/simd24317.rzn
+CHAIN s38 rzn/simd24318.rzn
+CHAIN s39 rzn/simd24319.rzn
+CHAIN s40 rzn/simd24320.rzn
+CHAIN s41 rzn/simd24321.rzn
+CHAIN s42 rzn/simd24322.rzn
+CHAIN s43 rzn/simd24323.rzn
+CHAIN s44 rzn/simd24324.rzn
+CHAIN s45 rzn/simd24325.rzn
+CHAIN s46 rzn/simd24326.rzn
+CHAIN s47 rzn/simd24327.rzn
+CHAIN s48 rzn/simd24328.rzn
+CHAIN s49 rzn/simd24329.rzn
+CHAIN s50 rzn/simd24330.rzn
+CHAIN s51 rzn/simd24331.rzn
+CHAIN s52 rzn/simd24332.rzn
+CHAIN s53 rzn/simd24333.rzn
+CHAIN s54 rzn/simd24334.rzn
+CHAIN s55 rzn/simd24335.rzn
+CHAIN s56 rzn/simd24336.rzn
+CHAIN s57 rzn/simd24337.rzn
+CHAIN s58 rzn/simd24338.rzn
+CHAIN s59 rzn/simd24339.rzn
+CHAIN s60 rzn/simd24340.rzn
+CHAIN s61 rzn/simd24341.rzn
+CHAIN s62 rzn/simd24342.rzn
+CHAIN s63 rzn/simd24343.rzn
+CHAIN s64 rzn/simd24344.rzn
+CHAIN s65 rzn/simd24345.rzn
+CHAIN s66 rzn/simd24346.rzn
+CHAIN s67 rzn/simd24347.rzn
+CHAIN s68 rzn/simd24348.rzn
+CHAIN s69 rzn/simd24349.rzn
+CHAIN s70 rzn/simd24350.rzn
+CHAIN s71 rzn/simd24351.rzn
+CHAIN s72 rzn/simd24352.rzn
+CHAIN s73 rzn/simd24353.rzn
+CHAIN s74 rzn/simd24354.rzn
+CHAIN s75 rzn/simd24355.rzn
+CHAIN s76 rzn/simd24356.rzn
+CHAIN s77 rzn/simd24357.rzn
+CHAIN s78 rzn/simd24358.rzn
+CHAIN s79 rzn/simd24359.rzn
+CHAIN s80 rzn/simd24360.rzn
+CHAIN s81 rzn/simd24361.rzn
+CHAIN s82 rzn/simd24362.rzn
+CHAIN s83 rzn/simd24363.rzn
+CHAIN s84 rzn/simd24364.rzn
+CHAIN s85 rzn/simd24365.rzn
+CHAIN s86 rzn/simd24366.rzn
+CHAIN s87 rzn/simd24367.rzn
+CHAIN s88 rzn/simd24368.rzn
+CHAIN s89 rzn/simd24369.rzn
+CHAIN s90 rzn/simd24370.rzn
+CHAIN s91 rzn/simd24371.rzn
+CHAIN s92 rzn/simd24372.rzn
+CHAIN s93 rzn/simd24373.rzn
+CHAIN s94 rzn/simd24374.rzn
+CHAIN s95 rzn/simd24375.rzn
+CHAIN s96 rzn/simd24376.rzn
+CHAIN s97 rzn/simd24377.rzn
+CHAIN s98 rzn/simd24378.rzn
+
+nt/cuts $1 abs(lpz)/sqrt(lpx**2+lpy**2+lpz**2)<0.95&&abs(j1pz)/sqrt(j1px**2+j1py**2+j1pz**2)<0.95&&abs(j2pz)/sqrt(j2px**2+j2py**2+j2pz**2)<0.95&&500-eve>300&&jinvm<60.&&sqrt((j1px+j2px)**2+(j1py+j2py)**2)>25
+
+zone 1 1
+opt liny
+h/cr/1d 100 'Whatever histogram' 100 0. 100.
+ve/cr contr(78)
+do i = 21, 98
+  nt/plot //s[i]/CHI20CHI30PROC/5.jinvm (scale*250.0).and.($1) ! ! ! ! 100
+  ve/inp contr([i]) $HINFO(100,'SUM')
+enddo
+
+h/cr/1d 200 'Contribution due to mode number N' 78 0.5 78.5
+h/cr/1d 300 'Sorted Contributions' 78 0.5 78.5
+h/put_vect/contents 200 contr
+ve/write contr 'loop_right_tmp_throw_me_away.dat'
+sh sort -n -r < loop_right_tmp_throw_me_away.dat > loop_right_tmp_throw_me_away2.dat
+ve/read contr2 'loop_right_tmp_throw_me_away2.dat'
+h/put_vect/contents 300 contr2
+zone 1 2
+opt liny
+h/plot 300
+h/plot 200
+
+sh rm -f loop_right_tmp_throw_me_away.dat
+sh rm -f loop_right_tmp_throw_me_away2.dat
+
+* h/plot 200(40:55)

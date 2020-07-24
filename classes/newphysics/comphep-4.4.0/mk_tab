@@ -1,0 +1,24 @@
+#!/bin/sh
+###########################################################
+# Copyright (C) 2001-2003, CompHEP Collaboration
+#------------------------------------------------------
+# $Id: mk_tab,v 1.3 2003/06/25 18:46:42 kryukov Exp $
+# $Log: mk_tab,v $
+# Revision 1.3  2003/06/25 18:46:42  kryukov
+# *** empty log message ***
+#
+# Revision 1.2  2003/06/17 16:43:15  sherstnv
+# mk_tab is linked by user in the $WDIR/usr directory.
+#
+# Revision 1.1  2003/04/18 16:34:11  sherstnv
+# Proga mk_tab peredelana pod noviy format zapisi sobitiy.
+# Teper' mk_tab mozhet rabotat' s files, v kotorih zapisani
+# sobitiya ot neskol'kih podprocessov.
+#
+###########################################################
+export COMPHEP=/A/lns183/cdat/daf9/mccann/software/src/comphep-4.4.0
+if [ x$1 = xDEBUG ]; then
+  ( export COMPHEP=$COMPHEP; ddd usr/mk_tab.exe )
+else
+  usr/mk_tab.exe $1 $2 $3 $4 $5 $6
+fi

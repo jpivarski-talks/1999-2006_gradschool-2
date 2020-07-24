@@ -1,0 +1,10 @@
+#$ -l u5
+#$ -o /cdat/tem/mccann/test_view4.log
+#$ -S /bin/bash
+#$ -j y
+
+cd /home/mccann/crosstalk/run/
+. /nfs/cleo3/scripts/cleo3defs
+c3rel Apr18_03_P2
+
+suez -f test_view4.tcl

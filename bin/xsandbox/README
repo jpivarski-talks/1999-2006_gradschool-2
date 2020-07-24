@@ -1,0 +1,244 @@
+			       XSANDBOX
+
+If you're using FreeBSD, there is no compilation necessary, just move
+and rename "xsandbox_FreeBSD_binary."  Someday, I will compile and
+include a Linux binary.
+
+For everyone who needs to compile, you will notice that there is no
+./configure script, but the Makefile is ridiculously simple.  Remember
+that you need the GTK library to compile and run this--- that is the
+`gtk12-config --cflags --libs` part of the compilation line.  Try
+running the program `gtk12-config' to see if you have it.  If not,
+don't worry, just try running `gtk-config'.  (The latter seems to be
+far more common.)  If still you don't have it, download it from
+
+			 http://www.gtk.org/
+
+or from your packages/ports/RPM collection.  Of course, if you do
+install it and `gtk-config' works, rather than `gtk12-config', you'll
+have to change that part of the Makefile.
+
+Oh yeah, and then type `make' or `gmake'.
+
+(If it complains that you don't have `gcc', substitute `cc'.)
+
+			    *     *     *
+
+This comes with documentation which can be turned into a manfile---
+move xsandbox.1 into the directory that your manfiles are stored (this
+will require root permissions).  On my computer, this is:
+
+			 /usr/local/man/man1/
+
+Here's a way to view it as a manfile without installing it permanently:
+
+	       groff -mandoc -Tascii xsandbox.1 | less
+
+(I think that `groff' is the GNU version of `troff', so use that if
+you don't have `groff'.)  This version of the documentation is the one
+with equations removed, as they didn't turn out well in ASCII.  I have
+another version of the documentation which can be turned into a
+postscript, with equations:
+
+	 eqn xsandbox_doc.1 | groff -mandoc > xsandbox_doc.ps
+
+But then, this begs the question: why didn't I just use LaTeX?
+
+In case you can't read the above documentation, here it is, taken off
+my screen as a manfile:
+
+			    *     *     *
+
+XSANDBOX(1)                                           XSANDBOX(1)
+
+
+NAME
+       xsandbox - physics-based distraction
+
+SYNOPSIS
+       xsandbox [sandbox options...] [GTK options...]
+
+DESCRIPTION
+       xsandbox  renders  a sandbox in an X11 window, buffeted by
+       ocean waves.
+
+       Sand may be added with the left mouse button, removed with
+       the right mouse button, and pushed around (leveling peaks)
+       with the middle button.
+
+       Water is simulated with adjustable resolution by a disper-
+       sive  Laplace equation, subject to gravity. Water boundary
+       conditions are periodic at the four edges of  the  window,
+       and  the  water  height of the bottom edge is sinusoidally
+       driven to represent the ocean.
+
+       Some parameters can be set at startup  time  (see  SANDBOX
+       OPTIONS), and others can be changed while xsandbox is run-
+       ning (see KEYBOARD COMMANDS).
+
+SANDBOX OPTIONS
+       -geom, --geometry +x+y|wXh[+x+y] (default = 400x300)
+               This is the standard  X11  geometry  argument  for
+               setting the size and location of the window. (Set-
+               ting the window location  doesn't  yet  work.  See
+               KNOWN BUGS)
+
+       -nw, --no-water
+               Create a window filled with sand but no water.
+
+       -wp, --water-pixelation int (default = 3)
+               Set  the width and height of a single water pixel.
+               Only 2, 3 and 4 are suggested.
+
+       -wc, --water-coupling float (default = 0.45)
+               Set the water coupling constant (square  of  wave-
+               propagation  speed).  It is suggested that a lower
+               value than the default is used, if any.
+
+       -wd, --water-dissipation float (default = 0.05)
+               Set the level of energy dissipation. Values higher
+               than the default are suggested, if any.
+
+       -u, --update-time int (default = 100)
+               Set  the  time  in  milliseconds  between calls to
+               update the water. Only use small  values  on  fast
+               machines.
+
+       -nh, --no-hill
+               Start  the  sand  distribution  with no hill. This
+
+
+
+xsandbox                  July, 14 2001                         1
+
+
+
+
+
+XSANDBOX(1)                                           XSANDBOX(1)
+
+
+               option is suggested if you plan to resize the win-
+               dow while the program is running (see KNOWN BUGS).
+
+       -nb, --no-bumps
+               Don't create initial anisotropies in the sand dis-
+               tribution,  saving  time in startup at the expense
+               of realism.
+
+       -amp, --ocean-amplitude float (default = 1.0)
+               Set the amplitude of ocean waves  in  units  of  a
+               suggested value.
+
+       -per, --ocean-period float (default = 20.0)
+               Set the period of ocean waves in seconds.
+
+GTK OPTIONS
+       Since  xsandbox  uses  GTK to handle the X11 interface, it
+       has inherited the standard suite of GTK options. They will
+       be listed but not described here.
+
+       --gtk-module
+
+       --g-fatal-warnings
+
+       --gtk-debug
+
+       --gtk-no-debug
+
+       --gdk-debug
+
+       --gdk-no-debug
+
+       --display
+
+       --sync
+
+       --no-xshm
+
+       --name
+
+       --class
+
+MOUSE COMMANDS
+       While  xsandbox  is running, the mouse is used as a paint-
+       brush to add, remove or push sand. The brush acts  when  a
+       mouse button is pressed or held down while moving (but not
+       when it is held down and stationary).
+
+       Left Mouse Button - Add Sand
+               The sand height is increased  in  a  Gaussian-dis-
+               tributed region around the cursor.
+
+       Middle Mouse Button - Push Sand
+               The sand height is flattened to a given level (the
+
+
+
+xsandbox                  July, 14 2001                         2
+
+
+
+
+
+XSANDBOX(1)                                           XSANDBOX(1)
+
+
+               level of the sand where  the  push  started).  Any
+               sand  that  was  previously  above  this  level is
+               pushed by the brush in a clump ahead of the direc-
+               tion  of  motion.  This  is  the only of the three
+               brushes which conserves the quantity of sand.
+
+       Right Mouse Button - Remove Sand
+               The sand height is decreased  in  a  Gaussian-dis-
+               tributed region around the cursor.
+
+KEYBOARD COMMANDS
+       If  one  of the following keys are clicked in the window's
+       focus, xsandbox will perform the associated action.
+
+       q or Q - Quit
+               xsandbox exits normally.
+
+       p or P - Pause
+               Pause or unpause the water animation.
+
+       r or R - Resume
+               Resume the water animation.
+
+       > or < - Rotate Light Source
+               Increase or decrease the angle of the light source
+               by  ten  degrees.  Each  time  it  is clicked, the
+               entire window must be redrawn, so  be  careful  to
+               avoid autorepeating keys.
+
+       spacebar - Toggle Contour Lines
+               Turn  on or off the contour lines used to indicate
+               sand elevation.
+
+KNOWN BUGS
+       Setting the window location with GTK doesn't work.  I  may
+       be  using  the  wrong  command or I may be using it at the
+       wrong time.
+
+       Due to another GTK anachronism, the window size cannot  be
+       made smaller than the size it has at startup time.
+
+       The  way  that  the sand field responds to new area (by an
+       enlargement of the window) is naive and  undesirably  dis-
+       continuous.  Changing the window size is only suggested in
+       the mode specified by the -nh option (no  hill--  a  level
+       starting distribution).
+
+AUTHOR
+       Jim McCann <mccann@watson.org>
+
+
+
+
+
+
+
+
+xsandbox                  July, 14 2001                         3

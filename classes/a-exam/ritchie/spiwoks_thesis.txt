@@ -1,0 +1,26 @@
+Evaluation and Simulation of Event Building Techniques
+for a Detector at the LHC
+
+
+Dissertation
+
+zur Erlangung des Grades eines Doktors der Naturwissenschaften 
+der Abteilung Physik an der Universität Dortmund
+
+
+vorgelegt von Diplomphysiker
+Ralf Spiwoks
+aus Duisburg
+
+- Dortmund, Oktober 1995 -
+
+
+Gutachter:
+
+Prof. Dr. C. Gößling, Universität Dortmund
+
+Dr. L. Mapelli, CERN
+
+
+http://rd13doc.cern.ch/RD13/Thesis-Spiwoks/Thesis_1.html
+

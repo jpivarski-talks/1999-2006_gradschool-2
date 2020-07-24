@@ -1,0 +1,16 @@
+z, phix, phiy were fixed to zero
+200 micron difference between positive and negative drift... T0's???
+150 micron seperation between layers 3 and 4... z shift
+50 micron cosine term which flips sign with z... rotation around x axis
+
+ FCN=  0.5561941     FROM MIGRAD    STATUS=CONVERGED     35 CALLS       37 TOTAL
+                     EDM=  0.62E-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME        VALUE          ERROR          SIZE      DERIVATIVE 
+   1  x           -0.62313E-04   0.37501E-01   0.22855E-05  -0.63282E-01
+   2  y           -0.14829E-01   0.38600E-01   0.23524E-05  -0.80437E-01
+   3  z                 0.         fixed    
+   4  rotx              0.         fixed    
+   5  roty              0.         fixed    
+   6  rotz         -4.4146        12.376       0.90795E-03   0.68017E-03

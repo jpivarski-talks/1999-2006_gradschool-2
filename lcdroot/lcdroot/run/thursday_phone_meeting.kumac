@@ -1,0 +1,516 @@
+* chi10 chi30
+h/file 1 ljf26_rzn/n1n3.rzn  
+* chi1+ chi1-
+h/file 2 ljf26_rzn/c1c1.rzn 
+* chi1+ chi2-
+h/file 3 ljf26_rzn/c1c2.rzn
+* chi20 chi30
+h/file 4 ljf26_rzn/n2n3.rzn
+
+* wpairs
+h/file 21 ljf26_rzn/wpairs.rzn
+* z0pairs
+h/file 22 ljf26_rzn/zpairs.rzn
+* ttbar
+h/file 23 ljf26_rzn/ttbar.rzn
+
+nt/plot //lun1/LCProc/1000.lepeng abs(lepeng)<200 1500
+nt/plot //lun2/LCProc/1000.lepeng abs(lepeng)<200 1500 ! ! 's'
+nt/plot //lun3/LCProc/1000.lepeng abs(lepeng)<200 1500 ! ! 's'
+nt/plot //lun4/LCProc/1000.lepeng abs(lepeng)<200 1500 ! ! 's'
+nt/plot //lun21/LCProc/1000.lepeng abs(lepeng)<200 1500 ! ! 's'
+nt/plot //lun22/LCProc/1000.lepeng abs(lepeng)<200 1500 ! ! 's'
+nt/plot //lun23/LCProc/1000.lepeng abs(lepeng)<200 1500 ! ! 's'
+
+h/file 40 /home/mccann/lcdroot/run2/mcmatch.rzn
+h/file 41 /home/mccann/lcdroot/run2/datamatch.rzn
+h/cr/title 'PERFECT MATCHING (cm)                           DATA-BASED MATCHING (cm)'
+zone 2 3
+h/plot //lun40/lcdtwoleptons/10
+h/plot //lun41/lcdtwoleptons/10
+f/plot 43*sqrt(x) 0 15 's'
+h/plot //lun40/lcdtwoleptons/11(0.:1.)
+h/plot //lun41/lcdtwoleptons/11(0.:1.)
+h/plot //lun40/lcdtwoleptons/12(0.:1.)
+h/plot //lun41/lcdtwoleptons/12(0.:1.)
+pict/print '/home/mccann/lcdroot/run2/mcvsdata_matching.eps'
+
+* misseng   * 0.332835E+03 * 0.494552E+03 *
+* jeteng    * 0.000000E+00 * 0.000000E+00 *
+* lepeng    * 0.414969E+00 * 0.153466E+03 *
+* numlep    * 0.200000E+01 * 0.500000E+01 *
+* e1        * 0.213768E+00 * 0.137171E+03 *
+* p1x       * -.119983E+03 * 0.118658E+03 *
+* p1y       * -.111218E+03 * 0.101930E+03 *
+* p1z       * -.107933E+03 * 0.116525E+03 *
+* e2        * 0.200279E+00 * 0.701105E+02 *
+* p2x       * -.648063E+02 * 0.548033E+02 *
+* p2y       * -.563623E+02 * 0.654877E+02 *
+* p2z       * -.650088E+02 * 0.622290E+02 *
+
+set ncol 16
+palette 1
+
+sigma pre = 100
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Missing energy with two leptons' 100 0. 500.
+h/cr/1d $SIGMA(pre+02) 'Missing energy with two leptons' 100 0. 500.
+h/cr/1d $SIGMA(pre+03) 'Missing energy with two leptons' 100 0. 500.
+h/cr/1d $SIGMA(pre+04) 'Missing energy with two leptons' 100 0. 500.
+h/cr/1d $SIGMA(pre+05) 'Missing energy with two leptons' 100 0. 500.
+h/cr/1d $SIGMA(pre+06) 'Missing energy with two leptons' 100 0. 500.
+h/cr/1d $SIGMA(pre+07) 'Missing energy with two leptons' 100 0. 500.
+nt/plot	 //lun1/LCProc/1000.misseng ! ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.misseng ! ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.misseng ! ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.misseng ! ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.misseng ! ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.misseng ! ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.misseng ! ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+11) $SIGMA(500.0/449.1) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+12) $SIGMA(500.0/431.0) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+13) $SIGMA(500.0/1405.0) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+14) $SIGMA(500.0/479.3) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+15) $SIGMA(500.0/2.764) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+16) $SIGMA(500.0/23.42) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+17) $SIGMA(500.0/35.28) 0
+add $SIGMA(pre+11) $SIGMA(pre+13) $SIGMA(pre+23)
+add $SIGMA(pre+23) $SIGMA(pre+14) $SIGMA(pre+24)
+add $SIGMA(pre+24) $SIGMA(pre+12) $SIGMA(pre+22)
+add $SIGMA(pre+22) $SIGMA(pre+16) $SIGMA(pre+26)
+add $SIGMA(pre+26) $SIGMA(pre+17) $SIGMA(pre+27)
+add $SIGMA(pre+27) $SIGMA(pre+15) $SIGMA(pre+25)
+set hcol 1107
+h/plot $SIGMA(pre+25)
+set hcol 1105
+h/plot $SIGMA(pre+27) 's'
+set hcol 1103
+h/plot $SIGMA(pre+26) 's'
+set hcol 1115
+h/plot $SIGMA(pre+22) 's'
+set hcol 1106
+h/plot $SIGMA(pre+24) 's'
+set hcol 1104
+h/plot $SIGMA(pre+23) 's'
+set hcol 1102
+h/plot $SIGMA(pre+11) 's'
+set ltyp 3
+dline 350 350 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+
+sigma pre = 400
+h/cr/1d $SIGMA(pre+01) 'Two-lepton mass with missing energy cut' 100 0. 160.
+h/cr/1d $SIGMA(pre+02) 'Two-lepton mass with missing energy cut' 100 0. 160.
+h/cr/1d $SIGMA(pre+03) 'Two-lepton mass with missing energy cut' 100 0. 160.
+h/cr/1d $SIGMA(pre+04) 'Two-lepton mass with missing energy cut' 100 0. 160.
+h/cr/1d $SIGMA(pre+05) 'Two-lepton mass with missing energy cut' 100 0. 160.
+h/cr/1d $SIGMA(pre+06) 'Two-lepton mass with missing energy cut' 100 0. 160.
+h/cr/1d $SIGMA(pre+07) 'Two-lepton mass with missing energy cut' 100 0. 160.
+nt/plot	 //lun1/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+11) $SIGMA(500.0/449.1) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+12) $SIGMA(500.0/431.0) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+13) $SIGMA(500.0/1405.0) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+14) $SIGMA(500.0/479.3) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+15) $SIGMA(500.0/2.764) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+16) $SIGMA(500.0/23.42) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+17) $SIGMA(500.0/35.28) 0
+add $SIGMA(pre+11) $SIGMA(pre+13) $SIGMA(pre+23)
+add $SIGMA(pre+23) $SIGMA(pre+14) $SIGMA(pre+24)
+add $SIGMA(pre+24) $SIGMA(pre+12) $SIGMA(pre+22)
+add $SIGMA(pre+22) $SIGMA(pre+16) $SIGMA(pre+26)
+add $SIGMA(pre+26) $SIGMA(pre+17) $SIGMA(pre+27)
+add $SIGMA(pre+27) $SIGMA(pre+15) $SIGMA(pre+25)
+max $SIGMA(pre+25) 3000
+set hcol 1107
+h/plot $SIGMA(pre+25)
+set hcol 1105
+h/plot $SIGMA(pre+27) 's'
+set hcol 1103
+h/plot $SIGMA(pre+26) 's'
+set hcol 1115
+h/plot $SIGMA(pre+22) 's'
+set hcol 1106
+h/plot $SIGMA(pre+24) 's'
+set hcol 1104
+h/plot $SIGMA(pre+23) 's'
+set hcol 1102
+h/plot $SIGMA(pre+11) 's'
+set ltyp 3
+dline 350 350 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+
+sigma pre = 200
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'cos(angle between leptons) with missing energy cut' 100 -1. 1.
+h/cr/1d $SIGMA(pre+02) 'cos(angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+03) 'cos(angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+04) 'cos(angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+05) 'cos(angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+06) 'cos(angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+07) 'cos(angle between leptons) with missing energy cut' 100  -1. 1.
+nt/plot	 //lun1/LCProc/1000.((p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.((p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.((p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.((p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.((p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.((p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.((p1x*p2x+p1y*p2y+p1z*p2z)/sqrt(p1x**2+p1y**2+p1z**2)/sqrt(p2x**2+p2y**2+p2z**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+11) $SIGMA(500.0/449.1) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+12) $SIGMA(500.0/431.0) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+13) $SIGMA(500.0/1405.0) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+14) $SIGMA(500.0/479.3) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+15) $SIGMA(500.0/2.764) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+16) $SIGMA(500.0/23.42) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+17) $SIGMA(500.0/35.28) 0
+add $SIGMA(pre+11) $SIGMA(pre+13) $SIGMA(pre+23)
+add $SIGMA(pre+23) $SIGMA(pre+14) $SIGMA(pre+24)
+add $SIGMA(pre+24) $SIGMA(pre+12) $SIGMA(pre+22)
+add $SIGMA(pre+22) $SIGMA(pre+16) $SIGMA(pre+26)
+add $SIGMA(pre+26) $SIGMA(pre+17) $SIGMA(pre+27)
+add $SIGMA(pre+27) $SIGMA(pre+15) $SIGMA(pre+25)
+max $SIGMA(pre+25) 2000.
+set hcol 1107
+h/plot $SIGMA(pre+25)
+set hcol 1105
+h/plot $SIGMA(pre+27) 's'
+set hcol 1103
+h/plot $SIGMA(pre+26) 's'
+set hcol 1115
+h/plot $SIGMA(pre+22) 's'
+set hcol 1106
+h/plot $SIGMA(pre+24) 's'
+set hcol 1104
+h/plot $SIGMA(pre+23) 's'
+set hcol 1102
+h/plot $SIGMA(pre+11) 's'
+set ltyp 3
+dline 350 350 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+
+sigma pre = 300
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'cos(RPHI angle between leptons) with missing energy cut' 100 -1. 1.
+h/cr/1d $SIGMA(pre+02) 'cos(RPHI angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+03) 'cos(RPHI angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+04) 'cos(RPHI angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+05) 'cos(RPHI angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+06) 'cos(RPHI angle between leptons) with missing energy cut' 100  -1. 1.
+h/cr/1d $SIGMA(pre+07) 'cos(RPHI angle between leptons) with missing energy cut' 100  -1. 1.
+nt/plot	 //lun1/LCProc/1000.((p1x*p2x+p1y*p2y)/sqrt(p1x**2+p1y**2)/sqrt(p2x**2+p2y**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.((p1x*p2x+p1y*p2y)/sqrt(p1x**2+p1y**2)/sqrt(p2x**2+p2y**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.((p1x*p2x+p1y*p2y)/sqrt(p1x**2+p1y**2)/sqrt(p2x**2+p2y**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.((p1x*p2x+p1y*p2y)/sqrt(p1x**2+p1y**2)/sqrt(p2x**2+p2y**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.((p1x*p2x+p1y*p2y)/sqrt(p1x**2+p1y**2)/sqrt(p2x**2+p2y**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.((p1x*p2x+p1y*p2y)/sqrt(p1x**2+p1y**2)/sqrt(p2x**2+p2y**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.((p1x*p2x+p1y*p2y)/sqrt(p1x**2+p1y**2)/sqrt(p2x**2+p2y**2)) misseng>350 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+11) $SIGMA(500.0/449.1) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+12) $SIGMA(500.0/431.0) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+13) $SIGMA(500.0/1405.0) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+14) $SIGMA(500.0/479.3) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+15) $SIGMA(500.0/2.764) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+16) $SIGMA(500.0/23.42) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+17) $SIGMA(500.0/35.28) 0
+add $SIGMA(pre+11) $SIGMA(pre+13) $SIGMA(pre+23)
+add $SIGMA(pre+23) $SIGMA(pre+14) $SIGMA(pre+24)
+add $SIGMA(pre+24) $SIGMA(pre+12) $SIGMA(pre+22)
+add $SIGMA(pre+22) $SIGMA(pre+16) $SIGMA(pre+26)
+add $SIGMA(pre+26) $SIGMA(pre+17) $SIGMA(pre+27)
+add $SIGMA(pre+27) $SIGMA(pre+15) $SIGMA(pre+25)
+max $SIGMA(pre+25) 2000.
+set hcol 1107
+h/plot $SIGMA(pre+25)
+set hcol 1105
+h/plot $SIGMA(pre+27) 's'
+set hcol 1103
+h/plot $SIGMA(pre+26) 's'
+set hcol 1115
+h/plot $SIGMA(pre+22) 's'
+set hcol 1106
+h/plot $SIGMA(pre+24) 's'
+set hcol 1104
+h/plot $SIGMA(pre+23) 's'
+set hcol 1102
+h/plot $SIGMA(pre+11) 's'
+set ltyp 3
+dline 350 350 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+
+sigma pre = 500
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Lepton cos([Q]?1!)-cos([Q]?2!) with missing energy cut' 100 -2. 2.
+h/cr/1d $SIGMA(pre+02) 'Lepton cos([Q]?1!)-cos([Q]?2!) with missing energy cut' 100 -2. 2.
+h/cr/1d $SIGMA(pre+03) 'Lepton cos([Q]?1!)-cos([Q]?2!) with missing energy cut' 100 -2. 2.
+h/cr/1d $SIGMA(pre+04) 'Lepton cos([Q]?1!)-cos([Q]?2!) with missing energy cut' 100 -2. 2.
+h/cr/1d $SIGMA(pre+05) 'Lepton cos([Q]?1!)-cos([Q]?2!) with missing energy cut' 100 -2. 2.
+h/cr/1d $SIGMA(pre+06) 'Lepton cos([Q]?1!)-cos([Q]?2!) with missing energy cut' 100 -2. 2.
+h/cr/1d $SIGMA(pre+07) 'Lepton cos([Q]?1!)-cos([Q]?2!) with missing energy cut' 100 -2. 2.
+nt/plot	 //lun1/LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2)-p2z/sqrt(p2x**2+p2y**2+p2z**2) misseng>350 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2)-p2z/sqrt(p2x**2+p2y**2+p2z**2) misseng>350 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2)-p2z/sqrt(p2x**2+p2y**2+p2z**2) misseng>350 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2)-p2z/sqrt(p2x**2+p2y**2+p2z**2) misseng>350 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2)-p2z/sqrt(p2x**2+p2y**2+p2z**2) misseng>350 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2)-p2z/sqrt(p2x**2+p2y**2+p2z**2) misseng>350 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.p1z/sqrt(p1x**2+p1y**2+p1z**2)-p2z/sqrt(p2x**2+p2y**2+p2z**2) misseng>350 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+11) $SIGMA(500.0/449.1) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+12) $SIGMA(500.0/431.0) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+13) $SIGMA(500.0/1405.0) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+14) $SIGMA(500.0/479.3) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+15) $SIGMA(500.0/2.764) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+16) $SIGMA(500.0/23.42) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+17) $SIGMA(500.0/35.28) 0
+add $SIGMA(pre+11) $SIGMA(pre+13) $SIGMA(pre+23)
+add $SIGMA(pre+23) $SIGMA(pre+14) $SIGMA(pre+24)
+add $SIGMA(pre+24) $SIGMA(pre+12) $SIGMA(pre+22)
+add $SIGMA(pre+22) $SIGMA(pre+16) $SIGMA(pre+26)
+add $SIGMA(pre+26) $SIGMA(pre+17) $SIGMA(pre+27)
+add $SIGMA(pre+27) $SIGMA(pre+15) $SIGMA(pre+25)
+set hcol 1107
+h/plot $SIGMA(pre+25)
+set hcol 1105
+h/plot $SIGMA(pre+27) 's'
+set hcol 1103
+h/plot $SIGMA(pre+26) 's'
+set hcol 1115
+h/plot $SIGMA(pre+22) 's'
+set hcol 1106
+h/plot $SIGMA(pre+24) 's'
+set hcol 1104
+h/plot $SIGMA(pre+23) 's'
+set hcol 1102
+h/plot $SIGMA(pre+11) 's'
+set ltyp 3
+dline 350 350 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+
+sigma pre = 600
+h/cr/1d $SIGMA(pre+01) 'Mass with missing energy and exactly two same-generation leptons' 100 0. 160.
+h/cr/1d $SIGMA(pre+02) 'Mass with missing energy and exactly two same-generation leptons' 100 0. 160.
+h/cr/1d $SIGMA(pre+03) 'Mass with missing energy and exactly two same-generation leptons' 100 0. 160.
+h/cr/1d $SIGMA(pre+04) 'Mass with missing energy and exactly two same-generation leptons' 100 0. 160.
+h/cr/1d $SIGMA(pre+05) 'Mass with missing energy and exactly two same-generation leptons' 100 0. 160.
+h/cr/1d $SIGMA(pre+06) 'Mass with missing energy and exactly two same-generation leptons' 100 0. 160.
+h/cr/1d $SIGMA(pre+07) 'Mass with missing energy and exactly two same-generation leptons' 100 0. 160.
+nt/plot	 //lun1/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350.and.(((e1**2-p1x**2-p1y**2-p1z**2)>0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)>0.006)).or.(((e1**2-p1x**2-p1y**2-p1z**2)<0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)<0.006)) ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350.and.(((e1**2-p1x**2-p1y**2-p1z**2)>0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)>0.006)).or.(((e1**2-p1x**2-p1y**2-p1z**2)<0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)<0.006)) ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350.and.(((e1**2-p1x**2-p1y**2-p1z**2)>0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)>0.006)).or.(((e1**2-p1x**2-p1y**2-p1z**2)<0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)<0.006)) ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350.and.(((e1**2-p1x**2-p1y**2-p1z**2)>0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)>0.006)).or.(((e1**2-p1x**2-p1y**2-p1z**2)<0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)<0.006)) ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350.and.(((e1**2-p1x**2-p1y**2-p1z**2)>0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)>0.006)).or.(((e1**2-p1x**2-p1y**2-p1z**2)<0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)<0.006)) ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350.and.(((e1**2-p1x**2-p1y**2-p1z**2)>0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)>0.006)).or.(((e1**2-p1x**2-p1y**2-p1z**2)<0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)<0.006)) ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0&&misseng>350.and.(((e1**2-p1x**2-p1y**2-p1z**2)>0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)>0.006)).or.(((e1**2-p1x**2-p1y**2-p1z**2)<0.006).and.((e2**2-p2x**2-p2y**2-p2z**2)<0.006)) ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+11) $SIGMA(500.0/449.1) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+12) $SIGMA(500.0/431.0) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+13) $SIGMA(500.0/1405.0) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+14) $SIGMA(500.0/479.3) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+15) $SIGMA(500.0/2.764) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+16) $SIGMA(500.0/23.42) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+17) $SIGMA(500.0/35.28) 0
+add $SIGMA(pre+11) $SIGMA(pre+13) $SIGMA(pre+23)
+add $SIGMA(pre+23) $SIGMA(pre+14) $SIGMA(pre+24)
+add $SIGMA(pre+24) $SIGMA(pre+12) $SIGMA(pre+22)
+add $SIGMA(pre+22) $SIGMA(pre+16) $SIGMA(pre+26)
+add $SIGMA(pre+26) $SIGMA(pre+17) $SIGMA(pre+27)
+add $SIGMA(pre+27) $SIGMA(pre+15) $SIGMA(pre+25)
+max $SIGMA(pre+25) 1500
+set hcol 1107
+h/plot $SIGMA(pre+25)
+set hcol 1105
+h/plot $SIGMA(pre+27) 's'
+set hcol 1103
+h/plot $SIGMA(pre+26) 's'
+set hcol 1115
+h/plot $SIGMA(pre+22) 's'
+set hcol 1106
+h/plot $SIGMA(pre+24) 's'
+set hcol 1104
+h/plot $SIGMA(pre+23) 's'
+set hcol 1102
+h/plot $SIGMA(pre+11) 's'
+set ltyp 3
+dline 350 350 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+
+
+
+
+
+sigma pre = 000
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'REPLACEME' 100 
+h/cr/1d $SIGMA(pre+02) 'REPLACEME' 100 
+h/cr/1d $SIGMA(pre+03) 'REPLACEME' 100 
+h/cr/1d $SIGMA(pre+04) 'REPLACEME' 100 
+h/cr/1d $SIGMA(pre+05) 'REPLACEME' 100 
+h/cr/1d $SIGMA(pre+06) 'REPLACEME' 100 
+h/cr/1d $SIGMA(pre+07) 'REPLACEME' 100 
+nt/plot	 //lun1/LCProc/1000.REPLACEME misseng>350 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.REPLACEME misseng>350 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.REPLACEME misseng>350 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.REPLACEME misseng>350 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.REPLACEME misseng>350 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.REPLACEME misseng>350 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.REPLACEME misseng>350 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+11) $SIGMA(500.0/449.1) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+12) $SIGMA(500.0/431.0) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+13) $SIGMA(500.0/1405.0) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+14) $SIGMA(500.0/479.3) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+15) $SIGMA(500.0/2.764) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+16) $SIGMA(500.0/23.42) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+17) $SIGMA(500.0/35.28) 0
+add $SIGMA(pre+11) $SIGMA(pre+13) $SIGMA(pre+23)
+add $SIGMA(pre+23) $SIGMA(pre+14) $SIGMA(pre+24)
+add $SIGMA(pre+24) $SIGMA(pre+12) $SIGMA(pre+22)
+add $SIGMA(pre+22) $SIGMA(pre+16) $SIGMA(pre+26)
+add $SIGMA(pre+26) $SIGMA(pre+17) $SIGMA(pre+27)
+add $SIGMA(pre+27) $SIGMA(pre+15) $SIGMA(pre+25)
+set hcol 1107
+h/plot $SIGMA(pre+25)
+set hcol 1105
+h/plot $SIGMA(pre+27) 's'
+set hcol 1103
+h/plot $SIGMA(pre+26) 's'
+set hcol 1115
+h/plot $SIGMA(pre+22) 's'
+set hcol 1106
+h/plot $SIGMA(pre+24) 's'
+set hcol 1104
+h/plot $SIGMA(pre+23) 's'
+set hcol 1102
+h/plot $SIGMA(pre+11) 's'
+set ltyp 3
+dline 350 350 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+

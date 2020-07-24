@@ -1,0 +1,114 @@
+This is TeX, Version 3.14159 (Web2c 7.0) (format=latex 1.10.14)  24 SEP 2004 16:40
+**electrodynamics2.tex
+(electrodynamics2.tex
+LaTeX2e <2001/06/01>
+(/usr/local/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/local/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 1996/11/03 v2.2b
+
+(/usr/local/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 1997/03/24 v2.2c
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 133.
+))
+(/usr/local/share/texmf/tex/latex/packages/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/share/texmf/tex/latex/packages/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/share/texmf/tex/latex/packages/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/share/texmf/tex/latex/packages/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/share/texmf/tex/latex/packages/graphics/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/local/share/texmf/tex/latex/packages/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(electrodynamics2.aux)
+\openout1 = `electrodynamics2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+ (/usr/local/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 1995/01/05 v2.2e AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+
+(/usr/local/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 1995/01/05 v2.2e AMS font definitions
+) [1
+
+] [2]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 176--177
+ [] 
+ []
+
+[3]
+File: wzlep.ps Graphic file (type eps)
+ <wzlep.ps>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 213.
+
+ (/usr/local/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 213.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 206--223
+ [] 
+ []
+
+[4]
+File: quadratic.eps Graphic file (type eps)
+ <quadratic.eps>
+File: mexicanhat.eps Graphic file (type eps)
+ <mexicanhat.eps> [5] [6] (electrodynamics2.aux) ) 
+Here is how much of TeX's memory you used:
+ 842 strings out of 10960
+ 9160 string characters out of 73839
+ 56009 words of memory out of 263001
+ 3741 multiletter control sequences out of 10000+0
+ 8900 words of font info for 34 fonts, out of 100000 for 500
+ 14 hyphenation exceptions out of 1000
+ 25i,16n,24p,227b,490s stack positions out of 300i,100n,500p,3000b,4000s
+
+Output written on electrodynamics2.dvi (6 pages, 23824 bytes).

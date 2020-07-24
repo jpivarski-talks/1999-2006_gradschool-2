@@ -1,0 +1,3 @@
+I have replaced latticespacingagain.eps to correct the placement of the
+experimental datapoint.  (I forgot to multiply by the ratio of the masses,
+and for some unknown reason, the errorbars were too large.)

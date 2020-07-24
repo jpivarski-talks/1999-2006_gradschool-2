@@ -1,0 +1,289 @@
+From mccann@watson.org Mon Mar 22 08:08:31 2004
+Date: Thu, 6 Dec 2001 07:33:13 -0500
+From: "Jim Pivarski (McCann)" <mccann@watson.org>
+To: Mike Schuresko <mds@watson.org>
+Subject: bell's theorem
+
+On Tue, Dec 04, 2001 at 04:12:11PM -0500, Mike Schuresko wrote:
+> On Tue, 4 Dec 2001, Jim Pivarski (McCann) wrote:
+> 
+> > In 196X, Bell found a quantity that could distinguish between the two
+> > interpretations in a stremlined version of the experiment Einstein,
+> > Podolsky and Rosen proposed. (I can look it up for you if you want
+> > something more specific than "a quantity").
+> 
+> please do.
+
+Here's the simplest scenario:
+
+The spin-0 state decays into two electrons (spin-1/2 particles).
+Spin-1/2 particles, when measured, will only ever be found in a +1/2
+or a -1/2 state, never spin 0. To conserve angular momentum, if one of
+them is found in a +1/2 state, the other MUST be found in a -1/2
+state, if the measurement is done along the same axis.
+
+    z
+    |_ x
+
+    spin-measuring   /________  decay of    ________\  spin-measuring
+       device A      \         spin-0 state         /     device B
+
+Experimentally, this is done with photons (spin-1 particles). The same
+logic applies (a photon will never be found with a spin of zero along
+any axis) but the derivation is more involved. Aspect and Grangier in
+the 70's did exactly the above with photon pairs from a decaying
+nucleus.
+
+The two detectors are placed far enough apart that the time to measure
+and record a spin measurement is shorter than the time for a signal at
+speed c to propogate from one detector to the other.
+
+Device A will be measuring spins along the z axis (perpendicular to
+the beamline). Device B will be measuring spin along an axis which is
+perpendicular to the beamline but an angle theta from the z axis. When
+theta is zero, device B will always measure a spin opposite to the
+spin measured by device A (exactly anti-correlated), by conservation
+of angular momentum. When theta is pi/2, device B will measure a spin
+which is completely uncorrelated with the measurement of device A. For
+intermediate values of theta, the value will be partially correlated.
+Here is the explaination and calculation given by quantum mechanics:
+
+(I decided to include all the background to really understand the
+calculation... I don't remember there being any vector space
+formulation of QM in physics 3.)
+
+The state of a particle is given by a normalized vector in a vector
+space. For spin-1/2 particles (as it is for spin-1 particles), this
+vector space (or the relevant part of it) is two-dimensional. If we
+choose a basis in this vector space to be "spin measurements in the
+z-direction", then one basis vector may be associated with "spin =
++1/2" and the other with "spin = -1/2". An unobserved particle may
+take a state represented by any normalized vector in this space, but
+when the particle is observed, it is then projected onto the "spin
+measurements in teh z-direction" basis vectors. The component on the
+"spin = +1/2" vector is interpreted as the sqrt of the probability of
+finding the particle in the +1/2 state. Alternatively, we can say
+that the probability of getting a measurement corresponding to state x
+from a particle which was originally in a state y is the (square of
+the) inner product                                2
+		   P( measurement x ) == ( x . y )
+
+The two particles in our experimental apparatus are in an entangled
+state--- neither particle can be expressed in terms of a state alone,
+the system of both particles together are expressed as the following
+state
+
+   y = ( "A = +1/2, B = -1/2"  -  "A = -1/2, B = +1/2" ) / sqrt(2)
+
+where the vector space is a four-dimensional space. This space is
+spanned by the following set of orthonormal basis vectors:
+  "A = +1/2, B = +1/2"    A measures spin +1/2 zhat, B has +1/2 zhat
+  "A = +1/2, B = -1/2"    A measures spin +1/2 zhat, B has -1/2 zhat
+  "A = -1/2, B = +1/2"    A measures spin -1/2 zhat, B has +1/2 zhat
+  "A = -1/2, B = -1/2"    A measures spin -1/2 zhat, B has -1/2 zhat
+
+Notice that if we take the inner products
+  ( "A = +1/2, B = +1/2"  .  y )^2  ==  0
+  ( "A = +1/2, B = -1/2"  .  y )^2  ==  1/2
+  ( "A = -1/2, B = +1/2"  .  y )^2  ==  1/2
+  ( "A = -1/2, B = -1/2"  .  y )^2  ==  0
+because you'll never see A and B with the same spin (theta=0), and
+you'll see either of the two antiparallel combinations with equal
+probability. The axiom of probability that
+		sum of all disjoint probabilities == 1
+is equivalent to the completeness relation of basis vectors that span
+a space.
+
+Now, when you do a spin measurement of a particle NOT along the
+z-axis, that measurement picks a different basis set. It can be
+derived that the unitary transformation from the "spin measurement in
+the z-direction" basis to the "spin measurement at an angle theta from
+z" basis is
+
+		 /  cos( theta / 2 )    -sin( theta / 2 )  \
+	 R  ==  |                                           |
+		 \  sin( theta / 2 )     cos( theta / 2 )  /
+
+In our four-dimensional abstract spin space, the rotation is only
+applied to the B measurement part. (R4 = identity $\otimes$ R)
+
+		        /  cos  -sin    0     0   \
+		 R  == |   sin   cos    0     0    |
+		  4    |    0     0    cos  -sin   |
+		        \   0     0    sin   cos  /
+
+Our entangled state y is expressed (above) in terms of the theta=0
+basis. The measurement is going to pick out basis vectors in a
+non-zero theta basis, so we need to inner product y onto transformed
+basis vectors                                       2
+		P( measurement x ) == ( x . R4 . y )
+
+Here are the results:
+	  P( A = +1/2, B = +1/2 ) == sin^2( theta / 2 ) / 2
+	  P( A = +1/2, B = -1/2 ) == cos^2( theta / 2 ) / 2
+	  P( A = -1/2, B = +1/2 ) == cos^2( theta / 2 ) / 2
+	  P( A = -1/2, B = -1/2 ) == sin^2( theta / 2 ) / 2
+These add up to one and quantify a correlation that continuously
+varies with theta from perfect anticorrelation at theta=0 to being
+perfectly uncorrelated at theta=pi/2.
+
+This is the quantum mechanical prediction. Notice that I haven't
+assumed that any more fundumental information exists about the state
+of a particle other than a recipe for calculating the probabilities
+for a set of results, given a measurement technique. We can think of
+the quantum mechanical description of the state as supplying a
+function from experimental setup (angle theta of detector B) to a set
+of disjoint < result, probability > pairs. (The vector y and a choice
+of orthonormal basis can be mapped to a set of components-squared of
+y.)
+
+It would seem that this is not enough: for a particle in some given
+state, there must exist a function from experimental setup to the
+result of the measurement, even if we don't know what that function
+is. This is what you described, thinking that there was conflict
+between QM and locality, in terms of cryptography theory: the particle
+state is effectively a pseudorandom generator, a mapping from
+measurement strategy to the result of that measurement which is too
+complicated for us to compute and therefore predict. (If I'm putting
+words into your mouth, I'm sure you'll stop me.)
+
+Bell's inequality comes from the following argument. Suppose that
+there are three experimental setups under consideration:
+  1. detector A is aligned along z, B is angled at theta = 10 degrees
+  2. detector A is aligned along z, B is angled at theta = 20 degrees
+  3. detector A is angled at theta = 10 degrees, B is at 20 degrees
+
+The result of any measurement will only ever be +/- 1/2, so there are
+eight relevant states (A at 10 deg == - B at 10 deg).
+
+  population   A at 0 deg   A at 10 deg   B at 10 deg   B at 20 deg
+      N1   	 + 1/2 	      - 1/2	    + 1/2    	  + 1/2
+      N2   	 + 1/2 	      - 1/2  	    + 1/2    	  - 1/2
+      N3   	 + 1/2 	      + 1/2  	    - 1/2    	  + 1/2
+      N4   	 + 1/2 	      + 1/2  	    - 1/2    	  - 1/2
+      N5   	 - 1/2 	      - 1/2  	    + 1/2    	  + 1/2
+      N6   	 - 1/2 	      - 1/2  	    + 1/2    	  - 1/2
+      N7   	 - 1/2 	      + 1/2  	    - 1/2    	  + 1/2
+      N8   	 - 1/2 	      + 1/2  	    - 1/2    	  - 1/2
+
+Even in this deterministic theory, it is not necessarily possible to
+identify which of the eight states the system was in by measurement
+because you can only measure B at 10 degrees or at 20 degrees, not
+both. The measurement process could, in principle, change the state so
+that a subsequent 60-degree measurement would not be valid to
+distiguish state 7 from state 8. (This is somethingthing that people
+erroneously think is novel about QM.)
+
+This situation is different from quantum mechanics because of the
+assertion that each of these lines represents a distinct state of the
+system. Even if we can't necessarily measure it with instruments, in
+the deterministic theory we can consider a state that would read +1/2
+if we turned B 10 degrees and would read -1/2 if we turned B 20
+degrees. This is impossible in (modern) QM since the "B is 10 degrees"
+basis vectors and the "B is 20 degrees" basis vectors have non-zero,
+non-one projections onto each other, so even if you knew that B@10 deg
+would yield +1/2, you could only make a probabilistic statement about
+what you would measure for B@20 degrees.
+
+For some large dataset (N == N1+N2+N3+N4+N5+N6+N7+N8 events), the
+details of the deterministic theory may predict populations Ni for
+each of the possible states. Whatever these Ni are, they are certainly
+non-negative. So we can say
+
+         N1 + N3       <=     N1 + N3 + N2 + N7
+
+       ( N1 + N3 )     <=      ( N1 + N2 )    +      ( N3 + N7 )
+
+       ( N1 + N3 )     <=      ( N1 + N2 )    +      ( N3 + N7 )
+      -------------           -----------------------------------
+            N                                 N
+
+   P( A@0 +, B@20 + )  <=  P( A@0 +, B@10 + ) + P( A@10 +, B@20 + )
+
+This is a special case of Bell's inequality. It can be generalized to
+arbitrary angles easily, and for arbitrary-spin particles with
+difficulty. 
+
+As a reminder, the probability for getting +1/2 in both detectors
+according to QM was
+
+	  P( A = +1/2, B = +1/2 ) == sin^2( theta / 2 ) / 2
+
+where theta is the angle between the measurement axes of the two
+detectors.
+
+   P( A@0  +, B@20 + ) == sin^2( 20 / 2 ) / 2 == 0.0151
+   P( A@0  +, B@10 + ) == sin^2( 10 / 2 ) / 2 == 0.0038
+   P( A@10 +, B@20 + ) == sin^2( 10 / 2 ) / 2 == 0.0038
+
+and 0.0038 + 0.0038 == 0.0076 is not greater than or equal to 0.0151.
+This is not a special case of small numbers or anything like that,
+Bell's inequality is violated by QM through the range 0 < theta <
+pi/2. Once the technology to produce pure entangled states developed,
+the QM prediction was verifed to many standard deviations outside of
+the deterministic theory bound. Experiments usually work with the
+spin-1 version of Bell's theorem, measuring the "spin" (polarization)
+of photons by passing them through polarizing filters.
+
+Even this doesn't entirely rule out deterministic theories, though---
+it is still possible for a deterministic theory to reproduce the QM
+predictions by allowing the measurement process at one detector to
+alter the state of the particle near the other detector. Since the two
+detectors can be separated by a distance much larger than the
+resolution times of the two detectors, this communication is non-local
+and violates causality as it is understood in the framework of special
+relativity. Most physicists prefer to believe non-deterministic
+quantum mechanics.
+
+It may seem that QM is violating locality here, too, since a mixed
+state ( "A = +1/2, B = -1/2" - "A = -1/2, B = +1/2" ) / sqrt(2)
+becomes either "A = +1/2, B = -1/2" or "A = -1/2, B = +1/2" when it is
+measured at A, forcing the measurement at B to be known with
+certainty. This is an opportunity to refine our definition of
+locality: the quantum state of a system is an inherantly unobservable
+object. When we believe that we have created a pure ensemble of
+particles in a given state, we can deduce or impose bounds on parts of
+the quantum state by observing the frequency of collapses to this
+basis or that basis, but the state of an arbitrary particle can't be
+determined by any single measurement. (And one measurement is all you
+get!) Most physicists take the position that locality, and hence
+causality, only matters for in-principly observable things. Thus QM is
+local and those deterministic theories which reproduce QM are not
+because in any deterministic theory, the state of a system is in
+principle observable.
+
+Observer A may have resolved ( y1 - y2 ) / sqrt(2) ---> y1, but
+observer B doesn't know that. When he sees a measurement of y1, he
+might as well think that he did the state collapse for observer A.
+There is no causal connection between the two measurements, and the
+partial ordering is preserved.
+
+It's getting to be daylight. I've been staying up in the control room
+while data that I'll be using in my thesis is being taken (not that I
+have much to do with it--- I just check to see that the numbers are
+reasonable as they come in... every... hour... or... two...). What
+I've really been doing is trying to get an analysis job to run while
+relearning and typesetting Bell's theorem. I thought it was fun, I
+hope it's understandable.
+
+> btw, i like your new name .
+
+:)
+
+I've been meaning to do it for some time, to disambiguate child names,
+but have never gotten around to it. Now the level of having gotten
+around to it is that I'm on the CLEO author list as Pivarski but
+everything else says McCann. Entangled state references have not come
+up, but I'm sometimes called "The Graduate Student Formerly Known as
+McCann."
+
+Uh-oh, morning people are getting here and asking me questions. Good
+night!
+
+-- Jim
+
+===================================================
+   Jim Pivarski (a.k.a. McCann)
+   Physics graduate student, CLEO, Cornell University
+   mailto:mccann@watson.org
+

@@ -1,0 +1,33 @@
+import layer*
+
+max $SIGMA(prefix+25) $HINFO($SIGMA(prefix+25), 'MAX')
+min $SIGMA(prefix+25) 0
+max $SIGMA(prefix+24) $HINFO($SIGMA(prefix+25), 'MAX')
+min $SIGMA(prefix+24) 0
+max $SIGMA(prefix+23) $HINFO($SIGMA(prefix+25), 'MAX')
+min $SIGMA(prefix+23) 0
+max $SIGMA(prefix+22) $HINFO($SIGMA(prefix+25), 'MAX')
+min $SIGMA(prefix+22) 0
+max $SIGMA(prefix+01) $HINFO($SIGMA(prefix+25), 'MAX')
+min $SIGMA(prefix+01) 0
+
+if [1].eq.'s' then
+  set hcol $SIGMA(1100+c[layer5])
+  h/plot $SIGMA(prefix+25) 'sbox'
+else
+  set hcol $SIGMA(1100+c[layer5])
+  h/plot $SIGMA(prefix+25) 'box'
+endif
+set hcol $SIGMA(1100+c[layer4])
+h/plot $SIGMA(prefix+24) 'sbox'
+set hcol $SIGMA(1100+c[layer3])
+h/plot $SIGMA(prefix+23) 'sbox'
+set hcol $SIGMA(1100+c[layer2])
+h/plot $SIGMA(prefix+22) 'sbox'
+set hcol $SIGMA(1100+c[layer1])
+h/plot $SIGMA(prefix+01) 'sbox'
+
+set bord 1
+set fais 0
+set faci 0
+box $GRAFINFO('WNXMIN') $GRAFINFO('WNXMAX') $GRAFINFO('WNYMIN') $GRAFINFO('WNYMAX')

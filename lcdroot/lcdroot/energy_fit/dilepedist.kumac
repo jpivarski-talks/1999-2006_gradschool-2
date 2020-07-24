@@ -1,0 +1,387 @@
+Application Comis Quit
+
+C ----------------------------------------------------
+C This function will assume mass differences and then 
+C Calculate the di lepton energy distribution depending on 
+C lsp mass. You must exec andreasdist.kumac before using this.
+
+	real function bdilepedist(ell,mlsp)
+	implicit none
+	real ell, mlsp
+	real output
+	real invmx, invmn, dinvm
+	real invm
+	real bnorm
+	real badist
+	real bener
+	real becmprob
+	real get_eb_step
+	real bpmag
+	real dm
+	real emax,emin,prob
+	real probn2,probn3
+	real norm
+	real sig
+	real ctheta,pcos,pmag
+	real hold,etot,m1,m2,m3
+	real ebeamx,ebeamn,ebeam,debeam
+	real pbeam
+	int i, steps,steps3, stepse
+	int j,k
+
+	invmn=25.0
+	dinvm=0.5
+
+	dm= 159.417 - 107.697
+	sig= 0.95
+
+	debeam=0.05
+	ebeamn=360.0
+	ebeamx=500.0
+	stepse=58
+C zero the output
+	output=0.0
+	ebeam=ebeamx
+	do k=1,stepse
+	debeam=get_eb_step(ebeam)
+	ebeam=ebeam-debeam
+	pbeam=becmprob(ebeam)
+c	write(*,*) 'ebeam pbeam debeam',ebeam,pbeam,debeam
+C Now calculate etotp
+	m1=ebeam
+	m2=mlsp+dm
+	m3=mlsp+dm
+	if(ebeam.gt.(m2+m3)) then
+	pmag=bpmag(m1,m2,m3)
+
+	norm=bnorm(m3,mlsp,sig,0.5)
+	etot=sqrt(m3*m3+pmag*pmag)
+
+C Get the norms for the invm distributions
+C Get the maxium invariant mass, which is the mass difference
+	invmx=dm
+	steps=(invmx-invmn)/dinvm
+	invm=invmn-dinvm
+C loop over possible invariant masses
+	do i=1, steps
+	invm=invm+dinvm
+C Get the maximum and minium di-lepton energies for this invariant mass
+	emax=bener(invm,mlsp,dm,etot,1.0)
+	emin=bener(invm,mlsp,dm,etot,-1.0)
+C	write(*,*) 'invm mlsp dm etot ',invm,mlsp,dm,etot
+C If the energy is within the min and max, integrate
+C	write(*,*) 'emin ell emax ',emin,ell,emax
+	if(ell.gt.emin.and.ell.lt.emax) then
+	prob=norm*(badist(invm,mlsp+dm,mlsp,sig))
+
+	pcos=(1.0/(emax-emin))
+	output=output+prob*pbeam*pcos*dinvm*debeam
+C	write(*,*) 'prob pbeam pcos ',prob,pbeam,pcos
+C	write(*,*) 'dinvm debeam ',dinvm,debeam
+C	write(*,*) 'output ',output
+	endif
+C invm loop enddo
+	enddo 
+C endif to if ebeam > m1+m2 
+	endif
+C beam energy enddo
+	enddo
+C	write(*,*) ell, output
+	bdilepedist=output
+	return
+	end
+
+
+
+C ----------------------------------------------------
+C This function will assume mass differences and then 
+C Calculate the di lepton energy distribution depending on 
+C lsp mass. You must exec andreasdist.kumac before using this.
+
+	real function bedist(ell,mlsp,m_min,m_max)
+	implicit none
+	real ell, mlsp,m_max,m_min
+	real output
+	real invmx, invmn, dinvm
+	real invm
+	real bnorm
+	real badist
+	real bener
+	real dm,dm2,dm3
+	real emax,emin,prob
+	real probn2,probn3
+	real normn2,normn3,norm
+	real sig,sig2,sig3
+	real ctheta,pcos,pmag
+	real hold,etot,etot2,etot3,m1,m2,m3
+	int i, steps
+	int j
+
+C	write(*,*) 'I am in bedist'
+
+	if(m_min.gt.m_max) then
+C	write(*,*) 'WARNING: Minimum is greater than Maximum'
+	endif
+
+	invmn=m_min
+	dinvm=0.5
+	dm2=51.72
+	sig2=0.95
+	dm3=51.72
+	sig3=0.95
+
+C Now calculate etotp
+	m1=500.0
+	m2=mlsp+dm2
+	m3=mlsp+dm3
+	hold=m1*m1*m1*m1
+	hold=hold+m2*m2*m2*m2
+	hold=hold+m3*m3*m3*m3
+	hold=hold-2.0*m1*m1*m2*m2
+	hold=hold-2.0*m1*m1*m3*m3
+	hold=hold-2.0*m3*m3*m2*m2
+	hold=sqrt(hold)/(2.0*m1)
+	pmag=hold
+	etot2=sqrt(m2*m2+pmag*pmag)
+	etot3=sqrt(m3*m3+pmag*pmag)
+
+	normn2=bnorm(m2,mlsp,sig2,0.5)
+	normn3=bnorm(m3,mlsp,sig3,1.0)
+	
+
+	output=0.0
+C	write(*,*) 'I am about to loop'
+C loop over N2 and N3	
+	do j=1,2
+	
+	if(j.eq.1) then
+	dm=dm2
+	sig=sig2
+	norm=normn2
+	etot=etot2
+	else
+	dm=dm3
+	sig=sig3
+	norm=normn3
+	etot=etot3
+	endif
+
+	invmx=dm
+C Take the smallest of the upper edge of our bin and the upper
+C edge physically possible
+	if(m_max.lt.invmx) then
+	invmx=m_max
+	endif
+	steps=(invmx-invmn)/dinvm
+	invm=invmn-dinvm
+C	write(*,*) 'about to loop through invm'
+C	write(*,*) 'invmx invmn dinvm ', invmx,invmn,dinvm
+C loop over possible invariant masses
+	do i=1, steps
+	invm=invm+dinvm
+	emax=bener(invm,mlsp,dm,etot,1.0)
+	emin=bener(invm,mlsp,dm,etot,-1.0)
+C	write(*,*) emin,ell,emax
+	if(ell.gt.emin.and.ell.lt.emax) then
+	prob=norm*(badist(invm,mlsp+dm,mlsp,sig))
+	ctheta=2.0*(ell-0.5*(emin+emax))/(emax-emin)
+	pcos=(1.0/(emax-emin))
+	output=output+prob*pcos*dinvm
+C	write(*,*) norm,prob,output
+	endif
+	enddo
+
+	enddo
+C	write(*,*) output
+	bedist=output
+	return
+	end
+
+
+C -------------------------------------------------
+
+	real function bener(invm,mlsp,dm,etotp,x)
+	real invm,mlsp,dm,etotp,x
+	real m1,m2,m3,p
+	real bgam,gam
+	real avEll,dEll
+	real etot
+	m1=mlsp+dm
+	m2=mlsp
+	m3=invm
+
+	p=m1*m1*m1*m1
+	p=p+m2*m2*m2*m2
+	p=p+m3*m3*m3*m3
+	p=p-2.0*m1*m1*m2*m2
+	p=p-2.0*m1*m1*m3*m3
+	p=p-2.0*m2*m2*m3*m3
+	if(p.lt.0.0) then
+	p=0
+	endif
+	p=sqrt(p)/(2.0*m1)
+
+	etot=sqrt(p*p+mlsp*mlsp)+sqrt(p*p+invm*invm)
+
+C etotp is the energy of the Neutralino in the CM frame
+	gam=etotp/m1
+	bgam=gam*sqrt(1.0-1.0/(gam*gam))
+
+
+	avEll=gam*sqrt(invm*invm+p*p)
+	dEll=bgam*p
+
+	bener=avEll+x*dEll
+	return
+	end
+
+
+C------------------------------------------------------------------
+
+C This will give you the total CM energy probability distribution after
+C Brem and Beam-straulung takes it's toll.
+	real function becmprob(ener)
+	implicit none
+	real ener
+	real norm
+	real funcinfo(17,2)
+	real m,x1,x2,y1,y2,prob
+	int i
+
+	norm=1.0/9897.0
+
+C This gives non zero for range of 360 to 500GeV
+	if(ener.lt.360.0) then
+	becmprob=0.0
+	return
+	endif
+	if(ener.gt.500.0) then
+	becmprob=0.0
+	return
+	endif
+
+C This is the function
+C The first entry is the energy, the second is the 
+C probability/norm. I know this is ugly, but not sure how else to do it
+	funcinfo(1,1)=365.0
+	funcinfo(1,2)=2.0
+	funcinfo(2,1)=375.0
+	funcinfo(2,2)=5.0
+	funcinfo(3,1)=385.0
+	funcinfo(3,2)=12.0
+	funcinfo(4,1)=395.0
+	funcinfo(4,2)=18.0
+	funcinfo(5,1)=405.0
+	funcinfo(5,2)=20.0
+	funcinfo(6,1)=415.0
+	funcinfo(6,2)=27.0
+	funcinfo(7,1)=425.0
+	funcinfo(7,2)=36.0
+	funcinfo(8,1)=435.0
+	funcinfo(8,2)=42.0
+	funcinfo(9,1)=445.0
+	funcinfo(9,2)=50.0
+	funcinfo(10,1)=455.0
+	funcinfo(10,2)=60.0
+	funcinfo(11,1)=465.0
+	funcinfo(11,2)=80.0
+	funcinfo(12,1)=475.0
+	funcinfo(12,2)=100.0
+	funcinfo(13,1)=485.0
+	funcinfo(13,2)=130.0
+	funcinfo(14,1)=493.0
+	funcinfo(14,2)=200.0
+	funcinfo(15,1)=497.5
+	funcinfo(15,2)=275.0
+	funcinfo(16,1)=498.5
+	funcinfo(16,2)=500.0
+	funcinfo(17,1)=500.0
+	funcinfo(17,2)=1785.0
+
+
+	if(ener.gt.360.0.and.ener.lt.500.0) then
+	x1=360.0
+	y1=0.0
+	do i=1,17
+	x2=funcinfo(i,1)
+	y2=funcinfo(i,2)
+	if(ener.gt.x1.and.ener.lt.x2) then
+	m=(y2-y1)/(x2-x1)
+	prob=y1+m*(ener-x1)
+	prob=prob*norm
+	becmprob=prob
+	return
+	endif
+	x1=x2
+	y1=y2
+	enddo
+
+
+	endif
+
+
+	return
+	end
+
+
+C-----------------------------------------------------
+C This will get momentum of m2 and m3 in m1 rest frame if 
+C m2 and m3 are m1's daughters
+	real function bpmag(m1,m2,m3)
+	implicit none
+	real m1,m2,m3
+	real p
+	p=m1*m1*m1*m1
+	p=p+m2*m2*m2*m2
+	p=p+m3*m3*m3*m3
+	p=p-2.0*m1*m1*m2*m2
+	p=p-2.0*m1*m1*m3*m3
+	p=p-2.0*m2*m2*m3*m3
+	if(p.lt.0.0) then
+	p=0
+	endif
+	p=sqrt(p)/(2.0*m1)
+	bpmag=p
+	return
+	end
+
+C--------------------------------------------------------------
+C This is a function to get a step size to intergrate over different
+C parts of the beam energy function
+	real function get_eb_step(ebeam)
+	implicit none
+	real ebeam
+
+	if(ebeam.lt.500.0.and.ebeam.gt.498.0) then
+	get_eb_step=0.1
+	return 
+	endif
+	if(ebeam.lt.498.1.and.ebeam.gt.480.0) then
+	get_eb_step=1.0
+	return
+	endif
+	if(ebeam.lt.480.1.and.ebeam.gt.460.0) then
+	get_eb_step=2.0
+	return
+	endif
+	if(ebeam.lt.460.1.and.ebeam.gt.420.0) then
+	get_eb_step=5.0
+	return
+	endif
+	if(ebeam.lt.420.1) then
+	get_eb_step=10.0
+	return
+	endif
+
+	get_eb_step=10.0
+	return
+	end
+
+
+	
+
+
+
+quit
+
+

@@ -1,0 +1,166 @@
+* /home/rcg24/build/Mar04_04_MC_LCD/Linux/g++/rzn/chi20chi30v4_c10c30.rzn  
+* nt/chain c1c2   
+* /home/rcg24/build/Mar04_04_MC_LCD/Linux/g++/rzn/chi20chi30v4_c1pc2m.rzn 
+* nt/chain n2n3   
+* /home/rcg24/build/Mar04_04_MC_LCD/Linux/g++/rzn/chi20chi30v4_c20c30.rzn
+* nt/chain c1c1   
+* /home/rcg24/build/Mar04_04_MC_LCD/Linux/g++/rzn/chi20chi30v4_c1pc1m.rzn  
+* nt/chain zpairs 
+* /home/rcg24/build/Mar04_04_MC_LCD/Linux/g++/rzn/chi20chi30v4.5_z0pair.rzn  
+* nt/chain ttbar  
+* /home/rcg24/build/Mar04_04_MC_LCD/Linux/g++/rzn/chi20chi30v4_ttbar.rzn  
+* nt/chain wpairs 
+* /home/rcg24/build/Mar04_04_MC_LCD/Linux/g++/rzn/chi20chi30v4_wpair.rzn  
+
+* I use ntuple 3, which (I hope) is the two jet one, and plot jinvm, which 
+* is the invariant mass of the two jets, using the following cuts
+
+* cut $1 (500-eve).ge.350
+* cut $2 (ranf3.le.0.5).and.((j1mid=5.or.j2mid=5).
+* or.((j1mid=4.or.j1mid=4).and.ranf4.le.0.01))
+* cut $3 abs(j1pz/sqrt(j1px**2+j1py**2+j1pz**2)).le.0.9.and.
+* abs(j2pz/sqrt(j2px**2+j2py**2+j2pz**2)).le.0.9
+
+* The first is missing energy, the second is btagging.  The third is a cos 
+* theta cut.
+
+* We can talk tomorrow if this doesn't make sense.
+* The file I was making these plots from is 
+* ~ljf26/workshop/TwoJetProc/pretty_plots.kumac
+
+opt zfl1
+
+* nt/chain n1n3 	rcg24/chi20chi30v4_c10c30.rzn
+* nt/chain c1c2 	rcg24/chi20chi30v4_c1pc2m.rzn
+* nt/chain n2n3 	rcg24/chi20chi30v4_c20c30.rzn
+* nt/chain c1c1 	rcg24/chi20chi30v4_c1pc1m.rzn
+* nt/chain zpairs rcg24/chi20chi30v4.5_z0pair.rzn
+* nt/chain ttbar  rcg24/chi20chi30v4_ttbar.rzn
+* nt/chain wpairs rcg24/chi20chi30v4_wpair.rzn
+* sigma sn1n3 =   (250) / (282.8)
+* sigma sc1c2 =   (250) / (499.8)
+* sigma sn2n3 =   (250) / (245.0)
+* sigma sc1c1 =   (250) / (226.5)
+* sigma szpairs = (250) / (265.0)
+* sigma sttbar =  (250) / (157.0)
+* sigma swpairs = (250) / (14.2)
+
+nt/chain n1n3 	rcg24_again/chi20chi30v5_n1n3_r.rzn
+nt/chain c1c2 	rcg24_again/chi20chi30v5_c1pc2m_r.rzn
+nt/chain n2n3 	rcg24_again/chi20chi30v5_n2n3_r.rzn
+nt/chain c1c1 	rcg24_again/chi20chi30v5_c1pc1m_r_p1.rzn
+nt/chain c1c1 	rcg24_again/chi20chi30v5_c1pc1m_r_p2.rzn
+nt/chain zpairs rcg24_again/chi20chi30v5_zpair_r_p1.rzn
+nt/chain zpairs rcg24_again/chi20chi30v5_zpair_r_p2.rzn
+nt/chain ttbar  rcg24_again/chi20chi30v5_ttbar_r_0p1.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_r0.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_r1.rzn
+sigma sn1n3 =   (250) / (317.2)
+sigma sc1c2 =   (250) / (198.4+500.0)
+sigma sn2n3 =   (250) / (282.1)
+sigma sc1c1 =   (250) / (1010.0)
+sigma szpairs = (250) / (292.5)
+sigma sttbar =  (250) / (124.5+124.5)
+sigma swpairs = (250) / (132.2+82.0)
+
+global/create layer7 wpairs
+global/create layer6 ttbar
+global/create layer5 zpairs
+global/create layer4 c1c1
+global/create layer3 c1c2
+global/create layer2 n2n3
+global/create layer1 n1n3
+
+exec color.kumac
+
+* 2 jet, l lepton is CHI20CHI30PROC/5
+* 2 lepton is CHI20CHI30PROC/1
+
+set GSIZ $SIGMA(0.28*1.5)
+set TSIZ $SIGMA(0.28*1.5)
+set ASIZ $SIGMA(0.28*1.5)
+set CSIZ $SIGMA(0.28*1.5)
+set PSIZ $SIGMA(0.28*1.5)
+set VSIZ $SIGMA(0.28*1.5)
+
+zone 1 2
+sigma prefix=100
+exec fill.kumac 'Missing energy in 2-jet events' 100 0. 700. CHI20CHI30PROC/3.500-eve !
+exec plot.kumac 0. 0. 0. 0. !
+exec cutline.kumac 350. 1. 0.9
+exec key.kumac 3 0. $SIGMA(0.28*1.5)
+
+nt/cuts $1 500-eve>350.
+
+sigma prefix=200
+exec fill.kumac 'Jet cos(theta)' 100 -1. 1. CHI20CHI30PROC/3.j1pz/sqrt(j1px**2+j1py**2+j1pz**2) $1
+exec plot.kumac 0. 0. 0. 0. !
+exec cutline.kumac -0.9 1. 0.9
+exec cutline.kumac 0.9 -1. 0.9
+
+nt/cuts $2 ((ranf3.le.0.5).and.((j1mid=5.or.j2mid=5).or.((j1mid=4.or.j1mid=4).and.ranf4.le.0.01)))
+nt/cuts $3 abs(j1pz/sqrt(j1px**2+j1py**2+j1pz**2)).le.0.9.and.abs(j2pz/sqrt(j2px**2+j2py**2+j2pz**2)).le.0.9
+
+pict/print 'laura1.eps'
+
+zone 1 2
+set dmod 1
+sigma prefix=300
+exec fill.kumac 'Invariant mass of two jets' 100 0. 130. CHI20CHI30PROC/3.jinvm $1&&$3
+exec plot.kumac 0. 0. 0. 0. !
+
+exec key.kumac 3 0. $SIGMA(0.28*1.5)
+
+add $SIGMA(prefix+11) $SIGMA(prefix+12) $SIGMA(prefix+30) ! ! 'e'
+add $SIGMA(prefix+14) $SIGMA(prefix+15) $SIGMA(prefix+99) ! ! 'e'
+add $SIGMA(prefix+99) $SIGMA(prefix+17) $SIGMA(prefix+31) ! ! 'e'
+h/copy $SIGMA(prefix+30) $SIGMA(prefix+32) 'Background-subtracted'
+
+ve/cr const(100)
+ve/cr destr(100)
+ve/cr jiggled(100)
+ve/cr err(100)
+ve/cr random(100)
+ve/inp random  -1.72052 -0.354545 0.064867 1.58224 -0.694896 0.817527 0.0977323 -1.22395 -0.349863 0.710312 0.84887 1.8686 -2.52021 -0.326994 0.548518 -0.374818 -0.0590199 0.137762 -0.851019 0.722761 0.800933 -1.46124 2.05649 -0.298604 -1.83412 -1.07605 -0.646231 0.358182 -1.11723 0.890651 0.895272 0.376012 -0.58118 -0.25445 -0.57243 -0.91589 -0.0425481 -0.289017 -0.559709 -0.0146767 -1.19587 -0.834601 -0.811177 -0.703453 0.26647 0.681248 1.16039 -0.540597 0.27787 0.46589 1.58954 0.0172342 -0.245893 -0.964094 -0.0194391 0.836726 -0.653519 0.353266 -1.05229 -1.63877 -0.26008 -1.49344 -0.706005 -0.106746 0.12589 -0.227995 -1.25622 -1.3157 0.869758 -1.47886 -0.756534 1.78497 1.36663 -0.53079 -1.03665 -0.718477 0.137608 -0.248777 -0.065007 1.24545 0.276499 -0.275514 -1.28756 -0.586634 -2.01222 1.78947 0.837618 -1.00799 0.527408 0.967342 0.789489 -0.172271 -0.411791 0.405 1.00144 -0.0266852 -0.744879 0.0120932 0.208102 0.246596
+h/get_vect/contents $SIGMA(prefix+30) const
+h/get_vect/contents $SIGMA(prefix+31) destr
+do i = 1, 100
+  ve/inp err([i]) $SIGMA(sqrt(const([i])+destr([i])))
+  ve/inp jiggled([i]) $SIGMA(const([i])+sqrt(destr([i]))*random([i]))
+enddo
+h/put_vect/contents $SIGMA(prefix+32) jiggled
+h/put_vect/errors $SIGMA(prefix+32) err
+
+max $SIGMA(prefix+32) 30
+min $SIGMA(prefix+32) -10
+set hcol 1
+ve/cr par(4)
+ve/inp par 5 80 4 60
+* h/fit $SIGMA(prefix+32)(27.:130.) fitfunc2.f 'e' 4 par
+h/plot $SIGMA(prefix+32)
+dline 0 130 0 0
+set dmod 2
+f/plot fitfunc2.f 0. 130. 's'
+f/plot fitfunc.f 0. 130. 's'
+* ve/cr par(2)
+* ve/inp par 5.5 80
+* h/fit $SIGMA(prefix+32)(60.:130.) fitfunc.f 'e' 2 par
+* dline 0 130 0 0
+* set dmod 2
+* f/plot fitfunc.f 0. 130. 's'
+
+pict/print 'laura2.eps'
+
+ve/cr stuff(100)
+h/get_vect/errors $SIGMA(prefix+32) stuff
+sigma tot = 0
+do i = 1, 100
+  sigma tot = tot + stuff([i])**2
+enddo
+message $hinfo($SIGMA(prefix+32),'sum') $SIGMA(sqrt(tot))
+
+zone 1 1
+set dmod 1
+opt sta
+nt/plot //n1n3/CHI20CHI30PROC/3.jinvm $1&&$3
+nt/plot //n2n3/CHI20CHI30PROC/3.jinvm $1&&$3

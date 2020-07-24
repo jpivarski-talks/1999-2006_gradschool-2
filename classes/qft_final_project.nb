@@ -1,0 +1,377 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 4.0,
+MathReader 4.0, or any compatible application. The data for the notebook 
+starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8037,        277]*)
+(*NotebookOutlinePosition[      8694,        301]*)
+(*  CellTagsIndexPosition[      8650,        297]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(<< HighEnergyPhysics`fc`\)], "Input"],
+
+Cell[TextData[{
+  StyleBox["FeynCalc",
+    FontWeight->"Bold"],
+  " ",
+  "4.1.0.3b",
+  "    ",
+  " Evaluate ?FeynCalc for help or visit ",
+  ButtonBox["www.feyncalc.org",
+    ButtonData:>{
+      URL[ "http://www.feyncalc.org"], None},
+    ButtonStyle->"Hyperlink",
+    ButtonNote->"http://www.feyncalc.org"]
+}], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(traceonly = 
+      Tr[\((GS[p] + ml)\) . 
+          GA[\[Alpha]] . \((1 - GA[5])\) . \((GS[k] - mn)\) . 
+          GA[\[Beta]] . \((1 - GA[5])\)]\)], "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{"4", " ", 
+        RowBox[{"(", 
+          RowBox[{
+            RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+              SuperscriptBox["\[Epsilon]", 
+                RowBox[{
+                  FormBox[
+                    FormBox["\[Alpha]",
+                      "TraditionalForm"],
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox[
+                    FormBox["\[Beta]",
+                      "TraditionalForm"],
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox["k",
+                    "TraditionalForm"], "\[NoBreak]", 
+                  FormBox["p",
+                    "TraditionalForm"]}]]}], "+", 
+            RowBox[{"2", " ", 
+              SuperscriptBox[
+                FormBox["p",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Alpha]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]], " ", 
+              SuperscriptBox[
+                FormBox["k",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Beta]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]]}], "+", 
+            RowBox[{"2", " ", 
+              SuperscriptBox[
+                FormBox["k",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Alpha]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]], " ", 
+              SuperscriptBox[
+                FormBox["p",
+                  "TraditionalForm"], 
+                FormBox[
+                  FormBox["\[Beta]",
+                    "TraditionalForm"],
+                  "TraditionalForm"]]}], "-", 
+            RowBox[{"2", " ", \(g\^\(\[Alpha]\[NoBreak]\[Beta]\)\), " ", 
+              RowBox[{
+                FormBox["k",
+                  "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", 
+                "\[NoBreak]", 
+                FormBox["p",
+                  "TraditionalForm"]}]}]}], ")"}]}], 
+      TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(allcontractions = 
+      Contract[traceonly*FV[q, \[Alpha]]*FV[q, \[Beta]]]\)], "Input"],
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{
+        RowBox[{"16", " ", 
+          RowBox[{
+            FormBox["k",
+              "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", "\[NoBreak]", 
+            
+            FormBox["q",
+              "TraditionalForm"]}], " ", 
+          RowBox[{
+            FormBox["p",
+              "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", "\[NoBreak]", 
+            
+            FormBox["q",
+              "TraditionalForm"]}]}], "-", 
+        RowBox[{"8", " ", 
+          RowBox[{
+            FormBox["k",
+              "TraditionalForm"], "\[NoBreak]", "\[CenterDot]", "\[NoBreak]", 
+            
+            FormBox["p",
+              "TraditionalForm"]}], " ", 
+          SuperscriptBox[
+            FormBox["q",
+              "TraditionalForm"], "2"]}]}], TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(integrand = 
+      FullSimplify[\(\((2*\((Ek^2 + 
+                      Ek*Sqrt[Ek^2 + ml^2])\)*\((Ek*Sqrt[Ek^2 + ml^2] + 
+                      Ek^2 + ml^2)\) - \((Ek*Sqrt[Ek^2 + ml^2] + 
+                      Ek^2)\)*\((Ek + Sqrt[Ek^2 + ml^2])\)^2)\)/Ek\)/
+          Sqrt[Ek^2 + ml^2]]\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`ml\^2\ \((Ek\/\@\(Ek\^2 + ml\^2\) + 1)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullSimplify[
+      D[mpi - Ek - Sqrt[Ek^2 + ml^2], Ek] /. 
+        Ek \[Rule] \(\((mpi^2 - ml^2)\)/2\)/mpi, 
+      mpi > 0 && ml > 0]\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\(-\(\(2\ mpi\^2\)\/\(ml\^2 + mpi\^2\)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(mostofit = 
+      FullSimplify[\((integrand*Ek^2/\((2*mpi^2/\((ml^2 + mpi^2)\))\))\) /. 
+          Ek -> \(\((mpi^2 - ml^2)\)/2\)/mpi, mpi > 0 && ml > 0]\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\((ml\^3 - ml\ mpi\^2)\)\^2\/\(4\ mpi\^2\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(gam = GF^2*\(\(fpi^2/8\)/Pi\)/mpi*mostofit\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\(fpi\^2\ GF\^2\ \((ml\^3 - ml\ mpi\^2)\)\^2\)\/\(32\ \
+mpi\^3\ \[Pi]\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(gammu = 
+      gam /. {GF \[Rule] 1.1664*^-5/GeV^2, fpi \[Rule] 0.128\ GeV, 
+          mpi \[Rule] 0.13957\ GeV, ml \[Rule] 0.10566\ GeV}\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`6.295973092266545`*^-18\ GeV\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(game = 
+      gam /. {GF \[Rule] 1.1664*^-5/GeV^2, fpi \[Rule] 0.128\ GeV, 
+          mpi \[Rule] 0.13957\ GeV, ml \[Rule] 0.000511\ GeV}\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`8.080483461627781`*^-22\ GeV\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(tau = 6.5821*^-25\ GeV\ s/gammu\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1.0454460181993011`*^-7\ s\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(theo = gammu/game\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`7791.579702086596`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(expt = 99.9877/0.0123\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`8129.081300813008`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\((theo - expt)\)/expt\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`\(-0.041517803333158694`\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"]
+},
+FrontEndVersion->"4.0 for X",
+ScreenRectangle->{{0, 1024}, {0, 768}},
+WindowSize->{830, 630},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification->1.5
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1717, 49, 57, 1, 39, "Input"],
+Cell[1777, 52, 369, 14, 46, "Text"],
+
+Cell[CellGroupData[{
+Cell[2171, 70, 178, 4, 62, "Input"],
+Cell[2352, 76, 2101, 57, 47, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4490, 138, 108, 2, 39, "Input"],
+Cell[4601, 142, 831, 25, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5469, 172, 320, 6, 154, "Input"],
+Cell[5792, 180, 91, 1, 85, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5920, 186, 167, 4, 62, "Input"],
+Cell[6090, 192, 93, 1, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6220, 198, 186, 3, 85, "Input"],
+Cell[6409, 203, 93, 1, 71, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6539, 209, 75, 1, 39, "Input"],
+Cell[6617, 212, 122, 2, 71, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6776, 219, 170, 3, 85, "Input"],
+Cell[6949, 224, 79, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7065, 230, 170, 3, 62, "Input"],
+Cell[7238, 235, 79, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7354, 241, 64, 1, 39, "Input"],
+Cell[7421, 244, 77, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7535, 250, 50, 1, 39, "Input"],
+Cell[7588, 253, 69, 1, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7694, 259, 54, 1, 39, "Input"],
+Cell[7751, 262, 69, 1, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7857, 268, 55, 1, 39, "Input"],
+Cell[7915, 271, 77, 1, 40, "Output"]
+}, Open  ]],
+Cell[8007, 275, 26, 0, 39, "Input"]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+
+

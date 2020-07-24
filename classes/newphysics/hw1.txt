@@ -1,0 +1,41 @@
+Parameters of the Standard Model in CompHEP:
+
+EE (equivalent to alpha): perhaps the most precisely-known number in
+physics?  If there have been any advances since 2002, it would only
+matter in the digits that are being truncated anyway.  Maybe we need a
+different number if we're simulating HEP in ancient stars.
+
+GG ($\alpha_s$): this was ``measured'' by an unquenched lattice QCD
+calculation a few years ago (comparison of lattice results with data),
+but I think that was also before 2002.  Could be in trouble if there's
+something wrong with the improved actions.
+
+SW (Weinberg angle): kaon decay has large statistics from fixed-target
+experiments.  My (2000) PDG gives a 1.5\% error.
+
+s12, s23, s13 (other CKM elements): I know a lot of people who are
+working on these; this will need a lot of updating in the near future.
+I'm a little confused: I thought {\tt s12} $\times \sqrt{1-\mbox{\tt
+s13}^2}$ is the same thing as {\tt SW}.  But there have to be four CKM
+parameters in all, so I guess it works out somehow.
+
+MZ, wZ, wW (mass and width of W, Z bosons): won't be getting any
+better than the LEP values anytime soon.
+
+Mm: there has been ample opportunity to get this right.
+
+Mtau: CLEO-c might measure this in a few years.
+
+I suppose electrons are massless.
+
+Mc, Mb: may be different if heavy quark expansion gets revised.
+
+Ms: determined from lattice QCD the same way as $\alpha_s$--- so it
+depends on the validity of the improved actions.
+
+Mtop, wtop: FermiLab direct measurements and LEP precision
+electro-weak data measure this, and these values are sure to be
+revised with LHC direct measurements.  (And from class today, they may
+be revised just from re-analysis!)
+
+MH, wH: are only guesses.  I expect we'll be changing these a lot.

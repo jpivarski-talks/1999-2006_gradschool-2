@@ -1,0 +1,102 @@
+BODY {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+DIV {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+FORM {
+	FONT-SIZE: 12px; MARGIN: 0px; COLOR: #000000
+}
+SELECT {
+	FONT-SIZE: 11px; COLOR: #000000
+}
+INPUT {
+	FONT-SIZE: 11px; COLOR: #000000
+}
+A {
+	COLOR: #000000
+}
+A:hover {
+	COLOR: #999999
+}
+.color1 {
+	BACKGROUND-COLOR: #000066
+}
+.color2 {
+	BACKGROUND-COLOR: #cccccc
+}
+.color3 {
+	BACKGROUND-COLOR: #ffffcc
+}
+.color4 {
+	BACKGROUND-COLOR: #ffcc00
+}
+.color5 {
+	BACKGROUND-COLOR: #ff6600
+}
+.colorBlack {
+	BACKGROUND-COLOR: #000000
+}
+.colorGray {
+	BACKGROUND-COLOR: #e6e6e6
+}
+.colorWhite {
+	BACKGROUND-COLOR: #ffffff
+}
+.fontColor1 {
+	COLOR: #000066
+}
+.fontColorWhite {
+	COLOR: #ffffff
+}
+.fontColorGray {
+	COLOR: #e6e6e6
+}
+.fontL2 {
+	FONT-SIZE: 18px; COLOR: #000066
+}
+.fontL1 {
+	FONT-SIZE: 13px
+}
+.fontS1 {
+	FONT-SIZE: 12px
+}
+.fontS2 {
+	FONT-SIZE: 11px
+}
+.TopNav1 {
+	BACKGROUND-COLOR: #000066; TEXT-DECORATION: none
+}
+.TopNav2 {
+	BACKGROUND-COLOR: #666666; TEXT-DECORATION: none
+}
+.SubNav1 {
+	BACKGROUND-COLOR: #ffffcc
+}
+.TopNav1Txt {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.SubNav1Txt {
+	FONT-SIZE: 10px; COLOR: #000000; BACKGROUND-COLOR: #ffffcc; TEXT-DECORATION: none
+}
+.tblDataCell {
+	BACKGROUND-COLOR: #ffffff
+}
+.tblHdrCell {
+	BACKGROUND-COLOR: #ffffff
+}
+.tblLblCell {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-COLOR: #e6e6e6
+}
+A.TopNav1Txt:hover {
+	COLOR: #ffffff
+}
+.errorTxt {
+	FONT-WEIGHT: bold; COLOR: #ff0000
+}
+.fontL3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px
+}

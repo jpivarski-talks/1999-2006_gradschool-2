@@ -1,0 +1,11 @@
+set ltyp 2
+sigma top = $GRAFINFO('WNYMAX')
+sigma bot = $GRAFINFO('WNYMIN')
+sigma wide = $GRAFINFO('WNXMAX') - $GRAFINFO('WNXMIN')
+dline [1] [1] $SIGMA(10**bot) $SIGMA(10**top)
+set ltyp 1
+dline [1] $SIGMA([1]+[2]/abs([2])*0.1*wide) $SIGMA(10**([3]*(top-bot)+bot)) $SIGMA(10**([3]*(top-bot)+bot))
+if [2].ne.0 then
+  dline $SIGMA([1]+[2]/abs([2])*0.1*wide) $SIGMA([1]+[2]/abs([2])*0.06*wide) $SIGMA(10**([3]*(top-bot)+bot)) $SIGMA(10**(([3]+0.02)*(top-bot)+bot))
+  dline $SIGMA([1]+[2]/abs([2])*0.1*wide) $SIGMA([1]+[2]/abs([2])*0.06*wide) $SIGMA(10**([3]*(top-bot)+bot)) $SIGMA(10**(([3]-0.02)*(top-bot)+bot))
+endif

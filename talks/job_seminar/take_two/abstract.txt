@@ -1,0 +1,15 @@
+Title: Gamma_ee and f_D: Testing the Flavors of Lattice QCD
+
+Abstract:
+
+One of the major obstacles to unraveling the CKM matrix is our
+ignorance of the strong force.  Quantum Chromodynamics has been
+accepted as the explaination of the strong force for nearly twenty
+years, but its non-perturbative nature at low energies makes some
+problems difficult or impossible to solve, among them the decay
+constant $f_B$ in $B$-$\bar{B}$ mixing.  Precision lattice QCD is a
+promising technique, having successfully predicted or reproduced about
+a dozen masses and widths, but we would like to test the theory in a
+regime relevant for $B$ physics.  I will discuss two CLEO results that
+are each only one quark removed from the elusive $f_B$, and present
+some early comparisons with the lattice.

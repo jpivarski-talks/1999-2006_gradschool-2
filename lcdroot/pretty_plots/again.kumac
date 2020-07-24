@@ -1,0 +1,212 @@
+* Chi1+Chi1-
+nt/chain c1c1 rcg24_again/chi20chi30v5_c1pc1m_l_0p1.rzn
+nt/chain c1c1 rcg24_again/chi20chi30v5_c1pc1m_l_0p2.rzn
+nt/chain c1c1 rcg24_again/chi20chi30v5_c1pc1m_l_1p1.rzn
+*Chi1+Chi2-
+nt/chain c1c2 rcg24_again/chi20chi30v5_c1pc2m_l.rzn
+*Chi10Chi20
+nt/chain n1n3 rcg24_again/chi20chi30v5_n1n3_l.rzn
+*Chi20Chi30
+nt/chain n2n3 rcg24_again/chi20chi30v5_n2n3_l.rzn
+*Wpair
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_l0_p1.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_l0_p2.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_l0_p3.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_l1_p1.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_l1_p2.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_l1_p3.rzn
+*Zpair
+nt/chain zpairs rcg24_again/chi20chi30v5_zpair_l_0p1.rzn
+nt/chain zpairs rcg24_again/chi20chi30v5_zpair_l_0p2.rzn
+nt/chain zpairs rcg24_again/chi20chi30v5_zpair_l_1p1.rzn
+*ttbar
+nt/chain ttbar rcg24_again/chi20chi30v5_ttbar_l_0p1.rzn
+nt/chain ttbar rcg24_again/chi20chi30v5_ttbar_l_0p2.rzn
+nt/chain ttbar rcg24_again/chi20chi30v5_ttbar_l_1p1.rzn
+nt/chain ttbar rcg24_again/chi20chi30v5_ttbar_l_1p2.rzn
+
+* (250 fb^-1) / (generated luminosity)
+sigma sn1n3 =   (250) / (281.6)
+sigma sc1c2 =   (250) / (163.5 + 511)
+sigma sn2n3 =   (250) / (254.4)
+sigma sc1c1 =   (250) / (127.6 + 138.2)
+sigma szpairs = (250) / (174.4 + 79.3)
+sigma sttbar =  (250) / (66.8 + 66.8 + 66.8 + 66.8)
+sigma swpairs = (250) / (11.3 + 11.3)
+
+
+
+
+
+
+opt zfl1
+
+nt/chain n1n3 	rcg24_again/chi20chi30v5_n1n3_r.rzn
+nt/chain c1c2 	rcg24_again/chi20chi30v5_c1pc2m_r.rzn
+nt/chain n2n3 	rcg24_again/chi20chi30v5_n2n3_r.rzn
+nt/chain c1c1 	rcg24_again/chi20chi30v5_c1pc1m_r_p1.rzn
+nt/chain c1c1 	rcg24_again/chi20chi30v5_c1pc1m_r_p2.rzn
+nt/chain zpairs rcg24_again/chi20chi30v5_zpair_r_p1.rzn
+nt/chain zpairs rcg24_again/chi20chi30v5_zpair_r_p2.rzn
+nt/chain ttbar  rcg24_again/chi20chi30v5_ttbar_r_0p1.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_r0.rzn
+nt/chain wpairs rcg24_again/chi20chi30v5_wpair_r1.rzn
+
+* (250 fb^-1) / (generated luminosity)
+* sigma sn1n3 =   (250) / (224.6)
+* sigma sc1c2 =   (250) / (702.6)
+* sigma sn2n3 =   (250) / (239.6)
+* sigma sc1c1 =   (250) / (215.5)
+* sigma szpairs = (250) / (250.0)
+* sigma sttbar =  (250) / (155.8)
+* sigma swpairs = (250) / (16.56)
+sigma sn1n3 =   (250) / (317.2)
+sigma sc1c2 =   (250) / (198.4+500.0)
+sigma sn2n3 =   (250) / (282.1)
+sigma sc1c1 =   (250) / (1010.0)
+sigma szpairs = (250) / (292.5)
+sigma sttbar =  (250) / (124.5+124.5)
+sigma swpairs = (250) / (132.2+82.0)
+
+global/create layer7 wpairs
+global/create layer6 ttbar
+global/create layer5 zpairs
+global/create layer4 c1c1
+global/create layer3 c1c2
+global/create layer2 n2n3
+global/create layer1 n1n3
+
+exec color.kumac
+
+* 2 jet, l lepton is CHI20CHI30PROC/5
+* 2 lepton is CHI20CHI30PROC/1
+
+set GSIZ $SIGMA(0.28*1.5)
+set TSIZ $SIGMA(0.28*1.5)
+set ASIZ $SIGMA(0.28*1.5)
+set CSIZ $SIGMA(0.28*1.5)
+set PSIZ $SIGMA(0.28*1.5)
+set VSIZ $SIGMA(0.28)
+set yhti 1.0
+
+fortran/file 65 'again1l.eps'
+graphics/metafile 65 -111
+igset mtype 1
+
+zone 1 2
+sigma prefix=100
+exec fill.kumac 'Missing energy in 2-lepton events' 100 0. 700. CHI20CHI30PROC/1.500-eve !
+exec plot.kumac 0. 0. 0. 800. !
+exec cutline.kumac 350. 1. 0.9
+exec key.kumac 3 0. $SIGMA(0.28*1.5)
+
+nt/cuts $1 500-eve>350.
+
+sigma prefix=200
+exec fill.kumac 'Positive lepton cos([Q]^+!) minus negative lepton cos([Q]^-!)' 100 -2. 2. CHI20CHI30PROC/1.pzp/sqrt(pxp**2+pyp**2+pzp**2)-pzm/sqrt(pxm**2+pym**2+pzm**2) $1
+exec plot.kumac 0. 0. 0. 400. !
+exec cutline.kumac 0. 1. 0.9
+
+nt/cuts $2 pzp/sqrt(pxp**2+pyp**2+pzp**2)-pzm/sqrt(pxm**2+pym**2+pzm**2)>0
+
+close 65
+
+sigma prefix=300
+exec fill.kumac 'Invariant mass of two leptons' 100 0. 150. CHI20CHI30PROC/1.invm $1&&$2
+exec plot.kumac 0. 0. 0. 0. !
+
+add $SIGMA(prefix+11) $SIGMA(prefix+12) $SIGMA(prefix+99) ! ! 'e'
+add $SIGMA(prefix+99) $SIGMA(prefix+15) $SIGMA(prefix+30) ! ! 'e'
+add $SIGMA(prefix+14) $SIGMA(prefix+17) $SIGMA(prefix+31) ! ! 'e'
+h/copy $SIGMA(prefix+30) $SIGMA(prefix+32) 'Invariant mass with (like flavor - opposite flavor)'
+
+zone 1 1
+
+ve/cr const(100)
+ve/cr destr(100)
+ve/cr jiggled(100)
+ve/cr err(100)
+ve/cr random(100)
+ve/inp random 0.139111 -0.531988 1.33248 1.42213 1.56613 0.565463 -0.997431 -0.52884 -0.561107 1.90813 -0.19789 1.60283 1.91796 -0.318807 0.782217 -1.2356 1.27446 -1.00269 -1.87667 0.345264 0.741625 0.647388 0.638625 1.01869 0.189817 -0.230386 -0.158271 -0.362705 -0.129379 0.62304 -0.250326 1.42009 0.275097 1.19382 -0.316214 0.459211 -0.238362 0.224321 0.916497 1.66593 0.161149 0.476592 0.339406 0.618978 -0.290505 0.769281 -0.0101504 -0.066257 -0.217591 1.14198 -0.732439 0.427661 -0.879069 0.717549 -0.774635 0.349845 0.267562 0.239187 -1.89213 -1.07817 2.21879 -2.39318 -0.508782 -0.257044 1.98072 1.24828 -1.01614 1.02427 -1.31727 -0.913188 1.13499 0.220768 1.1533 -0.301211 -1.03801 1.98708 -0.873423 1.6032 0.0835724 -0.120163 -0.0730247 -0.588403 0.708989 -0.717302 2.07106 0.734792 -1.03434 0.171492 1.22754 -0.316588 -0.532311 -0.33218 1.19082 -0.324128 0.84813 -0.0309258 0.965363 -1.08058 -1.67603 -0.400506
+
+h/get_vect/contents $SIGMA(prefix+30) const
+h/get_vect/contents $SIGMA(prefix+31) destr
+do i = 1, 100
+  ve/inp err([i]) $SIGMA(sqrt(const([i])+2*destr([i])))
+  ve/inp jiggled([i]) $SIGMA(const([i])+sqrt(2*destr([i]))*random([i]))
+enddo
+h/put_vect/contents $SIGMA(prefix+32) jiggled
+h/put_vect/errors $SIGMA(prefix+32) err
+
+fortran/file 65 'again2l.eps'
+graphics/metafile 65 -111
+igset mtype 1
+
+max $SIGMA(prefix+32) 150
+min $SIGMA(prefix+32) -30
+set hcol 1
+ve/cr par(2)
+ve/inp par 6 80
+h/fit $SIGMA(prefix+32) fitfunc.f 'e' 2 par
+
+close 65
+
+
+
+nt/plot //n1n3/CHI20CHI30PROC/1.invm $1&&$2
+
+
+
+
+
+
+
+
+
+
+ve/cr stuff(100)
+ve/cr stuffs(100)
+h/get_vect/contents $SIGMA(prefix+32) stuff
+h/get_vect/errors $SIGMA(prefix+32) stuffs
+sigma all = 0
+sigma tot = 0
+do i = 1, 58
+  sigma all = all + stuff([i])
+  sigma tot = tot + stuffs([i])**2
+enddo
+message $SIGMA(all) +/- $SIGMA(sqrt(tot))
+
+
+nt/cuts $2 pzp/sqrt(pxp**2+pyp**2+pzp**2)-pzm/sqrt(pxm**2+pym**2+pzm**2)>0
+
+zone 1 2
+
+sigma prefix=200
+exec fill.kumac 'Energy of two leptons' 100 0. 200. CHI20CHI30PROC/1.em+ep $2
+exec plot.kumac 0. 0. 0. 0. !
+
+add $SIGMA(prefix+11) $SIGMA(prefix+12) $SIGMA(prefix+99) ! ! 'e'
+add $SIGMA(prefix+99) $SIGMA(prefix+15) $SIGMA(prefix+30) ! ! 'e'
+add $SIGMA(prefix+14) $SIGMA(prefix+17) $SIGMA(prefix+31) ! ! 'e'
+h/copy $SIGMA(prefix+30) $SIGMA(prefix+32) 'Invariant mass with (like flavor - opposite flavor)'
+
+ve/cr const(100)
+ve/cr destr(100)
+ve/cr jiggled(100)
+ve/cr err(100)
+ve/cr random(100)
+ve/inp random 0.139111 -0.531988 1.33248 1.42213 1.56613 0.565463 -0.997431 -0.52884 -0.561107 1.90813 -0.19789 1.60283 1.91796 -0.318807 0.782217 -1.2356 1.27446 -1.00269 -1.87667 0.345264 0.741625 0.647388 0.638625 1.01869 0.189817 -0.230386 -0.158271 -0.362705 -0.129379 0.62304 -0.250326 1.42009 0.275097 1.19382 -0.316214 0.459211 -0.238362 0.224321 0.916497 1.66593 0.161149 0.476592 0.339406 0.618978 -0.290505 0.769281 -0.0101504 -0.066257 -0.217591 1.14198 -0.732439 0.427661 -0.879069 0.717549 -0.774635 0.349845 0.267562 0.239187 -1.89213 -1.07817 2.21879 -2.39318 -0.508782 -0.257044 1.98072 1.24828 -1.01614 1.02427 -1.31727 -0.913188 1.13499 0.220768 1.1533 -0.301211 -1.03801 1.98708 -0.873423 1.6032 0.0835724 -0.120163 -0.0730247 -0.588403 0.708989 -0.717302 2.07106 0.734792 -1.03434 0.171492 1.22754 -0.316588 -0.532311 -0.33218 1.19082 -0.324128 0.84813 -0.0309258 0.965363 -1.08058 -1.67603 -0.400506
+
+h/get_vect/contents $SIGMA(prefix+30) const
+h/get_vect/contents $SIGMA(prefix+31) destr
+do i = 1, 100
+  ve/inp err([i]) $SIGMA(sqrt(const([i])+2*destr([i])))
+  ve/inp jiggled([i]) $SIGMA(const([i])+sqrt(2*destr([i]))*random([i]))
+enddo
+h/put_vect/contents $SIGMA(prefix+32) jiggled
+h/put_vect/errors $SIGMA(prefix+32) err
+
+set hcol 1
+h/plot $SIGMA(prefix+32)
+
+pict/print 'again_energy_withcut.eps'

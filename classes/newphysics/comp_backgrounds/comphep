@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# Copyright (C) 2001-2003, CompHEP Collaboration
+#------------------------------------------------------
+# $Id: comphep,v 1.10 2003/06/26 15:51:43 sherstnv Exp $
+# $Log: comphep,v $
+# Revision 1.10  2003/06/26 15:51:43  sherstnv
+# symp_batch.pl script is customized to new CompHEP options/new
+# n_comphep creation schime.
+#
+# Revision 1.9  2003/06/25 18:46:42  kryukov
+# *** empty log message ***
+#
+# Revision 1.8  2003/04/04 19:12:51  kryukov
+# Fix another minor bag for debug mode :-)
+#
+# Revision 1.7  2003/04/04 18:43:43  kryukov
+# Fix minor bug in debug mode
+#
+# Revision 1.6  2003/01/27 14:37:09  kryukov
+# rcs2log output
+#
+# Revision 1.5  2003/01/25 19:13:48  kryukov
+# no message
+#
+# Revision 1.4  2003/01/25 17:24:24  kryukov
+# *** empty log message ***
+#
+#
+
+export COMPHEP=/A/lns183/cdat/daf9/mccann/software/src/comphep-4.4.0
+
+if [ x$1 = xDEBUG ]; then
+	DDD=ddd
+fi
+
+while :
+do
+  ${DDD} $COMPHEP/s_comphep $*
+  case $? in
+    13) ;;
+    24) ${DDD} $COMPHEP/s_comphep -blind "]}}]]]}]}9"
+        break;;
+    *)
+      break
+  esac
+done

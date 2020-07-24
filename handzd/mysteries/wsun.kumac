@@ -1,0 +1,182 @@
+h/file 1 ../rzn/ord_kalman_201365.rzn
+h/file 2 ../rzn/ord_chisqfit_201365.rzn
+
+ ********************************************************
+ * NTUPLE ID=    1  ENTRIES= 104856   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * curv      * -.208997E+00 * 0.207909E+00 *
+ *      2     * phi0      * 0.169207E-02 * 0.627788E+01 *
+ *      3     * d0        * -.152192E-02 * 0.143173E-02 *
+ *      4     * cT        * -.237101E+01 * 0.239236E+01 *
+ *      5     * z0        * -.465860E-01 * 0.591828E-01 *
+ *      6     * layer     * 0.100000E+01 * 0.530000E+02 *
+ *      7     * wire      * 0.000000E+00 * 0.347000E+03 *
+ *      8     * dca       * -.378124E-01 * 0.340406E-01 *
+ *      9     * drift     * -.370764E-01 * 0.345707E-01 *
+ *     10     * residual  * -.155610E-01 * 0.127849E-01 *
+ ********************************************************
+
+h/cr/1d 100 'all ZD residuals (KALMAN)' 100 -0.003 0.003
+h/cr/1d 200 'all ZD residuals (CHISQFIT)' 100 -0.003 0.003
+nt/plot //lun1/ordinary/1.dca-drift layer<7&&abs(cT)<0.5 ! ! ! 'N' 100
+nt/plot //lun2/ordinary/1.dca-drift layer<7&&abs(cT)<0.5 ! ! ! 'N' 200
+
+zone 2 1
+opt sta
+set stat 0001110
+opt fit
+set fit 111
+min 100 0
+max 100 700
+min 200 0
+max 200 700
+set fcol 4
+h/fit 100(-0.00040:0.00040) g
+h/fit 200(-0.00040:0.00040) g
+pict/print '../plots/kalman_vs_chisqfit.ps'
+
+cd //lun1/ordinary
+
+ve/cr LAYER1(33)
+ve/cr LAYER2(40)
+ve/cr LAYER3(46)
+ve/cr LAYER4(52)
+ve/cr LAYER5(58)
+ve/cr LAYER6(65)
+
+ve/cr ERR1(33)
+ve/cr ERR2(40)
+ve/cr ERR3(46)
+ve/cr ERR4(52)
+ve/cr ERR5(58)
+ve/cr ERR6(65)
+
+h/cr/1d 300 'resid' 100 -0.005 0.005
+
+do i=1,33
+  nt/plot 1.dca-drift layer==1&&wire==[i]&&abs(z)<0.01&&0.0015<drift<0.0038 ! ! ! ! 300
+  ve/inp LAYER1([i]) $HINFO(300, 'RMS')
+  sigma err = $HINFO(300, 'RMS') / sqrt(2. * $HINFO(300, 'ENTRIES'))
+  ve/inp ERR1([i]) $SIGMA(err)
+  if $HINFO(300, 'ENTRIES').lt.3 then
+    ve/inp LAYER1([i]) 0
+    ve/inp ERR1([i]) 1000.
+  endif
+  message layer 1 wire [i]
+enddo
+
+do i=1,40
+  nt/plot 1.dca-drift layer==2&&wire==[i]&&abs(z)<0.01&&0.0015<drift<0.0038 ! ! ! ! 300
+  ve/inp LAYER2([i]) $HINFO(300, 'RMS')
+  sigma err = $HINFO(300, 'RMS') / sqrt(2. * $HINFO(300, 'ENTRIES'))
+  ve/inp ERR2([i]) $SIGMA(err)
+  if $HINFO(300, 'ENTRIES').lt.3 then
+    ve/inp LAYER2([i]) 0
+    ve/inp ERR2([i]) 1000.
+  endif
+  message layer 2 wire [i]
+enddo
+
+do i=1,46
+  nt/plot 1.dca-drift layer==3&&wire==[i]&&abs(z)<0.01&&0.0015<drift<0.0038 ! ! ! ! 300
+  ve/inp LAYER3([i]) $HINFO(300, 'RMS')
+  sigma err = $HINFO(300, 'RMS') / sqrt(2. * $HINFO(300, 'ENTRIES'))
+  ve/inp ERR3([i]) $SIGMA(err)
+  if $HINFO(300, 'ENTRIES').lt.3 then
+    ve/inp LAYER3([i]) 0
+    ve/inp ERR3([i]) 1000.
+  endif
+  message layer 3 wire [i]
+enddo
+
+do i=1,52
+  nt/plot 1.dca-drift layer==4&&wire==[i]&&abs(z)<0.01&&0.0015<drift<0.0038 ! ! ! ! 300
+  ve/inp LAYER4([i]) $HINFO(300, 'RMS')
+  sigma err = $HINFO(300, 'RMS') / sqrt(2. * $HINFO(300, 'ENTRIES'))
+  ve/inp ERR4([i]) $SIGMA(err)
+  if $HINFO(300, 'ENTRIES').lt.3 then
+    ve/inp LAYER4([i]) 0
+    ve/inp ERR4([i]) 1000.
+  endif
+  message layer 4 wire [i]
+enddo
+
+do i=1,58
+  nt/plot 1.dca-drift layer==5&&wire==[i]&&abs(z)<0.01&&0.0015<drift<0.0038 ! ! ! ! 300
+  ve/inp LAYER5([i]) $HINFO(300, 'RMS')
+  sigma err = $HINFO(300, 'RMS') / sqrt(2. * $HINFO(300, 'ENTRIES'))
+  ve/inp ERR5([i]) $SIGMA(err)
+  if $HINFO(300, 'ENTRIES').lt.3 then
+    ve/inp LAYER5([i]) 0
+    ve/inp ERR5([i]) 1000.
+  endif
+  message layer 5 wire [i]
+enddo
+
+do i=1,65
+  nt/plot 1.dca-drift layer==6&&wire==[i]&&abs(z)<0.01&&0.0015<drift<0.0038 ! ! ! ! 300
+  ve/inp LAYER6([i]) $HINFO(300, 'RMS')
+  sigma err = $HINFO(300, 'RMS') / sqrt(2. * $HINFO(300, 'ENTRIES'))
+  ve/inp ERR6([i]) $SIGMA(err)
+  if $HINFO(300, 'ENTRIES').lt.3 then
+    ve/inp LAYER6([i]) 0
+    ve/inp ERR6([i]) 1000.
+  endif
+  message layer 6 wire [i]
+enddo
+
+h/cr/1d 10 'Layer 1' 33 0.5 33.5
+h/cr/1d 20 'Layer 2' 40 0.5 40.5
+h/cr/1d 30 'Layer 3' 46 0.5 46.5
+h/cr/1d 40 'Layer 4' 52 0.5 52.5
+h/cr/1d 50 'Layer 5' 58 0.5 58.5
+h/cr/1d 60 'Layer 6' 65 0.5 65.5
+
+h/put_vect/contents 10 LAYER1
+h/put_vect/contents 20 LAYER2
+h/put_vect/contents 30 LAYER3
+h/put_vect/contents 40 LAYER4
+h/put_vect/contents 50 LAYER5
+h/put_vect/contents 60 LAYER6
+
+h/put_vect/errors 10 ERR1
+h/put_vect/errors 20 ERR2
+h/put_vect/errors 30 ERR3
+h/put_vect/errors 40 ERR4
+h/put_vect/errors 50 ERR5
+h/put_vect/errors 60 ERR6
+
+min 10 0.000
+max 10 0.002
+min 20 0.000
+max 20 0.002
+min 30 0.000
+max 30 0.002
+min 40 0.000
+max 40 0.002
+min 50 0.000
+max 50 0.002
+min 60 0.000
+max 60 0.002
+
+opt nsta
+zone 2 3
+h/cr/title 'wire-by-wire RMS residual (in mm) with abs(z).lt.1cm 1.5mm.lt.drift.lt.3.8mm'
+
+opt fit
+set fit 111
+h/fit 10 p0
+h/fit 40 p0
+h/fit 20 p0
+h/fit 50 p0
+h/fit 30 p0
+h/fit 60 p0
+
+pict/print '../plots/kalman_wirebywire_residuals.ps'
+
+
+
+
+

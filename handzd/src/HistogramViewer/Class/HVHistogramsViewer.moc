@@ -1,0 +1,117 @@
+/****************************************************************************
+** HVHistogramsViewer meta object code from reading C++ file 'HVHistogramsViewer.h'
+**
+** Created: Thu Nov 13 17:54:30 2003
+**      by: The Qt MOC ($Id: qt/moc_yacc.cpp   3.2.2   edited Oct 10 03:44 $)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <qmetaobject.h>
+#include <qapplication.h>
+
+#include <private/qucomextra_p.h>
+#if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
+#error "This file was generated using the moc from 3.2.2. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+const char *HVHistogramsViewer::className() const
+{
+    return "HVHistogramsViewer";
+}
+
+QMetaObject *HVHistogramsViewer::metaObj = 0;
+static QMetaObjectCleanUp cleanUp_HVHistogramsViewer( "HVHistogramsViewer", &HVHistogramsViewer::staticMetaObject );
+
+#ifndef QT_NO_TRANSLATION
+QString HVHistogramsViewer::tr( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "HVHistogramsViewer", s, c, QApplication::DefaultCodec );
+    else
+	return QString::fromLatin1( s );
+}
+#ifndef QT_NO_TRANSLATION_UTF8
+QString HVHistogramsViewer::trUtf8( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "HVHistogramsViewer", s, c, QApplication::UnicodeUTF8 );
+    else
+	return QString::fromUtf8( s );
+}
+#endif // QT_NO_TRANSLATION_UTF8
+
+#endif // QT_NO_TRANSLATION
+
+QMetaObject* HVHistogramsViewer::staticMetaObject()
+{
+    if ( metaObj )
+	return metaObj;
+    QMetaObject* parentObject = QWorkspace::staticMetaObject();
+    static const QUParameter param_slot_0[] = {
+	{ "iHist", &static_QUType_ptr, "HIHist1D", QUParameter::In }
+    };
+    static const QUMethod slot_0 = {"createPlot", 1, param_slot_0 };
+    static const QUParameter param_slot_1[] = {
+	{ "iHist", &static_QUType_ptr, "HIHist2D", QUParameter::In }
+    };
+    static const QUMethod slot_1 = {"createPlot", 1, param_slot_1 };
+    static const QUParameter param_slot_2[] = {
+	{ "iHist", &static_QUType_ptr, "HIHistProf", QUParameter::In }
+    };
+    static const QUMethod slot_2 = {"createPlot", 1, param_slot_2 };
+    static const QUMethod slot_3 = {"updateHistograms", 0, 0 };
+    static const QMetaData slot_tbl[] = {
+	{ "createPlot(const HIHist1D*)", &slot_0, QMetaData::Public },
+	{ "createPlot(const HIHist2D*)", &slot_1, QMetaData::Public },
+	{ "createPlot(const HIHistProf*)", &slot_2, QMetaData::Public },
+	{ "updateHistograms()", &slot_3, QMetaData::Public }
+    };
+    metaObj = QMetaObject::new_metaobject(
+	"HVHistogramsViewer", parentObject,
+	slot_tbl, 4,
+	0, 0,
+#ifndef QT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+#endif // QT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_HVHistogramsViewer.setMetaObject( metaObj );
+    return metaObj;
+}
+
+void* HVHistogramsViewer::qt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "HVHistogramsViewer" ) )
+	return this;
+    return QWorkspace::qt_cast( clname );
+}
+
+bool HVHistogramsViewer::qt_invoke( int _id, QUObject* _o )
+{
+    switch ( _id - staticMetaObject()->slotOffset() ) {
+    case 0: createPlot((const HIHist1D*)static_QUType_ptr.get(_o+1)); break;
+    case 1: createPlot((const HIHist2D*)static_QUType_ptr.get(_o+1)); break;
+    case 2: createPlot((const HIHistProf*)static_QUType_ptr.get(_o+1)); break;
+    case 3: updateHistograms(); break;
+    default:
+	return QWorkspace::qt_invoke( _id, _o );
+    }
+    return TRUE;
+}
+
+bool HVHistogramsViewer::qt_emit( int _id, QUObject* _o )
+{
+    return QWorkspace::qt_emit(_id,_o);
+}
+#ifndef QT_NO_PROPERTIES
+
+bool HVHistogramsViewer::qt_property( int id, int f, QVariant* v)
+{
+    return QWorkspace::qt_property( id, f, v);
+}
+
+bool HVHistogramsViewer::qt_static_property( QObject* , int , int , QVariant* ){ return FALSE; }
+#endif // QT_NO_PROPERTIES

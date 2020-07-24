@@ -1,0 +1,349 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,graphicx}
+
+\oddsidemargin  -0.5 cm
+\evensidemargin 0.0 cm
+\textwidth      6.5in
+\headheight     0.0in
+\topmargin      -1 cm
+\textheight=9.0in
+
+\begin{document}
+
+\begin{flushright}
+Jim Pivarski's Notes for Physics and Geometry (\today)
+\end{flushright}
+
+\section{Lagrangians are Important!}
+
+First principles of classical mechanics (no more information than
+Newton's Laws, but a simpler formulation)
+\begin{equation}
+  \mathcal{L} : \{q_i, \dot{q_i}\} \to \mathbb{R} \mbox{ where }
+  q_i : \mathbb{R} \mbox{ (time) } \to \mathbb{R} \mbox{ (coordinate value) and }
+  \dot{q_i} = \frac{dq}{dt}
+\end{equation}
+Hamilton's Principle (1835): of all possible paths a system defined by
+$q_i$ and $\dot{q_i}$ can take between $t_1$ and $t_2$, the path a
+physical system actually does take minimizes
+\begin{equation}
+  \int_{t_1}^{t_2} \mathcal{L} \, dt \mbox{ (called the ``action'').}
+\end{equation}
+The minimization of paths yields the equations of motion
+\begin{equation}
+  \frac{d}{dt}\left(\mbox{``}\frac{\partial \mathcal{L}}{\partial \dot{q_i}}\mbox{''}
+  \right) - \mbox{``}\frac{\partial \mathcal{L}}{\partial q_i}\mbox{''} = 0
+\end{equation}
+
+Symmetries of the Lagrangian generate conserved quantities.  For
+instance, time translation symmetry generates conservation of energy:
+\begin{eqnarray}
+  \frac{d}{dt}\mathcal{L} &=& \sum_i \mbox{``} \frac{\partial \mathcal{L}}{\partial q_i} \mbox{''} \dot{q_i} +
+  \sum_i \mbox{``} \frac{\partial \mathcal{L}}{\partial \dot{q_i}} \mbox{''} \frac{d\dot{q_i}}{dt} 
+  \mbox{ ($+$ no explicit $\displaystyle \frac{\partial\mathcal{L}}{\partial t}$)} \\
+  &=& \sum_i \left( \frac{d}{dt} \mbox{``} \frac{\partial \mathcal{L}}{\partial \dot{q_i}} \mbox{''} \right) \dot{q_i} +
+  \sum_i \mbox{``} \frac{\partial \mathcal{L}}{\partial \dot{q_i}} \mbox{''} \left(\frac{d}{dt}\dot{q_i}\right) \\
+  &=& \sum_i \frac{d}{dt} \left( \mbox{``} \frac{\partial \mathcal{L}}{\partial \dot{q_i}} \mbox{''} \dot{q_i} \right) \\
+  0 &=& \frac{d}{dt} \left(\mathcal{L} - \sum_i\mbox{``} \frac{\partial \mathcal{L}}{\partial \dot{q_i}} \mbox{''} \dot{q_i} \right)
+\end{eqnarray}
+where the parenthesized expression in the last row is the Hamiltonian,
+the energy of the system.
+
+For field theories,
+\begin{eqnarray}
+  \mathcal{L} &:& \{\psi_i, \partial_\mu \psi_i, \psi_i^\dagger, \partial_\mu \psi_i^\dagger\} \to \mathbb{R} \\
+  \mbox{ where } \psi_i &:& \mathbb{R}^4 \mbox{ (space-time) } \to \mathbb{R}, \mathbb{C}, \mbox{ or non-commutative operator (QM)}
+\end{eqnarray}
+where the equations of motion are now
+\begin{equation}
+  \sum_i \left( \partial_\mu \left(\mbox{``}\frac{\partial \mathcal{L}}{\partial (\partial_\mu \psi_i)} \mbox{''}
+  \right) - \mbox{``} \frac{\partial \mathcal{L}}{\partial \psi_i} \mbox{''} +
+  \partial_\mu \left(\mbox{``} \frac{\partial \mathcal{L}}{\partial (\partial_\mu \psi_i^\dagger)} \mbox{''}
+  \right) - \mbox{``} \frac{\partial \mathcal{L}}{\partial \psi_i^\dagger} \mbox{''} \right) = 0
+\end{equation}
+
+\section{Phase Symmetry Generates Charge Conservation}
+
+Take the Dirac Lagrangian
+\begin{equation}
+  \mathcal{L}_D = i \psi^\dagger \gamma^0 \gamma_\mu \partial^\mu \psi - m \psi^\dagger \gamma^0 \psi
+\end{equation}
+which describes the kinetic ($\psi^\dagger \partial^\mu \psi$) and
+potential ($m \psi^\dagger \psi$) energy of electrons and positrons.
+Here, $\psi$ is complex, but the Lagrangian is insensitive to the
+phase of $\psi$.  If we took
+\begin{eqnarray}
+  \psi &\to& \psi' = e^{i \alpha} \psi \mbox{,} \label{globalphase} \\
+  \mathcal{L} &\to& \mathcal{L}' = \mathcal{L} \mbox{.}
+\end{eqnarray}
+
+Let $\mathcal{L}$ be any Lagrangian insensitive to the phase of
+$\psi$.  Suppose we perturbed $\psi$ by a small phase change $\delta
+\psi = i \alpha \psi$.  The change in the Lagrangian would be
+\begin{eqnarray}
+  0 &=& \delta \mathcal{L} = \mbox{``}\frac{\partial\mathcal{L}}{\partial \psi}\mbox{''} \delta \psi +
+  \mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''} \delta (\partial_\mu \psi) +
+  \mbox{``}\frac{\partial\mathcal{L}}{\partial \psi^\dagger}\mbox{''} \delta \psi^\dagger +
+  \mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi^\dagger)}\mbox{''} \delta (\partial_\mu \psi^\dagger) \\
+  &=& \mbox{``}\frac{\partial\mathcal{L}}{\partial \psi}\mbox{''} (i \alpha \psi) +
+  \mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''} (i \alpha \partial_\mu \psi) +
+  \mbox{ same for $\psi^\dagger$} \\
+  &=& i \alpha \left(\mbox{``}\frac{\partial\mathcal{L}}{\partial \psi}\mbox{''}\psi +
+  \mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''} (\partial_\mu \psi) -
+  \partial_\mu \left(\mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''} \psi \right) \right)
+  + i \alpha \partial_\mu \left(\mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''} \psi \right)
+  + ^\dagger \\
+  0 &=& i \alpha \left( \underbrace{\mbox{``}\frac{\partial\mathcal{L}}{\partial \psi}\mbox{''} -
+  \partial_\mu \left(\mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''}\right)} \right) \psi
+  + i \alpha \partial_\mu \left( \mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''} \psi \right)
+  + \mbox{ same for $\psi^\dagger$}
+\end{eqnarray}
+where the underbraced part is left-hand side of the Euler-Lagrange
+equation, and therefore zero.  That leaves us with a conserved
+quantity
+\begin{equation}
+  \partial_\mu \left( \mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi)}\mbox{''} \psi -
+  \mbox{``}\frac{\partial\mathcal{L}}{\partial (\partial_\mu \psi^\dagger)}\mbox{''} \psi^\dagger \right) = 0
+\end{equation}
+Call it $j^\mu$, so that
+\begin{equation}
+  \partial_\mu j^\mu = 0 \mbox{ or } -\nabla \cdot \vec{J} = \frac{\partial \rho}{\partial t}
+\end{equation}
+
+For the Dirac Lagrangian, this conserved quantity is
+\begin{equation}
+  j_D^\mu = i \psi^\dagger \gamma^0 \gamma_\mu \psi
+\end{equation}
+This suggests joining the Dirac Lagrangian to the Electromagnetic Lagrangian
+\begin{equation}
+  \mathcal{L}_{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} - j_{EM}^\mu A_\mu
+\end{equation}
+by identifying $j_{EM} = -i e j_D$.  ($e$ is an arbitrary constant, which
+in nature turns out to be $\sqrt{4 \pi \alpha_{EM}} =$ 0.302822\ldots)
+
+\section{From Global to Local Phase Invariance}
+
+Instead of saying that there is an unmeasurable universal phase (but
+phase differences in $\psi$ can be measured from between any two
+arbitrarily distant points), suppose that we require the phase of
+$\psi$ to be unmeasurable at every point.  In other words, instead of
+requiring the Lagrangian to be invariant under \ref{globalphase},
+require it to be invariant under
+\begin{equation}
+  \psi(x) \to \psi'(x) = e^{i \alpha(x)} \psi(x) \mbox{ (where $x$ is a space-time point)}
+\end{equation}
+
+The Dirac Lagrangian (alone) is not invariant under this more
+restrictive condition.  Because
+\begin{equation}
+  \partial_\mu (\psi') = i(\partial_\mu \alpha) e^{i\alpha} \psi + e^{i\alpha} (\partial_\mu \psi) \mbox{,}
+\end{equation}
+\begin{eqnarray}
+  \mathcal{L}_D' &=& i(e^{-i\alpha})\psi^\dagger \gamma^0 \gamma^\mu
+  \left(e^{i\alpha} (\partial_\mu \psi) + i (\partial_\mu \alpha) e^{i\alpha} \psi \right) - m \psi^\dagger \gamma^0 \psi \\
+  &=& i \psi^\dagger \gamma^0 \gamma^\mu (\partial_\mu \psi) - m \psi^\dagger \gamma^0 \psi -
+  \psi^\dagger \gamma^0 \gamma^\mu \psi (\partial_\mu \alpha) \\
+  &=& \mathcal{L}_D -   \psi^\dagger \gamma^0 \gamma^\mu \psi (\partial_\mu \alpha) \label{needtocancel}
+\end{eqnarray}
+This can be fixed up by putting in that $e \psi^\dagger \gamma^0
+\gamma_\mu \psi A^\mu$ term where
+\begin{equation}
+  A^\mu \to (A^\mu)' = A^\mu + \frac{1}{e}\partial_\mu \alpha \label{gaugesymmetryofa}
+\end{equation}
+(LINKS PHASE SYMMETRY WITH GAUGE SYMMETRY!)  This new term
+transforms as
+\begin{eqnarray}
+  (\mbox{``}e\mbox{''} \psi^\dagger \gamma^0 \gamma^\mu \psi A_\mu)' &=&
+  \mbox{``}e\mbox{''} (e^{-i\alpha}) \psi^\dagger \gamma^0 \gamma^\mu (e^{i\alpha}) \psi
+  (A_\mu + \frac{1}{\mbox{``}e\mbox{''}} \partial_\mu \alpha ) \\
+  &=& \mbox{``}e\mbox{''} \psi^\dagger \gamma^0 \gamma^\mu \psi A_\mu + \psi^\dagger \gamma^0 \gamma^\mu \psi (\partial_\mu \alpha)
+\end{eqnarray}
+The second term is the one we need to cancel the extra one in
+\ref{needtocancel}, making the Lagrangian
+\begin{equation}
+  \mathcal{L}_D + e \psi^\dagger \gamma^0 \gamma_\mu \psi A^\mu
+\end{equation}
+invariant under local phase/gauge symmetry.  Since we've just provided
+$A^\mu$ as an energy sink for electrons and positrons, we should also
+include the photofield's kinetic energy.
+\begin{center}
+  \fbox{\begin{minipage}{\linewidth}
+    \begin{equation}
+      \mathcal{L}_{\mbox{\scriptsize all of E\&M}} = i \psi^\dagger \gamma^0 \gamma_\mu \partial^\mu \psi
+      - m \psi^\dagger \gamma^0 \psi
+      - \frac{1}{4} F_{\mu'\nu'} F^{\mu'\nu'} + e \psi^\dagger \gamma^0 \gamma^\mu A_\mu
+    \end{equation}
+  \end{minipage}}
+\end{center}
+
+While we're including all possibilities, why not add a mass term for
+the photon?  It might have mass\ldots after all, electrons and
+positrons have mass.  A mass term for a vector particle would look
+like this:
+\begin{equation}
+  \frac{1}{2} m^2 A_\mu A^\mu
+\end{equation}
+But that's not locally gauge invariant.
+\begin{equation}
+  (\frac{1}{2} m^2 A_\mu A^\mu)' = \frac{1}{2} m^2 A_\mu A^\mu +
+  \frac{1}{2} \frac{m^2}{e}(A_\mu \partial^\mu \alpha + A^\mu \partial_\mu \alpha) +
+  \frac{1}{2} \frac{m^2}{e}(\partial_\mu \alpha)(\partial^\mu \alpha)
+\end{equation}
+
+\section{Photon(-ish Things) With Mass}
+
+Weak Nuclear Force is just like Electromagnetism except that it's
+generated by a local $SU(2)$ symmetry, rather than $U(1)$.  (Instead
+of rotating $\psi(x)$, a complex number, by $e^{i \alpha(x)}$, rotate
+$\Psi(x)$, a two-dimensional complex vector, by $e^{i \vec{\alpha}(x)
+\cdot \vec{T}}$ where $\vec{T}$ is a vector of Pauli spinors.)  Other
+than that, the Weak Force Lagrangian is just like the Electromagnetic
+Lagrangian--- Weak currents were generated from local $SU(2)$
+symmetry--- but the vector fields $(W^+)_\mu$, $(W^-)_\mu$, and
+$(Z^0)_\mu$ have mass!
+
+\begin{center}
+  \begin{tabular}{p{0.5\linewidth} p{0.5\linewidth}}
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{wzlep.ps}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      Precision Weak Force physics at LEP:
+      \begin{itemize}
+        \item 18 million $Z$ bosons with a mass of 91.1882 GeV (1989 - 2000)
+
+        \item 80 thousand $W^+W^-$ pairs with a threshold of
+              2$\times$80.419 GeV (1996-2000)
+
+	\item (Contribution to $e^+e^- \to$ hadrons centered at zero
+              comes from the zero-mass photon.)
+      \end{itemize}
+    \end{minipage}
+  \end{tabular}
+\end{center}
+
+How can local $SU(2)$ symmetry be justified in a theory where the
+gauge fields have mass?
+
+\section{General Discussion of Mass Terms}
+
+A mass term is a negative term in the Lagrangian that grows
+quadratically with the amplitude of a field.  It is an energy
+cost for having too much field: a (moving) massless field only costs
+as much as the kinetic energy it carries, but massive fields also
+carry a fee for having the field at all.  In quantum mechanics, where
+fields are quantized into a number of particles, the number of
+particles is proportional to the field amplitude squared.
+
+The $-m\psi^\dagger \gamma^0 \psi$ term in the Dirac Lagrangian is a
+mass term because it is proportional to $-m|\psi|^2$.  A vector field
+like a photon would have a $(1/2) m^2 A_\mu A^\mu$ mass term.  (The
+sign and units being different has something to do with the Dirac equation
+being first order.)  For the Weak Nuclear Force, we need something
+like $(1/2) m^2 A_\mu A^\mu$ for $W+$, $W-$, and $Z^0$, but we can't
+put it in by hand, because that would break local gauge symmetry.
+
+So far, we've discussed ``spin-1/2'' Dirac fermions (electrons and
+positrons) and ``spin-1'' vector fields (photons), but there are other
+possibilities.  An interesting one is a ``spin-0'' scalar field, which
+can have a Lagrangian like this:
+\begin{equation}
+  \label{higgslagrangian}
+  \mathcal{L}_H = \partial^\mu \phi^* \partial_\mu \phi - \mu^2
+  \phi^*\phi - \lambda (\phi^* \phi)^2 \mbox{ where $\phi(x)$ is a
+  complex number.}
+\end{equation}
+The $-\mu^2 \phi^*\phi$ term is the scalar field mass and the $\lambda
+(\phi^* \phi)^2$ term allows the field to interact with itself. What
+would happen if we made $\mu^2$ negative?
+
+Normally, you can't have a negative mass term because the Lagrangian
+would be unbounded from below, and it would be advantageous to
+continually create field, but the scalar has a negative definite
+$-\lambda (\phi^* \phi)^2$ term, so free production of field is
+bounded.  Rather than having a quadratic form, the mass-potential will
+have two minima at $\pm\sqrt{-\mu^2/\lambda}$.
+\begin{center}
+  \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}}
+    \includegraphics[width=\linewidth]{quadratic.eps} &
+    \includegraphics[width=\linewidth]{mexicanhat.eps} \\
+    \vspace{-0.5 cm} \begin{center} A normal mass-potential\end{center} &
+    \vspace{-0.5 cm} \begin{center}Scalar field with negative $\mu^2$\end{center}
+  \end{tabular}
+\end{center}
+Actually, since $\phi$ is complex, the minimum potential energy
+solutions lie along a circle in the Argand plane with radius
+\begin{equation}
+  v = \sqrt{-\mu^2/\lambda}
+\end{equation}
+($v$ is for vacuum expectation value, the
+typical low-energy value of $\phi$.)  Because the Lagrangian has
+neither one local minimum nor is that minimum unique, nature has to
+choose a ground state for the scalar field to fall into.  This is
+called spontaneous symmetry breaking.
+
+\section{The Higgs Mechanism}
+
+Including a scalar field can give a vector field like $A^\mu$ an
+effective mass.  In the following Lagrangian, a scalar field interacts
+with a vector field:
+\begin{equation}
+  \mathcal{L}_{HA} = (\partial^\mu + ieA^\mu) \phi^* (\partial_\mu - ieA_\mu) \phi
+  - \mu^2 \phi^*\phi - \lambda (\phi^*\phi)^2 - \frac{1}{4} F_{\mu\nu}F^{\mu\nu}
+\end{equation}
+once again, $\mu^2$ is negative, $\phi(x)$ is complex, and $A^\mu$
+transforms as in \ref{gaugesymmetryofa}.  The $\pm ie A^\mu$ terms in
+the derivatives of $\phi$ guarantee local $U(1)$ symmetry of
+$\mathcal{L}$.
+
+The complex scalar field $\phi$ can be re-written in terms of two real
+fields $h$ and $\theta$ like this:
+\begin{equation}
+  \phi(x) = \sqrt{\frac{1}{2}} (v + h(x)) e^{i\theta(x)/v}
+\end{equation}
+I'd like to choose the gauge where $\alpha(x) = \theta(x) / v$, so
+that $A^\mu$ transforms as
+\begin{equation}
+  A^\mu \to (A^\mu)' = A^\mu + \frac{1}{ev} \partial^\mu \theta
+\end{equation}
+The first term in the Lagrangian becomes
+\begin{eqnarray}
+  & & \frac{1}{2}(\partial^\mu + ieA^\mu + \frac{i}{v} \partial^\mu \theta)(v+h)e^{-i\theta/v}
+  (\partial_\mu - ieA_\mu - \frac{i}{v} \partial_\mu \theta) (v + h) e^{i\theta/v} \\
+  &=& \frac{1}{2}(\partial^\mu h e^{-i\theta/v} + (v+h)\frac{-i}{v} \partial^\mu \theta e^{-i\theta/v} + ieA^\mu(v+h)e^{-i\theta/v} + \frac{i}{v}(\partial^\mu \theta)(v+h)e^{-i\theta/v}) \\
+  & & \times (\partial_\mu h e^{i\theta/v} + (v+h)\frac{i}{v} \partial_\mu \theta e^{i\theta/v} - ieA_\mu(v+h)e^{i\theta/v} - \frac{i}{v}(\partial_\mu \theta)(v+h)e^{i\theta/v}) \\
+  &=& \frac{1}{2}(\partial^\mu h + ieA^\mu (v+h)) (\partial_\mu h - ieA_\mu(v+h)) \\
+  &=& \frac{1}{2}(\partial^\mu h) (\partial_\mu h) + \frac{1}{2} e^2 A^\mu A_\mu (v + h)^2
+\end{eqnarray}
+The next two terms become
+\begin{equation}
+  \frac{1}{4} v^4 \lambda - v^2\lambda h^2 - v \lambda h^3 - \frac{1}{4} \lambda h^4
+\end{equation}
+The last term, $-\frac{1}{4} F_{\mu\nu}F^{\mu\nu}$, is unchanged.
+
+The full Lagrangian is therefore
+\begin{equation}
+  \mathcal{L}_{HA}' = \frac{1}{2}(\partial^\mu h) (\partial_\mu h) + \fbox{$\displaystyle \frac{1}{2}e^2v^2 A^\mu A_\mu$} + e^2 v h A^\mu A_\mu + \frac{1}{2}e^2 h^2 A^\mu A_\mu
+  - \fbox{$v^2 \lambda h^2$} - v \lambda h^3 - \frac{1}{4} \lambda h^4 + \frac{1}{4} v^4 \lambda^2
+\end{equation}
+
+The second term is an effective mass for the $A^\mu$ vector field: a mass of
+\begin{equation}
+  m_A = ev
+\end{equation}
+is generated by the scalar field $\phi$.  The $h$ field also has a mass,
+\begin{equation}
+  m_h = v \sqrt{2\lambda}
+\end{equation}
+The other terms are higher-order interactions of $h$ with itself and
+$h$ and $A^\mu$ with each other.
+
+In the Standard Model, $\phi$ couples to the $SU(2)$ part of the
+Lagrangian (algebraically more complicated but the same spirit as the
+above), generating the masses of $W^+$, $W^-$, and $Z^0$, but not the
+photon $A$.  The effective field $h$ has a mass, which was
+conveniently too large to generate in colliders (at the time the Higgs
+mechanism was proposed), but there are good reasons to expect the LHC
+at CERN to discover it.
+
+\end{document}

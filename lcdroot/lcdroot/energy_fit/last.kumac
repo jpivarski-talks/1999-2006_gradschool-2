@@ -1,0 +1,577 @@
+*** Begin of history file: Thu Oct 28 13:35:28 2004
+exec /tmp/pawtmp-4317.kumac
+func/pl 80*982.0*bendist(x) 20.0 150.0 s
+func/pl 85*982.0*bendist(x) 20.0 150.0 s
+exec /tmp/pawtmp-8191.kumac
+func/pl 100*982.0*bendist(x) 20.0 150.0 s
+func/pl 120*982.0*bendist(x) 20.0 150.0 s
+call wellike
+message $HINFO(200,'SUM')
+exec /tmp/pawtmp-309.kumac
+exec load_c1pc1m_pl.kumac
+nt/plot 5.j1e+j2e
+call fill_edfunc(107.697)
+func/pl 120*982.0*bendist(x) 20.0 150.0 s
+exec /tmp/pawtmp-9182.kumac
+call fill_edfunc(107.697)
+func/pl 140*982.0*bendist(x) 20.0 150.0 s
+func/pl 120*982.0*bendist(x) 20.0 150.0 s
+func/pl 100*982.0*bendist(x) 20.0 150.0 s
+message $HINFO(200,'SUM')
+opt sta
+nt/plot 5.j1e+j2e
+nt/plot 5.j1e+j2e $1
+nt/plot 5.j1e+j2e $1 1000000
+nt/plot 5.j1e+j2e $1 23521
+nt/plot 5.j1e+j2e $1 23500
+nt/plot 5.j1e+j2e $1 23100
+nt/plot 5.j1e+j2e $1 22000
+nt/plot 5.j1e+j2e $1 22100
+nt/plot 5.j1e+j2e $1 22200
+nt/plot 5.j1e+j2e $1 22400
+nt/plot 5.j1e+j2e $1 22300
+nt/plot 5.j1e+j2e $1 22200
+nt/plot 5.j1e+j2e $1 22150
+nt/plot 5.j1e+j2e $1 22160
+h/del 200
+h/del 201
+h/del 202
+h/del 203
+h/del 204
+h/del 205
+h/del 206
+h/del 207
+/hist/cr/1d 200 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 201 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 202 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 203 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 204 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 205 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 206 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 207 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+zone 1 1
+hi/op/add $SIGMA(c1c1ID) $SIGMA(c1c1ID) 200 $SIGMA(sc1c1) 0.0
+hi/op/add $SIGMA(wpairID) 200 201 $SIGMA(swpair) 1.0
+h/del 200
+h/del 201
+h/del 202
+h/del 203
+h/del 204
+h/del 205
+h/del 206
+h/del 207
+/hist/cr/1d 200 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 201 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 202 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 203 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 204 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 205 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 206 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 207 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+hi/op/add $SIGMA(c1c1ID) $SIGMA(c1c1ID) 200 $SIGMA(sc1c1) 0.0
+hi/op/add $SIGMA(wpairID) 200 201 $SIGMA(swpair) 0.
+h/plot $SIGMA(wpairID)
+h/del 200
+h/del 201
+h/del 202
+h/del 203
+h/del 204
+h/del 205
+h/del 206
+h/del 207
+/hist/cr/1d 200 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 201 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 202 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 203 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 204 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 205 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 206 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+/hist/cr/1d 207 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+zone 1 1
+hi/op/add $SIGMA(c1c1ID) $SIGMA(c1c1ID) 200 $SIGMA(sc1c1) 0.0
+hi/op/add $SIGMA(wpairID) 200 201 $SIGMA(swpair) 0.
+set hcol 0
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' $SIGMA(nbin) $SIGMA(xmin) $SIGMA(xmax)
+nt/plot 5.j1e+j2e $1 22160 ! ! ! 1000
+h/plot 1000 'e'
+call zero_common
+nt/plot 5.bfillcom((j1e+j2e),1.) $1 22160 ! ! ! 1000
+call zero_common
+nt/plot 5.bfillcom((j1e+j2e),1.) $1.and.(j1e+j2e).gt.$SIGMA(xmin).and.(j1e+j2e).lt.$SIGMA(xmax) 22160 ! ! ! 1000
+message $SIGMA(xmin)
+message $SIGMA(xmax)
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1 22160 ! ! ! 1000
+opt nsta
+call zero_common
+nt/plot 5.bfillcom((j1e+j2e),1.) $1&&0<(j1e+j2e)<130 22160 ! ! ! 1000
+h/plot 1000 'e'
+/hist/file 25 rzn/hist_gen.rzn
+nt/pl //lun25/GENLEVELPROC/1.c11e+c12e c1dec.eq.210.and.c2e.eq.0.and.c1invm.gt.30.0
+/hist/cr/1d 1001 'Two-jet Energy (GeV)' 130 0 130
+nt/pl //lun25/GENLEVELPROC/1.c11e+c12e c1dec.eq.210.and.c2e.eq.0.and.c1invm.gt.30.0 ! ! ! ! 1001
+h/plot 1000
+h/plot 1001 's'
+h/plot 1000 's'
+h/plot 1000
+h/plot 1001 's'
+h/plot 1001
+h/plot 1000 's'
+nt/pl //lun25/GENLEVELPROC/1.c11e+c12e c1dec.eq.210.and.c2e.eq.0.and.c1invm.gt.25.0 ! ! ! ! 1001
+h/plot 1001
+h/plot 1000 's'
+/hist/cr/1d 1002 'Two-jet Energy (GeV)' 130 0 130
+div 1001 1000 1002 1. 1. 'e'
+h/plot 1002
+max 1002 10
+h/plot 1002
+max 1002 20
+h/plot 1002
+max 1002 30
+h/plot 1002
+h/fit 1002 p4
+h/fit 1002 p6
+h/fit 1002 p8
+h/fit 1002 p8
+h/fit 1002 p8
+h/fit 1002 p8
+h/fit 1002 p3
+h/fit 1002 p4
+h/fit 1002 p5
+h/fit 1002 p6
+h/fit 1002 p6
+h/fit 1002 p6
+h/fit 1002 p6
+h/fit 1002 p5
+h/fit 1002 p20
+h/fit 1002 p10
+h/fit 1002 p15
+h/fit 1002 p14
+h/fit 1002 p5
+/hist/cr/1d 1002 'Two-jet Energy (GeV)' 130 0 130
+div 1000 1001 1002 1. 1. 'e'
+h/plot 1002
+h/fit 1002 g
+h/fit 1002 g*p2
+ve/cr par(5)
+h/fit 1002 g*p2 ! 5 par
+ve/cr par(6)
+h/fit 1002 g*p2 ! 6 par
+h/fit 1002 g
+h/fit 1002 p3
+h/fit 1002 p5
+h/fit 1002 p6
+h/fit 1002 p8
+h/fit 1002 p9
+h/fit 1002 p10
+h/fit 1002 p3
+h/plot 1000 'e'
+func/pl 100*982.0*bendist(x) 20.0 150.0 s
+func/pl 50*982.0*bendist(x) 20.0 150.0 s
+h/plot 1002
+h/fit 1002 p3
+h/plot 1002 'hist'
+f/plot 0.34717-0.28155E-01*x+0.66701E-03*x**2-0.35965E-05*x**3 0 130
+h/plot 1002 'hist'
+f/plot 0.34717-0.28155E-01*x+0.66701E-03*x**2-0.35965E-05*x**3 0 130 's'
+h/plot 1002 'e'
+h/plot 1002 'hist'
+f/plot 0.34717-0.28155E-01*x+0.66701E-03*x**2-0.35965E-05*x**3 0 130 's'
+h/plot 1000 'e'
+func/pl 50*982.0*bendist(x) 20.0 150.0 s
+exec llfuncs.kumac
+func/pl 50*982.0*bendist(x) 20.0 150.0 s
+exec llfuncs.kumac
+func/pl 50*982.0*bendist(x) 20.0 150.0 s
+exec llfuncs.kumac
+func/pl 50*982.0*bendist(x) 20.0 150.0 s
+func/pl bendist(x) 20.0 150.0 s
+func/pl bendist(x) 20.0 150.0
+h/plot 1000 'e'
+func/pl bendist(x) 0 130
+exec llfuncs.kumac
+func/pl bendist(x) 0 130
+exec llfuncs.kumac
+func/pl bendist(x) 0 130
+exec llfuncs.kumac
+func/pl boob(x) 0 130
+func/pl boob(x) 0 130
+exec llfuncs.kumac
+func/pl boob(x) 0 130
+h/plot 1000 'e'
+exec llfuncs.kumac
+func/pl 50*982.0*bendist(x) 0 130 's'
+func/pl 100*982.0*bendist(x) 0 130 's'
+func/pl 75*982.0*bendist(x) 0 130 's'
+func/pl 80*982.0*bendist(x) 0 130 's'
+h/plot 1000 'e'
+func/pl 80*982.0*bendist(x) 0 130 's'
+h/plot 1002
+zone 1 2
+h/plot 1000 'e'
+func/pl 80*982.0*bendist(x) 0 130 's'
+h/fit 1002 p3
+dline 95 95 0 1
+dline 96 96 0 1
+dline 97 97 0 1
+zone 1 1
+h/fit 1002 p3
+dline 97 97 0 1
+exec llfuncs.kumac
+h/plot 1000 'e'
+func/pl 80*982.0*bendist(x) 0 130 's'
+call fill_edfunc(107.697)
+func/pl 80*982.0*bendist(x) 0 130 's'
+h/plot 1000 'e'
+func/pl 80*982.0*bendist(x) 0 130 's'
+call fill_edfunc($SIGMA(107.697+1))
+func/pl 80*982.0*bendist(x) 0 130 's'
+h/plot 1000 'e'
+call fill_edfunc($SIGMA(107.697-5))
+func/pl 80*982.0*bendist(x) 0 130 's'
+call wellike
+call wellike
+call fill_edfunc($SIGMA(107.697))
+h/plot 1000 'e'
+func/pl 80*982.0*bendist(x) 0 130 's'
+exec llfuncs.kumac
+func/pl 80*982.0*bendist(x) 0 130 's'
+func/pl 10*982.0*bendist(x) 0 130 's'
+func/pl 30*982.0*bendist(x) 0 130 's'
+func/pl 40*982.0*bendist(x) 0 130 's'
+func/pl 50*982.0*bendist(x) 0 130 's'
+h/plot 1000 'e'
+func/pl 50*982.0*bendist(x) 0 130 's'
+func/pl 60*982.0*bendist(x) 0 130 's'
+exec llfuncs.kumac
+h/plot 1000 'e'
+func/pl 60*982.0*bendist(x) 0 130 's'
+exec llfuncs.kumac
+call fill_edfunc($SIGMA(107.697))
+h/plot 1000 'e'
+func/pl 60*982.0*bendist(x) 0 130 's'
+exec llfuncs.kumac
+h/plot 1000 'e'
+func/pl 80*982.0*bendist(x) 0 130 's'
+exec load_c1pc1m_pl.kumac
+nt/print 5
+nt/plot 5.eve-le%j1e+j2e
+dline 0 120 0 120
+h/plot 1002
+h/plot 1001
+h/fit 1001(110.:120.) p1
+message $SIGMA(2172.3/18.635)
+h/fit 1000(110.:120.) p1
+message $SIGMA(1479.6/12.794)
+h/fit 1000(110.:120.) p1
+h/fit 1000(100.:120.) p1
+h/fit 1000(100.:120.) p1
+h/fit 1000(110.:120.) p1
+h/fit 1000(100.:120.) p1
+h/fit 1000(110.:120.) p1
+h/fit 1000(100.:120.) p1
+h/fit 1000(110.:120.) p1
+h/fit 1000(100.:120.) p1
+h/fit 1000(110.:120.) p1
+h/fit 1000(100.:120.) p1
+h/fit 1001(100.:120.) p1
+h/plot 1000 'e'
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+call fill_edfunc($SIGMA(107.697-5))
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+exec llfuncs.kumac
+call wellike
+exec llfuncs.kumac
+exec llfuncs.kumac
+call wellike
+call fill_edfunc(105)
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+call fill_edfunc(105.0)
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+h/fit 1002 p3
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+exec llfuncs.kumac
+exec llfuncs.kumac
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+func/pl 80*982.0*bendiss(x) 0 130 's'
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+func/pl 0.6*80*982.0*bendiss(x) 0 130 's'
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+func/pl 0.6*80*982.0*bendiss(x) 0 97. 's'
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+func/pl 0.6*80*982.0*bendiss(x) 0 85. 's'
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+func/pl 0.6*80*982.0*bendiss(x) 0 88. 's'
+func/pl 0.6*80*982.0*bendiss(x) 0 89. 's'
+func/pl 0.6*80*982.0*bendiss(x) 0 92. 's'
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+func/pl 0.6*80*982.0*bendiss(x) 0 92. 's'
+set dmod 1
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+set dmod 2
+func/pl 0.6*80*982.0*bendiss(x) 0 92. 's'
+set dmod 1
+max 1000 400
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+set dmod 2
+func/pl 0.6*80*982.0*bendiss(x) 0 92. 's'
+h/fit 1000(92.:120.) p1
+set dmod 1
+h/fit 1000(92.:120.) p1
+h/fit 1000(95.:120.) p1
+h/fit 1000(95.:120.) p1
+f/plot sqrt(x**2-(sqrt((500/2)**2-155.723**2)-sqrt(((500/2)-x)**2-106.547**2))**2) 20 118
+message $SIGMA(sqrt((115.6)**2-(sqrt((500/2)**2-155.723**2)-sqrt(((500/2)-(115.6))**2-106.547**2))**2))
+message $SIGMA(sqrt((115.6)**2-(sqrt((500/2)**2-155.723**2)-sqrt(((500/2)-(115.6))**2-106.547**2))**2))
+message $SIGMA(sqrt((115.6)**2-(sqrt((500/2)**2-155.723**2)-sqrt(((500/2)-(115.6))**2-106.547**2))**2))
+/hist/cr/1d 1003 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm>35 22160 ! ! ! 1003
+h/fit 1003(95.:120.)
+h/fit 1003(95.:120.) p1
+set dmod 1
+max 1000 400
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+set dmod 2
+func/pl 0.6*80*982.0*bendiss(x) 0 92. 's'
+set GSIZ $SIGMA(0.28*1.5)
+set TSIZ $SIGMA(0.28*1.5)
+set ASIZ $SIGMA(0.28*1.5)
+set CSIZ $SIGMA(0.28*1.5)
+set PSIZ $SIGMA(0.28*1.5)
+set VSIZ $SIGMA(0.28)
+set yhti 1.0
+fortran/file 65 'jimp_jetenergyfit.eps'
+graphics/metafile 65 -111
+igset mtype 1
+set dmod 1
+max 1000 400
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+set dmod 2
+func/pl 0.6*80*982.0*bendiss(x) 0 92. 's'
+set dmod 1
+close 65
+exec llfuncs.kumac
+call fill_edfunc(107.697)
+h/plot 1000 'ehist'
+func/pl 80*982.0*bendist(x) 0 130 's'
+nt/cut $1 (500-eve>300.)&&(abs(j1pz/sqrt(j1px**2+j1py**2+j1pz**2))<0.9&&abs(j2pz/sqrt(j2px**2+j2py**2+j2pz**2))<0.9)&&(jinvm<60.)
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm<25 22160 ! ! ! 1000
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm>25 22160 ! ! ! 1000
+func/pl 80*982.0*bendist(x) 0 130 's'
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm>30 22160 ! ! ! 1000
+func/pl 80*982.0*bendist(x) 0 130 's'
+set GSIZ $SIGMA(0.28*1.5)
+func/pl 70*982.0*bendist(x) 0 130 's'
+func/pl 60*982.0*bendist(x) 0 130 's'
+func/pl 65*982.0*bendist(x) 0 130 's'
+func/pl 63*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>30 22160 ! ! ! 1000
+func/pl 62*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>35 22160 ! ! ! 1000
+func/pl 62*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>30 22160 ! ! ! 1000
+func/pl 62*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>31 22160 ! ! ! 1000
+func/pl 62*982.0*bendist(x) 0 130 's'
+set dmod 1
+max 1000 400
+h/plot 1000 'ehist'
+func/pl 62*982.0*bendist(x) 0 130 's'
+set dmod 2
+func/pl 0.6*62*982.0*bendiss(x) 0 92. 's'
+set dmod 1
+max 1000 325
+h/plot 1000 'ehist'
+func/pl 62*982.0*bendist(x) 0 130 's'
+set dmod 2
+func/pl 0.6*62*982.0*bendiss(x) 0 92. 's'
+set dmod 1
+set dmod 1
+max 1000 325
+h/plot 1000 'ehist'
+func/pl 61*982.0*bendist(x) 0 130 's'
+set dmod 2
+func/pl 0.6*61*982.0*bendiss(x) 0 92. 's'
+set dmod 1
+call wellike
+ve/cr ell(101)
+ve/read ell 'ellfile.txt'
+ve/draw ell
+ve/cr emm(101)
+ve/cr ell(101)
+ve/read emm,ell 'ellfile.txt'
+null 101.5 111.5 60000 62000
+graph 101 emm ell
+graph 101 emm ell '*'
+null 101.5 111.5 60000 62000
+graph 101 emm ell '*'
+graph 101 emm ell
+null 101.5 111.5 61000 67000
+graph 101 emm ell '*'
+nt/plot 5.j1e+j2e $1&&jinvm>31&&j1e+j2e>100 22160
+nt/plot 5.j1e+j2e $1&&jinvm>31&&j1e+j2e>112 22160
+null 101.5 111.5 61000 67000
+graph 101 emm ell '*'
+h/cr/1d 'vec' 101 101.45 111.55
+h/cr/1d 1004 'vec' 101 101.45 111.55
+h/put_vect/contents 1004 ell
+h/plot 1004
+graph 101 emm ell '*'
+min 1004 61000
+max 1004 67000
+h/plot 1004
+graph 101 emm ell '*'
+h/fit 1004(102.:106) p2
+h/fit 1004(102.:106.) p2
+min 1004 61000
+max 1004 62000
+h/plot 1004
+max 1004 67000
+h/plot 1004
+graph 101 emm ell '*'
+h/fit 1004(102.:106.) p2
+h/fit 1004(106.:107.) p2
+h/fit 1004(106.1:107.) p2
+h/fit 1004(107.5:108.2) p2
+h/fit 1004(109.3:109.5) p2
+h/fit 1004(110.0:110.5) p2
+h/fit 1004(102.:106.) p2
+h/fit 1004(106.1:107.) p2
+h/fit 1004(107.5:108.2) p2
+h/fit 1004(109.3:109.5) p2
+h/fit 1004(110.0:110.5) p2
+ve/cr par(3)
+h/fit 1004(102.:106.) parab.f ! 3 par
+ve/inp par 105. 1. 61500.
+h/fit 1004(102.:106.) parab.f ! 3 par
+ve/inp par 105. 1. 61500.
+h/fit 1004(102.:106.) parab.f ! 3 par
+h/fit 1004(106.1:107.) parab.f ! 3 par
+h/fit 1004(102.:106.) parab.f ! 3 par
+h/fit 1004(106.1:107.) parab.f ! 3 par
+h/fit 1004(107.5:108.2) parab.f ! 3 par
+h/fit 1004(109.3:109.5) parab.f ! 3 par
+h/fit 1004(110.0:110.5) parab.f ! 3 par
+h/fit 1004(102.:106.) parab.f ! 3 par
+min 1004 61000
+max 1004 62000
+h/plot 1004
+min 1004 61200
+max 1004 62600
+h/plot 1004
+min 1004 61200
+max 1004 61600
+h/plot 1004
+ve/inp par 105. 1. 61500.
+h/fit 1004(102.:106.) parab.f ! 3 par
+h/plot 1004(103.:106.)
+min 1004 61350
+max 1004 61450
+h/plot 1004(103.:106.)
+h/fit 1004(103.:106.) parab.f ! 3 par
+h/fit 1004(104.:106.) parab.f ! 3 par
+h/plot 1004(104.:106.)
+h/plot 1004(103.5:106.)
+h/fit 1004(103.5:106.) parab.f ! 3 par
+h/plot 1004(103.5:106.)
+min 1004 61360
+max 1004 61400
+h/plot 1004(103.5:106.)
+min 1004 61365
+max 1004 61400
+h/plot 1004(103.5:106.)
+h/plot 1004(103.5:106.) 'func'
+graph 101 emm ell '*'
+h/fit 1004(103.5:106.) parab.f '0' 3 par
+h/fit 1004(103.5:106.) parab.f '0' 3 par
+call zero_common
+nt/plot 5.bfillcom((j1e+j2e),1.) $1&&0<(j1e+j2e)<130&&jinvm>31 22160 ! ! ! 1000
+call zero_common
+nt/plot 5.bfillcom((j1e+j2e),1.) $1&&0<(j1e+j2e)<130&&jinvm>30 22160 ! ! ! 1000
+call fill_edfunc(107.697)
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm>30 22160 ! ! ! 1000
+func/pl 61*982.0*bendist(x) 0 130 's'
+func/pl 62*982.0*bendist(x) 0 130 's'
+func/pl 63*982.0*bendist(x) 0 130 's'
+func/pl 65*982.0*bendist(x) 0 130 's'
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm>31 22160 ! ! ! 1000
+func/pl 65*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>31 22160 ! ! ! 1000
+func/pl 61*982.0*bendist(x) 0 130 's'
+call zero_common
+nt/plot 5.bfillcom((j1e+j2e),1.) $1&&0<(j1e+j2e)<130&&jinvm>31 22160 ! ! ! 1000
+h/plot 1004(103.5:106.) 'func'
+graph 101 emm ell '*'
+exec llfuncs.kumac
+call wellike
+call fill_edfunc(107.697)
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm>31 22160 ! ! ! 1000
+func/pl 61*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>35 22160 ! ! ! 1000
+func/pl 61*982.0*bendist(x) 0 130 's'
+func/pl 59*982.0*bendist(x) 0 130 's'
+func/pl 50*982.0*bendist(x) 0 130 's'
+func/pl 40*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>34.08 22160 ! ! ! 1000
+func/pl 40*982.0*bendist(x) 0 130 's'
+func/pl 43*982.0*bendist(x) 0 130 's'
+func/pl 45*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>34.08 22160 ! ! ! 1000
+func/pl 45*982.0*bendist(x) 0 130 's'
+nt/plot 5.j1e+j2e $1&&jinvm>35 22160 ! ! ! 1000
+func/pl 45*982.0*bendist(x) 0 130 's'
+exec llfuncs.kumac
+call fill_edfunc(107.697)
+func/pl 45*982.0*bendist(x) 0 130
+exec dilepedist.kumac
+call fill_edfunc(107.697)
+func/pl 45*982.0*bendist(x) 0 130 's'
+func/pl 45*982.0*bendist(x) 0 130
+exec dilepedist.kumac
+call fill_edfunc(107.697)
+func/pl 45*982.0*bendist(x) 0 130
+exec dilepedist.kumac
+call fill_edfunc(107.697)
+exec dilepedist.kumac
+call fill_edfunc(107.697)
+func/pl 45*982.0*bendist(x) 0 130 's'
+exec dilepedist.kumac
+call fill_edfunc(107.697)
+func/pl 45*982.0*bendist(x) 0 130
+call zero_common
+nt/plot 5.bfillcom((j1e+j2e),1.) $1&&0<(j1e+j2e)<130&&jinvm>25 22160 ! ! ! 1000
+exec llfuncs.kumac
+exec dilepedist.kumac
+call fill_edfunc(107.697)
+/hist/cr/1d 1000 'Two-jet Energy (GeV)' 130 0 130
+nt/plot 5.j1e+j2e $1&&jinvm>25 22160 ! ! ! 1000
+func/pl 45*982.0*bendist(x) 0 130 's'
+func/pl 61*982.0*bendist(x) 0 130 's'
+func/pl 80*982.0*bendist(x) 0 130 's'
+call wellike
+exec llfuncs.kumac
+call wellike
+h/plot 1004(103.5:106.) 'func'
+graph 101 emm ell '*'
+*** End   of history file: Thu Oct 28 21:09:01 2004

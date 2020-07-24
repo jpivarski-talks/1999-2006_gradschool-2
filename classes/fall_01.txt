@@ -1,0 +1,65 @@
+This buffer is for notes you don't want to save, and for Lisp evaluation.
+If you want to create a file, visit that file with C-x C-f,
+then enter the text in that file's own buffer.
+
+TEAGLE HALL EXHIBITION POOL 
+          Monday & Wednesday 9:00 to 9:45 a.m. S. Norberg(902-325)(Start 9/10) 
+          Tuesday & Thursday 9:00 to 9:45 a.m. Staff(902-379)(Start 9/11) 
+
+PHYS  651 REL QUANT FIELD THEORY I       3.0 HRS       S/U ONLY
+    475-582   LEC 01 MW   0840-0955A RF 112    NEUBERT, M
+           SUB-COURSES
+    475-649   SEC 01 W    0335-0425P RF 104    STAFF
+
+PHYS  645 HIGH-ENERGY PARTICLE PHYSICS   3.0 HRS       S/U OR LET
+    946-807   LEC 01 MWF  1010-1100A RF 128    GITTELMAN, B
+
+T&AM  610 METHODS OF APPL MATH I         3.0 HRS       LET ONLY
+    739-039   LEC 01 MWF  1115-1205P TH 203
+
+MATH  615 MATH METHODS IN PHYSICS        4.0 HRS       S/U OR LET
+    952-665   LEC 01 MWF  1115-1205P MT 206    GROSS
+
+P ED  114 SWIMMING CONDITIONING          1.0 VAR HRS   S/U ONLY
+  PLEASE GO TO THE PHYS. ED. WEBSITE (WWW.CORNELLBIGRED.COM/
+  FITNESS/INDEX.HTML) FOR INFORMATION ON FEES AND OTHER
+  RELEVANT MATERIAL.
+    341-513   SEC 02 TR   0900-0945A TE 151B   STAFF
+
+			    *     *     *
+
+T&AM 610 Methods of Applied Mathematics I
+
+     Fall. 3 credits. Intended for beginning graduate students in
+     engineering and science. An intensive course, requiring more time
+     than is normally available to undergraduates (see T&AM 310-311)
+     but open to exceptional undergraduates with permission of
+     instructor.
+
+Emphasis is on applications. Linear algebra, calculus of several
+variables, vector analysis, series, ordinary differential equations,
+complex variables.
+
+			    *     *     *
+
+MATH 615-616 Mathematical Methods In Physics
+
+     NOT OFFERED THIS YEAR 615, fall; 616, spring. 4 credits each.
+     Intended for graduate students in physics or related fields who
+     have had a strong advanced calculus course and at least 2 years
+     of general physics. A knowledge of the elements of finite
+     dimensional vector space theory, complex variables, separation of
+     variables in partial differential equations, and Fourier series
+     will be assumed. Undergraduates will be admitted only with
+     permission of instructor. Mathematics 615 is a prerequisite for
+     616. Not offered 2000-2001.
+
+Topics designed to give a working knowledge of the principal
+mathematical methods used in advanced physics. 615: Hilbert space,
+generalized functions, Fourier transform, Sturm-Liouville problem in
+ODE, Green's functions, asymptotic expansions. 616: Linear operators.
+Differential operators and integral operators, the equations and
+eigenvalue problems connected with them and the special functions
+arising from them. Elements of group theory. The rotation group and
+its representations.
+

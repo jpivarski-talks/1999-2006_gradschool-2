@@ -1,0 +1,152 @@
+r = { 1, 0, 0 }
+
+g = { 0, 1, 0 }
+
+b = { 0, 0, 1 }
+
+l1 = { {0,1,0}, {1,0,0}, {0,0,0} }
+
+l2 = { {0,-I,0}, {I,0,0}, {0,0,0} }
+
+l3 = { {1,0,0}, {0,-1,0}, {0,0,0} }
+
+l4 = { {l4a,l4b,l4c}, {l4d,l4e,l4f}, {l4g,l4h,l4i} }
+
+l5 = { {l5a,l5b,l5c}, {l5d,l5e,l5f}, {l5g,l5h,l5i} }
+
+r2b = ( l4 + I * l5 ) / 2
+
+b2r = ( l4 - I * l5 ) / 2
+
+Solve[ { b == r2b . r, r == b2r . b }, { l4a, l4b, l4c, l4d, l4e, l4f, l4g, l4h, l4i,
+                                         l5a, l5b, l5c, l5d, l5e, l5f, l5g, l5h, l5i } ]
+
+(* solutions are {{l4a -> -I l5a,
+                   l4c -> 2 + I l5c,
+                   l4d -> -I l5d,
+                   l4f -> I l5f,
+                   l4g -> 2 - I l5g,
+                   l4i -> I l5i}}     *)
+
+l5 = { {1,0,1}, {1,0,1}, {1,0,1} }
+
+l4 = { {-I,0,2+I}, {-I,0,I}, {2-I,0,I} }
+
+l6 = { {l6a,l6b,l6c}, {l6d,l6e,l6f}, {l6g,l6h,l6i} }
+
+l7 = { {l7a,l7b,l7c}, {l7d,l7e,l7f}, {l7g,l7h,l7i} }
+
+g2b = ( l6 + I * l7 ) / 2
+
+b2g = ( l6 - I * l7 ) / 2
+
+Solve[ { g == b2g . b, b == g2b . g }, { l6a, l6b, l6c, l6d, l6e, l6f, l6g, l6h, l6i,
+                                         l7a, l7b, l7c, l7d, l7e, l7f, l7g, l7h, l7i } ]
+
+(* Solutions are: {{l6b -> -I l7b,
+                    l6c -> I l7c,
+                    l6e -> -I l7e,
+                    l6f -> 2 + I l7f,
+                    l6h -> 2 - I l7h,
+                    l6i -> I l7i}}     *)
+
+l7 = { { 0, 1, 1 }, { 0, 1, 1 }, { 0, 1, 1} }
+
+l6 = { { 0, -I, I }, { 0, -I, 2+I }, { 0, 2-I, I } }
+
+l8 = { {1,0,0}, {0,1,0}, {0,0,-2} }
+
+(* The matricies are: 
+In[60]:= TableForm[ l1 ]
+
+Out[60]//TableForm= 0   1   0
+
+                    1   0   0
+
+                    0   0   0
+
+In[61]:= TableForm[ l2 ]
+
+Out[61]//TableForm= 0   -I   0
+
+                    I   0    0
+
+                    0   0    0
+
+In[62]:= TableForm[ l3 ]
+
+Out[62]//TableForm= 1   0    0
+
+                    0   -1   0
+
+                    0   0    0
+
+In[63]:= TableForm[ l4 ]
+
+Out[63]//TableForm= -I      0   2 + I
+
+                    -I      0   I
+
+                    2 - I   0   I
+
+In[64]:= TableForm[ l5 ]
+
+Out[64]//TableForm= 1   0   1
+
+                    1   0   1
+
+                    1   0   1
+
+In[65]:= TableForm[ l6 ]
+
+Out[65]//TableForm= 0   -I      I
+
+                    0   -I      2 + I
+
+                    0   2 - I   I
+
+In[66]:= TableForm[ l7 ]
+
+Out[66]//TableForm= 0   1   1
+
+                    0   1   1
+
+                    0   1   1
+
+In[67]:= TableForm[ l8 ]
+
+Out[67]//TableForm= 1   0   0
+
+                    0   1   0
+
+                    0   0   -2     *)
+
+fijk[ { i_, j_, k_ } ] = If[ Sort[ {i, j, k} ] == { 1, 2, 3 }, Signature[ {i, j, k} ], 0 ]
+
+(* ***************************************************************************** *)
+
+
+fijk[ i_, j_, k_ ] = If[ And[ i == 1, j == 2, k == 3 ], 1,
+                         If[ Or[ And[ i == 4, j == 5, k == 8 ], And[ i == 6, j == 7, k == 8 ] ], Sqrt[3]/2,
+                             If[ Or[ And[ i == 1, j == 4, k == 7 ],
+                                     And[ i == 1, j == 6, k == 5 ],
+                                     And[ i == 2, j == 4, k == 6 ],
+                                     And[ i == 2, j == 5, k == 7 ],
+                                     And[ i == 3, j == 4, k == 5 ],
+                                     And[ i == 3, j == 7, k == 6 ]  ], 1/2, 0 ] ] ]
+
+TableForm[ Table[ fijk[i,j,k], {i,1,8}, {j,1,8}, {k,1,8} ] ]
+
+comm[ el1_, el2_ ] = el1 . el2 - el2 . el1
+
+lambda[ i_ ] = If[ i == 1, l1, If[ i == 2, l2, If[ i == 3, l3, If[ i == 4, l4,
+                   If[ i == 5, l5, If[ i == 6, l6, If[ i == 7, l7, If[ i == 8, l8, 0 ] ] ] ] ] ] ] ]
+
+ReplaceAll[ comm[ lambda[ i ] / 2, lambda[ j ] / 2 ] -
+            Sum[ I * fijk[ i, j, k ] * lambda[ k ] / 2, { k, 1, 8 } ],
+            { i -> 1, j -> 2 } ]
+
+ReplaceAll[ Sum[ I * fijk[ i, j, k ] * lambda[ k ] / 2, { k, 1, 8 } ], { i -> 1, j -> 3 } ]
+
+ReplaceAll[ comm[ lambda[ i ] / 2, lambda[ j ] / 2 ], { i -> 1, j -> 3 } ]
+

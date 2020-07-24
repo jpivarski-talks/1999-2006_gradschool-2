@@ -1,0 +1,77 @@
+*** Begin of history file: Tue Nov 25 10:55:29 2003
+h/file 1 ../rzn/ntuple_fixedphi.rzn
+cd zdhitstudy
+h/cr/2d 100 'layer 1 (cotTheta*radius - z0) - zhit VS zhit' 10 -0.3 0.3 10 -0.1 0.1
+nt/plot 1.(cotTheta*0.052621-z0)-refz%refz layer==1 ! ! ! ! 100
+nt/plot 1.(cotTheta*asin(0.052621*curv)/curv-z0)-refz%refz layer==1 ! ! ! ! 100
+nt/plot 1.wirey%wirex layer==1&&wire==4
+nt/plot 1.wirey%wirex%refz layer==1&&wire==4
+nt/plot 1.wirey%wirex%refz layer==1
+nt/plot 1.wirey%wirex%refz
+nt/plot 1.wirey%wirex%refz layer<3
+nt/plot 1.wirey%wirex%refz wire<10
+nt/plot 1.wirey%wirex%refz wire<10&&layer<4
+nt/plot 1.wirey%wirex wire<10&&layer<4
+nt/plot 1.wirey%wirex wire<3
+nt/plot 1.wirey%wirex wire<3&&layer<3
+nt/plot 1.wirey%wirex wire<3&&layer<4
+nt/plot 1.wirey%wirex wire<3
+nt/plot 1.wirey%wirex wire==0
+nt/plot 1.wirey%wirex wire<4
+nt/plot 1.wirey%wirex wire<4&&refz>0
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-dca%dca
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-dca
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-dca%dca
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)%dca
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)%dca*drift/abs(drift)
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)%dca*drift/abs(drift) drift!=0
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)*drift/abs(drift)%dca drift!=0
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)%abs(dca)
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca layer==1
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca layer==2
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca layer==3
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca layer==4
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca layer==5
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca layer==6
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%dca layer<4
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%refz
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%refz layer==1
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%hphi layer==1
+nt/plot 1.hphi layer==1
+h/cr/1d 90 'layer 1 phi' 1000 0. $SIGMA(2.*M_PI)
+h/cr/1d 90 'layer 1 phi' 1000 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 5000 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1 ! ! ! ! 90
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%hphi layer==1
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 1000 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 500 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 100 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 200 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 300 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/plot 90 e
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 340 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 68 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+h/cr/1d 90 'layer 1 phi' 136 0. $SIGMA(2.*3.1415926)
+nt/plot 1.hphi layer==1&&sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)<0.02e-4 ! ! ! ! 90
+nt/plot 1.sqrt((wirex-refx)**2+(wirey-refy)**2)-abs(dca)%hphi layer==1
+nt/plot 1.(cotTheta*asin(0.052621*curv)/curv-z0)-refz%refz layer==1 ! ! ! ! 100
+nt/plot 1.sqrt(wirex**2+wirey**2)
+nt/plot 1.sqrt(wirex**2+wirey**2) layer==1
+nt/plot 1.(cotTheta*asin(sqrt(wirex**2+wirey**2)*curv)/curv-z0)-refz%refz layer==1 ! ! ! ! 100
+nt/plot 1.(cotTheta*asin(sqrt(refx**2+refy**2)*curv)/curv-z0)-refz%refz layer==1 ! ! ! ! 100
+h/cr/2d 100 'layer 1 (cotTheta*radius - z0) - zhit VS zhit' 10 -0.3 0.3 10 -0.1 0.1
+*** End   of history file: Tue Nov 25 11:15:02 2003

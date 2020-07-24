@@ -1,0 +1,623 @@
+h/file 1 ../rzn2/n1n3.rzn  
+h/file 2 ../rzn2/c1c2.rzn 
+h/file 3 ../rzn2/n2n3.rzn
+h/file 4 ../rzn2/c1c1.rzn
+h/file 21 ../rzn2/zpairs.rzn
+h/file 22 ../rzn2/ttbar.rzn
+h/file 23 ../rzn2/wpairs.rzn
+
+* h/file 1 ljf26_n1n3.rzn  
+* h/file 2 ljf26_c1c2.rzn 
+* h/file 3 ljf26_n2n3.rzn
+* h/file 4 ljf26_c1c1.rzn
+* h/file 21 ljf26_zpairs.rzn
+* h/file 22 ljf26_ttbar.rzn
+* h/file 23 ljf26_wpairs.rzn
+
+* nt/print //lun1/lcproc/1000
+* nt/print //lun2/lcproc/1000
+* nt/print //lun3/lcproc/1000
+* nt/print //lun4/lcproc/1000
+* nt/print //lun21/lcproc/1000
+* nt/print //lun22/lcproc/1000
+* nt/print //lun23/lcproc/1000
+
+* (500) / ((lumi number)*(number in rzn)/(number in root))
+
+* impatience factors
+sigma n1n3 =   (500) / ((449.1)*(12620)*(12620))
+sigma c1c2 =   (500) / ((1405.)*(22300)*(22300))
+sigma n2n3 =   (500) / ((479.3)*(20000)*(20000))
+sigma c1c1 =   (500) / ((431.0)*(65836)*(120000))
+sigma zpairs = (500) / ((250.0)*(27854)*(106725))
+sigma ttbar =  (500) / ((155.8)*(10844)*(88330))
+sigma wpairs = (500) / ((13.82)*(23859)*(100000))
+
+* What to plot:
+*
+* 100. missing energy = (500-esumiso-esumtrk)
+* $9 = (500-esumiso-esumtrk)>X
+* $1 = bigp*secp<0
+* 200. second-most energetic track = abs(secp) with $9&&$1
+* $2 = abs(secp)>Y
+* 300. missing energy with $1&&$2
+* zone 1 2: 400. big track e/p = bigem/abs(bigp) with $9&&$1&&$2
+*           500. sec track e/p = secem/abs(secp) with $9&&$1&&$2
+* $3 = abs(bigem/abs(bigp)-1)<Z&&abs(secem/abs(secp)-1)<Z
+* 600. missing energy with $1&&$2&&$3
+* 700. two-lepton mass = sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) with $9&&$1&&$2&&$3
+* overlay signal two-lepton mass with ($9&&$1&&$2&&$3) and without cuts, showing endpoint
+
+set ncol 16
+palette 1
+
+sigma pre = 100
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Missing energy' 100 0. 500.
+h/cr/1d $SIGMA(pre+02) 'Missing energy' 100 0. 500.
+h/cr/1d $SIGMA(pre+03) 'Missing energy' 100 0. 500.
+h/cr/1d $SIGMA(pre+04) 'Missing energy' 100 0. 500.
+h/cr/1d $SIGMA(pre+05) 'Missing energy' 100 0. 500.
+h/cr/1d $SIGMA(pre+06) 'Missing energy' 100 0. 500.
+h/cr/1d $SIGMA(pre+07) 'Missing energy' 100 0. 500.
+nt/plot	 //lun1/LCProc/1000.(500-esumiso-esumtrk) ! ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.(500-esumiso-esumtrk) ! ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.(500-esumiso-esumtrk) ! ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.(500-esumiso-esumtrk) ! ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.(500-esumiso-esumtrk) ! ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.(500-esumiso-esumtrk) ! ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.(500-esumiso-esumtrk) ! ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+set ltyp 3
+dline 300 300 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+pict/print 'withmatching_1.eps'
+
+nt/cuts $9 (500-esumiso-esumtrk)>300
+nt/cuts $1 bigp*secp<0
+
+zone 1 2
+
+sigma pre = 200
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Biggest energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+02) 'Biggest energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+03) 'Biggest energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+04) 'Biggest energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+05) 'Biggest energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+06) 'Biggest energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+07) 'Biggest energetic track with missing energy' 100 0. 100.
+nt/plot	 //lun1/LCProc/1000.abs(bigp) $9&&$1 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.abs(bigp) $9&&$1 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.abs(bigp) $9&&$1 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.abs(bigp) $9&&$1 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.abs(bigp) $9&&$1 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.abs(bigp) $9&&$1 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.abs(bigp) $9&&$1 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+set ltyp 3
+dline 10 10 0 $GRAFINFO('WNYMAX')
+exec halfkey.kumac
+
+sigma pre = 250
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Second-most energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+02) 'Second-most energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+03) 'Second-most energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+04) 'Second-most energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+05) 'Second-most energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+06) 'Second-most energetic track with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+07) 'Second-most energetic track with missing energy' 100 0. 100.
+nt/plot	 //lun1/LCProc/1000.abs(secp) $9&&$1 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.abs(secp) $9&&$1 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.abs(secp) $9&&$1 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.abs(secp) $9&&$1 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.abs(secp) $9&&$1 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.abs(secp) $9&&$1 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.abs(secp) $9&&$1 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+set ltyp 3
+dline 10 10 0 $GRAFINFO('WNYMAX')
+exec halfkey.kumac
+pict/print 'withmatching_2.eps'
+
+nt/cuts $2 abs(secp)>10
+
+zone 1 1
+
+sigma pre = 300
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Missing energy with two energetic tracks' 100 0. 500.
+h/cr/1d $SIGMA(pre+02) 'Missing energy with two energetic tracks' 100 0. 500.
+h/cr/1d $SIGMA(pre+03) 'Missing energy with two energetic tracks' 100 0. 500.
+h/cr/1d $SIGMA(pre+04) 'Missing energy with two energetic tracks' 100 0. 500.
+h/cr/1d $SIGMA(pre+05) 'Missing energy with two energetic tracks' 100 0. 500.
+h/cr/1d $SIGMA(pre+06) 'Missing energy with two energetic tracks' 100 0. 500.
+h/cr/1d $SIGMA(pre+07) 'Missing energy with two energetic tracks' 100 0. 500.
+nt/plot	 //lun1/LCProc/1000.(500-esumiso-esumtrk) $1&&$2 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.(500-esumiso-esumtrk) $1&&$2 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.(500-esumiso-esumtrk) $1&&$2 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.(500-esumiso-esumtrk) $1&&$2 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.(500-esumiso-esumtrk) $1&&$2 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.(500-esumiso-esumtrk) $1&&$2 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.(500-esumiso-esumtrk) $1&&$2 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+set ltyp 3
+dline 300 300 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+pict/print 'withmatching_3.eps'
+
+zone 1 2
+
+sigma pre = 400
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+02) 'Biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+03) 'Biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+04) 'Biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+05) 'Biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+06) 'Biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+07) 'Biggest energetic track E/P with missing energy' 100 0. 1.5
+nt/plot	 //lun1/LCProc/1000.bigem/abs(bigp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.bigem/abs(bigp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.bigem/abs(bigp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.bigem/abs(bigp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.bigem/abs(bigp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.bigem/abs(bigp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.bigem/abs(bigp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+set ltyp 3
+dline 0.9 0.9 0 $GRAFINFO('WNYMAX')
+dline 1.1 1.1 0 $GRAFINFO('WNYMAX')
+exec halfkey.kumac
+
+sigma pre = 500
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Second-biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+02) 'Second-biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+03) 'Second-biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+04) 'Second-biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+05) 'Second-biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+06) 'Second-biggest energetic track E/P with missing energy' 100 0. 1.5
+h/cr/1d $SIGMA(pre+07) 'Second-biggest energetic track E/P with missing energy' 100 0. 1.5
+nt/plot	 //lun1/LCProc/1000.secem/abs(secp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.secem/abs(secp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.secem/abs(secp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.secem/abs(secp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.secem/abs(secp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.secem/abs(secp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.secem/abs(secp) $9&&$1&&$2 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+set ltyp 3
+dline 0.9 0.9 0 $GRAFINFO('WNYMAX')
+dline 1.1 1.1 0 $GRAFINFO('WNYMAX')
+exec halfkey.kumac
+pict/print 'withmatching_4.eps'
+
+zone 1 1
+
+nt/cuts $3 abs(bigem/abs(bigp)-1)<0.1&&abs(secem/abs(secp)-1)<0.1
+
+sigma pre = 600
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Missing energy with two energetic electrons' 100 0. 500.
+h/cr/1d $SIGMA(pre+02) 'Missing energy with two energetic electrons' 100 0. 500.
+h/cr/1d $SIGMA(pre+03) 'Missing energy with two energetic electrons' 100 0. 500.
+h/cr/1d $SIGMA(pre+04) 'Missing energy with two energetic electrons' 100 0. 500.
+h/cr/1d $SIGMA(pre+05) 'Missing energy with two energetic electrons' 100 0. 500.
+h/cr/1d $SIGMA(pre+06) 'Missing energy with two energetic electrons' 100 0. 500.
+h/cr/1d $SIGMA(pre+07) 'Missing energy with two energetic electrons' 100 0. 500.
+nt/plot	 //lun1/LCProc/1000.(500-esumiso-esumtrk) $1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.(500-esumiso-esumtrk) $1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.(500-esumiso-esumtrk) $1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.(500-esumiso-esumtrk) $1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.(500-esumiso-esumtrk) $1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.(500-esumiso-esumtrk) $1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.(500-esumiso-esumtrk) $1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+set ltyp 3
+dline 300 300 0 $GRAFINFO('WNYMAX')
+exec key.kumac
+pict/print 'withmatching_5.eps'
+
+nt/cuts $4 (e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2>0
+
+sigma pre = 700
+h/delete $SIGMA(pre+01)
+h/delete $SIGMA(pre+02)
+h/delete $SIGMA(pre+03)
+h/delete $SIGMA(pre+04)
+h/delete $SIGMA(pre+05)
+h/delete $SIGMA(pre+06)
+h/delete $SIGMA(pre+07)
+h/cr/1d $SIGMA(pre+01) 'Invariant mass of two energetic electrons with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+02) 'Invariant mass of two energetic electrons with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+03) 'Invariant mass of two energetic electrons with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+04) 'Invariant mass of two energetic electrons with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+05) 'Invariant mass of two energetic electrons with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+06) 'Invariant mass of two energetic electrons with missing energy' 100 0. 100.
+h/cr/1d $SIGMA(pre+07) 'Invariant mass of two energetic electrons with missing energy' 100 0. 100.
+nt/plot	 //lun1/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$9&&$1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+01)
+nt/plot	 //lun2/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$9&&$1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+02)
+nt/plot	 //lun3/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$9&&$1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+03)
+nt/plot	 //lun4/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$9&&$1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+04)
+nt/plot //lun21/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$9&&$1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+05)
+nt/plot //lun22/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$9&&$1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+06)
+nt/plot //lun23/LCProc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$9&&$1&&$2&&$3 ! ! ! 'N' $SIGMA(pre+07)
+h/delete $SIGMA(pre+11)
+h/delete $SIGMA(pre+12)
+h/delete $SIGMA(pre+13)
+h/delete $SIGMA(pre+14)
+h/delete $SIGMA(pre+15)
+h/delete $SIGMA(pre+16)
+h/delete $SIGMA(pre+17)
+h/delete $SIGMA(pre+21)
+h/delete $SIGMA(pre+22)
+h/delete $SIGMA(pre+23)
+h/delete $SIGMA(pre+24)
+h/delete $SIGMA(pre+25)
+h/delete $SIGMA(pre+26)
+h/delete $SIGMA(pre+27)
+sub $SIGMA(pre+01) $SIGMA(pre+01) $SIGMA(pre+21) $SIGMA(n1n3) 0
+sub $SIGMA(pre+02) $SIGMA(pre+02) $SIGMA(pre+22) $SIGMA(c1c2) 0
+sub $SIGMA(pre+03) $SIGMA(pre+03) $SIGMA(pre+23) $SIGMA(n2n3) 0
+sub $SIGMA(pre+04) $SIGMA(pre+04) $SIGMA(pre+24) $SIGMA(c1c1) 0
+sub $SIGMA(pre+05) $SIGMA(pre+05) $SIGMA(pre+25) $SIGMA(zpairs) 0
+sub $SIGMA(pre+06) $SIGMA(pre+06) $SIGMA(pre+26) $SIGMA(ttbar) 0
+sub $SIGMA(pre+07) $SIGMA(pre+07) $SIGMA(pre+27) $SIGMA(wpairs) 0
+add $SIGMA(pre+21) $SIGMA(pre+22) $SIGMA(pre+32)
+add $SIGMA(pre+32) $SIGMA(pre+23) $SIGMA(pre+33)
+add $SIGMA(pre+33) $SIGMA(pre+24) $SIGMA(pre+34)
+add $SIGMA(pre+34) $SIGMA(pre+25) $SIGMA(pre+35)
+add $SIGMA(pre+35) $SIGMA(pre+26) $SIGMA(pre+36)
+add $SIGMA(pre+36) $SIGMA(pre+27) $SIGMA(pre+37)
+set hcol 1107
+h/plot $SIGMA(pre+37)
+set hcol 1105
+h/plot $SIGMA(pre+36) 's'
+set hcol 1103
+h/plot $SIGMA(pre+35) 's'
+set hcol 1115
+h/plot $SIGMA(pre+34) 's'
+set hcol 1106
+h/plot $SIGMA(pre+33) 's'
+set hcol 1104
+h/plot $SIGMA(pre+32) 's'
+set hcol 1102
+h/plot $SIGMA(pre+21) 's'
+exec key.kumac
+pict/print 'withmatching_6.eps'
+
+set hcol 1
+
+h/cr/1d 800 'Invariant mass of two biggest tracks, with and without all cuts (signal only)' 100 0. 100.
+h/cr/1d 801 'Invariant mass of two biggest tracks, with and without all cuts (signal only)' 100 0. 100.
+nt/plot //lun1/lcproc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$1 ! ! ! 'N' 800
+nt/plot //lun1/lcproc/1000.sqrt((e1+e2)**2-(p1x+p2x)**2-(p1y+p2y)**2-(p1z+p2z)**2) $4&&$1&&$9&&$2&&$3 ! ! ! 'N' 801
+max 800 30
+h/plot 800
+set htyp 344
+h/plot 801 's'
+pict/print 'withmatching_7.eps'

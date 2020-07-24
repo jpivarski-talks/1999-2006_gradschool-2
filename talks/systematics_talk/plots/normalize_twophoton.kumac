@@ -1,0 +1,102 @@
+h/file 1 ../rzn/tbg_data_revamp3.rzn
+h/file 2 ../rzn/tbg_mc_revamp3.rzn
+h/file 3 ../rzn/tbg_taumc_revamp2.rzn
+h/file 30 ../rzn/tbg_electrons_allallnew.rzn
+h/file 40 ../rzn/tbg_positrons_allnew.rzn
+
+h/cr/1d 9100 'data pz/vise' 100 -1. 1.
+h/cr/1d 9200 'mc pz/vise' 100 -1. 1.
+h/cr/1d 9300 'taumc pz/vise' 100 -1. 1.
+nt/plot 1.pz/vise abs(z)<0.05 ! ! ! ! 9100
+nt/plot 1.(pz+0.065)/vise abs(z)<0.05 ! ! ! ! 9200
+subtract 9100 9200 9300 1. 1. 'e'
+h/plot 9300
+
+
+
+h/cr/1d 9100 'data pz/vise' 100 -1. 1.
+h/cr/1d 9200 'mc pz/vise' 100 -1. 1.
+h/cr/1d 9300 'taumc pz/vise' 100 -1. 1.
+nt/plot 1.pz/vise abs(z)<0.05 ! ! ! ! 9100
+nt/plot 1.pz/vise abs(z)<0.05 ! ! ! ! 9200
+subtract 9100 9200 9300 1. 1. 'e'
+h/plot 9300
+
+
+
+
+
+zone 2 2
+opt sta
+set stat 0001110
+h/cr/1d 10 'e- pz with abs(z).lt.0.05' 7 -3.5 3.5
+h/cr/1d 20 'e- pz with 0.05.lt.abs(z).lt.0.20' 7 -3.5 3.5
+h/cr/1d 30 'e+ pz with abs(z).lt.0.05' 7 -3.5 3.5
+h/cr/1d 40 'e+ pz with 0.05.lt.abs(z).lt.0.20' 7 -3.5 3.5
+nt/plot //lun30/testbeamgas/1.pz abs(z)<0.05 ! ! ! ! 10
+nt/plot //lun40/testbeamgas/1.pz abs(z)<0.05 ! ! ! ! 30
+nt/plot //lun30/testbeamgas/1.pz 0.05<abs(z)<0.20 ! ! ! ! 20
+nt/plot //lun40/testbeamgas/1.pz 0.05<abs(z)<0.20 ! ! ! ! 40
+pict/print 'normalize_twophoton1.ps'
+
+zone 1 1
+opt nsta
+
+cd //lun1/testbeamgas
+nt/recover 1
+nt/print 1
+h/cr/1d 100 'Data event z within 5cm' 80 -0.2 0.2
+h/cr/1d 200 'Data event z outside 5cm' 80 -0.2 0.2
+h/cr/1d 300 'Data pz with abs(z).lt.0.05' 100 -10. 10.
+h/cr/1d 400 'Data pz with 0.05.lt.abs(z).lt.0.20' 100 -10. 10.
+nt/plot 1.z abs(z)<0.05 ! ! ! ! 100
+nt/plot 1.z abs(z)>0.05 ! ! ! ! 200
+nt/plot 1.pz abs(z)<0.05 ! ! ! ! 300
+nt/plot 1.pz 0.05<abs(z)<0.20 ! ! ! ! 400
+
+cd //lun2/testbeamgas
+nt/recover 1
+nt/print 1
+h/cr/1d 150 'MC event z within 5cm' 80 -0.2 0.2
+h/cr/1d 250 'MC event z outside 5cm' 80 -0.2 0.2
+h/cr/1d 350 'MC pz with abs(z).lt.0.05' 100 -10. 10.
+h/cr/1d 450 'MC pz with 0.05.lt.abs(z).lt.0.20' 100 -10. 10.
+nt/plot 1.z abs(z)<0.05 ! ! ! ! 150
+nt/plot 1.z abs(z)>0.05 ! ! ! ! 250
+nt/plot 1.pz+0.065 abs(z)<0.05 ! ! ! ! 350
+nt/plot 1.pz+0.065 0.05<abs(z)<0.20 ! ! ! ! 450
+
+opt sta
+set stat 0000010
+zone 1 3
+h/plot 100
+h/plot 200
+null -1 1 -1 1
+text 0 0 'implies 1840 +/- 420 events in the top plot are beamgas' ! ! 'c'
+pict/print 'normalize_twophoton2.ps'
+
+cd //pawc
+
+h/delete 501
+h/delete 502
+h/delete 503
+subtract 300 400 501 1. 0.7055 'e'
+subtract 300 400 502 1. 0.5445 'e'
+subtract 300 400 503 1. 0.8666 'e'
+
+h/delete 601
+h/delete 602
+h/delete 603
+subtract 501 350 601 1. 1.11 'e'
+h/plot 601
+
+h/plot 300
+h/plot 501
+h/plot 350
+
+opt sta
+set stat 0001100
+h/plot 501
+h/plot 350 's'
+
+

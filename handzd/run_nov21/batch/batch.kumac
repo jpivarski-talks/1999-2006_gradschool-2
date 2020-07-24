@@ -1,0 +1,256 @@
+h/file 21 ../rzn/batch_200733.rzn
+h/file 22 ../rzn/batch_200734.rzn
+h/file 23 ../rzn/batch_200746.rzn
+h/file 24 ../rzn/batch_200750.rzn
+h/file 25 ../rzn/batch_200797.rzn
+h/file 26 ../rzn/batch_200798.rzn
+h/file 27 ../rzn/batch_200801.rzn
+h/file 28 ../rzn/batch_200802.rzn
+h/file 29 ../rzn/batch_200805.rzn
+h/file 30 ../rzn/batch_200806.rzn
+h/file 31 ../rzn/batch_200826.rzn
+h/file 32 ../rzn/batch_200829.rzn
+h/file 33 ../rzn/batch_200832.rzn
+h/file 34 ../rzn/batch_200833.rzn
+h/file 35 ../rzn/batch_200834.rzn
+h/file 36 ../rzn/batch_200835.rzn
+h/file 37 ../rzn/batch_200847.rzn
+h/file 38 ../rzn/batch_200851.rzn
+h/file 39 ../rzn/batch_200853.rzn
+h/file 40 ../rzn/batch_200854.rzn
+h/file 41 ../rzn/batch_200976.rzn
+h/file 42 ../rzn/batch_200978.rzn
+h/file 43 ../rzn/batch_200979.rzn
+h/file 44 ../rzn/batch_200981.rzn
+h/file 45 ../rzn/batch_200983.rzn
+h/file 46 ../rzn/batch_200984.rzn
+h/file 47 ../rzn/batch_201001.rzn
+h/file 48 ../rzn/batch_201002.rzn
+h/file 49 ../rzn/batch_201003.rzn
+h/file 50 ../rzn/batch_201004.rzn
+h/file 51 ../rzn/batch_201013.rzn
+h/file 52 ../rzn/batch_201014.rzn
+h/file 53 ../rzn/batch_201016.rzn
+h/file 54 ../rzn/batch_201017.rzn
+h/file 55 ../rzn/batch_201018.rzn
+h/file 56 ../rzn/batch_201019.rzn
+h/file 57 ../rzn/batch_201021.rzn
+h/file 58 ../rzn/batch_201023.rzn
+h/file 59 ../rzn/batch_201024.rzn
+h/file 60 ../rzn/batch_201026.rzn
+h/file 61 ../rzn/batch_201027.rzn
+h/file 62 ../rzn/batch_201028.rzn
+
+ve/cr mean(42)
+ve/cr merr(42)
+ve/cr rmsq(42)
+ve/cr rerr(42)
+h/cr/1d 100 'Wandering Mean"h#' 42 0.5 42.5
+h/cr/1d 200 'Wandering RMS"h#' 42 0.5 42.5
+
+do i=21,62
+  h/copy //lun[i]/fipassproc/1 10[i]
+  sigma norm = 1. / $HINFO(10[i], 'ENTRIES')
+  ve/inp mean($SIGMA([i] - 20)) $HINFO(10[i], 'MEAN')
+  sigma meanerr = $HINFO(10[i], 'RMS') / sqrt($HINFO(10[i], 'ENTRIES'))
+  ve/inp merr($SIGMA([i] - 20)) $SIGMA(meanerr)
+  ve/inp rmsq($SIGMA([i] - 20)) $HINFO(10[i], 'RMS')
+  sigma rmserr = $HINFO(10[i], 'RMS') / sqrt(2 * $HINFO(10[i], 'ENTRIES'))
+  ve/inp rerr($SIGMA([i] - 20)) $SIGMA(rmserr)
+  h/op/add 10[i] 10[i] 20[i] $SIGMA(norm) 0
+enddo
+
+h/put_vect/contents 100 mean
+h/put_vect/errors 100 merr
+h/put_vect/contents 200 rmsq
+h/put_vect/errors 200 rerr
+
+zone 1 3
+h/cr/title 'Page One (200733 - 201028)'
+
+min 2021 0
+max 2021 0.2
+h/plot 2021
+do i=22,62
+  h/plot 20[i] s
+enddo
+
+min 100 -0.06
+max 100 0.06
+h/plot 100
+max 200 0.
+max 200 1
+h/plot 200
+
+pict/print 'batch_p1.ps'
+
+h/file 21 ../rzn/batch_201029.rzn
+h/file 22 ../rzn/batch_201030.rzn
+h/file 23 ../rzn/batch_201031.rzn
+h/file 24 ../rzn/batch_201035.rzn
+h/file 25 ../rzn/batch_201037.rzn
+h/file 26 ../rzn/batch_201039.rzn
+h/file 27 ../rzn/batch_201040.rzn
+h/file 28 ../rzn/batch_201041.rzn
+h/file 29 ../rzn/batch_201042.rzn
+h/file 30 ../rzn/batch_201043.rzn
+h/file 31 ../rzn/batch_201095.rzn
+h/file 32 ../rzn/batch_201097.rzn
+h/file 33 ../rzn/batch_201102.rzn
+h/file 34 ../rzn/batch_201103.rzn
+h/file 35 ../rzn/batch_201104.rzn
+h/file 36 ../rzn/batch_201105.rzn
+h/file 37 ../rzn/batch_201106.rzn
+h/file 38 ../rzn/batch_201107.rzn
+h/file 39 ../rzn/batch_201108.rzn
+h/file 40 ../rzn/batch_201135.rzn
+h/file 41 ../rzn/batch_201142.rzn
+h/file 42 ../rzn/batch_201144.rzn
+h/file 43 ../rzn/batch_201145.rzn
+h/file 44 ../rzn/batch_201146.rzn
+h/file 45 ../rzn/batch_201147.rzn
+h/file 46 ../rzn/batch_201148.rzn
+h/file 47 ../rzn/batch_201150.rzn
+h/file 48 ../rzn/batch_201151.rzn
+h/file 49 ../rzn/batch_201152.rzn
+h/file 50 ../rzn/batch_201153.rzn
+h/file 51 ../rzn/batch_201154.rzn
+h/file 52 ../rzn/batch_201155.rzn
+h/file 53 ../rzn/batch_201156.rzn
+h/file 54 ../rzn/batch_201157.rzn
+h/file 55 ../rzn/batch_201158.rzn
+h/file 56 ../rzn/batch_201160.rzn
+h/file 57 ../rzn/batch_201164.rzn
+h/file 58 ../rzn/batch_201165.rzn
+h/file 59 ../rzn/batch_201166.rzn
+h/file 60 ../rzn/batch_201167.rzn
+h/file 61 ../rzn/batch_201170.rzn
+h/file 62 ../rzn/batch_201171.rzn
+
+ve/cr mean(42)
+ve/cr merr(42)
+ve/cr rmsq(42)
+ve/cr rerr(42)
+h/cr/1d 100 'Wandering Mean"h#' 42 0.5 42.5
+h/cr/1d 200 'Wandering RMS"h#' 42 0.5 42.5
+
+do i=21,62
+  h/copy //lun[i]/fipassproc/1 10[i]
+  sigma norm = 1. / $HINFO(10[i], 'ENTRIES')
+  ve/inp mean($SIGMA([i] - 20)) $HINFO(10[i], 'MEAN')
+  sigma meanerr = $HINFO(10[i], 'RMS') / sqrt($HINFO(10[i], 'ENTRIES'))
+  ve/inp merr($SIGMA([i] - 20)) $SIGMA(meanerr)
+  ve/inp rmsq($SIGMA([i] - 20)) $HINFO(10[i], 'RMS')
+  sigma rmserr = $HINFO(10[i], 'RMS') / sqrt(2 * $HINFO(10[i], 'ENTRIES'))
+  ve/inp rerr($SIGMA([i] - 20)) $SIGMA(rmserr)
+  h/op/add 10[i] 10[i] 20[i] $SIGMA(norm) 0
+enddo
+
+h/put_vect/contents 100 mean
+h/put_vect/errors 100 merr
+h/put_vect/contents 200 rmsq
+h/put_vect/errors 200 rerr
+
+zone 1 3
+h/cr/title 'Page Two (201029 - 201171)'
+
+min 2021 0
+max 2021 0.2
+h/plot 2021
+do i=22,62
+  h/plot 20[i] s
+enddo
+
+min 100 -0.06
+max 100 0.06
+h/plot 100
+max 200 0.
+max 200 1
+h/plot 200
+
+pict/print 'batch_p2.ps'
+
+h/file 21 ../rzn/batch_201172.rzn
+h/file 22 ../rzn/batch_201173.rzn
+h/file 23 ../rzn/batch_201174.rzn
+h/file 24 ../rzn/batch_201175.rzn
+h/file 25 ../rzn/batch_201176.rzn
+h/file 26 ../rzn/batch_201179.rzn
+h/file 27 ../rzn/batch_201180.rzn
+h/file 28 ../rzn/batch_201181.rzn
+h/file 29 ../rzn/batch_201184.rzn
+h/file 30 ../rzn/batch_201186.rzn
+h/file 31 ../rzn/batch_201188.rzn
+h/file 32 ../rzn/batch_201189.rzn
+h/file 33 ../rzn/batch_201190.rzn
+h/file 34 ../rzn/batch_201192.rzn
+h/file 35 ../rzn/batch_201193.rzn
+h/file 36 ../rzn/batch_201194.rzn
+h/file 37 ../rzn/batch_201195.rzn
+h/file 38 ../rzn/batch_201196.rzn
+h/file 39 ../rzn/batch_201197.rzn
+h/file 40 ../rzn/batch_201198.rzn
+h/file 41 ../rzn/batch_201199.rzn
+h/file 42 ../rzn/batch_201201.rzn
+h/file 43 ../rzn/batch_201202.rzn
+h/file 44 ../rzn/batch_201203.rzn
+h/file 45 ../rzn/batch_201204.rzn
+h/file 46 ../rzn/batch_201205.rzn
+h/file 47 ../rzn/batch_201206.rzn
+h/file 48 ../rzn/batch_201213.rzn
+h/file 49 ../rzn/batch_201277.rzn
+h/file 50 ../rzn/batch_201285.rzn
+h/file 51 ../rzn/batch_201301.rzn
+h/file 52 ../rzn/batch_201302.rzn
+h/file 53 ../rzn/batch_201303.rzn
+h/file 54 ../rzn/batch_201318.rzn
+h/file 55 ../rzn/batch_201319.rzn
+h/file 56 ../rzn/batch_201352.rzn
+h/file 57 ../rzn/batch_201365.rzn
+h/file 58 ../rzn/batch_201366.rzn
+h/file 59 ../rzn/batch_201385.rzn
+h/file 60 ../rzn/batch_201387.rzn
+h/file 61 ../rzn/batch_201390.rzn
+
+ve/cr mean(41)
+ve/cr merr(41)
+ve/cr rmsq(41)
+ve/cr rerr(41)
+h/cr/1d 100 'Wandering Mean"h#' 41 0.5 41.5
+h/cr/1d 200 'Wandering RMS"h#' 41 0.5 41.5
+
+do i=21,61
+  h/copy //lun[i]/fipassproc/1 10[i]
+  sigma norm = 1. / $HINFO(10[i], 'ENTRIES')
+  ve/inp mean($SIGMA([i] - 20)) $HINFO(10[i], 'MEAN')
+  sigma meanerr = $HINFO(10[i], 'RMS') / sqrt($HINFO(10[i], 'ENTRIES'))
+  ve/inp merr($SIGMA([i] - 20)) $SIGMA(meanerr)
+  ve/inp rmsq($SIGMA([i] - 20)) $HINFO(10[i], 'RMS')
+  sigma rmserr = $HINFO(10[i], 'RMS') / sqrt(2 * $HINFO(10[i], 'ENTRIES'))
+  ve/inp rerr($SIGMA([i] - 20)) $SIGMA(rmserr)
+  h/op/add 10[i] 10[i] 20[i] $SIGMA(norm) 0
+enddo
+
+h/put_vect/contents 100 mean
+h/put_vect/errors 100 merr
+h/put_vect/contents 200 rmsq
+h/put_vect/errors 200 rerr
+
+zone 1 3
+h/cr/title 'Page Three (201172 - 201390)'
+
+min 2021 0
+max 2021 0.2
+h/plot 2021
+do i=22,61
+  h/plot 20[i] s
+enddo
+
+min 100 -0.06
+max 100 0.06
+h/plot 100
+max 200 0.
+max 200 1
+h/plot 200
+
+pict/print 'batch_p3.ps'

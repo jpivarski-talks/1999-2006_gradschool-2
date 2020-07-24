@@ -1,0 +1,301 @@
+h/file 1 ../rzn/myst_bunches.rzn
+h/file 2 ../rzn/myst_bunchescc.rzn
+h/file 3 ../rzn/myst_newcuts.rzn
+h/file 4 ../rzn/myst_newestcuts.rzn
+
+ ********************************************************
+ * NTUPLE ID=    1  ENTRIES=  49736   vars
+ ********************************************************
+ *  Var numb  *   Name    *    Lower     *    Upper     *
+ ********************************************************
+ *      1     * curv      * -.251762E+00 * 0.243717E+00 *
+ *      2     * phi0      * 0.134159E-03 * 0.629404E+01 *
+ *      3     * d0        * -.354889E-02 * 0.262869E-02 *
+ *      4     * cT        * -.268669E+01 * 0.260488E+01 *
+ *      5     * z0        * -.994341E-01 * 0.972693E-01 *
+ *      6     * layer     * 0.100000E+01 * 0.600000E+01 *
+ *      7     * wire      * 0.000000E+00 * 0.650000E+02 *
+ *      8     * phi       * 0.948417E-04 * 0.628295E+01 *
+ *      9     * z         * -.313677E+00 * 0.315086E+00 *
+ *     10     * drift     * -.500655E-01 * 0.378376E-01 *
+ *     11     * dca       * -.503865E-01 * 0.376686E-01 *
+ *     12     * bestb     * 0.111622E+01 * 0.521401E+02 *
+ *     13     * nextb     * 0.000000E+00 * 0.197541E+02 *
+ ********************************************************
+
+fortran/file 65 '../plots/hitsInTime_cut.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+zone 1 2
+
+h/cr/1d 10 'bunchweight margin hitsInTime cut' 100 0. 1.
+nt/plot //lun4/mysterious/1.(bestb-nextb)/bestb ! ! ! ! ! 10
+
+h/cr/2d 30 'ZD residual VS Z' 1 -0.3 0.3 1 -0.01 0.01
+nt/plot //lun4/mysterious/1.(drift-dca)%z layer<4 ! ! ! ! 30
+
+h/cr/2d 50 'best bunch VS next best' 1 0 30 1 0 60
+
+zone 1 1
+nt/plot //lun4/mysterious/1.bestb%nextb bestb>nextb ! ! ! ! 50
+set ltyp 1
+dline 0 30 0 30
+set ltyp 2
+dline 0 30 15 45
+
+
+h/cr/1d 70 'curvature' 100 -0.3 0.3
+h/cr/1d 71 'phi0' 100 0. $SIGMA(2.*3.1415926)
+h/cr/1d 72 'd0' 100 -0.003 0.003
+h/cr/1d 73 'cotTheta' 100 -3 3
+h/cr/1d 74 'z0' 100 -0.1 0.1
+
+zone 2 3
+set htyp 0
+nt/plot //lun4/mysterious/1.curv layer==3 ! ! ! ! 70
+set htyp 144
+nt/plot //lun4/mysterious/1.curv layer==3&&bestb>nextb+15 ! ! ! 's' 70
+set htyp 0
+nt/plot //lun4/mysterious/1.phi0 layer==3 ! ! ! ! 71
+set htyp 144
+nt/plot //lun4/mysterious/1.phi0 layer==3&&bestb>nextb+15 ! ! ! 's' 71
+set htyp 0
+nt/plot //lun4/mysterious/1.d0 layer==3 ! ! ! ! 72
+set htyp 144
+nt/plot //lun4/mysterious/1.d0 layer==3&&bestb>nextb+15 ! ! ! 's' 72
+set htyp 0
+nt/plot //lun4/mysterious/1.cT layer==3 ! ! ! ! 73
+set htyp 144
+nt/plot //lun4/mysterious/1.cT layer==3&&bestb>nextb+15 ! ! ! 's' 73
+set htyp 0
+nt/plot //lun4/mysterious/1.z0 layer==3 ! ! ! ! 74
+set htyp 144
+nt/plot //lun4/mysterious/1.z0 layer==3&&bestb>nextb+15 ! ! ! 's' 74
+
+close 65
+
+
+***  plots!
+
+fortran/file 65 '../plots/my_problems_with_bunchweight.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+h/cr/1d 10 'bunchweight margin AFTER other bhabha cuts' 100 0. 1.
+h/cr/1d 20 'bunchweight margin AFTER my bhabha + CcEventSelectProc bhabha cuts' 100 0. 1.
+
+zone 1 2
+nt/plot //lun1/mysterious/1.(bestb-nextb)/bestb ! ! ! ! ! 10
+nt/plot //lun2/mysterious/1.(bestb-nextb)/bestb ! ! ! ! ! 20
+
+h/cr/2d 30 'ZD residual VS Z' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 31 'bunchmargin "g# 0.2' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 32 'bunchmargin "g# 0.4' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 33 'bunchmargin "g# 0.6' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 34 'bunchmargin "g# 0.7' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 35 'bunchmargin "g# 0.8' 1 -0.3 0.3 1 -0.01 0.01
+
+zone 2 3
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4 ! ! ! ! 30
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4&&(bestb-nextb)/bestb>0.2 ! ! ! ! 31
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4&&(bestb-nextb)/bestb>0.4 ! ! ! ! 32
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4&&(bestb-nextb)/bestb>0.6 ! ! ! ! 33
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4&&(bestb-nextb)/bestb>0.7 ! ! ! ! 34
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4&&(bestb-nextb)/bestb>0.8 ! ! ! ! 35
+
+h/cr/1d 40 'curvature' 100 -0.3 0.3
+h/cr/1d 41 'phi0' 100 0. $SIGMA(2.*3.1415926)
+h/cr/1d 42 'd0' 100 -0.003 0.003
+h/cr/1d 43 'cotTheta' 100 -3 3
+h/cr/1d 44 'z0' 100 -0.1 0.1
+
+set ncol 16
+palette 1
+
+zone 2 3
+
+set hcol 1115
+nt/plot //lun1/mysterious/1.curv layer==3 ! ! ! ! 40
+set hcol 1114
+nt/plot //lun1/mysterious/1.curv layer==3&&(bestb-nextb)/bestb>0.2 ! ! ! 's' 40
+set hcol 1113
+nt/plot //lun1/mysterious/1.curv layer==3&&(bestb-nextb)/bestb>0.4 ! ! ! 's' 40
+set hcol 1112
+nt/plot //lun1/mysterious/1.curv layer==3&&(bestb-nextb)/bestb>0.6 ! ! ! 's' 40
+set hcol 1111
+nt/plot //lun1/mysterious/1.curv layer==3&&(bestb-nextb)/bestb>0.7 ! ! ! 's' 40
+set hcol 1110
+nt/plot //lun1/mysterious/1.curv layer==3&&(bestb-nextb)/bestb>0.8 ! ! ! 's' 40
+
+set hcol 1115
+nt/plot //lun1/mysterious/1.phi0 layer==3 ! ! ! ! 41
+set hcol 1114
+nt/plot //lun1/mysterious/1.phi0 layer==3&&(bestb-nextb)/bestb>0.2 ! ! ! 's' 41
+set hcol 1113
+nt/plot //lun1/mysterious/1.phi0 layer==3&&(bestb-nextb)/bestb>0.4 ! ! ! 's' 41
+set hcol 1112
+nt/plot //lun1/mysterious/1.phi0 layer==3&&(bestb-nextb)/bestb>0.6 ! ! ! 's' 41
+set hcol 1111
+nt/plot //lun1/mysterious/1.phi0 layer==3&&(bestb-nextb)/bestb>0.7 ! ! ! 's' 41
+set hcol 1110
+nt/plot //lun1/mysterious/1.phi0 layer==3&&(bestb-nextb)/bestb>0.8 ! ! ! 's' 41
+
+set hcol 1115
+nt/plot //lun1/mysterious/1.d0 layer==3 ! ! ! ! 42
+set hcol 1114
+nt/plot //lun1/mysterious/1.d0 layer==3&&(bestb-nextb)/bestb>0.2 ! ! ! 's' 42
+set hcol 1113
+nt/plot //lun1/mysterious/1.d0 layer==3&&(bestb-nextb)/bestb>0.4 ! ! ! 's' 42
+set hcol 1112
+nt/plot //lun1/mysterious/1.d0 layer==3&&(bestb-nextb)/bestb>0.6 ! ! ! 's' 42
+set hcol 1111
+nt/plot //lun1/mysterious/1.d0 layer==3&&(bestb-nextb)/bestb>0.7 ! ! ! 's' 42
+set hcol 1110
+nt/plot //lun1/mysterious/1.d0 layer==3&&(bestb-nextb)/bestb>0.8 ! ! ! 's' 42
+
+set hcol 1115
+nt/plot //lun1/mysterious/1.cT layer==3 ! ! ! ! 43
+set hcol 1114
+nt/plot //lun1/mysterious/1.cT layer==3&&(bestb-nextb)/bestb>0.2 ! ! ! 's' 43
+set hcol 1113
+nt/plot //lun1/mysterious/1.cT layer==3&&(bestb-nextb)/bestb>0.4 ! ! ! 's' 43
+set hcol 1112
+nt/plot //lun1/mysterious/1.cT layer==3&&(bestb-nextb)/bestb>0.6 ! ! ! 's' 43
+set hcol 1111
+nt/plot //lun1/mysterious/1.cT layer==3&&(bestb-nextb)/bestb>0.7 ! ! ! 's' 43
+set hcol 1110
+nt/plot //lun1/mysterious/1.cT layer==3&&(bestb-nextb)/bestb>0.8 ! ! ! 's' 43
+
+set hcol 1115
+nt/plot //lun1/mysterious/1.z0 layer==3 ! ! ! ! 44
+set hcol 1114
+nt/plot //lun1/mysterious/1.z0 layer==3&&(bestb-nextb)/bestb>0.2 ! ! ! 's' 44
+set hcol 1113
+nt/plot //lun1/mysterious/1.z0 layer==3&&(bestb-nextb)/bestb>0.4 ! ! ! 's' 44
+set hcol 1112
+nt/plot //lun1/mysterious/1.z0 layer==3&&(bestb-nextb)/bestb>0.6 ! ! ! 's' 44
+set hcol 1111
+nt/plot //lun1/mysterious/1.z0 layer==3&&(bestb-nextb)/bestb>0.7 ! ! ! 's' 44
+set hcol 1110
+nt/plot //lun1/mysterious/1.z0 layer==3&&(bestb-nextb)/bestb>0.8 ! ! ! 's' 44
+
+set hcol 1
+
+h/cr/2d 50 'best bunch VS next best' 1 0 30 1 0 60
+h/cr/1d 51 'bunchweight margin' 100 0. 1.
+
+zone 2 1
+nt/plot //lun1/mysterious/1.bestb%nextb bestb>nextb ! ! ! ! 50
+dline 0 30 0 30
+set ltyp 2
+dline 0 30 15 45
+
+set dmod 1
+nt/plot //lun1/mysterious/1.(bestb-nextb)/bestb ! ! ! ! ! 51
+set dmod 2
+nt/plot //lun1/mysterious/1.(bestb-nextb)/bestb bestb>nextb+15 ! ! ! 's' 51
+
+h/cr/2d 60 'ZD residual VS Z' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 61 'bunchmargin diagonal cut' 1 -0.3 0.3 1 -0.01 0.01
+
+zone 1 2
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4 ! ! ! ! 60
+nt/plot //lun1/mysterious/1.(drift-dca)%z layer<4&&bestb>nextb+15 ! ! ! ! 61
+
+h/cr/1d 70 'curvature' 100 -0.3 0.3
+h/cr/1d 71 'phi0' 100 0. $SIGMA(2.*3.1415926)
+h/cr/1d 72 'd0' 100 -0.003 0.003
+h/cr/1d 73 'cotTheta' 100 -3 3
+h/cr/1d 74 'z0' 100 -0.1 0.1
+
+zone 2 3
+set dmod 1
+nt/plot //lun1/mysterious/1.curv layer==3 ! ! ! ! 70
+set dmod 2
+nt/plot //lun1/mysterious/1.curv layer==3&&bestb>nextb+15 ! ! ! 's' 70
+set dmod 1
+nt/plot //lun1/mysterious/1.phi0 layer==3 ! ! ! ! 71
+set dmod 2
+nt/plot //lun1/mysterious/1.phi0 layer==3&&bestb>nextb+15 ! ! ! 's' 71
+set dmod 1
+nt/plot //lun1/mysterious/1.d0 layer==3 ! ! ! ! 72
+set dmod 2
+nt/plot //lun1/mysterious/1.d0 layer==3&&bestb>nextb+15 ! ! ! 's' 72
+set dmod 1
+nt/plot //lun1/mysterious/1.cT layer==3 ! ! ! ! 73
+set dmod 2
+nt/plot //lun1/mysterious/1.cT layer==3&&bestb>nextb+15 ! ! ! 's' 73
+set dmod 1
+nt/plot //lun1/mysterious/1.z0 layer==3 ! ! ! ! 74
+set dmod 2
+nt/plot //lun1/mysterious/1.z0 layer==3&&bestb>nextb+15 ! ! ! 's' 74
+
+close 65
+
+
+
+
+
+
+
+
+*** more plots!
+
+fortran/file 65 '../plots/my_problems_with_bunchweight2.ps'
+graphics/metafile 65 -111
+igset mtype 1
+
+h/cr/title 'AFTER EventType.BhabhaTight cuts'
+
+h/cr/2d 50 'best bunch VS next best' 1 0 30 1 0 60
+h/cr/1d 51 'bunchweight margin' 30 0. 1.
+
+zone 2 1
+nt/plot //lun3/mysterious/1.bestb%nextb bestb>nextb ! ! ! ! 50
+dline 0 30 0 30
+set ltyp 2
+dline 0 30 15 45
+
+set dmod 1
+nt/plot //lun3/mysterious/1.(bestb-nextb)/bestb ! ! ! ! ! 51
+set dmod 2
+nt/plot //lun3/mysterious/1.(bestb-nextb)/bestb bestb>nextb+15 ! ! ! 's' 51
+
+h/cr/1d 70 'curvature' 100 -0.3 0.3
+h/cr/1d 71 'phi0' 100 0. $SIGMA(2.*3.1415926)
+h/cr/1d 72 'd0' 100 -0.003 0.003
+h/cr/1d 73 'cotTheta' 100 -3 3
+h/cr/1d 74 'z0' 100 -0.1 0.1
+
+zone 2 3
+set dmod 1
+nt/plot //lun3/mysterious/1.curv layer==3 ! ! ! ! 70
+set dmod 2
+nt/plot //lun3/mysterious/1.curv layer==3&&bestb>nextb+15 ! ! ! 's' 70
+set dmod 1
+nt/plot //lun3/mysterious/1.phi0 layer==3 ! ! ! ! 71
+set dmod 2
+nt/plot //lun3/mysterious/1.phi0 layer==3&&bestb>nextb+15 ! ! ! 's' 71
+set dmod 1
+nt/plot //lun3/mysterious/1.d0 layer==3 ! ! ! ! 72
+set dmod 2
+nt/plot //lun3/mysterious/1.d0 layer==3&&bestb>nextb+15 ! ! ! 's' 72
+set dmod 1
+nt/plot //lun3/mysterious/1.cT layer==3 ! ! ! ! 73
+set dmod 2
+nt/plot //lun3/mysterious/1.cT layer==3&&bestb>nextb+15 ! ! ! 's' 73
+set dmod 1
+nt/plot //lun3/mysterious/1.z0 layer==3 ! ! ! ! 74
+set dmod 2
+nt/plot //lun3/mysterious/1.z0 layer==3&&bestb>nextb+15 ! ! ! 's' 74
+
+h/cr/2d 60 'ZD residual VS Z' 1 -0.3 0.3 1 -0.01 0.01
+h/cr/2d 61 'bunchmargin diagonal cut' 1 -0.3 0.3 1 -0.01 0.01
+
+zone 1 2
+nt/plot //lun3/mysterious/1.(drift-dca)%z layer<4 ! ! ! ! 60
+nt/plot //lun3/mysterious/1.(drift-dca)%z layer<4&&bestb>nextb+15 ! ! ! ! 61
+
+close 65
+

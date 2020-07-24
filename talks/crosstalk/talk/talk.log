@@ -1,0 +1,474 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2002.8.29)  17 JUN 2003 12:16
+**talk
+(talk.tex
+LaTeX2e <2000/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/latex209.def
+File: latex209.def 1998/05/13 v0.52 Standard LaTeX file
+
+
+          Entering LaTeX 2.09 COMPATIBILITY MODE
+ *************************************************************
+    !!WARNING!!    !!WARNING!!    !!WARNING!!    !!WARNING!!   
+ 
+ This mode attempts to provide an emulation of the LaTeX 2.09
+ author environment so that OLD documents can be successfully
+ processed. It should NOT be used for NEW documents!
+ 
+ New documents should use Standard LaTeX conventions and start
+ with the \documentclass command.
+ 
+ Compatibility mode is UNLIKELY TO WORK with LaTeX 2.09 style
+ files that change any internal macros, especially not with
+ those that change the FONT SELECTION or OUTPUT ROUTINES.
+ 
+ Therefore such style files MUST BE UPDATED to use
+          Current Standard LaTeX: LaTeX2e.
+ If you suspect that you may be using such a style file, which
+ is probably very, very old by now, then you should attempt to
+ get it updated by sending a copy of this error message to the
+ author of that file.
+ *************************************************************
+
+\footheight=\dimen102
+\@maxsep=\dimen103
+\@dblmaxsep=\dimen104
+\@cla=\count79
+\@clb=\count80
+\mscount=\count81
+(/usr/share/texmf/tex/latex/base/tracefnt.sty
+Package: tracefnt 1997/05/29 v3.0j Standard LaTeX package (font tracing)
+\tracingfonts=\count82
+LaTeX Info: Redefining \selectfont on input line 96.
+)
+\symbold=\mathgroup4
+\symsans=\mathgroup5
+\symtypewriter=\mathgroup6
+\symitalic=\mathgroup7
+\symsmallcaps=\mathgroup8
+\symslanted=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 288.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 289.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 290.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 296.
+LaTeX Info: Redefining \em on input line 306.
+
+(/usr/share/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 42.
+)
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 370.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 372.
+LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 374.
+
+(/usr/share/texmf/tex/latex/config/latex209.cfg)
+(/usr/share/texmf/tex/latex/tools/rawfonts.sty
+Package: rawfonts 1994/05/08 Low-level LaTeX 2.09 font compatibility
+
+(/usr/share/texmf/tex/latex/tools/somedefs.sty
+Package: somedefs 1994/06/01 Toolkit for optional definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 44.
+
+(/usr/share/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2eLaTeX symbol font definitions
+)))
+(/usr/share/texmf/tex/latex/seminar/seminar.cls
+Document Class: seminar 1997/10/13, 1.4
+Document Style: `seminar' v1.4 <1997/10/13> (tvz)
+\slidewidth=\dimen105
+\slideheight=\dimen106
+\footheight=\dimen107
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2000/05/19 v1.4b Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2000/05/19 v1.4b Standard LaTeX file (size option)
+)
+\c@part=\count83
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\c@subparagraph=\count88
+\c@figure=\count89
+\c@table=\count90
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+Compatibility mode: definition of \rm ignored.
+Compatibility mode: definition of \sf ignored.
+Compatibility mode: definition of \tt ignored.
+Compatibility mode: definition of \bf ignored.
+Compatibility mode: definition of \it ignored.
+Compatibility mode: definition of \sl ignored.
+Compatibility mode: definition of \sc ignored.
+LaTeX Info: Redefining \cal on input line 501.
+LaTeX Info: Redefining \mit on input line 502.
+\bibindent=\dimen108
+)
+(/usr/share/texmf/tex/latex/seminar/sem-page.sty)
+\before@document=\toks14
+\after@document=\toks15
+\before@enddocument=\toks16
+\c@slide=\count91
+\slide@count=\count92
+\@slidebox=\box26
+\not@slidebox=\box27
+\slide@hook=\toks17
+\after@slide=\toks18
+\slide@footins=\insert233
+\slide@listdepth=\count93
+\saved@specials=\box28
+\before@newslide=\toks19
+\after@slidepage=\toks20
+\slidesep=\skip43
+\c@note=\count94
+\slideframewidth=\dimen109
+\slideframesep=\dimen110
+\semin=\dimen111
+\semcm=\dimen112
+)
+(/usr/share/texmf/tex/latex/config/seminar.con)
+(/usr/share/texmf/tex/latex/seminar/semcolor.sty
+Style Option: `semcolor' for doc style `seminar' 1.0 <93/04/01> (tvz)
+(/usr/share/texmf/tex/generic/pstricks/pstricks.tex
+`PSTricks' v97 patch 10  <1999/03/24> (tvz)
+\pst@dima=\dimen113
+\pst@dimb=\dimen114
+\pst@dimc=\dimen115
+\pst@dimd=\dimen116
+\pst@dimg=\dimen117
+\pst@dimh=\dimen118
+\pst@hbox=\box29
+\pst@boxg=\box30
+\pst@cnta=\count95
+\pst@cntb=\count96
+\pst@cntc=\count97
+\pst@cntd=\count98
+\pst@cntg=\count99
+\pst@cnth=\count100
+\pst@toks=\toks21
+(/usr/share/texmf/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen119
+\psxunit=\dimen120
+\psyunit=\dimen121
+\pslinewidth=\dimen122
+\pst@customdefs=\toks22
+\pslinearc=\dimen123
+\everypsbox=\toks23
+\psframesep=\dimen124
+\pslabelsep=\dimen125
+\theoverlaybox=\box31
+))
+(/usr/share/texmf/tex/latex/seminar/semlayer.sty
+\@@slidebox=\box32
+\c@overlay=\count101
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+(/usr/share/texmf/tex/latex/misc/fancybox.sty
+Package: fancybox 2000/09/19 1.3
+
+Style option: `fancybox' v1.3 <2000/09/19> (tvz)
+\@fancybox=\box33
+\shadowsize=\dimen128
+\@Sbox=\box34
+\do@VerbBox=\toks25
+\the@fancyput=\toks26
+\this@fancyput=\toks27
+\EndVerbatimTokens=\toks28
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) (/usr/share/texmf/tex/latex/misc/doublespace.sty) (clp_utils.tex) (talk.aux)
+\openout1 = `talk.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+
+[1
+
+
+]
+File: apropriateness.eps Graphic file (type eps)
+ <apropriateness.eps>
+Underfull \hbox (badness 1635) in paragraph at lines 90--91
+[]\OT1/cmr/m/n/20.74 Types of events you can ex-pect to see in
+ []
+
+[2
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 104.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 104.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 104.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 111.
+File: mupair.eps Graphic file (type eps)
+ <mupair.eps>
+File: qed_diagram.eps Graphic file (type eps)
+ <qed_diagram.eps>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <24.88> on input line 141.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 141.
+
+Overfull \hbox (22.73634pt too wide) detected at line 144
+\OT1/cmr/m/n/24.88 1 + [][] \OML/cmm/m/it/24.88 ^^R
+ []
+
+File: mupair_costh.eps Graphic file (type eps)
+<mupair_costh.eps>
+
+LaTeX Warning: Slide 3 overfull by 7.3688pt on input line 157.
+
+
+Overfull \vbox (5.03653pt too high) has occurred while \output is active []
+
+
+[3
+
+]
+File: 2lambdas_sidebyside_small.eps Graphic file (type eps)
+ <2lambdas_sidebyside_small.eps>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 172.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 172.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 172.
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+ []
+
+
+Overfull \hbox (10.84671pt too wide) detected at line 181
+[]
+ []
+
+File: lambdamass.eps Graphic file (type eps)
+<lambdamass.eps>
+Overfull \hbox (2.92007pt too wide) in paragraph at lines 172--187
+ [][] 
+ []
+
+
+LaTeX Warning: Slide 4 overfull by 6.40935pt on input line 191.
+
+
+Overfull \vbox (4.07707pt too high) has occurred while \output is active []
+
+
+[4
+
+]
+File: diagram_start.eps Graphic file (type eps)
+ <diagram_start.eps>
+File: diagram_jpsi.eps Graphic file (type eps)
+ <diagram_jpsi.eps>
+File: diagram_etac.eps Graphic file (type eps)
+ <diagram_etac.eps> [5
+
+]
+File: cleo_endview.eps Graphic file (type eps)
+
+<cleo_endview.eps> [6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+File: dedx.eps Graphic file (type eps)
+<dedx.eps>
+Overfull \hbox (0.71732pt too wide) in paragraph at lines 290--292
+[] 
+ []
+
+File: rich_kpisep2.eps Graphic file (type eps)
+<rich_kpisep2.eps>
+File: cc.eps Graphic file (type eps)
+ <cc.eps>
+Overfull \hbox (26.98755pt too wide) in paragraph at lines 306--308
+[] 
+ []
+
+
+Overfull \hbox (14.92009pt too wide) in paragraph at lines 286--317
+[][] 
+ []
+
+[7
+
+]
+File: bhabha_diagrams.eps Graphic file (type eps)
+ <bhabha_diagrams.eps>
+Overfull \hbox (27.1441pt too wide) in paragraph at lines 332--339
+[][] 
+ []
+
+File: mupair_diagrams.eps Graphic file (type eps)
+<mupair_diagrams.eps>
+Overfull \hbox (77.73073pt too wide) in paragraph at lines 355--363
+[][] 
+ []
+
+File: gamgam_diagrams.eps Graphic file (type eps)
+<gamgam_diagrams.eps>
+Overfull \hbox (27.1441pt too wide) in paragraph at lines 370--377
+[][] 
+ []
+
+[8
+
+]
+File: tau_event.eps Graphic file (type eps)
+ <tau_event.eps>
+File: tau_threshold.eps Graphic file (type eps)
+ <tau_threshold.eps>
+Overfull \hbox (10.44478pt too wide) in paragraph at lines 425--434
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+[]$[]$\OT1/cmr/m/n/12 Sensitive to Su-per-sym-met-ric
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 441.
+
+Overfull \hbox (11.03194pt too wide) detected at line 442
+\OML/cmm/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 ) = \O
+ML/cmm/m/it/12 ^^W[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )
+ []
+
+File: tau_spectralfunction.eps Graphic file (type eps)
+<tau_spectralfunction.eps> [9
+
+]
+Overfull \hbox (30.21706pt too wide) in paragraph at lines 472--473
+ \OT1/cmr/m/n/17.28 Continuum 
+ []
+
+File: qqbar_cont_diagrams.eps Graphic file (type eps)
+<qqbar_cont_diagrams.eps>
+Overfull \hbox (24.0pt too wide) in paragraph at lines 469--481
+ [] 
+ []
+
+
+Overfull \hbox (25.11299pt too wide) in paragraph at lines 488--489
+ \OT1/cmr/m/n/17.28 Resonance 
+ []
+
+File: qqbar_res_diagrams.eps Graphic file (type eps)
+<qqbar_res_diagrams.eps>
+Overfull \hbox (24.0pt too wide) in paragraph at lines 485--497
+ [] 
+ []
+
+File: qqbar_cont_event.eps Graphic file (type eps)
+<qqbar_cont_event.eps>
+File: qqbar_res_event.eps Graphic file (type eps)
+ <qqbar_res_event.eps>
+File: qqbar_rescont.eps Graphic file (type eps)
+ <qqbar_rescont.eps> [10
+
+]
+Overfull \hbox (10.95818pt too wide) in paragraph at lines 532--533
+[]$\OML/cmm/m/it/12 V[] \OMS/cmsy/m/n/12 ^^X$ 
+ []
+
+File: vertex_w.eps Graphic file (type eps)
+<vertex_w.eps>
+Overfull \hbox (1.55475pt too wide) in paragraph at lines 535--536
+[][] 
+ []
+
+File: r_plot_bottom.eps Graphic file (type eps)
+<r_plot_bottom.eps> [11
+
+]
+File: pdg_charmonium2.eps Graphic file (type eps)
+ <pdg_charmonium2.eps>
+File: periodic_table.eps Graphic file (type eps)
+ <periodic_table.eps> [12
+
+]
+File: two_photon.eps Graphic file (type eps)
+
+<two_photon.eps>
+Overfull \hbox (45.0799pt too wide) in paragraph at lines 629--637
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--660
+[]\OT1/cmr/m/n/14.4 Low trans-verse mo-men-tum:
+ []
+
+File: two_photon_event.eps Graphic file (type eps)
+<two_photon_event.eps>
+Overfull \hbox (2.92009pt too wide) in paragraph at lines 650--669
+[][] 
+ []
+
+[13
+
+]
+File: cosmic_event.eps Graphic file (type eps)
+ <cosmic_event.eps>
+File: cosmic_phi.eps Graphic file (type eps)
+ <cosmic_phi.eps>
+File: beamgaswall.eps Graphic file (type eps)
+ <beamgaswall.eps> [14
+
+] [15
+
+] (talk.aux) ) 
+Here is how much of TeX's memory you used:
+ 2472 strings out of 20887
+ 27207 string characters out of 196241
+ 87751 words of memory out of 350001
+ 5361 multiletter control sequences out of 10000+15000
+ 33548 words of font info for 122 fonts, out of 400000 for 1000
+ 16 hyphenation exceptions out of 10000
+ 27i,23n,23p,301b,1208s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on talk.dvi (15 pages, 26208 bytes).

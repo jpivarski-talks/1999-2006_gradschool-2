@@ -1,0 +1,29 @@
+comm[ el1_, el2_ ] = el1 . el2 - el2 . el1
+
+conj[ { real_, imag_ } ] = { real, -imag }
+
+mag[ { real_, imag_ } ] = real^2 + imag^2
+
+prod[ { real1_, imag1_ }, { real2_, imag2_ } ] = { real1 * real2 - imag1 * imag2, real1 * imag2 + imag1 * real2 }
+
+aa = { ar, ai } ; bb = { br, bi } ; cc = { cr, ci } ; dd = { dr, di } ; ee = { er, ei } ; ff = { fr, fi } ;
+
+sols = Solve[ { prod[ cc, conj[ aa ] ] == prod[ -dd, conj[ bb ] ],
+                prod[ ee, conj[ aa ] ] == prod[ -ff, conj[ bb ] ],
+                prod[ ee, conj[ cc ] ] == prod[ -ff, conj[ dd ] ] },
+              { ar, ai, br, bi, cr, ci, dr, di, er, ei, fr, fi } ]
+
+filt[ elem_ ] := If[ Or[ elem[[1]] == 0, elem[[2]] == 0, elem[[3]] == 0 ], 0, 1 ]
+
+Map[ filt, ReplaceAll[ { mag[ aa ] + mag[ bb ], mag[ cc ] + mag[ dd ], mag[ ee ] + mag[ ff ] }, sols ] ]
+
+(* 54 and 55 are promising *)
+
+Solve[ ReplaceAll[ { mag[ aa ] + mag[ bb ] == 1,
+                     mag[ cc ] + mag[ dd ] == 1,
+                     mag[ ee ] + mag[ ff ] == 1 }, sols[[ 55 ]] ],
+       { ar, ai, br, bi, cr, ci, dr, di, er, ei, fr, fi } ]
+
+sols[[55]]
+
+

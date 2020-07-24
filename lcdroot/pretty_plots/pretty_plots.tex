@@ -1,0 +1,54 @@
+% To combine into a pdf:
+%
+% > for x in *.eps; do epstopdf $x; done
+% > pdflatex pretty_plots.tex
+% > acroread pretty_plots.pdf
+%
+% or if you're a tcsh user, replace the for loop with something like this:
+% > foreach x (*.eps)
+% foreach? epstopdf $x
+% foreach? end
+%
+% or do them all by hand.
+
+\documentclass[landscape]{article}
+\usepackage[pdftex]{graphicx}
+\pagestyle{empty}
+\oddsidemargin  -0.5 in
+\evensidemargin -0.5 in
+\headheight     0 in
+\topmargin      -1 in
+\textheight     7.7 in
+\textwidth      10 in
+\begin{document}
+\huge
+\renewcommand{\labelitemi}{-}
+\setlength{\parindent}{0 cm}
+
+\begin{center} \includegraphics[height=\textheight]{pretty_1.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_2.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_3.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_4.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_5.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_6.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_7.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_8.pdf} \end{center}
+\pagebreak
+
+\begin{center} \includegraphics[height=\textheight]{pretty_9.pdf} \end{center}
+
+\end{document}

@@ -1,0 +1,55 @@
+import layer*
+import n*
+
+set bord 1
+set fais 1
+sigma left = 0.9*($GRAFINFO('WNXMAX')-$GRAFINFO('WNXMIN')) + $GRAFINFO('WNXMIN')
+sigma right = 0.95*($GRAFINFO('WNXMAX')-$GRAFINFO('WNXMIN')) + $GRAFINFO('WNXMIN')
+sigma textr = 0.88*($GRAFINFO('WNXMAX')-$GRAFINFO('WNXMIN')) + $GRAFINFO('WNXMIN')
+sigma top = $GRAFINFO('WNYMAX')
+sigma bot = $GRAFINFO('WNYMIN')
+
+if [1].eq.1 then
+  sigma boxtop = 0.98
+  sigma boxbot = 0.95
+  sigma boxbig = 0.05
+  sigma textop = 0.96
+else
+  if [1].eq.2 then
+    sigma boxtop = 0.94
+    sigma boxbot = 0.90
+    sigma boxbig = 0.10
+    sigma textop = 0.92
+  else
+    if [1].eq.3 then
+      sigma boxtop = 0.9 - 1.*0.02
+      sigma boxbot = 1.0 - 1.*0.05
+      sigma boxbig = 2.5*0.05
+      sigma textop = 0.93 - 0.04
+    else
+      message 'BLEXCH!'
+    endif
+  endif
+endif
+
+set faci $SIGMA(c[layer7])
+box $SIGMA(left) $SIGMA(right) $SIGMA((boxtop-0*boxbig-[2])*(top-bot)+bot) $SIGMA((boxbot-0*boxbig-[2])*(top-bot)+bot)
+text $SIGMA(textr) $SIGMA((textop-0*boxbig-[2])*(top-bot)+bot) [n[layer7]] [3] ! 'r'
+set faci $SIGMA(c[layer6])
+box $SIGMA(left) $SIGMA(right) $SIGMA((boxtop-1*boxbig-[2])*(top-bot)+bot) $SIGMA((boxbot-1*boxbig-[2])*(top-bot)+bot)
+text $SIGMA(textr) $SIGMA((textop-1*boxbig-[2])*(top-bot)+bot) [n[layer6]] [3] ! 'r'
+set faci $SIGMA(c[layer5])
+box $SIGMA(left) $SIGMA(right) $SIGMA((boxtop-2*boxbig-[2])*(top-bot)+bot) $SIGMA((boxbot-2*boxbig-[2])*(top-bot)+bot)
+text $SIGMA(textr) $SIGMA((textop-2*boxbig-[2])*(top-bot)+bot) [n[layer5]] [3] ! 'r'
+set faci $SIGMA(c[layer4])
+box $SIGMA(left) $SIGMA(right) $SIGMA((boxtop-3*boxbig-[2])*(top-bot)+bot) $SIGMA((boxbot-3*boxbig-[2])*(top-bot)+bot)
+text $SIGMA(textr) $SIGMA((textop-3*boxbig-[2])*(top-bot)+bot) [n[layer4]] [3] ! 'r'
+set faci $SIGMA(c[layer3])
+box $SIGMA(left) $SIGMA(right) $SIGMA((boxtop-4*boxbig-[2])*(top-bot)+bot) $SIGMA((boxbot-4*boxbig-[2])*(top-bot)+bot)
+text $SIGMA(textr) $SIGMA((textop-4*boxbig-[2])*(top-bot)+bot) [n[layer3]] [3] ! 'r'
+set faci $SIGMA(c[layer2])
+box $SIGMA(left) $SIGMA(right) $SIGMA((boxtop-5*boxbig-[2])*(top-bot)+bot) $SIGMA((boxbot-5*boxbig-[2])*(top-bot)+bot)
+text $SIGMA(textr) $SIGMA((textop-5*boxbig-[2])*(top-bot)+bot) [n[layer2]] [3] ! 'r'
+set faci $SIGMA(c[layer1])
+box $SIGMA(left) $SIGMA(right) $SIGMA((boxtop-6*boxbig-[2])*(top-bot)+bot) $SIGMA((boxbot-6*boxbig-[2])*(top-bot)+bot)
+text $SIGMA(textr) $SIGMA((textop-6*boxbig-[2])*(top-bot)+bot) [n[layer1]] [3] ! 'r'

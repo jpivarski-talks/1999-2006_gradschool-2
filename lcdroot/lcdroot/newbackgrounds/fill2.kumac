@@ -1,0 +1,35 @@
+import layer*
+
+h/delete $SIGMA(prefix+01)
+h/delete $SIGMA(prefix+02)
+h/delete $SIGMA(prefix+03)
+h/delete $SIGMA(prefix+04)
+h/delete $SIGMA(prefix+05)
+
+h/cr/2d $SIGMA(prefix+01) [1] [2] [3] [4] [5] [6] [7]
+h/cr/2d $SIGMA(prefix+02) [1] [2] [3] [4] [5] [6] [7]
+h/cr/2d $SIGMA(prefix+03) [1] [2] [3] [4] [5] [6] [7]
+h/cr/2d $SIGMA(prefix+04) [1] [2] [3] [4] [5] [6] [7]
+h/cr/2d $SIGMA(prefix+05) [1] [2] [3] [4] [5] [6] [7]
+
+nt/plot //[layer1]/[8] [9] ! ! ! 'N' $SIGMA(prefix+01)
+nt/plot //[layer2]/[8] [9] ! ! ! 'N' $SIGMA(prefix+02)
+nt/plot //[layer3]/[8] [9] ! ! ! 'N' $SIGMA(prefix+03)
+nt/plot //[layer4]/[8] [9] ! ! ! 'N' $SIGMA(prefix+04)
+nt/plot //[toplay]/[8] (scale*250.0).and.([9]) ! ! ! 'N' $SIGMA(prefix+05)
+
+h/delete $SIGMA(prefix+11)
+h/delete $SIGMA(prefix+12)
+h/delete $SIGMA(prefix+13)
+h/delete $SIGMA(prefix+14)
+h/delete $SIGMA(prefix+15)
+
+h/delete $SIGMA(prefix+22)
+h/delete $SIGMA(prefix+23)
+h/delete $SIGMA(prefix+24)
+h/delete $SIGMA(prefix+25)
+
+add $SIGMA(prefix+01) $SIGMA(prefix+02) $SIGMA(prefix+22) $SIGMA(s[layer1]) $SIGMA(s[layer2])
+add $SIGMA(prefix+22) $SIGMA(prefix+03) $SIGMA(prefix+23) 1. $SIGMA(s[layer3])
+add $SIGMA(prefix+23) $SIGMA(prefix+04) $SIGMA(prefix+24) 1. $SIGMA(s[layer4])
+add $SIGMA(prefix+24) $SIGMA(prefix+05) $SIGMA(prefix+25) 1. $SIGMA(s[layer5])
